@@ -60,6 +60,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="libglog.lib"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
 				SubSystem="1"
@@ -132,6 +133,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="libglog.lib"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="1"
@@ -181,7 +183,15 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath="..\src\pkgtools\cmd-args.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\error.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\except.h"
 				>
 			</File>
 		</Filter>
