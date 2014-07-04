@@ -41,6 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
+				AdditionalIncludeDirectories="..\inc"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -115,6 +116,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="..\inc"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -183,7 +185,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\src\pkgtools\cmd-args.h"
+				RelativePath="..\src\pkgtools\entry-argv.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\entry.h"
 				>
 			</File>
 			<File
@@ -192,6 +198,10 @@
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\except.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\script.h"
 				>
 			</File>
 		</Filter>
