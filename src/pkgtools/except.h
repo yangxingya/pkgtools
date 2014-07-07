@@ -21,18 +21,26 @@ protected:
 
 struct pkg_error : public except_base
 {
-    pkg_error(int errcode, std::string const& what = "make package error")
+    pkg_error(int errcode = -1, std::string const& what = "make package error")
         : except_base(errcode, what) {}
 };
 
 struct inst_error : public except_base
 {
-    inst_error(int errcode, std::string const& what = "install error")
+    inst_error(int errcode = -1, std::string const& what = "install error")
         : except_base(errcode, what) {}
 };
 
+struct uninst_error : public except_base
+{
+    uninst_error(int errcode = -1, std::string const& what = "uninstall error")
+        : except_base(errcode, what) {}
+};
 
-
-
+struct extract_error : public except_base
+{
+    extract_error(int errcode = -1, std::string const& what = "extract package error")
+        : except_base(errcode, what) {}
+};
 
 #endif // pkgtools_except_h_

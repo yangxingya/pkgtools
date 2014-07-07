@@ -7,10 +7,12 @@
 
 struct EntryBase 
 {
-    virtual int Execute(BaseArgs const* argv) = 0;
+    virtual int Install(BaseArgs const* argv) = 0;
+    virtual int Uninst(
+
 };
 
-class FileEntry : public EntryBase
+struct FileEntry : public EntryBase
 {
     
 };

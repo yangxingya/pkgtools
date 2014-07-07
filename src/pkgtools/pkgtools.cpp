@@ -21,8 +21,10 @@ int extract(std::string const& pkgfile, std::string const& outdir);
 int formaterror(std::string const& errcode);
 int main(int argc, char *argv[])
 {
-    //std::cout << argv[0] << std::endl;
     initializelog(argv[0]);
+
+    void test();
+    test();
 
     // log all args.
     std::string log_args = argv[0];
@@ -48,7 +50,7 @@ int main(int argc, char *argv[])
     
     if (std::string(argv[1]) == "-e") {
         std::string outdir = ".";
-        if (argc >= 3)
+        if (argc >= 4)
             outdir = argv[3];
         return extract(argv[2], argv[3]);
     }
@@ -195,3 +197,19 @@ int formaterror(std::string const& errcode)
     return ERROR_Success;
 }
 
+
+#include <windows.h>
+#include "osinfo.h"
+void test()
+{
+    SYSTEM_INFO sysinfo;
+
+    GetSystemInfo(&sysinfo);
+    std::cout << "Current cpu arch: " << cpuArch(&sysinfo) << std::endl;
+    std::cout << "Current cpu type: " << cpuType(&sysinfo) << std::endl;
+
+    GetNativeSystemInfo(&sysinfo);
+    std::cout << "Current cpu arch: " << cpuArch(&sysinfo) << std::endl;
+    std::cout << "Current cpu type: " << cpuType(&sysinfo) << std::endl;
+
+}

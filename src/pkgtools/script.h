@@ -20,9 +20,9 @@
 /// template: file: [filepath] [-p [n/e [-e b/c]]] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
 ///                   index:0      index:1         index:2         index:3
 
-/// template: dir:  [dirpath ] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
-/// template: dir:  [dirpath ] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
-///                   index:0        index:1              index:2         
+/// template: dir:  [dirpath] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
+/// template: dir:  [dirpath] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
+///                  index:0        index:1              index:2         
 
 /// // first: you should package tmp file.
 ///         file: [filepath] [-p] [] []
@@ -48,11 +48,8 @@
 class Script
 {
 public:
-    Script(std::string const& file){}
-
-    int Parse();
-
-    
+    Script(std::string const& file) {}
+    int Parse(); 
 };
 
 #endif // pkttools_script_h_

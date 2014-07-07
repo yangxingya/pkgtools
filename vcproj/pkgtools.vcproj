@@ -185,7 +185,11 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\src\pkgtools\entry-argv.h"
+				RelativePath="..\src\pkgtools\argv.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\defaultdir.h"
 				>
 			</File>
 			<File
@@ -198,6 +202,22 @@
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\except.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\lineparser.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\minifs.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\osinfo.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\pkgdef.h"
 				>
 			</File>
 			<File
