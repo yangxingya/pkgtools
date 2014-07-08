@@ -16,8 +16,8 @@
 ///     break/b     exit program. it is DEFAULT OPTION!
 ///     continue/c  ignore error, continue next.
 /// 
-/// template: file: [filepath] [-p [normal/effort [-e break/continue]]] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
-/// template: file: [filepath] [-p [n/e [-e b/c]]] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
+/// template: file: [destpath][srcpath][-p [normal/effort [-e break/continue]]] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
+/// template: file: [destpath][srcpath][-p [n/e [-e b/c]]] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
 ///                   index:0      index:1         index:2         index:3
 
 /// template: dir:  [dirpath] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
@@ -45,11 +45,20 @@
 #if !defined(pkttools_script_h_)
 #define pkttools_script_h_
 
+#include <string>
+#include <vector>
+#include <cclib/smartptr_def.h>
+
+struct EntryBase;
 class Script
 {
 public:
-    Script(std::string const& file) {}
-    int Parse(); 
+    Script(std::string const& script);
+    int Parse();
+    int Package();
+private:
+    std::string script_;
+    std::vector<shared_ptr<EntryBase> > entrys_;
 };
 
 #endif // pkttools_script_h_

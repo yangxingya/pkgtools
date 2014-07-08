@@ -175,7 +175,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\src\pkgtools\file.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\lineparser.cpp"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\pkgtools.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\script.cpp"
 				>
 			</File>
 		</Filter>
@@ -197,11 +209,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\pkgtools\entrydef.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\error.h"
 				>
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\except.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\filecreator.h"
 				>
 			</File>
 			<File
@@ -217,11 +237,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\pkgtools\pkg.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\pkgdef.h"
 				>
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\script.h"
+				>
+			</File>
+			<File
+				RelativePath="..\inc\types.h"
 				>
 			</File>
 		</Filter>

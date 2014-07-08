@@ -19,6 +19,12 @@ protected:
     int errcode_;
 };
 
+struct no_impl : public except_base
+{
+    no_impl(int errcode = -1, std::string const& what = "not implement")
+        : except_base(errcode, what) {}
+};
+
 struct pkg_error : public except_base
 {
     pkg_error(int errcode = -1, std::string const& what = "make package error")

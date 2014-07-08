@@ -11,6 +11,7 @@
 #include <string>
 #include <glog/logging.h>
 #include "error.h"
+#include "script.h"
 
 void initializelog(const char *argv0);
 void usage();
@@ -23,8 +24,8 @@ int main(int argc, char *argv[])
 {
     initializelog(argv[0]);
 
-    void test();
-    test();
+    //void test();
+    //test();
 
     // log all args.
     std::string log_args = argv[0];
@@ -169,6 +170,15 @@ int package(std::string const& sptfile)
     LOG(INFO) << "Package Start, script name: " << sptfile;
 
     //TODO:: packate implement...
+    Script script(sptfile);
+    int ret;
+    ret = script.Parse();
+    if (ret != ERROR_Success)
+        return ret;
+
+    ret = script.Package();
+    if (ret != ERROR_Success)
+        return ret;
 
     LOG(INFO) << "Package Over!";
     return -1; 

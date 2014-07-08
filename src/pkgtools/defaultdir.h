@@ -21,81 +21,67 @@
 #if !defined(pkgtools_default_dir_h_)
 #define pkgtools_default_dir_h_
 
+#include <shlobj.h>
 #include <string>
+#include <map>
+#include <cclib/types.h>
 
 namespace path {
+    const cclib::uint32_t kShiftBitsWithCommon = 16;
+    const cclib::uint32_t kLow16BitsMask = 0x0000ffff;
+    const cclib::uint32_t kHigh16BitsMask = 0xffff0000;
+    typedef std::map<std::string, cclib::uint32_t> spec_os_folder_t;
 
-    const std::string kRoot     = "%systemdrive%";
-    const std::string kWindows  = "%windir%";
-    const std::string kSystem   = "%windir%\\system32";
-    const std::string kSysWow   = "%windir%\\syswow64";
-    const std::string kSetup    =  "%programfiles%";
-    const std::string kSetupWow = "%programfiles(x86)%";
-    const std::string kUser     = "%username%";
-    const std::string kUserProf = "%userprofile%";
-    //TODO:: desktop dir???
-    const std::string kDesktop  = "";
-    const std::string kAppData  = "%appdata%";
-    const std::string kLocalAppData = "%localappdata%";
-    
-    // for inner 
-    namespace inner {
-#define k(x) k##x="$"#x
-    const std::string k(ROOT);
-    const std::string k(WINDOWS);
-    const std::string k(SYSTEM);
-    const std::string k(SYSWOW);
-    const std::string k(SETUP);
-    const std::string k(SETUPWOW);
-    const std::string k(USER);
-    const std::string k(USERPROF);
-    const std::string k(DESKTOP);
-    const std::string k(APPDATA);
-    const std::string k(LOCALAPPDATA);
-#undef k
-    } // namespace inner
+    inline cclib::uint32_t makeIndex(cclib::uint32_t low, cclib::uint32_t high = 0)
+    {
+        return low | (high << kShiftBitsWithCommon);
+    }
 
-    
+    inline cclib::uint32_t splitLow(cclib::uint32_t index)
+    {
+        return index & kLow16BitsMask;
+    }
 
-    /*
-    m_ShellConstants.add(_T("WINDIR"),CSIDL_WINDOWS,CSIDL_WINDOWS);
-    m_ShellConstants.add(_T("SYSDIR"),CSIDL_SYSTEM,CSIDL_SYSTEM);
-    m_ShellConstants.add(_T("QUICKLAUNCH"), CSIDL_APPDATA, CSIDL_APPDATA);
-    m_ShellConstants.add(_T("SENDTO"),CSIDL_SENDTO, CSIDL_SENDTO);
-    m_ShellConstants.add(_T("RECENT"),CSIDL_RECENT, CSIDL_RECENT);
-    m_ShellConstants.add(_T("NETHOOD"), CSIDL_NETHOOD, CSIDL_NETHOOD);
-    m_ShellConstants.add(_T("FONTS"), CSIDL_FONTS, CSIDL_FONTS);
-    m_ShellConstants.add(_T("LOCALAPPDATA"), CSIDL_LOCAL_APPDATA, CSIDL_LOCAL_APPDATA);
-    m_ShellConstants.add(_T("PRINTHOOD"), CSIDL_PRINTHOOD, CSIDL_PRINTHOOD);
-    m_ShellConstants.add(_T("COOKIES"), CSIDL_COOKIES, CSIDL_COOKIES);
-    m_ShellConstants.add(_T("HISTORY"), CSIDL_HISTORY, CSIDL_HISTORY);
-    m_ShellConstants.add(_T("PROFILE"), CSIDL_PROFILE, CSIDL_PROFILE);
-    m_ShellConstants.add(_T("RESOURCES"), CSIDL_RESOURCES, CSIDL_RESOURCES);
-    m_ShellConstants.add(_T("RESOURCES_LOCALIZED"), CSIDL_RESOURCES_LOCALIZED, CSIDL_RESOURCES_LOCALIZED);
-    m_ShellConstants.add(_T("CDBURN_AREA"), CSIDL_CDBURN_AREA, CSIDL_CDBURN_AREA);
-    */
+    inline cclib::uint32_t splitHigh(cclib::uint32_t index)
+    {
+        return (index & kHigh16BitsMask) >> kShiftBitsWithCommon;
+    }
 
-    /*
-    m_ShellConstants.add(_T("SMPROGRAMS"),CSIDL_PROGRAMS, CSIDL_COMMON_PROGRAMS);
-    m_ShellConstants.add(_T("SMSTARTUP"),CSIDL_STARTUP, CSIDL_COMMON_STARTUP);
-    m_ShellConstants.add(_T("DESKTOP"),CSIDL_DESKTOPDIRECTORY, CSIDL_COMMON_DESKTOPDIRECTORY);
-    m_ShellConstants.add(_T("STARTMENU"),CSIDL_STARTMENU, CSIDL_COMMON_STARTMENU);
-    m_ShellConstants.add(_T("DOCUMENTS"),CSIDL_PERSONAL, CSIDL_COMMON_DOCUMENTS);
-    
-    m_ShellConstants.add(_T("FAVORITES"),CSIDL_FAVORITES, CSIDL_COMMON_FAVORITES);
-    m_ShellConstants.add(_T("MUSIC"),CSIDL_MYMUSIC, CSIDL_COMMON_MUSIC);
-    m_ShellConstants.add(_T("PICTURES"),CSIDL_MYPICTURES, CSIDL_COMMON_PICTURES);
-    m_ShellConstants.add(_T("VIDEOS"),CSIDL_MYVIDEO, CSIDL_COMMON_VIDEO);
-    
-    m_ShellConstants.add(_T("TEMPLATES"), CSIDL_TEMPLATES, CSIDL_COMMON_TEMPLATES);
-    m_ShellConstants.add(_T("APPDATA"), CSIDL_APPDATA, CSIDL_COMMON_APPDATA);
-    
-    //m_ShellConstants.add(_T("ALTSTARTUP"), CSIDL_ALTSTARTUP, CSIDL_COMMON_ALTSTARTUP);
-    m_ShellConstants.add(_T("INTERNET_CACHE"), CSIDL_INTERNET_CACHE, CSIDL_INTERNET_CACHE);
-    
-    m_ShellConstants.add(_T("ADMINTOOLS"), CSIDL_ADMINTOOLS, CSIDL_COMMON_ADMINTOOLS);
-    
-    */
+    inline size_t makeSpecOSFolder(spec_os_folder_t *folder)
+    {
+        size_t orisz = folder->size();
+        folder->insert(std::make_pair("WINDIR",  CSIDL_WINDOWS));
+        folder->insert(std::make_pair("SYSDIR",  CSIDL_SYSTEM));
+        folder->insert(std::make_pair("SENDTO",  CSIDL_SENDTO));
+        folder->insert(std::make_pair("RECENT",  CSIDL_RECENT));
+        folder->insert(std::make_pair("NETHOOD", CSIDL_NETHOOD));
+        folder->insert(std::make_pair("FONTS",   CSIDL_FONTS));        
+        folder->insert(std::make_pair("COOKIES", CSIDL_COOKIES));
+        folder->insert(std::make_pair("HISTORY", CSIDL_HISTORY));
+        folder->insert(std::make_pair("PROFILE", CSIDL_PROFILE));
+        folder->insert(std::make_pair("PRINTHOOD",    CSIDL_PRINTHOOD));
+        folder->insert(std::make_pair("RESOURCES",    CSIDL_RESOURCES));
+        folder->insert(std::make_pair("CDBURN_AREA",  CSIDL_CDBURN_AREA));
+        folder->insert(std::make_pair("QUICKLAUNCH",  CSIDL_APPDATA));
+        folder->insert(std::make_pair("LOCALAPPDATA", CSIDL_LOCAL_APPDATA));
+        folder->insert(std::make_pair("RESOURCES_LOCALIZED", CSIDL_RESOURCES_LOCALIZED));
+        // if can't find current user path, then need use common user path.
+        folder->insert(std::make_pair("SMPROGRAMS", makeIndex(CSIDL_PROGRAMS, CSIDL_COMMON_PROGRAMS)));
+        folder->insert(std::make_pair("SMSTARTUP",  makeIndex(CSIDL_STARTUP, CSIDL_COMMON_STARTUP)));
+        folder->insert(std::make_pair("DESKTOP",    makeIndex(CSIDL_DESKTOPDIRECTORY, CSIDL_COMMON_DESKTOPDIRECTORY)));
+        folder->insert(std::make_pair("STARTMENU",  makeIndex(CSIDL_STARTMENU, CSIDL_COMMON_STARTMENU)));
+        folder->insert(std::make_pair("DOCUMENTS",  makeIndex(CSIDL_PERSONAL, CSIDL_COMMON_DOCUMENTS)));   
+        folder->insert(std::make_pair("FAVORITES",  makeIndex(CSIDL_FAVORITES, CSIDL_COMMON_FAVORITES)));
+        folder->insert(std::make_pair("MUSIC",      makeIndex(CSIDL_MYMUSIC, CSIDL_COMMON_MUSIC)));
+        folder->insert(std::make_pair("PICTURES",   makeIndex(CSIDL_MYPICTURES, CSIDL_COMMON_PICTURES)));
+        folder->insert(std::make_pair("VIDEOS",     makeIndex(CSIDL_MYVIDEO, CSIDL_COMMON_VIDEO)));
+        folder->insert(std::make_pair("TEMPLATES",  makeIndex(CSIDL_TEMPLATES, CSIDL_COMMON_TEMPLATES)));
+        folder->insert(std::make_pair("APPDATA",    makeIndex(CSIDL_APPDATA, CSIDL_COMMON_APPDATA)));
+        folder->insert(std::make_pair("INTERNET_CACHE", makeIndex(CSIDL_INTERNET_CACHE, CSIDL_INTERNET_CACHE)));
+        folder->insert(std::make_pair("ADMINTOOLS",     makeIndex(CSIDL_ADMINTOOLS, CSIDL_COMMON_ADMINTOOLS));
+        
+        return (size_t)(folder->size() - orisz);
+    }
 
 } // namespace path
 
