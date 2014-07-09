@@ -151,6 +151,30 @@ typedef struct _dinfomgr_t {
 
 #pragma pack(pop)
 
+const size_t kheaderlen = sizeof(header_t);
+const size_t kentrylen  = sizeof(entry_t);
+const size_t kdinfolen  = sizeof(dinfo_t);
+inline uint64_t length(header_t const* header)
+{
+    return sizeof(header_t);
+}
+
+inline uint64_t length(entrymgr_t const* entrymgr)
+{
+    return sizeof(entrymgr) + (entrymgr->count - 1) * sizeof(entry_t); 
+}
+
+inline uint64_t length(argvmgr_t const* argvmgr)
+{
+    return argvmgr->length;
+}
+
+inline uint64_t length(dinfomgr_t const* dinfomgr)
+{
+    return sizeof(dinfomgr) + (dinfomgr->count - 1) * sizeof(dinfo_t);
+}
+
+
 } // namespace pkg.
 
 #endif // pkgtools_pkg_def_h_

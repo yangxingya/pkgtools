@@ -221,7 +221,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\filecreator.h"
+				RelativePath="..\src\pkgtools\freader.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\fwriter.h"
 				>
 			</File>
 			<File
@@ -245,11 +249,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\script.h"
+				RelativePath="..\src\pkgtools\pkgfile.h"
 				>
 			</File>
 			<File
-				RelativePath="..\inc\types.h"
+				RelativePath="..\src\pkgtools\script.h"
 				>
 			</File>
 		</Filter>

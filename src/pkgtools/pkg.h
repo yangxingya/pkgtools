@@ -25,7 +25,6 @@ struct PkgFile : public PkgBase
     PkgFile(std::string const& line);
     virtual int doPkg();
     std::string get() const { return to_; }
-
 };
 
 #endif // pkgtools_pkg_h_

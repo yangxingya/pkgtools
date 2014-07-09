@@ -9,6 +9,7 @@
 #include <string>
 #include <cclib/smartptr_def.h>
 
+struct PkgBase;
 struct EntryBase;
 struct LineParser
 {

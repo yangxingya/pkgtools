@@ -16,29 +16,29 @@
 ///     break/b     exit program. it is DEFAULT OPTION!
 ///     continue/c  ignore error, continue next.
 /// 
-/// template: file: [destpath][srcpath][-p [normal/effort [-e break/continue]]] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
-/// template: file: [destpath][srcpath][-p [n/e [-e b/c]]] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
+/// template: file: [-d destpath][-s srcpath][-p [normal/effort [-e break/continue]]] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
+/// template: file: [-d destpath][-s srcpath][-p [n/e [-e b/c]]] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
 ///                   index:0      index:1         index:2         index:3
 
-/// template: dir:  [dirpath] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
-/// template: dir:  [dirpath] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
+/// template: dir:  [-d dirpath] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
+/// template: dir:  [-d dirpath] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
 ///                  index:0        index:1              index:2         
 
 /// // first: you should package tmp file.
-///         file: [filepath] [-p] [] []
-///      == file: [filepath] [-p n -e b]
+///         file: [-d filepath] [-s filepath] [-p] [-t]
+///      == file: [-d filepath] [-s filepath] [-p n -e b] [-t n -e b]
 ///
 /// // second: you should create dir.
-///         dir:  [dirpath] [-i effort -e continue] [-u effort -e continue]
-///      == dir:  [dirpath] [-i e -e c] [-u e -e c]
+///         dir:  [-d dirpath] [-i effort -e continue] [-u effort -e continue]
+///      == dir:  [-d dirpath] [-i e -e c] [-u e -e c]
 ///
 /// // third: you should package installed file.
-///         file: [filepath] [-p effort -e continue] [-i effort -e continue] [-u effort -e continue]
-///      == file: [filepath] [-p e -e c] [-i e -e c] [-u e -e c]
+///         file: [-d filepath] [-s filepath] [-p effort -e continue] [-i effort -e continue] [-u effort -e continue]
+///      == file: [-d filepath] [-s filepath] [-p e -e c] [-i e -e c] [-u e -e c]
 /// 
 /// // fourth: you should package exec cmdline.
 /// exec: [] []
-/// exec: [-i -c] [-c 0 takeown "args list"]
+/// exec: [-i -c] [-c 1 ] [-a takeown "args list"]
 /// exec: [-i -c] [-c 0 icacls "args list"]
 /// exec: [-i -c] [-c 0 vss-copy "C:\\"]
 

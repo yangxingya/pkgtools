@@ -34,7 +34,7 @@ int Script::Parse()
         try {
             LineParser parser(line);
             entrys_.push_back(parser.doParse());
-        } catch (pkg_error &ex) {
+        } catch (except_base &ex) {
             LOG(ERROR) << "Parse Script Error, script line: " << count - 1 <<". errcode: " << ex.error()
                 << ". errstring: " << ex.what();
             return ex.error();
@@ -55,7 +55,13 @@ int Script::Package()
     int ret;
     for (size_t i = 0; i < entrys_.size(); ++i) {
         shared_ptr<EntryBase> entry = entrys_[i];
-        ret = entry->Package();
+        try {
+            ret = entry->Package();
+        } catch (except_base &ex) {
+            LOG(ERROR) << "Package Failed!, error: " << ex.error() 
+                << ", errstr: " << ex.what();
+            return ex.error();
+        }
         if (ret != ERROR_Success) {
             LOG(ERROR) << "Package Failed!";
             return ret;

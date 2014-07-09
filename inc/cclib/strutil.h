@@ -260,6 +260,19 @@ inline std::string trim(
     return str.substr(start, end - start + 1);
 }
 
+/// TODO:: no test.
+inline bool start_with(std::string const& str, std::string const& with)
+{
+    return str.find(with) == 0;
+}
+
+//!
+/// TODO:: no test.
+inline bool end_with(std::string const& str, std::string const& with)
+{
+    return str.rfind(with) == (str.length() - with.length());
+}
+
 } // namespace cclib
 
 #endif // cclib_str_util_h_

@@ -16,8 +16,9 @@ enum Error {
     ERROR_NoContentInScript,
     ERROR_ScriptLineNoEntrySplitChar,
     ERROR_EntryTypeCantSupported,
+    ERROR_CreatePkgFileFailed,
     ERROR_Min = ERROR_Success,
-    ERROR_Max = ERROR_EntryTypeCantSupported,
+    ERROR_Max = ERROR_CreatePkgFileFailed,
 };
 
 const std::string kErrorStr[] = {
@@ -27,6 +28,7 @@ const std::string kErrorStr[] = {
     "No content in Script",
     "Script line no entry split char(:)",
     "Script line entry type not supported",
+    "Package file create failed",
 };
 
 inline const char* getError(int error)

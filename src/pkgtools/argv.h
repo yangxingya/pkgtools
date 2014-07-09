@@ -7,47 +7,100 @@
 
 #include <vector>
 #include <string>
-#include "strutil.h"
+#include <cclib/strutil.h>
+#include <cclib/types.h>
 
-const int kInstall   = 1;
-const int kUninstall = 2;
-const int kContinue  = 4;
+//!
+/// detail:
+///   flags:
+///     7 6 5 4 3 2 1 0
+///                   ^
+///                  p/i/u
+///                 ^
+///                 t(error try?)
+///               ^
+///               e(error exit?)
 
-const int kDefult = kInstall;
+const uint8_t kpkgtmask = 1;    /// 0x01
+const uint8_t kinstmask = 1;    /// 0x01
+const uint8_t kuninmask = 1;    /// 0x01  
 
-const std::string kInstallStr   = "-i";
-const std::string kUninstallStr = "-u";
-const std::string kContinueStr  = "-c";
+/// error try mask
+const uint8_t kerrtmask = 2;    /// 0x02
+/// error exit mask
+const uint8_t kerrxmask = 4;    /// 0x04
+
+const std::string kargvbegin = "[";
+const std::string kargvend = "]";
+const std::string kpkgtstr = "-p";
+const std::string kinststr = "-i";
+const std::string kuninstr = "-u";
+/// no error try prefix, error try value follow '-p/-i/-u'.
+/// detail: -p n/t, -i n/t, -u n/t
+/// no error exit prefix likely '-e b/i', is only b/i. so:
+/// detail: -p n/t b/i, -i n/t b/i, -u n/t b/i
+
+/// error try value.
+const uint8_t kerrtry = 2;
+/// error no try value.
+const uint8_t kerrnotry = 0;
+/// error ignore value.
+const uint8_t kerrignore = 4;
+/// error break value.
+const uint8_t kerrbreak = 0;
+///!
+/// the following is default value.
+const uint8_t kdfttry = kerrtry; 
+const uint8_t kdfterr = kerrignore;
+
+const uint8_t kdftpkgt = 1;
+const uint8_t kdftinst = 1;
+const uint8_t kdftunin = 0;
+
+/// the following is all combined default flags.
+const uint8_t kdftpcomb = kdftpkgt | kdfttry | kdfterr;
+const uint8_t kdfticomb = kdftinst | kdfttry | kdfterr;
+const uint8_t kdftucomb = kdftunin | kdfttry | kdfterr;
+
 
 //! 
-/// brief: base args: -i -u -c
-///        details: 
+/// brief: base args: -p -i -u
+///        details:
+///             -p package
 ///             -i install
 ///             -u uninstall
-///             -c cmd run failed, ignore? default is not ignore.
-/// example: file: [-i -u -c] ["filename"]
+/// detail:
+///     file:[-d dest] [-s src] [-p/i/u n/t b/i] 
+///     dir :[-d dest] [-p/i/u n/t b/i] 
+/// 
 struct BaseArgv {
 public:
     //!
-    /// brief: get base args by argv likely [-i -u -c] form, and transfort to base flags.
+    /// brief: get base args by argv likely [-p/i/u n/t b/i] form, and transfort to base flags.
     BaseArgv(std::string const& argv)
-        : flags_(kDefault)
+        : p_flags_(kdftpcomb)
+        , i_flags_(kdfticomb)
+        , u_flags_(kdftucomb)
     {
-        std::vector<std::string> out;
-        cclib::split(argv, " ", &out, true);
-        std::vector<std::string>::iterator it;
-        for (it = out.begin(); it != out.end(); ++it) {
-            if (*it == kInstallStr  ) flags_ |= kInstall;
-            else
-            if (*it == kUninstallStr) flags_ |= kUnstall;
-            else
-            if (*it == kContinueStr ) flags_ |= kContinue;
+        std::vector<std::string> argvs;
+        cclib::split(argv, kargvbegin, kargvend, &argvs, true);
+        for (size_t i = 0; i < argvs.size(); ++i) {
+            if (cclib::start_with(argvs[i], kpkgtstr)) {
+
+                continue;
+            }
         }
     }
     virtual ~BaseArgv() {}
-    int Flags() const { return flags_; }
+    uint8_t pkgtFlags() const { return p_flags_; }
+    uint8_t instFlags() const { return i_flags_; }
+    uint8_t uninFlags() const { return u_flags_; }
 private:
-    int flags_;  
+    uint8_t p_flags_;
+    uint8_t i_flags_;  
+    uint8_t u_flags_; 
+protected:
+    std::string argv_;
 };
 
 struct FileArgv : public BaseArgv
