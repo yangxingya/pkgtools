@@ -1,0 +1,17 @@
+file:[-d c:\program files\xxx.txt][-s c:\program files\xxx.txt] [-p n i] [-i n i] [-u n i]
+
+file:[-d c:\program files\xxx.txt][-s c:\xxx.txt] [-p t i] [-i n i] [-u t b]
+
+file:[-d c:\program files\xxx.txt][-s c:\program files\xxx.txt] [-p n] [-i n] [-u n]
+
+file:[-d c:\program files\xxx.txt][-s c:\program files\xxx.txt] [-p] [-i] [-u]
+
+file:[-d c:\program files\xxx.txt][-s c:\program files\xxx.txt] [-p n i] [-i n i]
+
+file:[-d c:\program files\xxx.txt][-s c:\program files\xxx.txt] [-p n i] [-i n i] [-u n i]
+
+dir:[-d c:\program files\app] [-p t i] [-i t i]
+
+out: [-d c:\app.dat]
+
+EXEC:[-i t i] [-v -1] [-c vss-copy c:\]

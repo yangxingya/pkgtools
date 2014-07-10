@@ -171,14 +171,14 @@ int package(std::string const& sptfile)
 
     //TODO:: packate implement...
     Script script(sptfile);
-    int ret;
-    ret = script.Parse();
+    int ret = script.Parse();
     if (ret != ERROR_Success)
         return ret;
 
-    ret = script.Package();
+    argv::AutoArgvList arglist = script.ArgList();
+    /*ret = script.Package();
     if (ret != ERROR_Success)
-        return ret;
+        return ret;*/
 
     LOG(INFO) << "Package Over!";
     return -1; 

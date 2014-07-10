@@ -54,8 +54,7 @@ private:
 
 struct Reader
 {
-    Reader(std::string const& file)
-        : 
+    Reader(std::string const& file) {}
 };
 
 } // namespace pkg

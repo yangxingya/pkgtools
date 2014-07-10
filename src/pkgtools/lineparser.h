@@ -7,15 +7,12 @@
 #define pkgtools_line_parser_h_
 
 #include <string>
-#include <cclib/smartptr_def.h>
+#include "argvdef.h"
 
-struct PkgBase;
-struct EntryBase;
 struct LineParser
 {
     LineParser(std::string const& line);
-    shared_ptr<EntryBase> doParse(); 
-    shared_ptr<PkgBase> doPkg();
+    argv::AutoArgv doParse(); 
 private:
     std::string line_;
 };

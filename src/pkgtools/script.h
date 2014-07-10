@@ -37,28 +37,25 @@
 ///      == file: [-d filepath] [-s filepath] [-p e -e c] [-i e -e c] [-u e -e c]
 /// 
 /// // fourth: you should package exec cmdline.
-/// exec: [] []
-/// exec: [-i -c] [-c 1 ] [-a takeown "args list"]
-/// exec: [-i -c] [-c 0 icacls "args list"]
-/// exec: [-i -c] [-c 0 vss-copy "C:\\"]
+/// exec: [-p n/t b/i] [-i n/t b/i] [-e c 0] [-c args list]
+///
+/// 
 
 #if !defined(pkttools_script_h_)
 #define pkttools_script_h_
 
 #include <string>
-#include <vector>
-#include <cclib/smartptr_def.h>
+#include "argvdef.h"
 
-struct EntryBase;
 class Script
 {
 public:
     Script(std::string const& script);
     int Parse();
-    int Package();
+    argv::AutoArgvList ArgList() const { return args_; }
 private:
     std::string script_;
-    std::vector<shared_ptr<EntryBase> > entrys_;
+    argv::AutoArgvList args_;
 };
 
 #endif // pkttools_script_h_

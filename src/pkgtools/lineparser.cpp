@@ -6,7 +6,7 @@
 #include "except.h"
 #include "error.h"
 #include "entrydef.h"
-#include "entry.h"
+#include "argv.h"
 
 LineParser::LineParser(std::string const& line)
     : line_(line)
@@ -20,7 +20,7 @@ LineParser::LineParser(std::string const& line)
 ///  file: [dstpath][srcpath][-p n/e -e c/e][-i n/e -e c/e][-u n/e -e c/e]
 ///  dir: [dirpath][-p n/e -e c/e][-i n/e -e c/e][-u n/e -e c/e]
 ///  exec:
-shared_ptr<EntryBase> LineParser::doParse()
+argv::AutoArgv LineParser::doParse()
 {
     std::string::size_type pos = line_.find_first_of(":");
     if (pos == std::string::npos)
@@ -32,66 +32,24 @@ shared_ptr<EntryBase> LineParser::doParse()
         std::string what = "entry type: ";
         what += type;
         what += " can't supported!";
-        throw pkg_error(ERROR_EntryTypeCantSupported, what.c_str());
+        throw pkg_error(ERROR_EntryTypeCantSupported, what);
     }
 
-    shared_ptr<EntryBase> entrybase; 
-    bool valid;
+    argv::AutoArgv argvbase;
 
     switch (entrytype) {
     case entry::kOut:
-        //TODO:: not implement.
-        throw no_impl();
+        argvbase.reset(new argv::OutArgv(line_.substr(pos + 1)));
         break;
     case entry::kFile:
-        entrybase.reset(new FileEntry(line_.substr(pos + 1), valid));
+        argvbase.reset(new argv::FileArgv(line_.substr(pos + 1)));
         break;
     case entry::kDir:
-        //TODO:: not implement.
-        throw no_impl();
+        argvbase.reset(new argv::DirArgv(line_.substr(pos + 1)));
         break;
     case entry::kExec:
-        //TODO:: not implement.
-        throw no_impl();
+        argvbase.reset(new argv::ExecArgv(line_.substr(pos + 1)));
         break;
     } 
-    return entrybase;
-}
-
-shared_ptr<PkgBase> LineParser::doPkg()
-{
-    std::string::size_type pos = line_.find_first_of(":");
-    if (pos == std::string::npos)
-        throw pkg_error(ERROR_ScriptLineNoEntrySplitChar, "no entry split char(:) at script line");
-    
-    std::string type = line_.substr(0, pos);
-    int entrytype = entry::type(type);
-    if (entrytype == entry::kUnknown) {
-        std::string what = "entry type: ";
-        what += type;
-        what += " can't supported!";
-        throw pkg_error(ERROR_EntryTypeCantSupported, what.c_str());
-    }
-
-    shared_ptr<EntryBase> entrybase; 
-    bool valid;
-
-    switch (entrytype) {
-    case entry::kOut:
-        //TODO:: not implement.
-        throw no_impl();
-        break;
-    case entry::kFile:
-        entrybase.reset(new FileEntry(line_.substr(pos + 1), valid));
-        break;
-    case entry::kDir:
-        //TODO:: not implement.
-        throw no_impl();
-        break;
-    case entry::kExec:
-        //TODO:: not implement.
-        throw no_impl();
-        break;
-    } 
-    return entrybase;
+    return argvbase;
 }

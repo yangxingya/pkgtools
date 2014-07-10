@@ -16,6 +16,11 @@ enum Error {
     ERROR_NoContentInScript,
     ERROR_ScriptLineNoEntrySplitChar,
     ERROR_EntryTypeCantSupported,
+    ERROR_ScriptFormatError,
+    ERROR_ScriptOutPathFormatError,
+    ERROR_ScriptFilePathFormatError,
+    ERROR_ScriptDirPathFormatError,
+    ERROR_ScriptExecCmdFormatError,
     ERROR_CreatePkgFileFailed,
     ERROR_Min = ERROR_Success,
     ERROR_Max = ERROR_CreatePkgFileFailed,
@@ -28,6 +33,11 @@ const std::string kErrorStr[] = {
     "No content in Script",
     "Script line no entry split char(:)",
     "Script line entry type not supported",
+    "Script format error",
+    "Script out path argv format error",
+    "Script file path argv format error",
+    "Script dir path argv format error",
+    "Script exec cmd argv format error",
     "Package file create failed",
 };
 

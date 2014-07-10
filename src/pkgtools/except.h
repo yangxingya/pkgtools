@@ -25,6 +25,12 @@ struct no_impl : public except_base
         : except_base(errcode, what) {}
 };
 
+struct script_error : public except_base
+{
+    script_error(int errcode = -1, std::string const& what = "script format error")
+        : except_base(errcode, what) {}
+};
+
 struct pkg_error : public except_base
 {
     pkg_error(int errcode = -1, std::string const& what = "make package error")

@@ -5,6 +5,8 @@
 #if !defined(pkgtools_pkg_h_)
 #define pkgtools_pkg_h_
 
+#include "argvdef.h"
+
 struct PkgBase 
 {
     virtual int doPkg() = 0;
@@ -13,7 +15,7 @@ struct PkgBase
 
 struct PkgOut : public PkgBase
 {
-    PkgOut(std::string const& line);
+    PkgOut(AutoArgv argv);
     virtual int doPkg();
     std::string get() const { return out_; }
 private:
@@ -22,7 +24,7 @@ private:
 
 struct PkgFile : public PkgBase 
 {
-    PkgFile(std::string const& line);
+    PkgFile(AutoArgv argv);
     virtual int doPkg();
     std::string get() const { return to_; }
 };

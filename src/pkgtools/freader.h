@@ -16,7 +16,7 @@ struct FileReader
     {
     }
 
-    ~FileCreator() { if (fp_) fclose(fp_); }
+    ~FileReader() { if (fp_) fclose(fp_); }
     bool good() const { return good_; }
     bool seek(int64_t pos) 
     { 

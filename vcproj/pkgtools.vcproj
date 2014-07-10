@@ -201,6 +201,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\pkgtools\argvdef.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\defaultdir.h"
 				>
 			</File>
@@ -250,6 +254,10 @@
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\pkgfile.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\pkgmaker.h"
 				>
 			</File>
 			<File

@@ -3,12 +3,16 @@
 
 #include "entry.h"
 #include "except.h"
+#include <assert.h>
 #include <glog/logging.h>
+#include "argv.h"
 
 /// package as parsing script used.
-FileEntry::FileEntry(std::string const& sriptline, bool& valid)
-{
-    LOG(INFO) << "File Entry: " << sriptline;
+FileEntry::FileEntry(argv::AutoArgv argv)
+{   
+    argv::FileArgv *fargv = (argv::FileArgv*)(argv.get());
+    assert(fargv != NULL);
+    LOG(INFO) << "File Entry: ";
 }
 
 /// for install or uninstall.
@@ -29,13 +33,7 @@ int FileEntry::Uninst()
     throw no_impl();
 }
 
-int FileEntry::Package()
-{
-    //TODO:: not implement.
-    throw no_impl();
-}
-
-int FileEntry::getEntry(pkg::entry_t const* entry)
+int FileEntry::makeEntry(pkg::entry_t const* entry)
 {
     //TODO:: not implement.
     throw no_impl();

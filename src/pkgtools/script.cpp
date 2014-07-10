@@ -33,7 +33,7 @@ int Script::Parse()
 
         try {
             LineParser parser(line);
-            entrys_.push_back(parser.doParse());
+            args_.push_back(parser.doParse());
         } catch (except_base &ex) {
             LOG(ERROR) << "Parse Script Error, script line: " << count - 1 <<". errcode: " << ex.error()
                 << ". errstring: " << ex.what();
@@ -42,32 +42,10 @@ int Script::Parse()
     }
     LOG(INFO) << "Parse Script End: <------";
 
-    if (entrys_.size() == 0) {
+    if (args_.size() == 0) {
         LOG(ERROR) << "Parse Script NO Error, but no ENTRY also!";
         return ERROR_NoContentInScript;
     }
-    LOG(INFO) << "Parse Script Successful, entry size: " << entrys_.size();
-    return ERROR_Success;
-}
-
-int Script::Package()
-{
-    int ret;
-    for (size_t i = 0; i < entrys_.size(); ++i) {
-        shared_ptr<EntryBase> entry = entrys_[i];
-        try {
-            ret = entry->Package();
-        } catch (except_base &ex) {
-            LOG(ERROR) << "Package Failed!, error: " << ex.error() 
-                << ", errstr: " << ex.what();
-            return ex.error();
-        }
-        if (ret != ERROR_Success) {
-            LOG(ERROR) << "Package Failed!";
-            return ret;
-        }
-    }
-
-    LOG(INFO) << "Package Successful!";
+    LOG(INFO) << "Parse Script Successful, entry size: " << args_.size();
     return ERROR_Success;
 }
