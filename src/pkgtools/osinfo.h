@@ -7,6 +7,7 @@
 
 #include <string>
 #include <sstream>
+#include <windows.h>
 
 //namespace os {
 
@@ -22,7 +23,6 @@ const int kCpuArchARM = 4;
 const int kCpuArchUnknown = 0xffff;
 
 /// the following is for test
-
 inline std::string cpuArch(const SYSTEM_INFO *lpsi)
 {
     std::string arch;
@@ -149,6 +149,24 @@ inline std::string cpuType(const SYSTEM_INFO *lpsi)
         break;
     }
     return cpu;
+}
+
+/// is 64bit os.
+inline bool is64bitOS()
+{
+    SYSTEM_INFO sysinfo;
+
+    /// the following func can be used XP or 2003 later.
+    /// detail: 
+    ///     http://msdn.microsoft.com/en-us/library/windows/desktop/ms724340(v=vs.85).aspx
+    GetNativeSystemInfo(&sysinfo);
+    return sysinfo.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64;
+}
+
+/// self is 64bit?
+inline bool is64bitSelf()
+{
+    return sizeof(void*) == 8;
 }
 
 

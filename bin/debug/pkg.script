@@ -15,3 +15,5 @@ dir:[-d c:\program files\app] [-p t i] [-i t i]
 out: [-d c:\app.dat]
 
 EXEC:[-i t i] [-v -1] [-c vss-copy c:\]
+
+file:[-d c:\测试Unicode字符\牛逼你就通过测试.txt][-s c:\牛逼通过测试.txt] [-p n i] [-i t b]

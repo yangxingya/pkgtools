@@ -8,7 +8,7 @@
 struct PkgMaker
 {
     
-}
+};
 
 
 #endif // pkgtools_pkg_maker_h_

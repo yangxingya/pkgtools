@@ -21,9 +21,9 @@ namespace cclib {
 template<typename T>
 inline T string_cast(std::string const& str)
 {
-    std::istringstream iss(str);
+    std::stringstream ss(str);
     T ret;
-    if (iss >> ret) return ret;
+    if (ss >> ret) return ret;
 
     // if cast failure then throw bad_cast exception.
     std::string err = "string: \"";
@@ -31,6 +31,28 @@ inline T string_cast(std::string const& str)
     err += "\" cast to type: ";
     err += typeid(T).name();
     err += " failure!";
+    
+    throw std::bad_cast(err.c_str());
+}
+
+//!
+/// brief: to_string(T) template function
+///          change t to string format.
+/// usage: int x = string_cast<int>("123456");
+/// WARNING: if cast failure, then throw bad_cast exception.
+template<typename T>
+inline std::string to_string(T value)
+{
+    std::stringstream ss;
+    std::string ret;
+
+    ss << value;
+    if (ss >> ret) return ret;
+
+    // if cast failure then throw bad_cast exception.
+    std::string err = "change type: ";
+    err += typeid(T).name();
+    err += " to string failure!";
     
     throw std::bad_cast(err.c_str());
 }
@@ -261,16 +283,61 @@ inline std::string trim(
 }
 
 /// TODO:: no test.
-inline bool start_with(std::string const& str, std::string const& with)
+inline bool start_with(
+    std::string const& str, std::string const& with, 
+    bool case_sensitive = true)
 {
-    return str.find(with) == 0;
+    /// if case sensitive.
+    if (case_sensitive) 
+        return str.find(with) == 0;
+
+    /// if case insensitive, 
+    ///   first change 'str' and 'with' to lower or higher, 
+    ///   then find.
+    std::string tmpstr = to_lower(str);
+    std::string tmpwith = to_lower(with);
+
+    return tmpstr.find(tmpwith) == 0;
 }
 
 //!
 /// TODO:: no test.
-inline bool end_with(std::string const& str, std::string const& with)
+inline bool end_with(
+    std::string const& str, std::string const& with
+    bool case_sensitive = true)
 {
-    return str.rfind(with) == (str.length() - with.length());
+    /// if case sensitive.
+    if (case_sensitive) 
+        return str.rfind(with) == (str.length() - with.length());
+
+    /// if case insensitive, 
+    ///   first change 'str' and 'with' to lower or higher, 
+    ///   then find.
+    std::string tmpstr  = to_lower(str);
+    std::string tmpwith = to_lower(with);
+
+    return tmpstr.rfind(tmpwith) == (tmpstr.length() - tmpwith.length());
+}
+
+int replace(std::string& str, std::string const& from, std::string const& to)
+{
+    int times = 0;
+    size_t index = 0;
+    while (true) {
+         /* Locate the substring to replace. */
+         index = str.find(from, index);
+         if (index == string::npos) break;
+
+         /* Make the replacement. */
+         str.replace(index, from.length(), to);
+
+         /* record replace times */
+         times++;
+
+         /* Advance index forward so the next iteration doesn't pick it up as well. */
+         index += from.length();
+    }
+    return times;
 }
 
 } // namespace cclib

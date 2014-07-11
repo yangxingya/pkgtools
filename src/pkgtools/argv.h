@@ -198,7 +198,7 @@ protected:
 
 const std::string kfiledststr = "-d";
 const std::string kfilesrcstr = "-s";
-const char kspace = ' ';
+const char kspacech = ' ';
 //!
 /// out argv format: out:[-d c:\xxx.dat]
 struct OutArgv : public ArgvBase
@@ -216,7 +216,7 @@ private:
 
         for (size_t i = 0; i < left_argv_.size(); ++i) {
             if (cclib::start_with(left_argv_[i], kfiledststr)) {
-                if (left_argv_[i][2] == kspace) {
+                if (left_argv_[i][2] == kspacech) {
                     has_dst = true;
                     dst_ = left_argv_[i].substr(3);
                     break;
@@ -260,14 +260,14 @@ private:
 
         for (size_t i = 0; i < left_argv_.size(); ++i) {
             if (cclib::start_with(left_argv_[i], kfiledststr)) {
-                if (left_argv_[i][2] == kspace) {
+                if (left_argv_[i][2] == kspacech) {
                     has_dst = true;
                     dst_ = left_argv_[i].substr(3);
                     continue;
                 }
             }
             if (cclib::start_with(left_argv_[i], kfilesrcstr)) {
-                if (left_argv_[i][2] == kspace) {
+                if (left_argv_[i][2] == kspacech) {
                     has_src = true;
                     src_ = left_argv_[i].substr(3);
                     continue;
@@ -307,7 +307,7 @@ private:
 
         for (size_t i = 0; i < left_argv_.size(); ++i) {
             if (cclib::start_with(left_argv_[i], kfiledststr)) {
-                if (left_argv_[i][2] == kspace) {
+                if (left_argv_[i][2] == kspacech) {
                     has_dst = true;
                     dst_ = left_argv_[i].substr(3);
                     break;
@@ -357,16 +357,16 @@ private:
 
         for (size_t i = 0; i < left_argv_.size(); ++i) {
             if (cclib::start_with(left_argv_[i], kcmdlinestr)) {
-                if (left_argv_[i][2] == kspace) {
+                if (left_argv_[i][2] == kspacech) {
                     has_cmd = true;
                     cmd_ = left_argv_[i].substr(3);   
                 }
                 continue;
             }
             if (cclib::start_with(left_argv_[i], kexecutestr)) {
-                if (left_argv_[i][2] == kspace) {
+                if (left_argv_[i][2] == kspacech) {
                     std::vector<std::string> out;
-                    cclib::split(left_argv_[i], " ", &out, true);
+                    cclib::split(left_argv_[i], kseparate, &out, true);
                     if (out.size() == 2) {
                         uint32_t ret = cclib::string_cast<uint32_t>(out[1]);
                         ck_ret_ = (uint8_t)ret;

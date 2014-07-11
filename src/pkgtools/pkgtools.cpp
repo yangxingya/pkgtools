@@ -207,7 +207,7 @@ int formaterror(std::string const& errcode)
     return ERROR_Success;
 }
 
-
+#if 0
 #include <windows.h>
 #include "osinfo.h"
 void test()
@@ -223,3 +223,5 @@ void test()
     std::cout << "Current cpu type: " << cpuType(&sysinfo) << std::endl;
 
 }
+
+#endif

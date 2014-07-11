@@ -205,10 +205,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\defaultdir.h"
-				>
-			</File>
-			<File
 				RelativePath="..\src\pkgtools\entry.h"
 				>
 			</File>
@@ -245,6 +241,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\pkgtools\pathconv.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\pkg.h"
 				>
 			</File>
@@ -262,6 +262,10 @@
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\script.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\specpath.h"
 				>
 			</File>
 		</Filter>

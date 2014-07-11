@@ -55,4 +55,10 @@ struct extract_error : public except_base
         : except_base(errcode, what) {}
 };
 
+struct spget_error : public except_base
+{
+    spget_error(int errcode = -1, std::string const& what = "special folder get error")
+        : except_base(errcode, what) {}
+};
+
 #endif // pkgtools_except_h_
