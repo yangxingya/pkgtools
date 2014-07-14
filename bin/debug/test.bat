@@ -2,6 +2,6 @@
 
 set curr_dir=%~dp0
 
-%curr_dir%pkgtools -i test.dat
+%curr_dir%pkgtools -p pkg.script
 
 pause

@@ -84,7 +84,7 @@ inline size_t makeSpec(SpecPath2CsidlMap *sp2csidl)
     sp2csidl->insert(std::make_pair("TEMPLATES",  makeIndex(CSIDL_TEMPLATES, CSIDL_COMMON_TEMPLATES)));
     sp2csidl->insert(std::make_pair("APPDATA",    makeIndex(CSIDL_APPDATA, CSIDL_COMMON_APPDATA)));
     sp2csidl->insert(std::make_pair("INTERNET_CACHE", makeIndex(CSIDL_INTERNET_CACHE, CSIDL_INTERNET_CACHE)));
-    sp2csidl->insert(std::make_pair("ADMINTOOLS",     makeIndex(CSIDL_ADMINTOOLS, CSIDL_COMMON_ADMINTOOLS));
+    sp2csidl->insert(std::make_pair("ADMINTOOLS",     makeIndex(CSIDL_ADMINTOOLS, CSIDL_COMMON_ADMINTOOLS)));
     
     // custom define: dont related users and special user, is global.
     // but has x86 or x64 dir in 64bit os.
@@ -97,10 +97,10 @@ inline size_t makeSpec(SpecPath2CsidlMap *sp2csidl)
     //        DISABLE FILESYSTEM REDIRECTION, then 'C:\\Program Files' is 
     //        'C:\\Program Files' dir not x86's.
 
-    sp2csidl->insert(std::make_pair("PROGFILES",    CSIDL_PROGRAM_FILES);
-    sp2csidl->insert(std::make_pair("PROGFILESX86", CSIDL_PROGRAM_FILESX86);
-    sp2csidl->insert(std::make_pair("PROGFILES_COMM",    CSIDL_PROGRAM_FILES_COMMON);
-    sp2csidl->insert(std::make_pair("PROGFILESX86_COMM", CSIDL_PROGRAM_FILES_COMMONX86);
+    sp2csidl->insert(std::make_pair("PROGFILES",    CSIDL_PROGRAM_FILES));
+    sp2csidl->insert(std::make_pair("PROGFILESX86", CSIDL_PROGRAM_FILESX86));
+    sp2csidl->insert(std::make_pair("PROGFILES_COMM",    CSIDL_PROGRAM_FILES_COMMON));
+    sp2csidl->insert(std::make_pair("PROGFILESX86_COMM", CSIDL_PROGRAM_FILES_COMMONX86));
 
     return (size_t)(sp2csidl->size() - orisz);
 }

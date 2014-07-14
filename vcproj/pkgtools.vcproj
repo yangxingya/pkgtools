@@ -205,6 +205,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\pkgtools\argvtrans.h"
+				>
+			</File>
+			<File
+				RelativePath="..\inc\cclib\win32\disabler.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\entry.h"
 				>
 			</File>
@@ -221,6 +229,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\pkgtools\fopener.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\freader.h"
 				>
 			</File>
@@ -234,14 +246,6 @@
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\minifs.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\osinfo.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\pathconv.h"
 				>
 			</File>
 			<File

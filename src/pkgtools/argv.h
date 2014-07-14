@@ -9,10 +9,12 @@
 #include <string>
 #include <cclib/strutil.h>
 #include <cclib/types.h>
+#include <cclib/smartptr_def.h>
 #include <glog/logging.h>
 #include "error.h"
 #include "except.h"
 #include "entrydef.h"
+#include "fopener.h"
 
 namespace argv {
 
@@ -250,9 +252,30 @@ public:
     }
     std::string dst() const { return dst_; }
     std::string src() const { return src_; }
+    ///TODO:: add fopener for check file if can open.
+    ///
+    int pkgPreCheck() 
+    {
+        if (opener_.get() == NULL) {
+            bool effort = ((pkgtFlags() & kerrtmask) == kerrtry);
+            bool ignore = ((pkgtFlags() & kerrtmask) == kerrignore);
+            try {
+                opener_.reset(new fopener(src_, effort));
+            } catch (except_base &ex) {
+                opener_.reset();
+                if (!ignore) {
+                    LOG(ERROR) << "Open file failed! file:\"" << src_ << "\", not ignore error";
+                    return ex.error();
+                }
+            }
+        }
+        return ERROR_Success;
+    }
+    shared_ptr<fopener> get() const { return opener_; }
 private:
     std::string dst_;
     std::string src_;
+    shared_ptr<fopener> opener_;
     void parse()
     {
         bool has_dst = false;
@@ -342,8 +365,8 @@ public:
         parse();
     }
     uint8_t ckFlags() const { return ck_flags_; }
-    uint8_t ckReturn()const { return ck_ret_;  }
-    std::string cmd() const { return cmd_;     }
+    uint8_t ckReturn()const { return ck_ret_;   }
+    std::string cmd() const { return cmd_;      }
 private:
     uint8_t ck_flags_;
     uint8_t ck_ret_;

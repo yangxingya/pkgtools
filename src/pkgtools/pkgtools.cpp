@@ -6,12 +6,22 @@
 /// author: yangxingya
 /// email: xingyayang@163.com
 
+/// test:
+///     project setting: argv = ' -p pkg.script '
+///     workdir        : $(OutDir)
+
+#define GLOG_NO_ABBREVIATED_SEVERITIES
+
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <algorithm>
 #include <glog/logging.h>
+#include <cclib/singleton.h>
+#include <cclib/win32/disabler.h>
 #include "error.h"
 #include "script.h"
+#include "argvtrans.h"
 
 void initializelog(const char *argv0);
 void usage();
@@ -74,11 +84,11 @@ void initializelog(const char *argv0)
     std::string programm_short = "pkgtools";
     std::string log_base_fn = programm_path + "/log/" + programm_short;
     // only log large than INFO level log.
-    google::SetLogDestination(google::INFO, log_base_fn.c_str());
+    google::SetLogDestination(google::GLOG_INFO, log_base_fn.c_str());
     // set error level log file is empty.
-    google::SetLogDestination(google::ERROR, "");
+    google::SetLogDestination(google::GLOG_ERROR, "");
     // set warn level log file is empty.
-    google::SetLogDestination(google::WARNING, "");
+    google::SetLogDestination(google::GLOG_WARNING, "");
 
     // log buffer time(second) default is 30s. 
     // set 0 will output immediately.
@@ -169,16 +179,55 @@ int package(std::string const& sptfile)
 {
     LOG(INFO) << "Package Start, script name: " << sptfile;
 
-    //TODO:: packate implement...
+    int ret;
+
     Script script(sptfile);
-    int ret = script.Parse();
+    ret = script.Parse();
     if (ret != ERROR_Success)
         return ret;
 
     argv::AutoArgvList arglist = script.ArgList();
-    /*ret = script.Package();
-    if (ret != ERROR_Success)
-        return ret;*/
+    ///TODO:: find arglist if disable wow64 fs redirection???
+    /// 1. find 
+    /// 2. disable.
+
+    /// disable wow64 fs redirection.
+    cclib::win32::Wow64FileSystem wow64fs;
+    cclib::win32::disabler<cclib::win32::Wow64FileSystem> disable(wow64fs);
+
+    std::vector<std::string> args;
+    entry::ArgvTransfer argvtransfer(args);
+    std::for_each(arglist.begin(), arglist.end(), argvtransfer);
+
+    for (size_t i = 0; i < args.size(); ++i)
+        DLOG(INFO) << "    args: " << args[i];
+
+    
+    /// file open checker.
+    /// if file open check failed, then return failed.
+    for (size_t i = 0; i < arglist.size(); ++i) {
+        if (arglist[i]->type() == entry::kFile) {
+            argv::FileArgv *fargv = (argv::FileArgv*)arglist[i].get();
+            if ((ret = fargv->pkgPreCheck()) != ERROR_Success) {
+                return ret;
+            }
+        }
+    }
+
+    /// package.
+    argv::AutoArgvList::iterator it;
+    for (it = arglist.begin(); it != arglist.end(); ) {
+        if ((*it)->type() == entry::kFile) {
+            argv::FileArgv *fargv = (argv::FileArgv*)(*it).get();
+            if (fargv->get().get() == NULL)
+                it = arglist.erase(it);
+            else
+                it++;
+        }
+    }
+
+
+    
 
     LOG(INFO) << "Package Over!";
     return -1; 

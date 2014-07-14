@@ -303,7 +303,7 @@ inline bool start_with(
 //!
 /// TODO:: no test.
 inline bool end_with(
-    std::string const& str, std::string const& with
+    std::string const& str, std::string const& with,
     bool case_sensitive = true)
 {
     /// if case sensitive.
@@ -319,14 +319,14 @@ inline bool end_with(
     return tmpstr.rfind(tmpwith) == (tmpstr.length() - tmpwith.length());
 }
 
-int replace(std::string& str, std::string const& from, std::string const& to)
+inline int replace(std::string& str, std::string const& from, std::string const& to)
 {
     int times = 0;
     size_t index = 0;
     while (true) {
          /* Locate the substring to replace. */
          index = str.find(from, index);
-         if (index == string::npos) break;
+         if (index == std::string::npos) break;
 
          /* Make the replacement. */
          str.replace(index, from.length(), to);

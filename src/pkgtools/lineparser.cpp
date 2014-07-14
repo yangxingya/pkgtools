@@ -3,6 +3,7 @@
 
 #include "lineparser.h"
 #include <glog/logging.h>
+#include <cclib/strutil.h>
 #include "except.h"
 #include "error.h"
 #include "entrydef.h"

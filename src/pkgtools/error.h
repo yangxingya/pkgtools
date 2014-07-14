@@ -22,6 +22,7 @@ enum Error {
     ERROR_ScriptDirPathFormatError,
     ERROR_ScriptExecCmdFormatError,
     ERROR_SpecFolderGetError,
+    ERROR_OpenFileFailed,
     ERROR_CreatePkgFileFailed,
     ERROR_Min = ERROR_Success,
     ERROR_Max = ERROR_CreatePkgFileFailed,
@@ -40,6 +41,7 @@ const std::string kErrorStr[] = {
     "Script dir path argv format error",
     "Script exec cmd argv format error",
     "Special folder get error",
+    "Open file failed",
     "Package file create failed",
 };
 
