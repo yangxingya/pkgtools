@@ -20,6 +20,9 @@ typedef short int16_t;
 typedef int   int32_t;
 typedef __int64 int64_t;
 
+const uint32_t kuint32max = 0xffffffff;
+const uint32_t kuint64high32shift = 32;
+
 CCLIB_NAMESPACE_END
 
 

@@ -84,10 +84,12 @@ typedef struct _entry_t {
     ///       e n u e n i
     ///   7 6 5 4 3 2 1 0
     /// detail:
-    ///   5/2<e> [0/1] 1: if error ignore, 0: if error exit.
-    ///   4/1<n> [0/1] 1: max effort,      0: normal
-    ///   3<u> [0/1]   1: uninstall,       0: no uninstall
-    ///   0<i> [0/1]   1: install,         0: no install
+    ///   5/2<e> [0/1] 1: if error ignore,  0: if error exit.
+    ///   4/1<n> [0/1] 1: max effort,       0: normal
+    ///   3<u> [0/1]   1: uninstall,        0: no uninstall
+    ///   0<i> [0/1]   1: install,          0: no install
+    /// optional
+    ///   6<c> [0/1]   1: exec check return,0: exec no check return.
     uint8_t  flags;
     /// entry private argument. custom define.
     union {
@@ -173,6 +175,24 @@ inline uint64_t length(dinfomgr_t const* dinfomgr)
 {
     return sizeof(dinfomgr) + (dinfomgr->count - 1) * sizeof(dinfo_t);
 }
+
+const uint8_t kentryfile = 1;
+const uint8_t kentrydir  = 2;
+const uint8_t kentryexec = 3;
+const uint8_t kentryunknown = 0xff;
+
+/// uninstall shift 
+const int kflagsuninshift = 3;
+/// exec check return shift.
+const int kflagsckshift = 7;
+const uint64_t kinvalid = -1L;
+
+const uint8_t kmagic[] = {'P', 'K', 'G', 'T'};
+const uint32_t kinvalidcrc32 = 0xffffffff;
+const uint8_t kcurrentver = 0x01;
+
+const uint8_t kcompno   = 0x00;
+const uint8_t kcomplzma = 0x01;
 
 
 } // namespace pkg.

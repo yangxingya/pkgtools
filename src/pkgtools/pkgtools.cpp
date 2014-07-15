@@ -22,6 +22,7 @@
 #include "error.h"
 #include "script.h"
 #include "argvtrans.h"
+#include "pkgmaker.h"
 
 void initializelog(const char *argv0);
 void usage();
@@ -195,14 +196,6 @@ int package(std::string const& sptfile)
     cclib::win32::Wow64FileSystem wow64fs;
     cclib::win32::disabler<cclib::win32::Wow64FileSystem> disable(wow64fs);
 
-    std::vector<std::string> args;
-    entry::ArgvTransfer argvtransfer(args);
-    std::for_each(arglist.begin(), arglist.end(), argvtransfer);
-
-    for (size_t i = 0; i < args.size(); ++i)
-        DLOG(INFO) << "    args: " << args[i];
-
-    
     /// file open checker.
     /// if file open check failed, then return failed.
     for (size_t i = 0; i < arglist.size(); ++i) {
@@ -211,10 +204,15 @@ int package(std::string const& sptfile)
             if ((ret = fargv->pkgPreCheck()) != ERROR_Success) {
                 return ret;
             }
+            continue;
         }
     }
 
-    /// package.
+    /// package pre check and remove invalid argv.
+    /// main arg is file arg, because file arg package
+    /// will be package to output file, if you can't 
+    /// open source file, how to copy to package???
+    std::string opt_file = pkg::kdefaultoutput;
     argv::AutoArgvList::iterator it;
     for (it = arglist.begin(); it != arglist.end(); ) {
         if ((*it)->type() == entry::kFile) {
@@ -223,14 +221,41 @@ int package(std::string const& sptfile)
                 it = arglist.erase(it);
             else
                 it++;
+            continue;
+        }
+
+        /// extract output file name.
+        if ((*it)->type() == entry::kOut) {
+            argv::OutArgv *oargv = (argv::OutArgv*)(*it).get();
+            opt_file = oargv->dst();
+            it = arglist.erase(it);
         }
     }
 
+    // 
 
-    
+    /// transfer to pkg maker inner deal.
+    /*
+    std::vector<std::string> args;
+    entry::ArgvTransfer argvtransfer(args);
+    std::for_each(arglist.begin(), arglist.end(), argvtransfer);
+
+    for (size_t i = 0; i < args.size(); ++i)
+        DLOG(INFO) << "    args: " << args[i];
+    */
+
+
+    /// package.
+    pkg::PkgMaker maker(arglist, opt_file);
+
+    if ((ret = maker.make()) != ERROR_Success) {
+        LOG(ERROR) << "make pkg failure!";
+        return ret;
+    }
+
 
     LOG(INFO) << "Package Over!";
-    return -1; 
+    return ERROR_Success; 
 }
 
 //!

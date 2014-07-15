@@ -19,6 +19,7 @@
 namespace argv {
 
 using namespace cclib;
+using ::file::fopener;
 
 //!
 /// detail:
@@ -364,12 +365,12 @@ public:
         }
         parse();
     }
-    uint8_t ckFlags() const { return ck_flags_; }
-    uint8_t ckReturn()const { return ck_ret_;   }
-    std::string cmd() const { return cmd_;      }
+    uint8_t ckFlags()  const { return ck_flags_; }
+    uint32_t ckReturn()const { return ck_ret_;   }
+    std::string cmd()  const { return cmd_;      }
 private:
     uint8_t ck_flags_;
-    uint8_t ck_ret_;
+    uint32_t ck_ret_;
     std::string cmd_;
     void parse()
     {
@@ -392,7 +393,7 @@ private:
                     cclib::split(left_argv_[i], kseparate, &out, true);
                     if (out.size() == 2) {
                         uint32_t ret = cclib::string_cast<uint32_t>(out[1]);
-                        ck_ret_ = (uint8_t)ret;
+                        ck_ret_ = ret;
                         has_ck = true;           
                     }
                 }
@@ -406,7 +407,7 @@ private:
         ck_flags_ = has_ck;
         DLOG(INFO) << "Exec Argv: cmd: \"" << cmd_ << "\""
             << (has_ck ? ", check and value: " : ", no check: ")
-            << (int32_t)(int8_t)ck_ret_;
+            << (int32_t)ck_ret_;
     }
 };
 

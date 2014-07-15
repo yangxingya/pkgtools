@@ -12,7 +12,7 @@ namespace argv {
 
 struct ArgvBase;
 
-typedef shared_ptr<ArgvBase> AutoArgv;
+typedef shared_ptr<ArgvBase>  AutoArgv;
 typedef std::vector<AutoArgv> AutoArgvList;
 
 } // namespace argv

@@ -12,6 +12,10 @@
 #include "error.h"
 #include "except.h"
 
+namespace file {
+
+using namespace cclib;
+
 #pragma warning(push)
 #pragma warning(disable: 4996)  /// disable fopen warning.
 
@@ -66,12 +70,12 @@ struct fopener
     }
 
     /// return file length, supported over 4G file.
-    cclib::uint64_t length() const { return len_; }
+    uint64_t length() const { return len_; }
 private:
     std::string name_;
     bool max_effort_;
     FILE *fp_;
-    cclib::uint64_t len_;
+    uint64_t len_;
 
     void getlen() 
     {
@@ -85,11 +89,13 @@ private:
         ///     http://msdn.microsoft.com/en-us/library/dfbc2kec.aspx
         /// then need changed to 0, because -1L cast to uint64 will 
         /// be max uint64 value.
-        cclib::int64_t len = _filelengthi64(fp_->_file);
+        int64_t len = _filelengthi64(fp_->_file);
         len_ = (len == -1L) ? 0 : len;
     }
 };
 
 #pragma warning(pop)  
+
+} // namespace file
 
 #endif // pkgtools_fopener_h_

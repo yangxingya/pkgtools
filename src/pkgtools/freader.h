@@ -9,15 +9,23 @@
 #include <stdio.h>
 #include <cclib/types.h>
 
-struct FileReader
-    FileReader(std::string const& file, std::string const& mode)
+namespace file {
+
+using namespace cclib;
+
+#pragma warning(push)
+#pragma warning(disable: 4996)  /// disable fopen warning.
+
+struct freader 
+{
+    freader(std::string const& file, std::string const& mode)
         : fp_(fopen(file.c_str(), mode.c_str()))
         , good_(fp_ != 0)
     {
     }
 
-    ~FileReader() { if (fp_) fclose(fp_); }
-    bool good() const { return good_; }
+    ~freader() { if (fp_) fclose(fp_); }
+    bool good() const { return good_;  }
     bool seek(int64_t pos) 
     { 
         if (fp_ == 0) return false;
@@ -31,10 +39,10 @@ struct FileReader
         return true;
     }
 
-    bool write(void const* buf, size_t buflen)
+    bool read(void *buf, size_t buflen)
     {
         if (fp_ == 0) return false;
-        return fwrite(buf, 1, buflen, fp_) == buflen;
+        return fread(buf, 1, buflen, fp_) == buflen;
     }
 
     int64_t length() 
@@ -47,5 +55,9 @@ private:
     FILE *fp_;
     bool good_;
 };
+
+#pragma warning(pop)  
+
+} // namespace file
 
 #endif // pkgtools_file_reader_h_

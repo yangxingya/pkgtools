@@ -232,7 +232,8 @@ struct ArgvTransfer
             // throw exception/
             break;
         }
-        argvs_.push_back(str);
+        if (!str.empty())
+            argvs_.push_back(str);
     }
 private:
     std::vector<std::string> &argvs_;

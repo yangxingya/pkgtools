@@ -6,26 +6,29 @@
 #define pkgtools_pkg_file_h_
 
 #include <string>
-#include "filecreator.h"
 #include <glog/logging.h>
+#include <cclib/types.h>
+#include "fwriter.h"
+#include "freader.h"
 #include "error.h"
 #include "except.h"
 #include "pkgdef.h"
 
-const uint32_t kuint32max = 0xffffffff;
-const uint32_t kuint64high32shift = 32;
-
 namespace pkg {
+
+using namespace cclib;
+using ::file::fwriter;
+using ::file::freader;
 
 struct Writer
 {
     Writer(std::string const& file)
-        : creator_(file, "wb+") 
+        : writer_(file, "wb+") 
     {
         std::string error = "Create Package File: ";
         error += file;
-        error += (creator_.good() ? " successfule!" : " failed!");
-        if (!creator_.good()) {
+        error += (writer_.good() ? " successfule!" : " failed!");
+        if (!writer_.good()) {
             LOG(ERROR) << error;
             throw pkg_error(ERROR_CreatePkgFileFailed, error.c_str());
         }
@@ -41,20 +44,42 @@ struct Writer
         uint64_t writed = 0;
         uint8_t *ptr = (uint8_t *)data;
         for (uint32_t i = 0; i < times; ++i) {
-            writed += creator_.write(ptr, kuint32max);
+            writed += writer_.write(ptr, kuint32max);
             ptr += kuint32max;
         }
-        writed += creator_.write(ptr, leave);
+        writed += writer_.write(ptr, leave);
         return writed == len; 
     }
-    
+
+    bool write(void const* buf, size_t len)
+    {
+        return writer_.write(buf, len);
+    }
 private:
-    FileCreator creator_;
+    fwriter writer_;
 };
 
 struct Reader
 {
-    Reader(std::string const& file) {}
+    Reader(std::string const& file)
+        : reader_(file, "rb") 
+    {
+        std::string error = "Create Package File: ";
+        error += file;
+        error += (reader_.good() ? " successfule!" : " failed!");
+        if (!reader_.good()) {
+            LOG(ERROR) << error;
+            throw pkg_error(ERROR_CreatePkgFileFailed, error.c_str());
+        }
+        DLOG(INFO) << error;
+    }
+
+    bool read(void *buf, size_t len)
+    {
+        return reader_.read(buf, len);
+    }
+private:
+    freader reader_;
 };
 
 } // namespace pkg

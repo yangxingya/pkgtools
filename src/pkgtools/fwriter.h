@@ -9,15 +9,22 @@
 #include <stdio.h>
 #include <cclib/types.h>
 
-struct FileWriter
+namespace file {
+
+using namespace cclib;
+
+#pragma warning(push)
+#pragma warning(disable: 4996)  /// disable fopen warning.
+
+struct fwriter
 {
-    FileWriter(std::string const& file, std::string const& mode)
+    fwriter(std::string const& file, std::string const& mode)
         : fp_(fopen(file.c_str(), mode.c_str()))
         , good_(fp_ != 0)
     {
     }
 
-    ~FileCreator() { if (fp_) fclose(fp_); }
+    ~fwriter() { if (fp_) fclose(fp_); }
     bool good() const { return good_; }
     bool seek(int64_t pos) 
     { 
@@ -48,5 +55,9 @@ private:
     FILE *fp_;
     bool good_;
 };
+
+#pragma warning(pop)  
+
+} // namespace file
 
 #endif // pkgtools_file_writer_h_
