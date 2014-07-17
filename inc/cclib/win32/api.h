@@ -16,10 +16,6 @@
 #include "../nocopyable.h"
 #include "../singleton.h"
 
-#define WIN32_NAMESPACE win32
-#define WIN32_NAMESPACE_BEGIN namespace win32 {
-#define WIN32_NAMESPACE_END }
-
 CCLIB_NAMESPACE_BEGIN
 WIN32_NAMESPACE_BEGIN
 

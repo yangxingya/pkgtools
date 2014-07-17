@@ -225,6 +225,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\pkgtools\extractor.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\fappender.h"
 				>
 			</File>
@@ -233,11 +237,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\freader.h"
+				RelativePath="..\src\pkgtools\fwrapper.h"
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\fwriter.h"
+				RelativePath="..\src\pkgtools\installer.h"
 				>
 			</File>
 			<File
@@ -245,7 +249,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\src\pkgtools\maker.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\pkgtools\minifs.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\packer.h"
 				>
 			</File>
 			<File
@@ -261,15 +273,15 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\pkgmaker.h"
-				>
-			</File>
-			<File
 				RelativePath="..\src\pkgtools\script.h"
 				>
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\specpath.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\unpacker.h"
 				>
 			</File>
 		</Filter>

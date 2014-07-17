@@ -24,9 +24,11 @@ enum Error {
     ERROR_SpecFolderGetError,
     ERROR_OpenFileFailed,
     ERROR_TransferArgvError,
+    ERROR_PkgHdrError,
     ERROR_CreatePkgFileFailed,
+    ERROR_CustomPathGetFailed,
     ERROR_Min = ERROR_Success,
-    ERROR_Max = ERROR_CreatePkgFileFailed,
+    ERROR_Max = ERROR_CustomPathGetFailed,
 };
 
 const std::string kErrorStr[] = {
@@ -44,7 +46,9 @@ const std::string kErrorStr[] = {
     "Special folder get error",
     "Open file failed",
     "Transfer argv error",
+    "Package file format error",
     "Package file create failed",
+    "Custom path obtain failed",
 };
 
 inline const char* getError(int error)

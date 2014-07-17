@@ -105,6 +105,22 @@ inline size_t makeSpec(SpecPath2CsidlMap *sp2csidl)
     return (size_t)(sp2csidl->size() - orisz);
 }
 
+inline std::string customPath(uint16_t csidl)
+{
+    char folder[MAX_PATH];
+
+    uint16_t low  = splitLow(csidl);
+    uint16_t high = splitHigh(csidl);
+
+    if (SHGetSpecialFolderPathA(0, folder, low, 0))
+        return folder;
+
+    if (SHGetSpecialFolderPathA(0, folder, high, 0))
+        return folder;
+
+    return "";
+}
+
 } // namespace path
 
 #endif // pkgtools_spec_path_h_

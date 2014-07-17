@@ -14,11 +14,13 @@
 #include "error.h"
 #include "except.h"
 #include "entrydef.h"
+#include "pkgdef.h"
 #include "fopener.h"
 
 namespace argv {
 
 using namespace cclib;
+using namespace pkg;
 using ::file::fopener;
 
 //!
@@ -35,6 +37,8 @@ using ::file::fopener;
 const uint8_t kpkgtmask = 1;    /// 0x01
 const uint8_t kinstmask = 1;    /// 0x01
 const uint8_t kuninmask = 1;    /// 0x01  
+
+const uint8_t kallmask = 7;     /// 0x07
 
 /// error try mask
 const uint8_t kerrtmask = 2;    /// 0x02
@@ -81,6 +85,21 @@ const uint8_t kdfticomb = kdftinst | kdfttry | kdfterr;
 const uint8_t kdftucomb = kdftunin | kdfttry | kdfterr;
 
 
+inline uint8_t toInst(uint8_t entryflags) { return entryflags & kallmask; }
+inline uint8_t toUnin(uint8_t entryflags) { return (entryflags >> kflagsuninshift) & kallmask; }
+inline int toType(uint16_t entrytype) 
+{
+    switch (entrytype) {
+        case kentryfile: return entry::kFile;
+        case kentrydir:  return entry::kDir;
+        case kentryexec: return entry::kExec;
+        default: return entry::kUnknown;
+    }
+}
+
+inline uint8_t toCheckRet(uint8_t entryflags) { return entryflags >> kflagsckshift; }
+
+
 //! 
 /// brief: base args: -p -i -u
 ///        details:
@@ -102,6 +121,13 @@ public:
     {
         parse(argv);
     }
+    
+    ArgvBase(entry_t *entry)
+        : p_flags_(0), i_flags_(toInst(entry->flags)), u_flags_(toUnin(entry->flags))
+        , has_pkgt_(false), has_inst_(toInst(entry->flags) != 0), has_unin_(toInst(entry->flags) != 0)
+        , type_(toType(entry->type))
+    {}
+
     virtual ~ArgvBase() {}
     uint8_t pkgtFlags() const { return p_flags_; }
     uint8_t instFlags() const { return i_flags_; }
@@ -191,6 +217,7 @@ private:
         DLOG(INFO) << "Parse detail, prefix: " << argv <<", flag(1<p/i/u>, 2<try>, 4<ignore>): " << (int)flags;
         return flags;
     }
+
 protected:
     std::vector<std::string> left_argv_;
     bool hasPkgt() const { return has_pkgt_; }
@@ -251,8 +278,16 @@ public:
         }
         parse();
     }
+
+    FileArgv(entry_t *entry, std::string const& dst, uint64_t offset)
+        : ArgvBase(entry)
+        , dst_(dst)
+        , offset_(offset)
+    {}
+
     std::string dst() const { return dst_; }
     std::string src() const { return src_; }
+    uint64_t offset() const { return offset_; }
     ///TODO:: add fopener for check file if can open.
     ///
     int pkgPreCheck() 
@@ -276,6 +311,7 @@ public:
 private:
     std::string dst_;
     std::string src_;
+    uint64_t offset_;
     shared_ptr<fopener> opener_;
     void parse()
     {
@@ -322,6 +358,10 @@ public:
         }
         parse();
     }
+    DirArgv(entry_t *entry, std::string const& dst)
+        : ArgvBase(entry)
+        , dst_(dst)
+    { }
     std::string dst() const { return dst_; }
 private:
     std::string dst_;
@@ -365,6 +405,12 @@ public:
         }
         parse();
     }
+    ExecArgv(entry_t *entry, std::string const& cmdline)
+        : ArgvBase(entry)
+        , ck_flags_(toCheckRet(entry->flags))
+        , cmd_(cmdline)
+        , ck_ret_(entry->args)
+    { }
     uint8_t ckFlags()  const { return ck_flags_; }
     uint32_t ckReturn()const { return ck_ret_;   }
     std::string cmd()  const { return cmd_;      }
@@ -410,6 +456,65 @@ private:
             << (int32_t)ck_ret_;
     }
 };
+
+namespace helper {
+
+inline entry_t transfer(argv::FileArgv *fargv)
+{
+    entry_t entry;
+
+    entry.type = kentryfile;
+    entry.flags = fargv->instFlags() | (fargv->uninFlags() << kflagsuninshift);
+
+    return entry;
+}
+
+inline entry_t transfer(argv::DirArgv *dargv)
+{
+    entry_t entry;
+
+    entry.type = kentrydir;
+    entry.flags = dargv->instFlags() | (dargv->uninFlags() << kflagsuninshift);
+    entry.dtaindex = kinvalid; 
+
+    return entry;
+}
+
+inline entry_t transfer(argv::ExecArgv *eargv)
+{
+    entry_t entry;
+
+    entry.type = kentryexec;
+    entry.flags = 
+        eargv->instFlags() | 
+        (eargv->uninFlags() << kflagsuninshift) | 
+        (eargv->ckFlags() << kflagsckshift);
+    entry.args = eargv->ckFlags() ? eargv->ckReturn() : 0;
+    entry.dtaindex = kinvalid; 
+
+    return entry;
+}
+
+inline entry_t extract(argv::AutoArgv const& argv)
+{
+    entry_t entry;
+    entry.type = kentryunknown;
+
+    switch (argv->type()) {
+    case entry::kFile:
+        return transfer((argv::FileArgv*)(argv.get()));
+    case entry::kDir:
+        return transfer((argv::DirArgv*)(argv.get()));
+    case entry::kExec:
+        return transfer((argv::ExecArgv*)(argv.get()));
+    default:
+        return entry;
+    }
+}
+
+
+
+} // namespace helper
 
 } // namespace argv
 

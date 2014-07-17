@@ -8,6 +8,7 @@
 #include <sstream>
 #include <cclib/types.h>
 #include <cclib/strutil.h>
+#include <cclib/win32/pathutil.h>
 #include "specpath.h"
 #include "argv.h"
 #include "error.h"
@@ -17,9 +18,10 @@
 #define MAX_PATH 260
 #endif
 
-namespace path {
+namespace argv {
 
 using namespace cclib;
+using namespace path;
 
 const std::string kcustompathpfx = "$";
 
@@ -208,9 +210,9 @@ namespace entry {
 using namespace path;
 using namespace argv;
 
-struct ArgvTransfer
+struct transfer
 {
-    ArgvTransfer(std::vector<std::string> &argvs)
+    transfer(std::vector<std::string> &argvs)
         : argvs_(argvs) {}
     void operator()(AutoArgv argv)
     {
@@ -254,6 +256,100 @@ private:
         ExecArgv *eargv = (ExecArgv *)argv.get();
         return eargv->cmd();
     }
+};
+
+struct restorer 
+{
+    restorer(
+        std::vector<std::string> const& orig_args, AutoArgvList &arglist
+        , bool exorinst = false, std::string const& todir = "")
+            : orig_args_(orig_args), arglist_(arglist)
+            , exorinst_(exorinst), todir_(todir) 
+    {
+    
+    }
+    
+    void operator()(entry_t entry)
+    {
+        std::string argv = orig_args_[(uint32_t)entry.strindex];
+
+        /// if type is not file or dir then dont change it.
+        if (entry.type != kentryfile && entry.type != kentrydir) {
+            out_args_.push_back(argv);
+            return;
+        }
+
+        /// type is file or dir.
+
+        /// start not $
+        if (!start_with(argv, kcustompathpfx)) {
+            std::string path = "";
+
+            /// if extract then need change 'C:\\xxx' to 'C$\\xxx' format.
+            if (exorinst_) {
+                path = todir_;
+                win32::add_sep(path);
+
+                /// change 'C:\\xxx' to 'C$\\xxx' format.
+                argv[1] = kcustompathpfx[0];
+            }
+
+            path += argv;
+            out_args_.push_back(path);
+            return;
+        }
+
+        /// start with $
+
+        /// extract
+        if (exorinst_) {
+            std::string path = todir_;
+
+            win32::add_sep(path);
+
+            ///todo:: change to $WINDIR format.
+            path += argv;
+            out_args_.push_back(path);
+
+            return;
+        }
+
+        /// install
+
+        std::string::size_type pos = argv.find_first_of(win32::kregseparator);
+        std::string pfx = argv.substr(0, pos + 1); 
+        std::string strcsidl = pfx.substr(1);
+
+        uint16_t csidl;
+        std::stringstream ss;
+        ss << strcsidl;
+        ss >> csidl;
+
+        std::string path = customPath(csidl);
+        if (path.empty()) {
+            std::stringstream ss;
+            ss << "Custom path is empty! CSIDL: 0x" << std::hex << csidl;
+            std::string error;
+
+            ss >> error;
+            LOG(ERROR) << error;
+            throw spget_error(ERROR_CustomPathGetFailed, error);
+        }
+
+        std::string tmp = argv;
+        replace(tmp, pfx, path);
+
+        DLOG(INFO) << "restorer, custom path: " << path;
+        DLOG(INFO) << "restorer, custom replace path: " << tmp;
+
+        out_args_.push_back(tmp); 
+    }
+private:
+    std::vector<std::string> const& orig_args_;
+    std::vector<std::string> out_args_;
+    AutoArgvList &arglist_;
+    bool exorinst_;
+    std::string todir_;
 };
 
 } // namespace argv

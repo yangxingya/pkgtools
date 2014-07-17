@@ -6,10 +6,11 @@
 #define pkgtools_pkg_file_h_
 
 #include <string>
+#include <sstream>
 #include <glog/logging.h>
 #include <cclib/types.h>
-#include "fwriter.h"
-#include "freader.h"
+#include "fwrapper.h"
+#include "fwrapper.h"
 #include "error.h"
 #include "except.h"
 #include "pkgdef.h"
@@ -17,8 +18,7 @@
 namespace pkg {
 
 using namespace cclib;
-using ::file::fwriter;
-using ::file::freader;
+using ::file::fwrapper;
 
 struct Writer
 {
@@ -55,15 +55,19 @@ struct Writer
     {
         return writer_.write(buf, len);
     }
+
+    bool seek(int64_t pos) { return writer_.seek(pos); }
 private:
-    fwriter writer_;
+    fwrapper writer_;
 };
 
 struct Reader
 {
     Reader(std::string const& file)
-        : reader_(file, "rb") 
+        : reader_(file, "rb")
     {
+        check();
+
         std::string error = "Create Package File: ";
         error += file;
         error += (reader_.good() ? " successfule!" : " failed!");
@@ -74,12 +78,49 @@ struct Reader
         DLOG(INFO) << error;
     }
 
-    bool read(void *buf, size_t len)
-    {
-        return reader_.read(buf, len);
-    }
+    bool read(void *buf, size_t buflen) { return reader_.read(buf, buflen); }
+    bool seek(int64_t pos) { return reader_.seek(pos); }
+   
 private:
-    freader reader_;
+    fwrapper reader_;
+    void check() 
+    {
+        /// only check header magic and pkglen == filesize
+        header_t hdr;
+        if (!read(&hdr, sizeof(header_t))) {
+            std::string error = "Package read package header failed!";
+            LOG(ERROR) << error;
+            throw pkg_error(ERROR_PkgHdrError, error);
+        }
+
+        if (hdr.magic != *(uint32_t *)kmagic) {
+            std::string error = "Package read package header magic failed!";
+            LOG(ERROR) << error;
+            throw pkg_error(ERROR_PkgHdrError, error);
+        }
+
+        uint64_t flen = (uint64_t)reader_.length();
+        if (hdr.pkglen != flen) {
+            std::stringstream serr;
+            serr << "Package read package header pkglen failed! file size: "
+                 << reader_.length() << ", header pkglen: "
+                 << hdr.pkglen;
+            std::string error;
+            serr >> error;
+            LOG(ERROR) << error;
+            throw pkg_error(ERROR_PkgHdrError, error);
+        }
+
+        
+
+        ///TODO:: crc32 not implement, so return true ever.
+
+        /// need seek file pointer to start.
+        seek(0);
+    }
+
+
+
 };
 
 } // namespace pkg

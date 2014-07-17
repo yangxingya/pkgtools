@@ -2,8 +2,8 @@
 /// brief: fappender.h define pkg data(files) appender
 /// principle: 
 ///         multi-fopener as all files holder is as input.
-///         one-fwriter is as output.
-///         copy fopener content to fwriter while you can
+///         one-fwrapper is as output.
+///         copy fopener content to fwrapper while you can
 ///         use compress algo or not.
 ///
 /// detail:
@@ -12,7 +12,7 @@
 ///              \         |         /
 ///               \        |        /
 ///                \       |       /
-///                  single-fwriter
+///                  single-fwrapper
 
 #if !defined(pkgtools_fappender_h_)
 #define pkgtools_fappender_h_
@@ -29,14 +29,12 @@ namespace file {
 using namespace cclib;
 using ::pkg::Writer;
 
-const uint32_t kmaxbufsize = (1 << 20) * 10; /// 10M.
-
 struct fappender
 {
-    fappender(Writer *writer, uint8_t compress = pkg::kcompno) 
-        : writer_(writer), compress_(compress) 
+    fappender(Writer *writer, std::vector<uint64_t> &complenlist, uint8_t compress = pkg::kcompno) 
+        : writer_(writer), comp_len_list_(complenlist), compress_(compress) 
     {
-        buf_.resize(kmaxbufsize);
+        buf_.resize(k1mega * 10);
     }
 
     void operator()(shared_ptr<fopener> opener)
@@ -63,7 +61,6 @@ struct fappender
         }
         comp_len_list_.push_back(writed);
     }
-    std::vector<uint64_t> complenlist() const { return comp_len_list_; }
 
 private: 
     Writer *writer_;
@@ -71,7 +68,7 @@ private:
     std::vector<uint8_t> buf_;
 
     std::vector<uint64_t> orig_len_list_;
-    std::vector<uint64_t> comp_len_list_;
+    std::vector<uint64_t> &comp_len_list_;
 
     uint32_t compress(void *dst, uint32_t dlen, void const* src, uint32_t slen)
     {

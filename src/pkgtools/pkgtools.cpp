@@ -22,7 +22,8 @@
 #include "error.h"
 #include "script.h"
 #include "argvtrans.h"
-#include "pkgmaker.h"
+#include "maker.h"
+#include "extractor.h"
 
 void initializelog(const char *argv0);
 void usage();
@@ -232,22 +233,10 @@ int package(std::string const& sptfile)
         }
     }
 
-    // 
-
+    ///
     /// transfer to pkg maker inner deal.
-    /*
-    std::vector<std::string> args;
-    entry::ArgvTransfer argvtransfer(args);
-    std::for_each(arglist.begin(), arglist.end(), argvtransfer);
-
-    for (size_t i = 0; i < args.size(); ++i)
-        DLOG(INFO) << "    args: " << args[i];
-    */
-
-
     /// package.
-    pkg::PkgMaker maker(arglist, opt_file);
-
+    pkg::Maker maker(arglist, opt_file);
     if ((ret = maker.make()) != ERROR_Success) {
         LOG(ERROR) << "make pkg failure!";
         return ret;
@@ -264,10 +253,17 @@ int extract(std::string const& pkgfile, std::string const& outdir)
 {
     LOG(INFO) << "Extract Start, package name: " << pkgfile << ", to dir: " << outdir;
     
-    //TODO:: extract implement...
+    int ret;
+    shared_ptr<pkg::Extractor> extractor;
+    try {
+        extractor.reset(new pkg::Extractor(pkgfile, outdir));
+        ret = extractor->extract();
+    } catch (except_base &ex) {
+        ret = ex.error();
+    }
 
     LOG(INFO) << "Extract Over!";
-    return -1; 
+    return ret; 
 }
 
 //! 
