@@ -122,10 +122,10 @@ public:
         parse(argv);
     }
     
-    ArgvBase(entry_t *entry)
-        : p_flags_(0), i_flags_(toInst(entry->flags)), u_flags_(toUnin(entry->flags))
-        , has_pkgt_(false), has_inst_(toInst(entry->flags) != 0), has_unin_(toInst(entry->flags) != 0)
-        , type_(toType(entry->type))
+    ArgvBase(entry_t const& entry)
+        : p_flags_(0), i_flags_(toInst(entry.flags)), u_flags_(toUnin(entry.flags))
+        , has_pkgt_(false), has_inst_(toInst(entry.flags) != 0), has_unin_(toInst(entry.flags) != 0)
+        , type_(toType(entry.type))
     {}
 
     virtual ~ArgvBase() {}
@@ -279,7 +279,7 @@ public:
         parse();
     }
 
-    FileArgv(entry_t *entry, std::string const& dst, uint64_t offset)
+    FileArgv(entry_t const& entry, std::string const& dst, uint64_t offset)
         : ArgvBase(entry)
         , dst_(dst)
         , offset_(offset)
@@ -358,7 +358,7 @@ public:
         }
         parse();
     }
-    DirArgv(entry_t *entry, std::string const& dst)
+    DirArgv(entry_t const& entry, std::string const& dst)
         : ArgvBase(entry)
         , dst_(dst)
     { }
@@ -405,11 +405,11 @@ public:
         }
         parse();
     }
-    ExecArgv(entry_t *entry, std::string const& cmdline)
+    ExecArgv(entry_t const& entry, std::string const& cmdline)
         : ArgvBase(entry)
-        , ck_flags_(toCheckRet(entry->flags))
+        , ck_flags_(toCheckRet(entry.flags))
         , cmd_(cmdline)
-        , ck_ret_(entry->args)
+        , ck_ret_(entry.args)
     { }
     uint8_t ckFlags()  const { return ck_flags_; }
     uint32_t ckReturn()const { return ck_ret_;   }

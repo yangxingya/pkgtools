@@ -27,8 +27,9 @@ enum Error {
     ERROR_PkgHdrError,
     ERROR_CreatePkgFileFailed,
     ERROR_CustomPathGetFailed,
+    ERROR_EntryTypeNotSupported,
     ERROR_Min = ERROR_Success,
-    ERROR_Max = ERROR_CustomPathGetFailed,
+    ERROR_Max = ERROR_EntryTypeNotSupported,
 };
 
 const std::string kErrorStr[] = {
@@ -49,6 +50,7 @@ const std::string kErrorStr[] = {
     "Package file format error",
     "Package file create failed",
     "Custom path obtain failed",
+    "Package entry type not supported",
 };
 
 inline const char* getError(int error)

@@ -13,10 +13,13 @@
 #include "pkgdef.h"
 #include "unpacker.h"
 #include "argvtrans.h"
+#include "argvdef.h"
+#include "argv.h"
 
 namespace pkg {
 
 using namespace cclib;
+using namespace argv;
 
 struct Extractor
 {
@@ -27,55 +30,41 @@ struct Extractor
 
     int extract()
     {
-        ex_data();
-        //argv::restorer restor(unpacker_.arglist(), out_args_, 
+        std::vector<entry_t> const& entrys = unpacker_.entrys();
+        std::vector<std::string> const& args = unpacker_.arglist();
+
+        AutoArgvList arglist;
+        entry::restorer restor(args, arglist, true, todir_);
+        std::for_each(entrys.begin(), entrys.end(), restor);
+    
+        for (size_t i = 0L; i < arglist.size(); ++i) {
+            switch (arglist[i]->type()) {
+            case entry::kFile:
+                {
+                    FileArgv *fargv = (FileArgv*)arglist[i].get();
+                    unpacker_.tofile(fargv->dst(), fargv->offset());
+                    break;
+                }
+            case entry::kDir:
+                {
+                    DirArgv *dargv = (DirArgv*)arglist[i].get();
+                    win32::mkdirtree(dargv->dst());
+                    break;
+                }
+            case entry::kExec:
+                {
+                    ExecArgv *eargv = (ExecArgv*)arglist[i].get();
+                    LOG(INFO) << "Extractor, exec entry: \"" << eargv->cmd() << "\" not exec";
+                    break;
+                }
+            }
+        }
         return ERROR_Success;
     }
 
 private:
     unpacker unpacker_;
     std::string todir_;
-
-#pragma region extract
-    
-    bool ex_data()
-    {
-        std::vector<entry_t> const& entrys = unpacker_.entrys();
-        std::string to;
-        for (size_t i = 0L; i < entrys.size(); ++i) {
-            switch (entrys[i].type) {
-            case kentryfile:
-                to = ex_path(entrys[i].strindex);
-                unpacker_.tofile(to, entrys[i].dtaindex);
-                break;
-            case kentrydir:
-                to = ex_path(entrys[i].strindex);
-                win32::mkdirtree(to);
-                break;
-            case kentryexec:
-                break;
-            }
-        }
-        return true;
-    }
-
-    std::string ex_path(uint64_t aindex)
-    { 
-        std::vector<std::string> const& arglist = unpacker_.arglist();
-        std::string path = arglist[(uint32_t)aindex];
-
-        if (path[0] != '$' && path[1] == ':')
-            path[1] = '$';
-
-        std::string todir = todir_;
-
-        win32::add_sep(todir);
-
-        std::string newpath = todir + path;
-        
-        return newpath;
-    }
-#pragma endregion extract all parts.
 };
 
 } // namespace pkg

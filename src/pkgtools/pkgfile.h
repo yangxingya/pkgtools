@@ -68,7 +68,7 @@ struct Reader
     {
         check();
 
-        std::string error = "Create Package File: ";
+        std::string error = "Open Package File: ";
         error += file;
         error += (reader_.good() ? " successfule!" : " failed!");
         if (!reader_.good()) {

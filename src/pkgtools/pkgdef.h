@@ -176,10 +176,10 @@ inline uint64_t length(dinfomgr_t const* dinfomgr)
     return sizeof(dinfomgr) + (dinfomgr->count - 1) * sizeof(dinfo_t);
 }
 
-const uint8_t kentryfile = 1;
-const uint8_t kentrydir  = 2;
-const uint8_t kentryexec = 3;
-const uint8_t kentryunknown = 0xff;
+const uint16_t kentryfile = 1;
+const uint16_t kentrydir  = 2;
+const uint16_t kentryexec = 3;
+const uint16_t kentryunknown = 0xffff;
 
 /// uninstall shift 
 const int kflagsuninshift = 3;

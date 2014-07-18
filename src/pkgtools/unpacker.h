@@ -24,6 +24,7 @@
 #include <cclib/types.h>
 #include <cclib/win32/pathutil.h>
 #include "pkgdef.h"
+#include "pkgfile.h"
 #include "fwrapper.h"
 
 namespace pkg {

@@ -1,4 +1,6 @@
-file:[-d c:\windows\system32\d3d9.dll] [-s c:\windows\system32\d3d9.dll] [-p] [-i] [-u]
+
+dir:[-d c:\pkg-install\] [-p] [-i] [-u]
+file:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3d9.dll] [-p] [-i] [-u]
 
 out:[-d .\test.dat]
 

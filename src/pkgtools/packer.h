@@ -7,9 +7,7 @@
 
 #include <string>
 
-
 namespace pkg {
-
 
 struct packer 
 {

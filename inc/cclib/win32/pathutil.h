@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <io.h>
 #include <direct.h>
+#include <stdio.h>
 #include "../types.h"
 #include "../strutil.h"
 
@@ -112,6 +113,29 @@ inline bool mkdirtree(std::string const& dir)
                 return false;     
     }
     return true;
+}
+
+inline bool rmfile(std::string const& file)
+{
+    return remove(file.c_str()) == 0;
+}
+
+inline bool rmdir(std::string const& dir)
+{
+    return _rmdir(dir.c_str()) == 0;
+}
+
+inline bool chdir(std::string const& dir)
+{
+    return _chdir(dir.c_str()) == 0;
+}
+
+inline std::string getcwd()
+{
+    char path[MAX_PATH];
+    _getcwd(path, MAX_PATH);
+
+    return path;
 }
 
 CCLIB_NAMESPACE_END

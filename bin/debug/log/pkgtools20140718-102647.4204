@@ -1,0 +1,28 @@
+Log file created at: 2014/07/18 10:26:47
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0718 10:26:47.813594  3312 pkgtools.cpp:48] Commandline: "d:\src\design\bin\debug\pkgtools.exe -p pkg.script"
+I0718 10:26:47.815594  3312 pkgtools.cpp:182] Package Start, script name: pkg.script
+I0718 10:26:47.815594  3312 script.cpp:17] Script: pkg.script, will be parsed!
+I0718 10:26:47.816594  3312 script.cpp:27] Parse Script Begin: ------>
+I0718 10:26:47.816594  3312 script.cpp:29] 1: 
+I0718 10:26:47.816594  3312 script.cpp:29] 2: dir:[-d c:\pkg-install\] [-p] [-i] [-u]
+I0718 10:26:47.816594  3312 lineparser.cpp:15] Line Parser line: dir:[-d c:\pkg-install\] [-p] [-i] [-u]
+I0718 10:26:47.817595  3312 argv.h:217] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 1
+I0718 10:26:47.817595  3312 argv.h:217] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 1
+I0718 10:26:47.817595  3312 argv.h:217] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 1
+I0718 10:26:47.817595  3312 argv.h:386] Dir Argv: dst: "c:\pkg-install\"
+I0718 10:26:47.817595  3312 script.cpp:29] 3: file:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3d9.dll] [-p] [-i] [-u]
+I0718 10:26:47.818594  3312 lineparser.cpp:15] Line Parser line: file:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3d9.dll] [-p] [-i] [-u]
+I0718 10:26:47.818594  3312 argv.h:217] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 1
+I0718 10:26:47.818594  3312 argv.h:217] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 1
+I0718 10:26:47.818594  3312 argv.h:217] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 1
+I0718 10:26:47.818594  3312 argv.h:342] File Argv: dst: "c:\pkg-install\d3d9.dll", src: "c:\windows\system32\d3d9.dll"
+I0718 10:26:47.819594  3312 script.cpp:29] 4: 
+I0718 10:26:47.819594  3312 script.cpp:29] 5: out:[-d .\test.dat]
+I0718 10:26:47.819594  3312 lineparser.cpp:15] Line Parser line: out:[-d .\test.dat]
+I0718 10:26:47.819594  3312 argv.h:261] Out Argv: dst: ".\test.dat"
+I0718 10:26:47.819594  3312 script.cpp:29] 6: 
+I0718 10:26:47.819594  3312 script.cpp:43] Parse Script End: <------
+I0718 10:26:47.819594  3312 script.cpp:49] Parse Script Successful, entry size: 3
+I0718 10:26:47.820595  3312 fopener.h:36] Open file: "c:\windows\system32\d3d9.dll" successful!

@@ -261,9 +261,9 @@ private:
 struct restorer 
 {
     restorer(
-        std::vector<std::string> const& orig_args, AutoArgvList &arglist
+        std::vector<std::string> const& args, AutoArgvList &arglist
         , bool exorinst = false, std::string const& todir = "")
-            : orig_args_(orig_args), arglist_(arglist)
+            : args_(args), arglist_(arglist)
             , exorinst_(exorinst), todir_(todir) 
     {
     
@@ -271,13 +271,42 @@ struct restorer
     
     void operator()(entry_t entry)
     {
-        std::string argv = orig_args_[(uint32_t)entry.strindex];
+        std::string args = args_[(uint32_t)entry.strindex];
+        AutoArgv arg;
 
-        /// if type is not file or dir then dont change it.
-        if (entry.type != kentryfile && entry.type != kentrydir) {
-            out_args_.push_back(argv);
-            return;
+        switch (entry.type) {
+        case kentryfile:
+            arg.reset(new FileArgv(entry, transfer(args), entry.dtaindex));
+            break;
+        case kentrydir:
+            arg.reset(new DirArgv(entry, transfer(args)));
+            break;
+        case kentryexec:
+            arg.reset(new ExecArgv(entry, args));
+            break;
+        default:
+            {
+                std::stringstream ss;
+                ss << "restorer: not support type: " << entry.type;
+                std::string error;
+                ss >> error;
+                LOG(ERROR) << error;
+                throw pkg_error(ERROR_EntryTypeNotSupported, error);
+            }
         }
+        
+        arglist_.push_back(arg);
+
+    }
+private:
+    std::vector<std::string> const& args_;
+    AutoArgvList &arglist_;
+    bool exorinst_;
+    std::string todir_;
+
+    std::string transfer(std::string const& str)
+    {
+        std::string argv = str;
 
         /// type is file or dir.
 
@@ -295,8 +324,7 @@ struct restorer
             }
 
             path += argv;
-            out_args_.push_back(path);
-            return;
+            return path;
         }
 
         /// start with $
@@ -309,9 +337,7 @@ struct restorer
 
             ///todo:: change to $WINDIR format.
             path += argv;
-            out_args_.push_back(path);
-
-            return;
+            return path;
         }
 
         /// install
@@ -342,14 +368,11 @@ struct restorer
         DLOG(INFO) << "restorer, custom path: " << path;
         DLOG(INFO) << "restorer, custom replace path: " << tmp;
 
-        out_args_.push_back(tmp); 
+        return tmp;
     }
-private:
-    std::vector<std::string> const& orig_args_;
-    std::vector<std::string> out_args_;
-    AutoArgvList &arglist_;
-    bool exorinst_;
-    std::string todir_;
+
+
+
 };
 
 } // namespace argv

@@ -1,0 +1,6 @@
+Log file created at: 2014/07/18 10:29:18
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0718 10:29:18.115191  4316 pkgtools.cpp:48] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat"
+I0718 10:29:18.117192  4316 pkgtools.cpp:154] Install Start, package name: test.dat
+I0718 10:29:18.117192  4316 pkgtools.cpp:158] Install Over!

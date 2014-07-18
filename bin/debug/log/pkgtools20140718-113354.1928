@@ -1,0 +1,12 @@
+Log file created at: 2014/07/18 11:33:54
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0718 11:33:54.618914  2352 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat"
+I0718 11:33:54.620914  2352 pkgtools.cpp:157] Install Start, package name: test.dat
+I0718 11:33:54.621914  2352 pkgfile.h:78] Open Package File: test.dat successfule!
+I0718 11:33:54.621914  2352 unpacker.h:136] Extract args 0: c:\pkg-install\
+I0718 11:33:54.621914  2352 unpacker.h:136] Extract args 1: c:\pkg-install\d3d9.dll
+I0718 11:33:54.683918  2352 installer.h:50] Install: create dir: "c:\pkg-install\" successful!
+I0718 11:33:54.683918  2352 pkgfile.h:35] Create Package File: c:\pkg-install\d3d9.dll successfule!
+I0718 11:33:54.685919  2352 installer.h:41] Install: unpack file to: "c:\pkg-install\d3d9.dll" successful!
+I0718 11:33:54.685919  2352 pkgtools.cpp:169] Install Over!

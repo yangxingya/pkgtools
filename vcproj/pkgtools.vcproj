@@ -253,15 +253,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\minifs.h"
-				>
-			</File>
-			<File
 				RelativePath="..\src\pkgtools\packer.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\pkg.h"
 				>
 			</File>
 			<File
@@ -278,6 +270,10 @@
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\specpath.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\uninstaller.h"
 				>
 			</File>
 			<File

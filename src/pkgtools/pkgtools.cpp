@@ -22,8 +22,11 @@
 #include "error.h"
 #include "script.h"
 #include "argvtrans.h"
+#include "installer.h"
+#include "uninstaller.h"
 #include "maker.h"
 #include "extractor.h"
+
 
 void initializelog(const char *argv0);
 void usage();
@@ -56,7 +59,7 @@ int main(int argc, char *argv[])
         return install(argv[2]);
 
     if (std::string(argv[1]) == "-u")
-        return install(argv[2]);
+        return uninstall(argv[2]);
 
     if (std::string(argv[1]) == "-p")
         return package(argv[2]);
@@ -153,10 +156,18 @@ int install(std::string const& pkgfile)
 {
     LOG(INFO) << "Install Start, package name: " << pkgfile;
     
-    //TODO:: install implement.
+    int ret;
+
+    shared_ptr<pkg::Installer> installer;
+    try {
+        installer.reset(new pkg::Installer(pkgfile));
+        ret = installer->install();
+    } catch (except_base &ex) {
+        return ex.error();
+    }
 
     LOG(INFO) << "Install Over!";
-    return -1;
+    return ret;
 }
 
 //!
@@ -168,7 +179,15 @@ int uninstall(std::string const& pkgfile)
 {
     LOG(INFO) << "Uninstall Start, package name: " << pkgfile;
 
-    //TODO:: uninstall implement...
+    int ret;
+
+    shared_ptr<pkg::Uninstaller> uninstaller;
+    try {
+        uninstaller.reset(new pkg::Uninstaller(pkgfile));
+        ret = uninstaller->uninstall();
+    } catch (except_base &ex) {
+        return ex.error();
+    }
 
     LOG(INFO) << "Uninstall Over!";
     return -1; 
@@ -230,7 +249,9 @@ int package(std::string const& sptfile)
             argv::OutArgv *oargv = (argv::OutArgv*)(*it).get();
             opt_file = oargv->dst();
             it = arglist.erase(it);
+            continue;
         }
+        it++;
     }
 
     ///
