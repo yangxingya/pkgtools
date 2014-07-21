@@ -15,6 +15,7 @@ CCLIB_NAMESPACE_BEGIN
 WIN32_NAMESPACE_BEGIN
 
 bool execute(
+    uint32_t *retcode,  /// you must wait for process exit, then ret code will used.
     std::string const& app, std::string const& cmd, 
     bool inherit_handle = false, bool hide_wnd = true, bool waited = true)
 {
@@ -45,13 +46,17 @@ bool execute(
     ScopeHandle(pi.hProcess);
     ScopeHandle(pi.hThread);
 
-    if (waited)
+    if (waited) {
         WaitForSingleObject(pi.hProcess, INFINITE);
+        if (retcode) 
+            GetExitCodeProcess(pi.hProcess, (LPDWORD)retcode);
+    }
 
     return true;
 }
 
 bool execute(
+    uint32_t *retcode,  /// you must wait for process exit, then ret code will used.
     std::string const& app, std::string const& cmd,
     std::string const& optfile, bool hide_wnd = true, bool waited = true)
 {
@@ -107,8 +112,11 @@ bool execute(
     ScopeHandle(pi.hProcess);
     ScopeHandle(pi.hThread);
 
-    if (waited)
+    if (waited) {
         WaitForSingleObject(pi.hProcess, INFINITE);
+        if (retcode) 
+            GetExitCodeProcess(pi.hProcess, (LPDWORD)retcode);
+    }
 
     return true;
 }

@@ -213,18 +213,32 @@ int package(std::string const& sptfile)
     /// 2. disable.
 
     /// disable wow64 fs redirection.
-    cclib::win32::Wow64FileSystem wow64fs;
-    cclib::win32::disabler<cclib::win32::Wow64FileSystem> disable(wow64fs);
+    /// cclib::win32::Wow64FileSystem wow64fs;
+    /// cclib::win32::disabler<cclib::win32::Wow64FileSystem> disable(wow64fs);
 
     /// file open checker.
     /// if file open check failed, then return failed.
     for (size_t i = 0; i < arglist.size(); ++i) {
-        if (arglist[i]->type() == entry::kFile) {
-            argv::FileArgv *fargv = (argv::FileArgv*)arglist[i].get();
-            if ((ret = fargv->pkgPreCheck()) != ERROR_Success) {
-                return ret;
+        switch (arglist[i]->type()) {
+        case entry::kSetting:
+            {
+                argv::SettingArgv *sargv = (argv::SettingArgv*)arglist[i].get();
+                if (sargv->pkgtFlags()) {
+                    pkg::Setting setting(sargv->flags());
+                    if ((ret = setting.doSet()) != ERROR_Success)
+                        return ret;
+                }
             }
-            continue;
+            break;
+        case entry::kFile:
+            {
+                argv::FileArgv *fargv = (argv::FileArgv*)arglist[i].get();
+                if ((ret = fargv->pkgPreCheck()) != ERROR_Success)
+                    return ret;
+            }
+            break;
+        default:
+            break;
         }
     }
 
@@ -262,7 +276,6 @@ int package(std::string const& sptfile)
         LOG(ERROR) << "make pkg failure!";
         return ret;
     }
-
 
     LOG(INFO) << "Package Over!";
     return ERROR_Success; 

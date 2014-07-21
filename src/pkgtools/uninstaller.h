@@ -32,43 +32,142 @@ struct Uninstaller
         entry::restorer restor(args, arglist);
         std::for_each(entrys.begin(), entrys.end(), restor);
     
+        int ret;
         for (size_t i = 0; i < arglist.size(); ++i) {
-            switch (arglist[arglist.size() - 1 - i]->type()) {
-            case entry::kFile:
-                {
-                    FileArgv *fargv = (FileArgv*)arglist[arglist.size() - 1 - i].get();
-                    if (fargv->uninFlags() != 0) {
-                        if (win32::rmfile(fargv->dst()))
-                            LOG(INFO) << "Uninstall: remove file: \"" << fargv->dst() << "\" successful!";
-                        else
-                            LOG(WARNING) << "Uninstall: remove file: \"" << fargv->dst() << "\" failed!";
-                    }
-                    break;
-                }
-            case entry::kDir:
-                {
-                    DirArgv *dargv = (DirArgv*)arglist[arglist.size() - 1 - i].get();
-                    if (dargv->uninFlags() != 0) {
-                        if (win32::rmdir(dargv->dst()))
-                            LOG(INFO) << "Uninstall: remove dir: \"" << dargv->dst() << "\" successful!";
-                        else
-                            LOG(WARNING) << "Uninstall: remove dir: \"" << dargv->dst() << "\" failed!";
-                    }
-                    break;
-                }
-            case entry::kExec:
-                {
-                    ExecArgv *eargv = (ExecArgv*)arglist[arglist.size() - 1 - i].get();
-                    LOG(INFO) << "Uninstall: exec entry: \"" << eargv->cmd() << "\" not exec";
-                    break;
-                }
-            }
+            if ((ret = uninstall(arglist[arglist.size() - 1 - i])) != ERROR_Success)
+                return ret;
+            
         }
         return ERROR_Success;
     }
 
 private:
     unpacker unpacker_;
+
+#pragma region entry uninstall
+    int uninstall(AutoArgv argv)
+    {
+        switch (argv->type()) {
+        case entry::kFile: return entryUninstall((FileArgv*)argv.get());
+        case entry::kDir:  return entryUninstall((DirArgv*) argv.get());
+        case entry::kExec: return entryUninstall((ExecArgv*)argv.get());
+        default: return ERROR_EntryTypeNotSupported;
+        }
+    }
+
+    int entryUninstall(FileArgv *argv)
+    {
+        uint8_t flags = (uint8_t)argv->uninFlags();
+
+        if (!(flags & kuninmask)) {
+            LOG(INFO) << "Uninstall: file: \"" << argv->dst() << "\" no need uninstall";
+            return ERROR_Success;
+        }
+
+        int ret;
+        /// support uninstall.
+        try {
+            ///todo:: file uninstall will be removed.
+            ///unpacker_.tofile(argv->dst(), argv->offset());
+            LOG(INFO) << "Uninstall: file: \"" << argv->dst() << "\" RAW remove successful!";
+            return ERROR_Success;
+        } catch (except_base &ex) {
+            ret = ex.error();
+            LOG(WARNING) << "Uninstall: file: \"" << argv->dst() << "\" RAW remove failed!!!";
+        }
+
+        /// error try
+        if ((flags & kerrtmask) == kerrtry) {
+            /// need remove file dir relatived right.<TrustedInstaller right>.
+
+        }
+
+        /// error ignore
+        if ((flags & kerrxmask) == kerrignore) {
+            LOG(WARNING) << "Uninstall: file: \"" << argv->dst() << "\" remove failed, ignore error, continue...";
+            return ERROR_Success;
+        }
+
+        LOG(ERROR) << "Uninstall: file: \"" << argv->dst() << "\" remove failed!";
+        return ret;
+    }
+
+    int entryUninstall(DirArgv *argv)
+    {
+        uint8_t flags = (uint8_t)argv->uninFlags();
+        if (!(flags & kuninmask)) {
+            LOG(INFO) << "Uninstall: dir: \"" << argv->dst() << "\" no need uninstall";
+            return ERROR_Success;
+        }
+
+        if (win32::rmdir(argv->dst())) {
+            LOG(INFO) << "Uninstall: dir: \"" << argv->dst() << "\" remove successful!";
+            return ERROR_Success;
+        }
+        
+        /// error try
+        if ((flags & kerrtmask) == kerrtry) {
+            /// need remove parent dir relatived right.<TrustedInstaller right>.
+
+        }
+
+        /// error ignore
+        if ((flags & kerrxmask) == kerrignore) {
+            LOG(WARNING) << "Uninstall: dir: \"" << argv->dst() << "\" remove failed, ignore error, continue...";
+            return ERROR_Success;
+        }
+
+        LOG(ERROR) << "Uninstall: dir: \"" << argv->dst() << "\" remove failed!";
+        return ERROR_DirEntryUninFailed;
+    }
+
+    int entryUninstall(ExecArgv *argv)
+    {
+        uint8_t flags = (uint8_t)argv->uninFlags();
+        if (!(flags & kuninmask)) {
+            LOG(INFO) << "Uninstall: exec: \"" << argv->cmd() << "\" no need uninstall";
+            return ERROR_Success;
+        }
+
+        uint32_t retcode;
+        if (win32::execute(&retcode, "", argv->cmd())) {
+            LOG(INFO) << "Uninstall: exec: \"" << argv->cmd() << "\" execute successful!";
+
+            if (!argv->ckFlags()) {
+                LOG(INFO) << "Uninstall: exec: \"" << argv->cmd() << "\" no need check return code";
+                return ERROR_Success;
+            }
+            
+            /// need check return.
+            if (argv->ckReturn() == retcode) {
+                LOG(INFO) << "Uninstall: exec: \"" << argv->cmd() << "\" check return code successful!";
+                return ERROR_Success;
+            }
+            
+            LOG(ERROR) << "Uninstall: exec: \"" << argv->cmd() << "\" check return code failed!";
+        }
+        
+        ///todo:: exec a cmd not to retry when exec once failed, so the following will be ignored.
+#if 0       
+        /// error try
+        if (flags & kerrtmask == kerrtry) {
+            /// need remove parent dir relatived right.<TrustedInstaller right>.
+        }
+
+        /// error ignore
+        if (flags & kerrxmask == kerrignore) {
+            LOG(WARNING) << "Uninstall: dir: \"" << argv->dst() << "\" create failed, ignore error, continue...";
+            return ERROR_Success;
+        }
+
+        LOG(ERROR) << "Uninstall: dir: \"" << dargv->dst() << "\" create failed!";
+        return ret;
+#endif 
+        
+        LOG(ERROR) << "Uninstall: exec: \"" << argv->cmd() << "\" exec failed!";
+        return ERROR_ExecEntryRunFailed;
+    }
+#pragma endregion entry install
 };
 
 } // namespace pkg

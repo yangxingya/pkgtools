@@ -18,6 +18,7 @@ enum Error {
     ERROR_EntryTypeCantSupported,
     ERROR_ScriptFormatError,
     ERROR_ScriptOutPathFormatError,
+    ERROR_ScriptSettingFormatError,
     ERROR_ScriptFilePathFormatError,
     ERROR_ScriptDirPathFormatError,
     ERROR_ScriptExecCmdFormatError,
@@ -28,8 +29,12 @@ enum Error {
     ERROR_CreatePkgFileFailed,
     ERROR_CustomPathGetFailed,
     ERROR_EntryTypeNotSupported,
+    ERROR_DirEntryInstFailed,
+    ERROR_DirEntryUninFailed,
+    ERROR_ExecEntryRunFailed,
+    ERROR_SettingArgsNotSupported,
     ERROR_Min = ERROR_Success,
-    ERROR_Max = ERROR_EntryTypeNotSupported,
+    ERROR_Max = ERROR_SettingArgsNotSupported,
 };
 
 const std::string kErrorStr[] = {
@@ -41,6 +46,7 @@ const std::string kErrorStr[] = {
     "Script line entry type not supported",
     "Script format error",
     "Script out path argv format error",
+    "Script setting format error",
     "Script file path argv format error",
     "Script dir path argv format error",
     "Script exec cmd argv format error",
@@ -51,6 +57,10 @@ const std::string kErrorStr[] = {
     "Package file create failed",
     "Custom path obtain failed",
     "Package entry type not supported",
+    "Dir entry install failed",
+    "Dir entry uninstall failed",
+    "Exec entry run failed",
+    "Setting args not supported",
 };
 
 inline const char* getError(int error)

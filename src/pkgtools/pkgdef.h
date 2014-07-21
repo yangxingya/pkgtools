@@ -179,6 +179,7 @@ inline uint64_t length(dinfomgr_t const* dinfomgr)
 const uint16_t kentryfile = 1;
 const uint16_t kentrydir  = 2;
 const uint16_t kentryexec = 3;
+const uint16_t kentrysetting = 4;
 const uint16_t kentryunknown = 0xffff;
 
 /// uninstall shift 
@@ -186,6 +187,8 @@ const int kflagsuninshift = 3;
 /// exec check return shift.
 const int kflagsckshift = 7;
 const uint64_t kinvalid = -1L;
+/// setting int value shift.
+const int kflagsintshift = 7;
 
 const uint8_t kmagic[] = {'P', 'K', 'G', 'T'};
 const uint32_t kinvalidcrc32 = 0xffffffff;

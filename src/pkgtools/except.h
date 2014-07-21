@@ -61,4 +61,10 @@ struct spget_error : public except_base
         : except_base(errcode, what) {}
 };
 
+struct setting_error : public except_base
+{
+    setting_error(int errcode = -1, std::string const& what = "setting error")
+        : except_base(errcode, what) {}
+};
+
 #endif // pkgtools_except_h_

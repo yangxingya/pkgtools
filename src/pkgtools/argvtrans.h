@@ -227,6 +227,9 @@ struct transfer
         case entry::kExec:
             str = execCmd(argv);
             break;
+        case entry::kSetting:
+            str = setFlags(argv);
+            break;
         case entry::kOut:
             // null.
             break;
@@ -256,6 +259,12 @@ private:
         ExecArgv *eargv = (ExecArgv *)argv.get();
         return eargv->cmd();
     }
+
+    std::string setFlags(AutoArgv argv)
+    {
+        SettingArgv *sargv = (SettingArgv *)argv.get();
+        return sargv->flags();
+    }
 };
 
 struct restorer 
@@ -283,6 +292,9 @@ struct restorer
             break;
         case kentryexec:
             arg.reset(new ExecArgv(entry, args));
+            break;
+        case kentrysetting:
+            arg.reset(new SettingArgv(entry, args));
             break;
         default:
             {

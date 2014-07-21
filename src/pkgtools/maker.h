@@ -113,6 +113,7 @@ private:
 
         pkg_argvs_len_ = 0L;
         entry_t entry;
+
         for (size_t i = 0; i < arglist_.size(); ++i) {
             entry = argv::helper::extract(arglist_[i]);
             entry.strindex = i;

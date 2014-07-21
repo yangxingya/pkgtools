@@ -16,6 +16,7 @@
 #include "entrydef.h"
 #include "pkgdef.h"
 #include "fopener.h"
+#include "setting.h"
 
 namespace argv {
 
@@ -51,6 +52,7 @@ const std::string kseparate = " ";
 const std::string kpkgtstr = "-p";
 const std::string kinststr = "-i";
 const std::string kuninstr = "-u";
+
 /// no error try prefix, error try value follow '-p/-i/-u'.
 /// detail: -p n/t, -i n/t, -u n/t
 /// no error exit prefix likely '-e b/i', is only b/i. so:
@@ -84,7 +86,6 @@ const uint8_t kdftpcomb = kdftpkgt | kdfttry | kdfterr;
 const uint8_t kdfticomb = kdftinst | kdfttry | kdfterr;
 const uint8_t kdftucomb = kdftunin | kdfttry | kdfterr;
 
-
 inline uint8_t toInst(uint8_t entryflags) { return entryflags & kallmask; }
 inline uint8_t toUnin(uint8_t entryflags) { return (entryflags >> kflagsuninshift) & kallmask; }
 inline int toType(uint16_t entrytype) 
@@ -98,7 +99,6 @@ inline int toType(uint16_t entrytype)
 }
 
 inline uint8_t toCheckRet(uint8_t entryflags) { return entryflags >> kflagsckshift; }
-
 
 //! 
 /// brief: base args: -p -i -u
@@ -222,8 +222,7 @@ protected:
     std::vector<std::string> left_argv_;
     bool hasPkgt() const { return has_pkgt_; }
     bool hasInst() const { return has_inst_; }
-    bool hasUnin() const { return has_unin_; }
-    
+    bool hasUnin() const { return has_unin_; }   
 };
 
 const std::string kfiledststr = "-d";
@@ -457,6 +456,57 @@ private:
     }
 };
 
+const std::string ksettingstr = "-s";
+
+struct SettingArgv : public ArgvBase
+{
+    SettingArgv(std::string const& argv)
+        : ArgvBase(argv, entry::kSetting)
+    {
+        parse();
+        /// check argv supported ???
+        if (Setting::valid(flags_) == kinvalidargs) {
+            /// error, not supported args.
+            std::string error = "Setting parse args: \"";
+            error += flags_;
+            error += "\" not supported";
+
+            LOG(ERROR) << error;
+            throw setting_error(ERROR_SettingArgsNotSupported, error);
+        }
+    }
+
+    SettingArgv(entry_t entry, std::string const& flags)
+        : ArgvBase(entry)
+        , flags_(flags)
+    { }
+    std::string flags() const { return flags_; }
+private:
+    std::string flags_;
+
+    void parse()
+    {
+        /// left format: one set one line.
+        /// "-s <d/e>fsrd" / "-s xxxx"
+
+        for (size_t i = 0; i < left_argv_.size(); ++i) {
+            if (cclib::start_with(left_argv_[i], ksettingstr)) {
+                if (left_argv_[i][2] == kspacech) {
+                    flags_ = left_argv_[i].substr(3);
+                    return;
+                }
+            }
+        }
+        /// can't find "-s xxx" format string.
+        std::string error = "Parse Setting Args [-s path] failed!";
+        LOG(ERROR) << error;
+        throw script_error(ERROR_ScriptSettingFormatError, error);
+        
+        DLOG(INFO) << "Setting Argv: flags: \"" << flags_ << "\"";
+    }
+};
+
+
 namespace helper {
 
 inline entry_t transfer(argv::FileArgv *fargv)
@@ -495,6 +545,19 @@ inline entry_t transfer(argv::ExecArgv *eargv)
     return entry;
 }
 
+inline entry_t transfer(argv::SettingArgv *sargv)
+{
+    entry_t entry;
+
+    entry.type = kentrysetting;
+    entry.flags = 
+        sargv->instFlags() | 
+        (sargv->uninFlags() << kflagsuninshift);
+    entry.dtaindex = kinvalid; 
+
+    return entry;
+}
+
 inline entry_t extract(argv::AutoArgv const& argv)
 {
     entry_t entry;
@@ -507,12 +570,12 @@ inline entry_t extract(argv::AutoArgv const& argv)
         return transfer((argv::DirArgv*)(argv.get()));
     case entry::kExec:
         return transfer((argv::ExecArgv*)(argv.get()));
+    case entry::kSetting:
+        return transfer((argv::SettingArgv*)(argv.get()));
     default:
         return entry;
     }
 }
-
-
 
 } // namespace helper
 

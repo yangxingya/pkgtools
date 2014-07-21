@@ -18,8 +18,8 @@ LineParser::LineParser(std::string const& line)
 //!
 /// define support format:
 ///  out: xxx.dat
-///  file: [dstpath][srcpath][-p n/e -e c/e][-i n/e -e c/e][-u n/e -e c/e]
-///  dir: [dirpath][-p n/e -e c/e][-i n/e -e c/e][-u n/e -e c/e]
+///  file: [dstpath][srcpath][-p n/t c/e][-i n/t c/e][-u n/t c/e]
+///  dir: [dirpath][-p n/t c/e][-i n/t -e c/e][-u n/t -e c/e]
 ///  exec:
 argv::AutoArgv LineParser::doParse()
 {
@@ -51,6 +51,8 @@ argv::AutoArgv LineParser::doParse()
     case entry::kExec:
         argvbase.reset(new argv::ExecArgv(line_.substr(pos + 1)));
         break;
+    case entry::kSetting:
+        argvbase.reset(new argv::SettingArgv(line_.substr(pos + 1)));
     } 
     return argvbase;
 }

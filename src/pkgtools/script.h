@@ -5,39 +5,34 @@
 ///
 /// myscript.txt
 
-///   [-p/i/u normal/effort[b/e] -e break/continue[b/c]]
+///   [-p/i/u [n/t [e/i]]]
 /// details:
 ///     -p          package. 
 ///     -i          install.
 ///     -u          uninstall.
-///     normal/n    if error happened, not try. it is DEFAULT OPTION!
-///     effort/e    if error happened, change solution and try again.
-///     -e          error happened, if effort it indicate try max effort but error also.
-///     break/b     exit program. it is DEFAULT OPTION!
-///     continue/c  ignore error, continue next.
+///     n           if error happened, not try. 
+///     t           if error happened, change solution and try again. it is DEFAULT OPTION!
+///     e           exit program. 
+///     i           ignore error, continue next. it is DEFAULT OPTION!
 /// 
-/// template: file: [-d destpath][-s srcpath][-p [normal/effort [-e break/continue]]] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
-/// template: file: [-d destpath][-s srcpath][-p [n/e [-e b/c]]] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
-///                   index:0      index:1         index:2         index:3
+/// template: file: [-d destpath][-s srcpath][-p [n/t [e/i]]] [-i [n/t [e/i]]] [-u [n/t [e/i]]]
+/// 
 
-/// template: dir:  [-d dirpath] [-i [normal/effort [-e break/continue]]] [-u [normal/effort [-e break/continue]]]
-/// template: dir:  [-d dirpath] [-i [n/e [-e b/c]]] [-u [n/e [-e b/c]]]
-///                  index:0        index:1              index:2         
+/// template: dir:  [-d dirpath] [-i [n/t [e/i]]] [-u [n/t [e/i]]]
+///      
 
 /// // first: you should package tmp file.
-///         file: [-d filepath] [-s filepath] [-p] [-t]
-///      == file: [-d filepath] [-s filepath] [-p n -e b] [-t n -e b]
+///         file: [-d tmppath] [-s filepath] [-p] [-i]
+///      == file: [-d tmppath] [-s filepath] [-p t i] [-i t i]
 ///
 /// // second: you should create dir.
-///         dir:  [-d dirpath] [-i effort -e continue] [-u effort -e continue]
-///      == dir:  [-d dirpath] [-i e -e c] [-u e -e c]
+///         dir:  [-d dirpath] [-i t i] [-u t i]
 ///
 /// // third: you should package installed file.
-///         file: [-d filepath] [-s filepath] [-p effort -e continue] [-i effort -e continue] [-u effort -e continue]
-///      == file: [-d filepath] [-s filepath] [-p e -e c] [-i e -e c] [-u e -e c]
+///         file: [-d filepath] [-s filepath] [-p t i] [-i t i] [-u t i]
 /// 
 /// // fourth: you should package exec cmdline.
-/// exec: [-p n/t b/i] [-i n/t b/i] [-e c 0] [-c args list]
+///         exec: [-p n/t b/i] [-i n/t b/i] [-e c 0] [-c args list]
 ///
 /// 
 

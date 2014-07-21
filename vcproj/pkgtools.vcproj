@@ -209,10 +209,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\entry.h"
-				>
-			</File>
-			<File
 				RelativePath="..\src\pkgtools\entrydef.h"
 				>
 			</File>
@@ -266,6 +262,10 @@
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\script.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\setting.h"
 				>
 			</File>
 			<File

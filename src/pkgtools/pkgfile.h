@@ -118,9 +118,6 @@ private:
         /// need seek file pointer to start.
         seek(0);
     }
-
-
-
 };
 
 } // namespace pkg

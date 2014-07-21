@@ -15,6 +15,7 @@ const int kOut  = 1;
 const int kFile = 2;
 const int kDir  = 3;
 const int kExec = 4;
+const int kSetting = 5;
 
 const int kUnknown = 0xffff;
 
@@ -24,6 +25,7 @@ const std::string k(file);
 const std::string k(dir);
 const std::string k(exec);
 const std::string k(unknown);
+const std::string k(setting);
 #undef k
 
 inline int type(std::string const& t)
@@ -37,6 +39,7 @@ inline int type(std::string const& t)
     else
     if (ss == kexec) return kExec;
     else
+    if (ss == ksetting) return kSetting;
     return kUnknown;
 }
 
