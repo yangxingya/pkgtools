@@ -30,7 +30,7 @@
 
 void initializelog(const char *argv0);
 void usage();
-int install(std::string const& pkgfile);
+int install(std::string const& pkgfile, bool witharg = false, std::string const& arglist = "");
 int uninstall(std::string const& pkgfile);
 int package(std::string const& sptfile);
 int extract(std::string const& pkgfile, std::string const& outdir);
@@ -55,8 +55,12 @@ int main(int argc, char *argv[])
         return ERROR_UsageInvalid; 
     }
 
-    if (std::string(argv[1]) == "-i")
+    if (std::string(argv[1]) == "-i") {
+        /// install with args.
+        if (argc == 4)
+            return install(argv[2], true, argv[3]);
         return install(argv[2]);
+    }
 
     if (std::string(argv[1]) == "-u")
         return uninstall(argv[2]);
@@ -130,9 +134,9 @@ void usage()
     std::string spacepfx(2, ' ');
     size_t spacesz = 8;
     std::cout
-        << "pkgtools [-i | -u | -p | -e | -x] [file | error] [outpath] \n\n"
+        << "pkgtools [-i | -u | -p | -e | -x] [file | error] [install arglist] [outpath] \n\n"
         << spacepfx + alignfill("-i", spacesz)
-        << "install package from file:<installed-package>.\n"
+        << "install package from file:<installed-package>. and you can install with args \"arglist\" format.\n"
         << spacepfx + alignfill("-u", spacesz)
         << "uninstall package from file:<installed-package>.\n"
         << spacepfx + alignfill("-p", spacesz)
@@ -152,7 +156,7 @@ void usage()
 
 //!
 /// brief: install a pragram by pkgfile.
-int install(std::string const& pkgfile)
+int install(std::string const& pkgfile, bool witharg, std::string const& arglist)
 {
     LOG(INFO) << "Install Start, package name: " << pkgfile;
     
@@ -160,7 +164,7 @@ int install(std::string const& pkgfile)
 
     shared_ptr<pkg::Installer> installer;
     try {
-        installer.reset(new pkg::Installer(pkgfile));
+        installer.reset(new pkg::Installer(pkgfile, witharg, arglist));
         ret = installer->install();
     } catch (except_base &ex) {
         return ex.error();

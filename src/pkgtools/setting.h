@@ -94,12 +94,14 @@ private:
     {
         win32::Wow64FileSystem fs;
         fs.disable();
+        LOG(INFO) << "Setting: disable filesystem redirection";
     }
 
     void enableFSRedirection()
     {
         win32::Wow64FileSystem fs;
         fs.enable();
+        LOG(INFO) << "Setting: enable filesystem redirection";
     }
 };
 

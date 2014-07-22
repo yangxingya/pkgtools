@@ -14,6 +14,7 @@
 CCLIB_NAMESPACE_BEGIN
 WIN32_NAMESPACE_BEGIN
 
+inline 
 bool execute(
     uint32_t *retcode,  /// you must wait for process exit, then ret code will used.
     std::string const& app, std::string const& cmd, 
@@ -55,6 +56,7 @@ bool execute(
     return true;
 }
 
+inline
 bool execute(
     uint32_t *retcode,  /// you must wait for process exit, then ret code will used.
     std::string const& app, std::string const& cmd,

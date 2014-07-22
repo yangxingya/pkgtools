@@ -1,0 +1,17 @@
+Log file created at: 2014/07/22 15:07:44
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0722 15:07:44.616927  4128 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat /NAME=yxy /OUT=hello.txt"
+I0722 15:07:44.617928  4128 pkgtools.cpp:161] Install Start, package name: test.dat
+I0722 15:07:44.618927  4128 pkgfile.h:78] Open Package File: test.dat successfule!
+I0722 15:07:44.618927  4128 unpacker.h:136] Extract args 0: dfsrd
+I0722 15:07:44.618927  4128 unpacker.h:136] Extract args 1: c:\pkg-install\
+I0722 15:07:44.618927  4128 unpacker.h:136] Extract args 2: c:\pkg-install\d3d9.dll
+I0722 15:07:44.618927  4128 unpacker.h:136] Extract args 3: "cmd.exe" echo "hello, this a test, output is: $NAME" > $OUT
+I0722 15:07:44.663930  4128 installer.h:29] Install args: "/NAME=yxy /OUT=hello.txt"
+I0722 15:07:50.416260  4128 setting.h:97] Setting: disable filesystem redirection
+I0722 15:07:50.416260  4128 installer.h:115] Install: dir: "c:\pkg-install\" create successful!
+I0722 15:07:50.418259  4128 pkgfile.h:35] Create Package File: c:\pkg-install\d3d9.dll successfule!
+I0722 15:07:50.422260  4128 installer.h:83] Install: file: "c:\pkg-install\d3d9.dll" RAW copy successful!
+I0722 15:08:18.256851  4128 installer.h:147] Install: exec: ""cmd.exe" echo "hello, this a test, output is: $NAME" > $OUT" ==> ""cmd.exe" echo "hello, this a test, output is: $NAME" > hello.txt " execute successful!
+I0722 15:08:18.258852  4128 installer.h:150] Install: exec: ""cmd.exe" echo "hello, this a test, output is: $NAME" > $OUT" ==> ""cmd.exe" echo "hello, this a test, output is: $NAME" > hello.txt " no need check return code

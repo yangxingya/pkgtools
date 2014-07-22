@@ -1,0 +1,10 @@
+Log file created at: 2014/07/22 14:15:50
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0722 14:15:50.826828  4328 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat"
+I0722 14:16:02.035470  4328 pkgtools.cpp:161] Install Start, package name: test.dat
+I0722 14:16:18.362403  4328 pkgfile.h:78] Open Package File: test.dat successfule!
+I0722 14:16:18.363404  4328 unpacker.h:136] Extract args 0: dfsrd
+I0722 14:16:18.363404  4328 unpacker.h:136] Extract args 1: c:\pkg-install\
+I0722 14:16:18.363404  4328 unpacker.h:136] Extract args 2: c:\pkg-install\d3d9.dll
+I0722 14:16:26.241854  4328 installer.h:29] Install args: ""

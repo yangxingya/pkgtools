@@ -10,9 +10,9 @@
 #define CCLIB_NAMESPACE_END }
 
 #ifdef _WIN32
-#define WIN32_NAMESPACE win32
-#define WIN32_NAMESPACE_BEGIN namespace win32 {
-#define WIN32_NAMESPACE_END }
+# define WIN32_NAMESPACE win32
+# define WIN32_NAMESPACE_BEGIN namespace win32 {
+# define WIN32_NAMESPACE_END }
 #endif // _WIN32
 
 CCLIB_NAMESPACE_BEGIN

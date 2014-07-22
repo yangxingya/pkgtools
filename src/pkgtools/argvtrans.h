@@ -14,10 +14,6 @@
 #include "error.h"
 #include "except.h"
 
-#ifndef MAX_PATH
-#define MAX_PATH 260
-#endif
-
 namespace argv {
 
 using namespace cclib;

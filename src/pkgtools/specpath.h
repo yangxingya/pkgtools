@@ -50,9 +50,6 @@ inline uint16_t splitHigh(uint16_t index)
     return (index & kHigh8BitsMask) >> kShiftBitsWithCommon;
 }
 
-const uint16_t kProgFiles     = 0x00ff;
-const uint16_t kProgFilesComm = 0x00fe;
-
 inline size_t makeSpec(SpecPath2CsidlMap *sp2csidl)
 {
     size_t orisz = sp2csidl->size();

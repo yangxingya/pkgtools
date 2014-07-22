@@ -91,9 +91,10 @@ inline uint8_t toUnin(uint8_t entryflags) { return (entryflags >> kflagsuninshif
 inline int toType(uint16_t entrytype) 
 {
     switch (entrytype) {
-        case kentryfile: return entry::kFile;
-        case kentrydir:  return entry::kDir;
-        case kentryexec: return entry::kExec;
+        case kentryfile:    return entry::kFile;
+        case kentrydir:     return entry::kDir;
+        case kentryexec:    return entry::kExec;
+        case kentrysetting: return entry::kSetting;
         default: return entry::kUnknown;
     }
 }
@@ -149,18 +150,21 @@ private:
             if (cclib::start_with(argvs[i], kpkgtstr)) {
                 /// like -p [n/t [b/i]]
                 p_flags_ = parse_detail(argvs[i], kpkgtstr);
+                p_flags_ |= kpkgtmask;
                 has_pkgt_ = true;
                 continue;
             }
             if (cclib::start_with(argvs[i], kinststr)) {
                 /// like -i [n/t [b/i]]
                 i_flags_ = parse_detail(argvs[i], kinststr);
+                i_flags_ |= kinstmask;
                 has_inst_ = true;
                 continue;
             }
             if (cclib::start_with(argvs[i], kuninstr)) {
                 /// like -u [n/t [b/i]]
                 u_flags_ = parse_detail(argvs[i], kuninstr);
+                u_flags_ |= kuninmask;
                 has_unin_ = true;
                 continue;
             }
@@ -183,8 +187,9 @@ private:
             throw script_error(ERROR_ScriptFormatError, error);
         }
 
-        /// pkgt flags enabled.
-        flags |= 1;
+        /// '-p/i/u' format no [n/t [b/i]] suffix, set default value:
+        if (out.size() == 1)
+            flags = kdfttry | kdfterr;
 
         if (out.size() >= 2) {
             if (out[1] != knotrystr && out[1] != ktrystr) {
@@ -195,11 +200,15 @@ private:
                 LOG(ERROR) << error;
                 throw script_error(ERROR_ScriptFormatError, error);
             }
-            //TODO::...
+
             if (out[1] == ktrystr)
-                flags |= kerrtry;
-            /// notry str not set.
+                flags = kerrtry;
+
+            /// '-p/i/u n/t' format, no [b/i] then set [b/i] to default: ignored.
+            if (out.size() == 2)
+                flags = kdfterr;
         }
+
         if (out.size() == 3) {
             if (out[2] != kbreakstr && out[2] != kignorestr) {
                 std::string error = "Parse [";
@@ -209,10 +218,9 @@ private:
                 LOG(ERROR) << error;
                 throw script_error(ERROR_ScriptFormatError, error);
             }
-            //TODO::...
+
             if (out[2] == kignorestr)
                 flags |= kerrignore;
-            /// notry str not set.
         }
         DLOG(INFO) << "Parse detail, prefix: " << argv <<", flag(1<p/i/u>, 2<try>, 4<ignore>): " << (int)flags;
         return flags;
@@ -263,7 +271,7 @@ private:
 };
 
 //!
-/// file:[-d dest] [-s src] [-p/i/u n/t b/i] 
+/// file:[-d dest] [-s src] [-p/i/u [n/t [b/i]]] 
 struct FileArgv : public ArgvBase
 {
 public:
@@ -343,7 +351,7 @@ private:
 };
 
 //!
-/// dir:[-d path] [-p n/t b/i] [-i n/t b/i] [-u n/t b/i]
+/// dir:[-d path] [-p/i/u [n/t [b/i]]]
 struct DirArgv : public ArgvBase
 {
 public:
@@ -390,7 +398,7 @@ const std::string kcmdlinestr = "-c";
 const std::string kexecutestr = "-v";
 
 //!
-/// exec:[-i n/t b/i] [-e c 0] [-c args list]
+/// exec:[-p/i/u [n/t [b/i]]] [-e c 0] [-c args list]
 struct ExecArgv : public ArgvBase
 {
 public:
@@ -458,6 +466,8 @@ private:
 
 const std::string ksettingstr = "-s";
 
+//!
+/// setting:[-p/i/u [n/t [b/i]]] [-s setting]
 struct SettingArgv : public ArgvBase
 {
     SettingArgv(std::string const& argv)

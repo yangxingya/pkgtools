@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <io.h>
 #include <cclib/types.h>
+#include <cclib/win32/pathutil.h>
+#include <cclib/win32/right.h>
 #include "error.h"
 #include "except.h"
 
@@ -30,6 +32,7 @@ struct fopener
         , max_effort_(max_effort)
         , fp_(fopen(name.c_str(), "rb"))
         , len_(0L)
+        , tmp_deleted_(false)
     {
         if (fp_ != NULL) {
             getlen();
@@ -47,18 +50,47 @@ struct fopener
         }
 
         /// max_effort_ == true;
-        /// do 2nd test:
-        ///     1. copy file to volume root dir, then open
+        /// do 3rd test:
+        ///     1. if name_ is a special path<system path>. remove parent dir trustedinstaller right.
+        ///     2. copy file to volume root dir, then open
         ///     2. if 1st is failed, then do vss(volume shadow copy) then copy.
         /// if 1 and 2 all failed, then throw exception.
 
+        /// 1. remove trustedinstaller right when name_ is a special path.
+        if (win32::is_special(name_)) {
+            std::string pdir = win32::pdir(name_);
+            if (win32::rm_trustedinstaller(pdir)) {
+                FILE *fp = fopen(name_.c_str(), "rb");
+                if (fp != NULL) {
+                    reset(fp);
+                    getlen();
+                    LOG(INFO) << "fopener: remove trustedinstaller and open: \"" << name_ << "\" successful!";
+                    return;
+                }
+                LOG(WARNING) << "fopener: remove trustedinstaller but open failed: \"" << name_ << "\"";
+            }
+        }
 
-        ///TODO:: 1. copy file to volume root dir and open.
-        /// getlen();
-        ///TODO:: 2. vss copy file to vss volume and open.
-        /// getlen();
+        /// 2. copy to root dir and open.
+        tmp_ = copy_to_root();
+        if (!tmp_.empty()) {
+            FILE *fp = fopen(tmp_.c_str(), "rb");
+            if (fp != NULL) {
+                reset(fp);
+                tmp_deleted_ = true;
+                getlen();
+                LOG(INFO) << "fopener: copy to root and open: \"" << tmp_ << "\" successful!";
+                return;
+            }
+            LOG(WARNING) << "fopener: copy to root but open failed: \"" << tmp_ << "\"";
+        }
+
+        /// 3. vss copy.
+
 
     }
+
+    ~fopener() { reset(); }
 
     /// read file content to buf, and the max read len is
     /// rdlen or file real left length less rdlen.
@@ -77,6 +109,9 @@ private:
     FILE *fp_;
     uint64_t len_;
 
+    bool tmp_deleted_;
+    std::string tmp_;
+
     void getlen() 
     {
         if (fp_ == NULL) {
@@ -91,6 +126,37 @@ private:
         /// be max uint64 value.
         int64_t len = _filelengthi64(fp_->_file);
         len_ = (len == -1L) ? 0 : len;
+    }
+
+    std::string copy_to_root()
+    {
+        std::string sname = win32::short_name(name_);
+        std::string root = win32::root(name_);
+        std::string rootname = root;
+
+        win32::add_sep(rootname);
+        rootname += sname;
+
+        if (!win32::copy(rootname, name_))
+            return "";
+
+        return rootname;
+    }
+
+    void reset(FILE *fp = NULL)
+    {
+        if (fp_) { 
+            fflush(fp_); 
+            fclose(fp_); 
+
+            /// deleted when closed.
+            if (tmp_deleted_) {
+                win32::rmfile(tmp_);
+                tmp_deleted_ = false;
+            }
+        } 
+
+        fp_ = fp;
     }
 };
 

@@ -177,9 +177,9 @@ inline size_t split(
             break;
         }
         if (key_lower)
-            kv_map[strvec[i].substr(0, pos)] = strvec[i].substr(pos + sp2.length());
-        else
             kv_map[to_lower(strvec[i].substr(0, pos))] = strvec[i].substr(pos + sp2.length());
+        else
+            kv_map[strvec[i].substr(0, pos)] = strvec[i].substr(pos + sp2.length());
     }
     // append to out map.
     out->insert(kv_map.begin(), kv_map.end());

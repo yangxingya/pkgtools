@@ -8,6 +8,7 @@
 #include <io.h>
 #include <stdio.h>
 #include <cclib/types.h>
+#include <cclib/win32/pathutil.h>
 
 namespace file {
 
@@ -18,13 +19,27 @@ using namespace cclib;
 
 struct fwrapper
 {
-    fwrapper(std::string const& file, std::string const& mode)
-        : fp_(fopen(file.c_str(), mode.c_str()))
-        , good_(fp_ != 0)
+    fwrapper(
+        std::string const& file, std::string const& mode
+        , bool closed_with_deleted = false)
+            : file_(file)
+            , fp_(fopen(file.c_str(), mode.c_str()))
+            , good_(fp_ != 0)
+            , closed_with_deleted_(closed_with_deleted)
     {
     }
 
-    ~fwrapper() { if (fp_) { fflush(fp_); fclose(fp_); } }
+    ~fwrapper() 
+    { 
+        if (fp_) { 
+            fflush(fp_); 
+            fclose(fp_); 
+
+            /// deleted when closed.
+            if (closed_with_deleted_)
+                win32::rmfile(file_);
+        } 
+    }
     bool good() const { return good_; }
     
     bool seek(int64_t pos) 
@@ -58,8 +73,10 @@ struct fwrapper
         return _filelengthi64(fp_->_file);
     }
 private:
+    std::string file_;
     FILE *fp_;
     bool good_;
+    bool closed_with_deleted_;
 };
 
 #pragma warning(pop)  

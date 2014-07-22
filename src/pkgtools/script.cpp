@@ -2,7 +2,6 @@
 //
 
 #include "script.h"
-#include "entry.h"
 #include <cclib/strutil.h>
 #include <glog/logging.h>
 #include <fstream>

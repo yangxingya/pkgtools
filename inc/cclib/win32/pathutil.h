@@ -9,6 +9,7 @@
 #include <io.h>
 #include <direct.h>
 #include <stdio.h>
+#include <exception>
 #include "../types.h"
 #include "../strutil.h"
 
@@ -47,6 +48,24 @@ inline std::string curr_dir()
     return _getcwd(dir, MAX_PATH);
 }
 
+inline std::string short_name(std::string const& file)
+{
+    std::string::size_type pos;
+
+    pos = file.find_last_of(kregseparator);
+    if (pos == std::string::npos)
+        return file;
+
+    if (pos == file.length() - 1) {
+        std::string error = "short_name() func can't support dir: \"";
+        error += file;
+        error += "\"";
+        throw std::logic_error(error);
+    }
+
+    return file.substr(pos + 1);
+}
+
 //!
 /// brief: like *nix os have root path, windows root path is volume path
 ///        likely "c:";
@@ -77,6 +96,8 @@ inline std::string& add_sep(std::string& path)
 ///      
 inline std::string pdir(std::string const& path)
 {
+    if (path.empty()) return "";
+
     /// absoluted path.
     std::string tmp = path;
     std::string::size_type index = path.length() - 1;
@@ -88,6 +109,11 @@ inline std::string pdir(std::string const& path)
         return tmp;
 
     return tmp.substr(0, index);
+}
+
+inline bool copy(std::string const& dst, std::string const& src, bool overlap = false)
+{
+    return !!CopyFileA(src.c_str(), dst.c_str(), !overlap);
 }
 
 //!
