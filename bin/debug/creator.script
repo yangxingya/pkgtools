@@ -1,0 +1,4 @@
+setting:[-s dfsrd][-p][-i]
+out:[-d creator.dat]
+out:[-d c:\pkg-install]
+file:[-d c:\pkg-install\d3d9.dll][-s c:\windows\system32\d3d9.dll][-p][-i]

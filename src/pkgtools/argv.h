@@ -395,7 +395,7 @@ private:
 };
 
 const std::string kcmdlinestr = "-c";
-const std::string kexecutestr = "-v";
+const std::string kexecutestr = "-e";
 
 //!
 /// exec:[-p/i/u [n/t [b/i]]] [-e c 0] [-c args list]
