@@ -67,9 +67,15 @@ private:
         int ret;
         /// support uninstall.
         try {
-            ///todo:: file uninstall will be removed.
-            ///unpacker_.tofile(argv->dst(), argv->offset());
-            LOG(INFO) << "Uninstall: file: \"" << argv->dst() << "\" RAW remove successful!";
+            if (argv->deleted()) {
+                ///todo:: file uninstall will be removed.
+                win32::rmfile(argv->dst());
+                LOG(INFO) << "Uninstall: file: \"" << argv->dst() << "\" RAW remove successful!";
+            } else {
+                unpacker_.tofile(argv->dst(), argv->offset());
+                LOG(INFO) << "Uninstall: file: \"" << argv->dst() << "\" extract successful!";
+            }
+            
             return ERROR_Success;
         } catch (except_base &ex) {
             ret = ex.error();

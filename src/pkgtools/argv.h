@@ -235,6 +235,7 @@ protected:
 
 const std::string kfiledststr = "-d";
 const std::string kfilesrcstr = "-s";
+const std::string kfilenodelstr = "-x";
 const char kspacech = ' ';
 //!
 /// out argv format: out:[-d c:\xxx.dat]
@@ -277,6 +278,7 @@ struct FileArgv : public ArgvBase
 public:
     FileArgv(std::string const& argv)
         : ArgvBase(argv, entry::kFile)
+        , deleted_(true)
     {
         if (!hasPkgt() || !hasInst()) {
             std::string error = "Parse Args no 'pkg args' or 'inst args'";
@@ -289,11 +291,13 @@ public:
     FileArgv(entry_t const& entry, std::string const& dst, uint64_t offset)
         : ArgvBase(entry)
         , dst_(dst)
+        , deleted_(!!entry.args)
         , offset_(offset)
     {}
 
     std::string dst() const { return dst_; }
     std::string src() const { return src_; }
+    bool deleted() const { return deleted_;}
     uint64_t offset() const { return offset_; }
     ///TODO:: add fopener for check file if can open.
     ///
@@ -318,6 +322,7 @@ public:
 private:
     std::string dst_;
     std::string src_;
+    bool deleted_;
     uint64_t offset_;
     shared_ptr<fopener> opener_;
     void parse()
@@ -339,6 +344,11 @@ private:
                     src_ = left_argv_[i].substr(3);
                     continue;
                 }
+            }
+            std::string tmplower = cclib::to_lower(left_argv_[i]);
+            if (tmplower == kfilenodelstr) {
+                deleted_ = false;
+                continue;
             }
         }
         if (!has_dst || !has_src) {
@@ -521,17 +531,18 @@ namespace helper {
 
 inline entry_t transfer(argv::FileArgv *fargv)
 {
-    entry_t entry;
+    entry_t entry = {0};
 
     entry.type = kentryfile;
     entry.flags = fargv->instFlags() | (fargv->uninFlags() << kflagsuninshift);
+    entry.args = fargv->deleted();
 
     return entry;
 }
 
 inline entry_t transfer(argv::DirArgv *dargv)
 {
-    entry_t entry;
+    entry_t entry = {0};
 
     entry.type = kentrydir;
     entry.flags = dargv->instFlags() | (dargv->uninFlags() << kflagsuninshift);
@@ -542,7 +553,7 @@ inline entry_t transfer(argv::DirArgv *dargv)
 
 inline entry_t transfer(argv::ExecArgv *eargv)
 {
-    entry_t entry;
+    entry_t entry = {0};
 
     entry.type = kentryexec;
     entry.flags = 
@@ -557,7 +568,7 @@ inline entry_t transfer(argv::ExecArgv *eargv)
 
 inline entry_t transfer(argv::SettingArgv *sargv)
 {
-    entry_t entry;
+    entry_t entry = {0};
 
     entry.type = kentrysetting;
     entry.flags = 

@@ -162,6 +162,33 @@ private:
 
 #pragma warning(pop)  
 
+struct fchecker
+{
+    fchecker() {}
+    shared_ptr<fopener> docheck(std::string const& name, bool effort = true)
+    {
+        std::string name_lower = to_lower(name);
+        std::map<std::string, shared_ptr<fopener>>::iterator it;
+        if ((it = name_to_opener_.find(name_lower)) != name_to_opener_.end())
+            return it->second;
+
+        /// not find.
+        shared_ptr<fopener> opener;
+        try {
+            opener.reset(new fopener(name, effort));
+        } catch (except_base &ex) {
+            LOG(ERROR) << "Open file failed! file:\"" << name << "\", error: " << ex.error();
+            return shared_ptr<fopener>();
+        }
+
+        /// add to map.
+        name_to_opener_[name] = opener;
+        return opener;
+    }
+private:
+    std::map<std::string, shared_ptr<fopener>> name_to_opener_;
+};
+
 } // namespace file
 
 #endif // pkgtools_fopener_h_

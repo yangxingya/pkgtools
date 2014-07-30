@@ -42,12 +42,16 @@ inline bool is_dir(std::string const& path)
     return !!(GetFileAttributesA(path.c_str()) & FILE_ATTRIBUTE_DIRECTORY);
 }
 
+//!
+/// brief: current dir.
 inline std::string curr_dir()
 {
     char dir[MAX_PATH] = {0};
     return _getcwd(dir, MAX_PATH);
 }
 
+//!
+/// brief: get short name: c:\\xx\\yy\\zz.txt -> zz.txt
 inline std::string short_name(std::string const& file)
 {
     std::string::size_type pos;
@@ -78,6 +82,8 @@ inline std::string root(std::string const& path = ".")
     return path.substr(0, 2);
 }
 
+//!
+/// brief: add path '\\' sep if path is not end with '\\' or '/'.
 inline std::string& add_sep(std::string& path)
 {
     std::string::size_type pos;
@@ -111,6 +117,8 @@ inline std::string pdir(std::string const& path)
     return tmp.substr(0, index);
 }
 
+//!
+/// brief: copy file.
 inline bool copy(std::string const& dst, std::string const& src, bool overlap = false)
 {
     return !!CopyFileA(src.c_str(), dst.c_str(), !overlap);
@@ -141,26 +149,43 @@ inline bool mkdirtree(std::string const& dir)
     return true;
 }
 
+//!
+/// brief: remove file.
 inline bool rmfile(std::string const& file)
 {
     return remove(file.c_str()) == 0;
 }
 
+//!
+/// brief: remove dir
 inline bool rmdir(std::string const& dir)
 {
     return _rmdir(dir.c_str()) == 0;
 }
 
+//!
+/// brief: change current dir.
 inline bool chdir(std::string const& dir)
 {
     return _chdir(dir.c_str()) == 0;
 }
 
+//!
+/// brief: get current work dir.
 inline std::string getcwd()
 {
     char path[MAX_PATH];
     _getcwd(path, MAX_PATH);
 
+    return path;
+}
+
+//!
+/// brief: get exe path
+inline std::string app_path()
+{
+    char path[MAX_PATH] = {0};
+    GetModuleFileNameA(NULL, path, MAX_PATH);
     return path;
 }
 

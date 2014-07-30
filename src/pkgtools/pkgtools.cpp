@@ -5,7 +5,7 @@
 /// copyright: easytek Comp.
 /// author: yangxingya
 /// email: xingyayang@163.com
-
+///
 /// test:
 ///     project setting: argv = ' -p pkg.script '
 ///     workdir        : $(OutDir)
@@ -18,7 +18,7 @@
 #include <algorithm>
 #include <glog/logging.h>
 #include <cclib/singleton.h>
-#include <cclib/win32/disabler.h>
+#include <cclib/win32/pathutil.h>
 #include "error.h"
 #include "script.h"
 #include "argvtrans.h"
@@ -89,7 +89,7 @@ void initializelog(const char *argv0)
 {
     google::InitGoogleLogging(argv0);
     //TODO:: need get programm path.
-    std::string programm_path = ".";
+    std::string programm_path = cclib::win32::pdir(cclib::win32::app_path());
     std::string programm_short = "pkgtools";
     std::string log_base_fn = programm_path + "/log/" + programm_short;
     // only log large than INFO level log.

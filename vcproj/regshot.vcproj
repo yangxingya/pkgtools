@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="pkgtools"
-	ProjectGUID="{C5A7A416-908F-4282-A192-0E616C5EEC9D}"
-	RootNamespace="pkgtools"
+	Name="regshot"
+	ProjectGUID="{639574B0-4418-40F6-BC0E-63775235CA57}"
+	RootNamespace="regshot"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -18,9 +18,9 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="..\bin\$(ConfigurationName)"
+			OutputDirectory="..\lib\$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			CharacterSet="1"
 			>
 			<Tool
@@ -60,18 +60,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="libglog.lib"
-				LinkIncremental="2"
-				GenerateDebugInformation="true"
-				SubSystem="1"
-				TargetMachine="1"
+				Name="VCLibrarianTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -83,17 +75,14 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="..\bin\$(ConfigurationName)"
+			OutputDirectory="..\lib\$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="1"
+			ConfigurationType="4"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -134,20 +123,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="libglog.lib"
-				LinkIncremental="1"
-				GenerateDebugInformation="true"
-				SubSystem="1"
-				OptimizeReferences="2"
-				EnableCOMDATFolding="2"
-				TargetMachine="1"
+				Name="VCLibrarianTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -157,9 +136,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -175,15 +151,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\src\pkgtools\lineparser.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\pkgtools.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\script.cpp"
+				RelativePath="..\src\regshot\regshot.cpp"
 				>
 			</File>
 		</Filter>
@@ -193,91 +161,7 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
-				RelativePath="..\src\pkgtools\argv.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\argvdef.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\argvtrans.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\entrydef.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\error.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\except.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\extractor.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\fappender.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\fcounter.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\fopener.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\fwrapper.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\installer.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\lineparser.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\maker.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\packer.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\pkgdef.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\pkgfile.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\script.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\setting.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\specpath.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\uninstaller.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\unpacker.h"
+				RelativePath="..\src\regshot\regdef.h"
 				>
 			</File>
 		</Filter>

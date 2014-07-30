@@ -99,14 +99,17 @@ private:
     void extractArgv()
     {
         // extract pkg argv string.
-        entry::transfer argvtransfer(pkg_argvs_);
+        std::map<uint64_t, uint64_t> args_map;
+        entry::transfer argvtransfer(pkg_argvs_, args_map);
         std::for_each(arglist_.begin(), arglist_.end(), argvtransfer);
 
+        /*
         if (pkg_argvs_.size() != arglist_.size()) {
             std::string error = "After transfer argv, the transfer size is not equal original argv list size";
             LOG(ERROR) << error;
             throw pkg_error(ERROR_TransferArgvError, error); 
         }
+        */
 
         for (size_t i = 0; i < arglist_.size(); ++i)
             DLOG(INFO) << "    args: " << pkg_argvs_[i];
@@ -116,7 +119,7 @@ private:
 
         for (size_t i = 0; i < arglist_.size(); ++i) {
             entry = argv::helper::extract(arglist_[i]);
-            entry.strindex = i;
+            entry.strindex = args_map[i];
 
             entry.dtaindex = kinvalid;
             /// if argv is file, file data index need calc.

@@ -205,11 +205,13 @@ namespace entry {
 
 using namespace path;
 using namespace argv;
+using namespace cclib;
+using namespace pkg;
 
 struct transfer
 {
-    transfer(std::vector<std::string> &argvs)
-        : argvs_(argvs) {}
+    transfer(std::vector<std::string> &argvs, std::map<uint64_t, uint64_t> &str_index)
+        : argvs_(argvs), str_index_(str_index), curr_index_(0L), counter_(0L) {}
     void operator()(AutoArgv argv)
     {
         std::string str = "";
@@ -233,11 +235,33 @@ struct transfer
             // throw exception/
             break;
         }
-        if (!str.empty())
-            argvs_.push_back(str);
+
+        if (str.empty()) {
+            str_index_[curr_index_++] = kinvalid;
+            return;
+        }
+
+        // find.
+        std::map<std::string, uint64_t>::iterator it;
+        if ((it = quick_tab_.find(str)) != quick_tab_.end()) {
+            str_index_[curr_index_++] = it->second;
+            return;
+        } 
+
+        // not find.
+        quick_tab_[str] = counter_;
+        argvs_.push_back(str);
+        str_index_[curr_index_++] = counter_;
+
+        counter_++;
     }
 private:
     std::vector<std::string> &argvs_;
+    std::map<uint64_t, uint64_t> &str_index_;
+    uint64_t curr_index_;
+    std::map<std::string, uint64_t> quick_tab_;
+    uint64_t counter_;
+
     std::string fileDst(AutoArgv argv)
     {
         FileArgv *fargv = (FileArgv *)argv.get();

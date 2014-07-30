@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pkgtools", "vcproj\pkgtools
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scriptcreator", "vcproj\scriptcreator.vcproj", "{1AEAAF16-1B98-4CF8-880F-E1FE7877A610}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "regshot", "vcproj\regshot.vcproj", "{639574B0-4418-40F6-BC0E-63775235CA57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{1AEAAF16-1B98-4CF8-880F-E1FE7877A610}.Debug|Win32.Build.0 = Debug|Win32
 		{1AEAAF16-1B98-4CF8-880F-E1FE7877A610}.Release|Win32.ActiveCfg = Release|Win32
 		{1AEAAF16-1B98-4CF8-880F-E1FE7877A610}.Release|Win32.Build.0 = Release|Win32
+		{639574B0-4418-40F6-BC0E-63775235CA57}.Debug|Win32.ActiveCfg = Debug|Win32
+		{639574B0-4418-40F6-BC0E-63775235CA57}.Debug|Win32.Build.0 = Debug|Win32
+		{639574B0-4418-40F6-BC0E-63775235CA57}.Release|Win32.ActiveCfg = Release|Win32
+		{639574B0-4418-40F6-BC0E-63775235CA57}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

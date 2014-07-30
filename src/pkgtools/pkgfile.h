@@ -111,8 +111,6 @@ private:
             throw pkg_error(ERROR_PkgHdrError, error);
         }
 
-        
-
         ///TODO:: crc32 not implement, so return true ever.
 
         /// need seek file pointer to start.
