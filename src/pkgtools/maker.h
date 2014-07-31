@@ -10,7 +10,7 @@
 #include "error.h"
 #include "except.h"
 #include "argv.h"
-#include "entrydef.h"
+#include "argvdef.h"
 #include "pkgdef.h"
 #include "argv.h"
 #include "pkgfile.h"
@@ -19,7 +19,7 @@
 namespace pkg {
 
 using namespace cclib;
-using ::file::fopener;
+using ::file::fholder;
 using ::file::fappender;
 
 const std::string kdefaultoutput = "./pkg.dat";
@@ -93,7 +93,7 @@ private:
 
     std::vector<std::string>  pkg_argvs_;
     std::vector<entry_t> pkg_entrys_;
-    std::vector<shared_ptr<fopener> > pkg_files_;
+    std::vector<shared_ptr<fholder> > pkg_files_;
     uint64_t pkg_argvs_len_;
 
     void extractArgv()
@@ -123,7 +123,7 @@ private:
 
             entry.dtaindex = kinvalid;
             /// if argv is file, file data index need calc.
-            if (arglist_[i]->type() == entry::kFile) {
+            if (arglist_[i]->type() == kFile) {
                 argv::FileArgv *fargv = (argv::FileArgv *)arglist_[i].get();
                 pkg_files_.push_back(fargv->get());
                 entry.dtaindex = pkg_files_.size() - 1;

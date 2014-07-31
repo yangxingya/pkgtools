@@ -39,7 +39,7 @@ struct Extractor
     
         for (size_t i = 0L; i < arglist.size(); ++i) {
             switch (arglist[i]->type()) {
-            case entry::kFile:
+            case kFile:
                 {
                     FileArgv *fargv = (FileArgv*)arglist[i].get();
                     unpacker_.tofile(fargv->dst(), fargv->offset());
@@ -51,7 +51,7 @@ struct Extractor
                     win32::mkdirtree(dargv->dst());
                     break;
                 }
-            case entry::kExec:
+            case kExec:
                 {
                     ExecArgv *eargv = (ExecArgv*)arglist[i].get();
                     LOG(INFO) << "Extractor, exec entry: \"" << eargv->cmd() << "\" not exec";

@@ -205,7 +205,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\entrydef.h"
+				RelativePath="..\src\pkgtools\counter.h"
 				>
 			</File>
 			<File
@@ -225,11 +225,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\fcounter.h"
-				>
-			</File>
-			<File
-				RelativePath="..\src\pkgtools\fopener.h"
+				RelativePath="..\src\pkgtools\fchecker.h"
 				>
 			</File>
 			<File

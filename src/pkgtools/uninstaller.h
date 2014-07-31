@@ -48,9 +48,9 @@ private:
     int uninstall(AutoArgv argv)
     {
         switch (argv->type()) {
-        case entry::kFile: return entryUninstall((FileArgv*)argv.get());
+        case kFile: return entryUninstall((FileArgv*)argv.get());
         case entry::kDir:  return entryUninstall((DirArgv*) argv.get());
-        case entry::kExec: return entryUninstall((ExecArgv*)argv.get());
+        case kExec: return entryUninstall((ExecArgv*)argv.get());
         default: return ERROR_EntryTypeNotSupported;
         }
     }

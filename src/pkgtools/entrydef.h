@@ -9,23 +9,30 @@
 #include <vector>
 #include <cclib/strutil.h>
 
+//todo:: need change to argv.
 namespace entry {
 
-const int kOut  = 1;
-const int kFile = 2;
-const int kDir  = 3;
-const int kExec = 4;
-const int kSetting = 5;
+const int kOut   = 1;
+const int kFile  = 2;
+const int kAddf  = 3;
+const int kDelf  = 4;
+const int kMkdir = 5;
+const int kRmdir = 6;
+const int kExec  = 7;
+const int kSetting = 8;
 
 const int kUnknown = 0xffff;
 
 #define k(x) k##x=""#x
 const std::string k(out);
 const std::string k(file);
-const std::string k(dir);
+const std::string k(addf);
+const std::string k(delf);
+const std::string k(mkdir);
+const std::string k(rmdir);
 const std::string k(exec);
-const std::string k(unknown);
 const std::string k(setting);
+const std::string k(unknown);
 #undef k
 
 inline int type(std::string const& t)
@@ -35,7 +42,13 @@ inline int type(std::string const& t)
     else
     if (ss == kfile) return kFile;
     else
-    if (ss == kdir) return kDir;
+    if (ss == kaddf) return kAddf;
+    else
+    if (ss == kdelf) return kDelf;
+    else
+    if (ss == kmkdir) return kMkdir;
+    else
+    if (ss == krmdir) return kRmdir;
     else
     if (ss == kexec) return kExec;
     else

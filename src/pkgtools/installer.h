@@ -57,10 +57,10 @@ private:
     int install(AutoArgv argv)
     {
         switch (argv->type()) {
-        case entry::kFile:    return entryInstall((FileArgv*   )argv.get());
+        case kFile:    return entryInstall((FileArgv*   )argv.get());
         case entry::kDir:     return entryInstall((DirArgv*    )argv.get());
-        case entry::kExec:    return entryInstall((ExecArgv*   )argv.get());
-        case entry::kSetting: return entryInstall((SettingArgv*)argv.get());
+        case kExec:    return entryInstall((ExecArgv*   )argv.get());
+        case kSetting: return entryInstall((SettingArgv*)argv.get());
         default: 
             LOG(ERROR) << "Install: Not support type: " << argv->type();
             return ERROR_EntryTypeNotSupported;

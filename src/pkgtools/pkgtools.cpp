@@ -224,7 +224,7 @@ int package(std::string const& sptfile)
     /// if file open check failed, then return failed.
     for (size_t i = 0; i < arglist.size(); ++i) {
         switch (arglist[i]->type()) {
-        case entry::kSetting:
+        case kSetting:
             {
                 argv::SettingArgv *sargv = (argv::SettingArgv*)arglist[i].get();
                 if (sargv->pkgtFlags()) {
@@ -234,7 +234,7 @@ int package(std::string const& sptfile)
                 }
             }
             break;
-        case entry::kFile:
+        case kFile:
             {
                 argv::FileArgv *fargv = (argv::FileArgv*)arglist[i].get();
                 if ((ret = fargv->pkgPreCheck()) != ERROR_Success)
@@ -253,7 +253,7 @@ int package(std::string const& sptfile)
     std::string opt_file = pkg::kdefaultoutput;
     argv::AutoArgvList::iterator it;
     for (it = arglist.begin(); it != arglist.end(); ) {
-        if ((*it)->type() == entry::kFile) {
+        if ((*it)->type() == kFile) {
             argv::FileArgv *fargv = (argv::FileArgv*)(*it).get();
             if (fargv->get().get() == NULL)
                 it = arglist.erase(it);
@@ -263,7 +263,7 @@ int package(std::string const& sptfile)
         }
 
         /// extract output file name.
-        if ((*it)->type() == entry::kOut) {
+        if ((*it)->type() == kOut) {
             argv::OutArgv *oargv = (argv::OutArgv*)(*it).get();
             opt_file = oargv->dst();
             it = arglist.erase(it);

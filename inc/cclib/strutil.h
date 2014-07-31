@@ -140,17 +140,17 @@ inline size_t split(
 ///        map["key1"] = "value1", map["key2"] = "value2".
 /// usage: 
 ///      1. std::map<std::string, std::string> out;
-///         size_t sz = split("-A=127.0.01 -p=6666 -N=test", " ", "=", &out);
+///         size_t sz = split("-A=127.0.0.1 -p=6666 -N=test", " ", "=", &out);
 ///         result: sz = out.size(); sz = 3;
 ///                 out:[0] = <"-A", "127.0.0.1">, [1] = <"-p", "6666">
 ///                     [2] = <"-N", "test">;
 ///      2. std::map<std::string, std::string> out;
-///         size_t sz = split("-A=127.0.01 -p=6666 -N=test", " ", "=", &out, true);
+///         size_t sz = split("-A=127.0.0.1 -p=6666 -N=test", " ", "=", &out, true);
 ///         result: sz = out.size(); sz = 3;
 ///                 out:[0] = <"-a", "127.0.0.1">, [1] = <"-p", "6666">
 ///                     [2] = <"-n", "test">;
 ///      3. std::map<std::string, std::string> out;
-///         size_t sz = split("-A=127.0.01 -p=6666 -N=test NoSatisfiedRule", " ", "=", &out, true);
+///         size_t sz = split("-A=127.0.0.1 -p=6666 -N=test NoSatisfiedRule", " ", "=", &out, true);
 ///         result: sz = out.size(); sz ISN'T 4 BUT 0, sz = 0.
 ///                 ??? out:[0] = <"-a", "127.0.0.1">, [1] = <"-p", "6666">
 ///                         [2] = <"-n", "test">;      [3] = ???HOW TO RESOLVE.
@@ -319,7 +319,11 @@ inline bool end_with(
     return tmpstr.rfind(tmpwith) == (tmpstr.length() - tmpwith.length());
 }
 
-inline int replace(std::string& str, std::string const& from, std::string const& to)
+//!
+/// brief: replace 'from' to 'to'
+inline int replace(
+    std::string& str, 
+    std::string const& from, std::string const& to)
 {
     int times = 0;
     size_t index = 0;

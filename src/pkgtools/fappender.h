@@ -1,13 +1,13 @@
 //!
 /// brief: fappender.h define pkg data(files) appender
 /// principle: 
-///         multi-fopener as all files holder is as input.
+///         multi-fholder as all files holder is as input.
 ///         one-fwrapper is as output.
-///         copy fopener content to fwrapper while you can
+///         copy fholder content to fwrapper while you can
 ///         use compress algo or not.
 ///
 /// detail:
-///         fopener1   fopener2   fopener3 ...
+///         fholder1   fholder2   fholder3 ...
 ///             \          |          /
 ///              \         |         /
 ///               \        |        /
@@ -20,7 +20,7 @@
 #include <vector>
 #include <cclib/types.h>
 #include <cclib/smartptr_def.h>
-#include "fopener.h"
+#include "fholder.h"
 #include "pkgfile.h"
 #include "pkgdef.h"
 
@@ -37,7 +37,7 @@ struct fappender
         buf_.resize(k1mega * 10);
     }
 
-    void operator()(shared_ptr<fopener> opener)
+    void operator()(shared_ptr<fholder> opener)
     {
         uint64_t len = opener->length();
         uint64_t writed = 0;

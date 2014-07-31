@@ -6,7 +6,7 @@
 #include <cclib/strutil.h>
 #include "except.h"
 #include "error.h"
-#include "entrydef.h"
+#include "argvdef.h"
 #include "argv.h"
 
 LineParser::LineParser(std::string const& line)
@@ -29,7 +29,7 @@ argv::AutoArgv LineParser::doParse()
     
     std::string type = line_.substr(0, pos);
     int entrytype = entry::type(type);
-    if (entrytype == entry::kUnknown) {
+    if (entrytype == kUnknown) {
         std::string what = "entry type: ";
         what += type;
         what += " can't supported!";
@@ -39,19 +39,19 @@ argv::AutoArgv LineParser::doParse()
     argv::AutoArgv argvbase;
 
     switch (entrytype) {
-    case entry::kOut:
+    case kOut:
         argvbase.reset(new argv::OutArgv(line_.substr(pos + 1)));
         break;
-    case entry::kFile:
+    case kFile:
         argvbase.reset(new argv::FileArgv(line_.substr(pos + 1)));
         break;
     case entry::kDir:
         argvbase.reset(new argv::DirArgv(line_.substr(pos + 1)));
         break;
-    case entry::kExec:
+    case kExec:
         argvbase.reset(new argv::ExecArgv(line_.substr(pos + 1)));
         break;
-    case entry::kSetting:
+    case kSetting:
         argvbase.reset(new argv::SettingArgv(line_.substr(pos + 1)));
     } 
     return argvbase;

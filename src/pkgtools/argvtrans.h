@@ -216,22 +216,22 @@ struct transfer
     {
         std::string str = "";
         switch (argv->type()) {
-        case entry::kFile:
+        case kAddf:
             str = fileDst(argv);
             break;
         case entry::kDir:
             str = dirDst(argv);
             break;
-        case entry::kExec:
+        case kExec:
             str = execCmd(argv);
             break;
-        case entry::kSetting:
+        case kSetting:
             str = setFlags(argv);
             break;
-        case entry::kOut:
+        case kOut:
             // null.
             break;
-        case entry::kUnknown:
+        case kUnknown:
             // throw exception/
             break;
         }
@@ -264,7 +264,7 @@ private:
 
     std::string fileDst(AutoArgv argv)
     {
-        FileArgv *fargv = (FileArgv *)argv.get();
+        AddfArgv *fargv = (AddfArgv *)argv.get();
         miniPath minipath(fargv->dst());
         return minipath.pkgargv;
     }

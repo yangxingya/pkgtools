@@ -13,16 +13,15 @@
 #include <glog/logging.h>
 #include "error.h"
 #include "except.h"
-#include "entrydef.h"
+#include "argvdef.h"
 #include "pkgdef.h"
-#include "fopener.h"
 #include "setting.h"
 
 namespace argv {
 
 using namespace cclib;
 using namespace pkg;
-using ::file::fopener;
+using ::file::fholder;
 
 //!
 /// detail:
@@ -91,11 +90,13 @@ inline uint8_t toUnin(uint8_t entryflags) { return (entryflags >> kflagsuninshif
 inline int toType(uint16_t entrytype) 
 {
     switch (entrytype) {
-        case kentryfile:    return entry::kFile;
-        case kentrydir:     return entry::kDir;
-        case kentryexec:    return entry::kExec;
-        case kentrysetting: return entry::kSetting;
-        default: return entry::kUnknown;
+    case kentryaddf:    return kAddf;
+    case kentrydelf:    return kDelf;
+    case kentrymkdir:   return kMkdir;
+    case kentryrmdir:   return kRmdir;
+    case kentryexec:    return kExec;
+    case kentrysetting: return kSetting;
+    default: return kUnknown;
     }
 }
 
@@ -115,7 +116,7 @@ struct ArgvBase {
 public:
     //!
     /// brief: get base args by argv likely [-p/i/u n/t b/i] form, and transfort to base flags.
-    ArgvBase(std::string const& argv, int type = entry::kUnknown)
+    ArgvBase(std::string const& argv, int type = kUnknown)
         : p_flags_(0), i_flags_(0), u_flags_(0)
         , has_pkgt_(false), has_inst_(false), has_unin_(false)
         , type_(type)
@@ -242,7 +243,7 @@ const char kspacech = ' ';
 struct OutArgv : public ArgvBase
 {
     OutArgv(std::string const& argv)
-        : ArgvBase(argv, entry::kOut)
+        : ArgvBase(argv, kOut)
     {
         parse();
     }
@@ -272,59 +273,35 @@ private:
 };
 
 //!
-/// file:[-d dest] [-s src] [-p/i/u [n/t [b/i]]] 
-struct FileArgv : public ArgvBase
+/// addf:[-d dst][-s src][-i/u [n/t [b/i]]] 
+struct AddfArgv : public ArgvBase
 {
-public:
-    FileArgv(std::string const& argv)
-        : ArgvBase(argv, entry::kFile)
-        , deleted_(true)
+    AddfArgv(std::string const& argv)
+        : ArgvBase(argv, kAddf), src_valid_(false)
     {
-        if (!hasPkgt() || !hasInst()) {
-            std::string error = "Parse Args no 'pkg args' or 'inst args'";
+        if (!hasInst() && !hasUnin()) {
+            std::string error = "Parse Args no 'inst args' or 'unin args'";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptFormatError, error); 
         }
         parse();
     }
-
-    FileArgv(entry_t const& entry, std::string const& dst, uint64_t offset)
-        : ArgvBase(entry)
-        , dst_(dst)
-        , deleted_(!!entry.args)
-        , offset_(offset)
+    AddfArgv(entry_t const& entry, std::string const& dst, uint64_t offset)
+       : ArgvBase(entry)
+       , dst_(dst)
+       , offset_(offset)
     {}
-
     std::string dst() const { return dst_; }
     std::string src() const { return src_; }
-    bool deleted() const { return deleted_;}
+    bool srcvalid() const { return src_valid_; }
+    void srcvalid(bool v) { src_valid_ = v; }
     uint64_t offset() const { return offset_; }
-    ///TODO:: add fopener for check file if can open.
-    ///
-    int pkgPreCheck() 
-    {
-        if (opener_.get() == NULL) {
-            bool effort = ((pkgtFlags() & kerrtmask) == kerrtry);
-            bool ignore = ((pkgtFlags() & kerrtmask) == kerrignore);
-            try {
-                opener_.reset(new fopener(src_, effort));
-            } catch (except_base &ex) {
-                opener_.reset();
-                if (!ignore) {
-                    LOG(ERROR) << "Open file failed! file:\"" << src_ << "\", not ignore error";
-                    return ex.error();
-                }
-            }
-        }
-        return ERROR_Success;
-    }
-    shared_ptr<fopener> get() const { return opener_; }
 private:
     std::string dst_;
     std::string src_;
-    bool deleted_;
+    bool src_valid_;
     uint64_t offset_;
-    shared_ptr<fopener> opener_;
+
     void parse()
     {
         bool has_dst = false;
@@ -345,37 +322,78 @@ private:
                     continue;
                 }
             }
-            std::string tmplower = cclib::to_lower(left_argv_[i]);
-            if (tmplower == kfilenodelstr) {
-                deleted_ = false;
-                continue;
-            }
         }
-        if (!has_dst || !has_src) {
-            std::string error = "Parse File Args [-d path] [-s path] failed!";
+        if (!has_dst && !has_src) {
+            std::string error = "Parse Addf Args [-d path] [-s path] failed!";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptFilePathFormatError, error);
         }
-        DLOG(INFO) << "File Argv: dst: \"" << dst_ << "\", src: \"" << src_ << "\"";
+        DLOG(INFO) << "Addf Argv: dst: \"" << dst_ << "\", src: \"" << src_ << "\"";
+            
     }
 };
 
 //!
-/// dir:[-d path] [-p/i/u [n/t [b/i]]]
-struct DirArgv : public ArgvBase
+/// delf:[-d dst][-i/u [n/t [b/i]]] 
+struct DelfArgv : public ArgvBase
 {
-public:
-    DirArgv(std::string const& argv)
-        : ArgvBase(argv, entry::kDir)
+    DelfArgv(std::string const& argv)
+        : ArgvBase(argv, kDelf)
     {
-        if (!hasPkgt() || !hasInst()) {
-            std::string error = "Parse Args no 'pkg args' or 'inst args'";
+        if (!hasInst() && !hasUnin()) {
+            std::string error = "Parse Args no 'inst args' or 'unin args'";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptFormatError, error); 
         }
         parse();
     }
-    DirArgv(entry_t const& entry, std::string const& dst)
+    DelfArgv(entry_t const& entry, std::string const& dst)
+       : ArgvBase(entry)
+       , dst_(dst)
+    {}
+    std::string dst() const { return dst_; }
+private:
+    std::string dst_;
+
+    void parse()
+    {
+        bool has_dst = false;
+
+        for (size_t i = 0; i < left_argv_.size(); ++i) {
+            if (cclib::start_with(left_argv_[i], kfiledststr)) {
+                if (left_argv_[i][2] == kspacech) {
+                    has_dst = true;
+                    dst_ = left_argv_[i].substr(3);
+                    break;
+                }
+            }
+        }
+        if (!has_dst) {
+            std::string error = "Parse Delf Args [-d path] failed!";
+            LOG(ERROR) << error;
+            throw script_error(ERROR_ScriptFilePathFormatError, error);
+        }
+        DLOG(INFO) << "Delf Argv: dst: \"" << dst_ << "\"";       
+    }
+};
+
+
+//!
+/// mkdir:[-d path] [-i/u [n/t [b/i]]]
+struct MkdirArgv : public ArgvBase
+{
+public:
+    MkdirArgv(std::string const& argv)
+        : ArgvBase(argv, kMkdir)
+    {
+        if (!hasInst() || !hasUnin()) {
+            std::string error = "Parse Args no 'inst args' or 'unin args'";
+            LOG(ERROR) << error;
+            throw script_error(ERROR_ScriptFormatError, error); 
+        }
+        parse();
+    }
+    MkdirArgv(entry_t const& entry, std::string const& dst)
         : ArgvBase(entry)
         , dst_(dst)
     { }
@@ -396,11 +414,55 @@ private:
             }
         }
         if (!has_dst) {
-            std::string error = "Parse Dir Args [-d path] failed!";
+            std::string error = "Parse Mkdir Args [-d path] failed!";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptDirPathFormatError, error);
         }
-        DLOG(INFO) << "Dir Argv: dst: \"" << dst_ << "\"";
+        DLOG(INFO) << "Mkdir Argv: dst: \"" << dst_ << "\"";
+    }
+};
+
+//!
+/// rmdir:[-d path] [-i/u [n/t [b/i]]]
+struct RmdirArgv : public ArgvBase
+{
+public:
+    RmdirArgv(std::string const& argv)
+        : ArgvBase(argv, kRmdir)
+    {
+        if (!hasInst() || !hasUnin()) {
+            std::string error = "Parse Args no 'inst args' or 'unin args'";
+            LOG(ERROR) << error;
+            throw script_error(ERROR_ScriptFormatError, error); 
+        }
+        parse();
+    }
+    RmdirArgv(entry_t const& entry, std::string const& dst)
+        : ArgvBase(entry)
+        , dst_(dst)
+    { }
+    std::string dst() const { return dst_; }
+private:
+    std::string dst_;
+    void parse()
+    {
+        bool has_dst = false;
+
+        for (size_t i = 0; i < left_argv_.size(); ++i) {
+            if (cclib::start_with(left_argv_[i], kfiledststr)) {
+                if (left_argv_[i][2] == kspacech) {
+                    has_dst = true;
+                    dst_ = left_argv_[i].substr(3);
+                    break;
+                }
+            }
+        }
+        if (!has_dst) {
+            std::string error = "Parse Rmdir Args [-d path] failed!";
+            LOG(ERROR) << error;
+            throw script_error(ERROR_ScriptDirPathFormatError, error);
+        }
+        DLOG(INFO) << "Rmdir Argv: dst: \"" << dst_ << "\"";
     }
 };
 
@@ -413,7 +475,7 @@ struct ExecArgv : public ArgvBase
 {
 public:
     ExecArgv(std::string const& argv)
-        : ArgvBase(argv, entry::kExec)
+        : ArgvBase(argv, kExec)
     {
         if (!hasInst() && !hasUnin()) {
             std::string error = "Parse Args no 'inst args' or 'unin args'";
@@ -481,7 +543,7 @@ const std::string ksettingstr = "-s";
 struct SettingArgv : public ArgvBase
 {
     SettingArgv(std::string const& argv)
-        : ArgvBase(argv, entry::kSetting)
+        : ArgvBase(argv, kSetting)
     {
         parse();
         /// check argv supported ???
@@ -526,54 +588,73 @@ private:
     }
 };
 
-
 namespace helper {
 
-inline entry_t transfer(argv::FileArgv *fargv)
+inline entry_t transfer(argv::AddfArgv *argv)
 {
     entry_t entry = {0};
 
-    entry.type = kentryfile;
-    entry.flags = fargv->instFlags() | (fargv->uninFlags() << kflagsuninshift);
-    entry.args = fargv->deleted();
+    entry.type = kentryaddf;
+    entry.flags = argv->instFlags() | (argv->uninFlags() << kflagsuninshift);
 
     return entry;
 }
 
-inline entry_t transfer(argv::DirArgv *dargv)
+inline entry_t transfer(argv::DelfArgv *argv)
 {
     entry_t entry = {0};
 
-    entry.type = kentrydir;
-    entry.flags = dargv->instFlags() | (dargv->uninFlags() << kflagsuninshift);
+    entry.type = kentrydelf;
+    entry.flags = argv->instFlags() | (argv->uninFlags() << kflagsuninshift);
+
+    return entry;
+}
+
+inline entry_t transfer(argv::MkdirArgv *argv)
+{
+    entry_t entry = {0};
+
+    entry.type = kentrymkdir;
+    entry.flags = argv->instFlags() | (argv->uninFlags() << kflagsuninshift);
     entry.dtaindex = kinvalid; 
 
     return entry;
 }
 
-inline entry_t transfer(argv::ExecArgv *eargv)
+inline entry_t transfer(argv::MkdirArgv *argv)
+{
+    entry_t entry = {0};
+
+    entry.type = kentrymkdir;
+    entry.flags = argv->instFlags() | (argv->uninFlags() << kflagsuninshift);
+    entry.dtaindex = kinvalid; 
+
+    return entry;
+}
+
+inline entry_t transfer(argv::ExecArgv *argv)
 {
     entry_t entry = {0};
 
     entry.type = kentryexec;
     entry.flags = 
-        eargv->instFlags() | 
-        (eargv->uninFlags() << kflagsuninshift) | 
-        (eargv->ckFlags() << kflagsckshift);
-    entry.args = eargv->ckFlags() ? eargv->ckReturn() : 0;
+        argv->instFlags() | 
+        (argv->uninFlags() << kflagsuninshift) | 
+        (argv->ckFlags() << kflagsckshift);
+    entry.args = argv->ckFlags() ? argv->ckReturn() : 0;
     entry.dtaindex = kinvalid; 
 
     return entry;
 }
 
-inline entry_t transfer(argv::SettingArgv *sargv)
+inline entry_t transfer(argv::SettingArgv *argv)
 {
     entry_t entry = {0};
 
     entry.type = kentrysetting;
     entry.flags = 
-        sargv->instFlags() | 
-        (sargv->uninFlags() << kflagsuninshift);
+        argv->instFlags() | 
+        (argv->uninFlags() << kflagsuninshift);
     entry.dtaindex = kinvalid; 
 
     return entry;
@@ -585,16 +666,13 @@ inline entry_t extract(argv::AutoArgv const& argv)
     entry.type = kentryunknown;
 
     switch (argv->type()) {
-    case entry::kFile:
-        return transfer((argv::FileArgv*)(argv.get()));
-    case entry::kDir:
-        return transfer((argv::DirArgv*)(argv.get()));
-    case entry::kExec:
-        return transfer((argv::ExecArgv*)(argv.get()));
-    case entry::kSetting:
-        return transfer((argv::SettingArgv*)(argv.get()));
-    default:
-        return entry;
+    case kAddf:  return transfer((argv::AddfArgv*)(argv.get()));
+    case kDelf:  return transfer((argv::DelfArgv*)(argv.get()));
+    case kMkdir: return transfer((argv::MkdirArgv*)(argv.get()));
+    case kRmdir: return transfer((argv::RmdirArgv*)(argv.get()));
+    case kExec:  return transfer((argv::ExecArgv*)(argv.get()));
+    case kSetting: return transfer((argv::SettingArgv*)(argv.get()));
+    default: return entry;
     }
 }
 
