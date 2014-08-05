@@ -28,12 +28,13 @@ struct counter
             return it->second;
 
         /// not find, then add to map and add to array.
-        names_[tmp_elem] = curr_index_;
+        elems_[tmp_elem] = curr_index_;
         indexs_.push_back(tmp_elem);
         
-        retrun curr_index_++;   
+        return curr_index_++;   
     }
-    std::vector<std::string>& map() const { return indexs_; }
+    std::vector<std::string>& map() { return indexs_; }
+    size_t cnt() const { return indexs_.size(); }
 private:
     /// for quick find string key.
     std::map<std::string, uint64_t> elems_;
@@ -51,6 +52,7 @@ struct fcounter
 {
     uint64_t index(std::string const& path) { return counter_.index(path, false); }
     std::vector<std::string>& map() { return counter_.map(); }
+    size_t cnt() const { return counter_.cnt(); }
 private:
     ::counter counter_;
 };
@@ -65,6 +67,7 @@ struct acounter
 {
     uint64_t index(std::string const& argv) { return counter_.index(argv); }
     std::vector<std::string>& map() { return counter_.map(); }
+    size_t cnt() const { return counter_.cnt(); }
 private:
     ::counter counter_;
 };

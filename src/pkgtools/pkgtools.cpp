@@ -19,19 +19,19 @@
 #include <glog/logging.h>
 #include <cclib/singleton.h>
 #include <cclib/win32/pathutil.h>
-#include "error.h"
 #include "script.h"
 #include "argvtrans.h"
 #include "installer.h"
 #include "uninstaller.h"
-#include "maker.h"
+#include "packer.h"
 #include "extractor.h"
 
+using namespace err;
 
 void initializelog(const char *argv0);
 void usage();
-int install(std::string const& pkgfile, bool witharg = false, std::string const& arglist = "");
-int uninstall(std::string const& pkgfile);
+int install(std::string const& pkgfile, std::string const& arglist = "");
+int uninstall(std::string const& pkgfile, std::string const& arglist = "");
 int package(std::string const& sptfile);
 int extract(std::string const& pkgfile, std::string const& outdir);
 int formaterror(std::string const& errcode);
@@ -58,12 +58,16 @@ int main(int argc, char *argv[])
     if (std::string(argv[1]) == "-i") {
         /// install with args.
         if (argc == 4)
-            return install(argv[2], true, argv[3]);
+            return install(argv[2], argv[3]);
         return install(argv[2]);
     }
 
-    if (std::string(argv[1]) == "-u")
+    if (std::string(argv[1]) == "-u") {
+        /// install with args.
+        if (argc == 4)
+            return install(argv[2], argv[3]);
         return uninstall(argv[2]);
+    }
 
     if (std::string(argv[1]) == "-p")
         return package(argv[2]);
@@ -134,11 +138,11 @@ void usage()
     std::string spacepfx(2, ' ');
     size_t spacesz = 8;
     std::cout
-        << "pkgtools [-i | -u | -p | -e | -x] [file | error] [install arglist] [outpath] \n\n"
+        << "pkgtools [-i | -u | -p | -e | -x] [file | error] [install | uninstall arglist] [outpath] \n\n"
         << spacepfx + alignfill("-i", spacesz)
         << "install package from file:<installed-package>. and you can install with args \"arglist\" format.\n"
         << spacepfx + alignfill("-u", spacesz)
-        << "uninstall package from file:<installed-package>.\n"
+        << "uninstall package from file:<installed-package>. and you can uninstall with args \"arglist\" format.\n"
         << spacepfx + alignfill("-p", spacesz)
         << "make install-package by file:<package-script>.\n" 
         << spacepfx + alignfill("-e", spacesz)
@@ -156,7 +160,7 @@ void usage()
 
 //!
 /// brief: install a pragram by pkgfile.
-int install(std::string const& pkgfile, bool witharg, std::string const& arglist)
+int install(std::string const& pkgfile, std::string const& arglist)
 {
     LOG(INFO) << "Install Start, package name: " << pkgfile;
     
@@ -164,7 +168,7 @@ int install(std::string const& pkgfile, bool witharg, std::string const& arglist
 
     shared_ptr<pkg::Installer> installer;
     try {
-        installer.reset(new pkg::Installer(pkgfile, witharg, arglist));
+        installer.reset(new pkg::Installer(pkgfile, arglist));
         ret = installer->install();
     } catch (except_base &ex) {
         return ex.error();
@@ -179,7 +183,7 @@ int install(std::string const& pkgfile, bool witharg, std::string const& arglist
 /// notice: UNINSTALL BY pkgfile, SO YOU MUST WRITE
 ///         UNINSTALL INFO AT pkgfile, and script MUST
 ///         INCLUDE unstall section.
-int uninstall(std::string const& pkgfile)
+int uninstall(std::string const& pkgfile, std::string const& arglist)
 {
     LOG(INFO) << "Uninstall Start, package name: " << pkgfile;
 
@@ -187,7 +191,7 @@ int uninstall(std::string const& pkgfile)
 
     shared_ptr<pkg::Uninstaller> uninstaller;
     try {
-        uninstaller.reset(new pkg::Uninstaller(pkgfile));
+        uninstaller.reset(new pkg::Uninstaller(pkgfile, arglist));
         ret = uninstaller->uninstall();
     } catch (except_base &ex) {
         return ex.error();
@@ -205,80 +209,18 @@ int package(std::string const& sptfile)
     LOG(INFO) << "Package Start, script name: " << sptfile;
 
     int ret;
-
     Script script(sptfile);
-    ret = script.Parse();
-    if (ret != ERROR_Success)
+    if ((ret = script.Parse()) != ERROR_Success)
         return ret;
 
     argv::AutoArgvList arglist = script.ArgList();
-    ///TODO:: find arglist if disable wow64 fs redirection???
-    /// 1. find 
-    /// 2. disable.
-
-    /// disable wow64 fs redirection.
-    /// cclib::win32::Wow64FileSystem wow64fs;
-    /// cclib::win32::disabler<cclib::win32::Wow64FileSystem> disable(wow64fs);
-
-    /// file open checker.
-    /// if file open check failed, then return failed.
-    for (size_t i = 0; i < arglist.size(); ++i) {
-        switch (arglist[i]->type()) {
-        case kSetting:
-            {
-                argv::SettingArgv *sargv = (argv::SettingArgv*)arglist[i].get();
-                if (sargv->pkgtFlags()) {
-                    pkg::Setting setting(sargv->flags());
-                    if ((ret = setting.doSet()) != ERROR_Success)
-                        return ret;
-                }
-            }
-            break;
-        case kFile:
-            {
-                argv::FileArgv *fargv = (argv::FileArgv*)arglist[i].get();
-                if ((ret = fargv->pkgPreCheck()) != ERROR_Success)
-                    return ret;
-            }
-            break;
-        default:
-            break;
-        }
-    }
-
-    /// package pre check and remove invalid argv.
-    /// main arg is file arg, because file arg package
-    /// will be package to output file, if you can't 
-    /// open source file, how to copy to package???
-    std::string opt_file = pkg::kdefaultoutput;
-    argv::AutoArgvList::iterator it;
-    for (it = arglist.begin(); it != arglist.end(); ) {
-        if ((*it)->type() == kFile) {
-            argv::FileArgv *fargv = (argv::FileArgv*)(*it).get();
-            if (fargv->get().get() == NULL)
-                it = arglist.erase(it);
-            else
-                it++;
-            continue;
-        }
-
-        /// extract output file name.
-        if ((*it)->type() == kOut) {
-            argv::OutArgv *oargv = (argv::OutArgv*)(*it).get();
-            opt_file = oargv->dst();
-            it = arglist.erase(it);
-            continue;
-        }
-        it++;
-    }
-
-    ///
-    /// transfer to pkg maker inner deal.
-    /// package.
-    pkg::Maker maker(arglist, opt_file);
-    if ((ret = maker.make()) != ERROR_Success) {
-        LOG(ERROR) << "make pkg failure!";
-        return ret;
+    
+    shared_ptr<pkg::packer> packer;
+    try {
+        packer.reset(new pkg::packer(arglist));
+        ret = packer->pack();
+    } catch (except_base &ex) {
+        ret = ex.error();
     }
 
     LOG(INFO) << "Package Over!";

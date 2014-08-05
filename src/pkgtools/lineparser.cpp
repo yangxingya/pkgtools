@@ -5,9 +5,10 @@
 #include <glog/logging.h>
 #include <cclib/strutil.h>
 #include "except.h"
-#include "error.h"
 #include "argvdef.h"
 #include "argv.h"
+
+using namespace err;
 
 LineParser::LineParser(std::string const& line)
     : line_(line)
@@ -28,8 +29,8 @@ argv::AutoArgv LineParser::doParse()
         throw pkg_error(ERROR_ScriptLineNoEntrySplitChar, "no entry split char(:) at script line");
     
     std::string type = line_.substr(0, pos);
-    int entrytype = entry::type(type);
-    if (entrytype == kUnknown) {
+    int entrytype = argv::type(type);
+    if (entrytype == argv::kUnknown) {
         std::string what = "entry type: ";
         what += type;
         what += " can't supported!";
@@ -39,19 +40,25 @@ argv::AutoArgv LineParser::doParse()
     argv::AutoArgv argvbase;
 
     switch (entrytype) {
-    case kOut:
+    case argv::kOut:
         argvbase.reset(new argv::OutArgv(line_.substr(pos + 1)));
         break;
-    case kFile:
-        argvbase.reset(new argv::FileArgv(line_.substr(pos + 1)));
+    case argv::kAddf:
+        argvbase.reset(new argv::AddfArgv(line_.substr(pos + 1)));
         break;
-    case entry::kDir:
-        argvbase.reset(new argv::DirArgv(line_.substr(pos + 1)));
+    case argv::kDelf:
+        argvbase.reset(new argv::DelfArgv(line_.substr(pos + 1)));
         break;
-    case kExec:
+    case argv::kMkdir:
+        argvbase.reset(new argv::MkdirArgv(line_.substr(pos + 1)));
+        break;
+    case argv::kRmdir:
+        argvbase.reset(new argv::RmdirArgv(line_.substr(pos + 1)));
+        break;
+    case argv::kExec:
         argvbase.reset(new argv::ExecArgv(line_.substr(pos + 1)));
         break;
-    case kSetting:
+    case argv::kSetting:
         argvbase.reset(new argv::SettingArgv(line_.substr(pos + 1)));
     } 
     return argvbase;

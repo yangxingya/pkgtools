@@ -1,0 +1,15 @@
+Log file created at: 2014/08/01 20:52:31
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0801 20:52:31.084806  5200 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat"
+I0801 20:52:31.087806  5200 pkgtools.cpp:161] Install Start, package name: test.dat
+I0801 20:52:31.087806  5200 pkgfile.h:78] Open Package File: test.dat successfule!
+I0801 20:52:31.088806  5200 unpacker.h:141] Extract args 0: dfsrd
+I0801 20:52:31.088806  5200 unpacker.h:141] Extract args 1: $36\mytmp\
+I0801 20:52:31.088806  5200 unpacker.h:141] Extract args 2: $36\mytmp\d3d9.dll
+I0801 20:52:31.135808  5200 installer.h:29] Install args: ""
+I0801 20:52:54.550148  5200 argvtrans.h:398] restorer, custom path: C:\Windows
+I0801 20:52:54.550148  5200 argvtrans.h:399] restorer, custom replace path: C:\Windowsmytmp\
+I0801 20:52:54.550148  5200 argvtrans.h:398] restorer, custom path: C:\Windows
+I0801 20:52:54.550148  5200 argvtrans.h:399] restorer, custom replace path: C:\Windowsmytmp\d3d9.dll
+I0801 20:53:12.596180  5200 setting.h:97] Setting: disable filesystem redirection

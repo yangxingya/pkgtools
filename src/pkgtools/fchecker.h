@@ -12,12 +12,12 @@
 #include <cclib/win32/pathutil.h>
 #include <cclib/win32/right.h>
 #include <cclib/smartptr_def.h>
-#include "error.h"
 #include "except.h"
 
 namespace file {
 
 using namespace cclib;
+using namespace err;
 
 #pragma warning(push)
 #pragma warning(disable: 4996)  /// disable fopen warning.
@@ -87,7 +87,7 @@ struct fholder
         }
 
         /// 3. vss copy.
-
+        
 
     }
 
@@ -186,7 +186,7 @@ struct fchecker
         return opener;
     }
     
-    std::map<std::string, shared_ptr<fholder>>& map() const { return name_to_holder_; }
+    std::map<std::string, shared_ptr<fholder>>& map() { return name_to_holder_; }
 
 private:
     std::map<std::string, shared_ptr<fholder>> name_to_holder_;

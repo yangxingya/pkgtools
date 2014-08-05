@@ -1,0 +1,15 @@
+Log file created at: 2014/08/01 17:19:11
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0801 17:19:11.553964  6116 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -u creator.dat"
+I0801 17:19:11.556964  6116 pkgtools.cpp:184] Uninstall Start, package name: creator.dat
+I0801 17:19:11.556964  6116 pkgfile.h:78] Open Package File: creator.dat successfule!
+I0801 17:19:11.556964  6116 unpacker.h:136] Extract args 0: dfsrd
+I0801 17:19:11.557965  6116 unpacker.h:136] Extract args 1: c:\pkg-install
+I0801 17:19:11.557965  6116 unpacker.h:136] Extract args 2: c:\pkg-install\d3d9.dll
+I0801 17:19:11.612968  6116 setting.h:97] Setting: disable filesystem redirection
+I0801 17:19:11.612968  6116 uninstaller.h:132] Uninstall: mkdir: "c:\pkg-install" no need uninstall
+I0801 17:19:11.612968  6116 uninstaller.h:66] Uninstall: addf: "c:\pkg-install\d3d9.dll" no need uninstall
+W0801 17:19:11.612968  6116 uninstaller.h:120] Uninstall: delf: "c:\pkg-install\d3d9.dll" remove failed, ignore error, continue...
+W0801 17:19:11.613968  6116 uninstaller.h:178] Uninstall: rmdir: "c:\pkg-install" remove failed, ignore error, continue...
+I0801 17:19:11.613968  6116 pkgtools.cpp:196] Uninstall Over!

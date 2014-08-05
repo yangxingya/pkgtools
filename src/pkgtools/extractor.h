@@ -9,12 +9,9 @@
 #include <cclib/types.h>
 #include <cclib/win32/pathutil.h>
 #include <glog/logging.h>
-#include "pkgfile.h"
-#include "pkgdef.h"
 #include "unpacker.h"
-#include "argvtrans.h"
-#include "argvdef.h"
-#include "argv.h"
+#include "runner.h"
+
 
 namespace pkg {
 
@@ -37,28 +34,10 @@ struct Extractor
         entry::restorer restor(args, arglist, true, todir_);
         std::for_each(entrys.begin(), entrys.end(), restor);
     
-        for (size_t i = 0L; i < arglist.size(); ++i) {
-            switch (arglist[i]->type()) {
-            case kFile:
-                {
-                    FileArgv *fargv = (FileArgv*)arglist[i].get();
-                    unpacker_.tofile(fargv->dst(), fargv->offset());
-                    break;
-                }
-            case entry::kDir:
-                {
-                    DirArgv *dargv = (DirArgv*)arglist[i].get();
-                    win32::mkdirtree(dargv->dst());
-                    break;
-                }
-            case kExec:
-                {
-                    ExecArgv *eargv = (ExecArgv*)arglist[i].get();
-                    LOG(INFO) << "Extractor, exec entry: \"" << eargv->cmd() << "\" not exec";
-                    break;
-                }
-            }
-        }
+        std::map<std::string, std::string> arg_map;
+        runner runner(unpacker_, OP_Extract, arg_map);
+        std::for_each(arglist.begin(), arglist.end(), runner);
+
         return ERROR_Success;
     }
 

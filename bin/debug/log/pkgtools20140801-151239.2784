@@ -1,0 +1,47 @@
+Log file created at: 2014/08/01 15:12:39
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0801 15:12:39.740255  3180 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -p pkg.script"
+I0801 15:12:39.741255  3180 pkgtools.cpp:205] Package Start, script name: pkg.script
+I0801 15:12:39.741255  3180 script.cpp:16] Script: pkg.script, will be parsed!
+I0801 15:12:39.742255  3180 script.cpp:26] Parse Script Begin: ------>
+I0801 15:12:39.742255  3180 script.cpp:28] 1: setting:[-p][-i][-u][-s dfsrd]
+I0801 15:12:39.742255  3180 lineparser.cpp:15] Line Parser line: setting:[-p][-i][-u][-s dfsrd]
+I0801 15:12:39.742255  3180 argv.h:225] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.742255  3180 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.742255  3180 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.742255  3180 script.cpp:28] 2: 
+I0801 15:12:39.742255  3180 script.cpp:28] 3: mkdir:[-d c:\pkg-install\][-i]
+I0801 15:12:39.742255  3180 lineparser.cpp:15] Line Parser line: mkdir:[-d c:\pkg-install\][-i]
+I0801 15:12:39.743257  3180 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.743257  3180 argv.h:434] Mkdir Argv: dst: "c:\pkg-install\"
+I0801 15:12:39.743257  3180 script.cpp:28] 4: addf:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3d9.dll][-p][-i]
+I0801 15:12:39.743257  3180 lineparser.cpp:15] Line Parser line: addf:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3d9.dll][-p][-i]
+I0801 15:12:39.743257  3180 argv.h:225] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.743257  3180 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.743257  3180 argv.h:340] Addf Argv: dst: "c:\pkg-install\d3d9.dll", src: "c:\windows\system32\d3d9.dll"
+I0801 15:12:39.743257  3180 script.cpp:28] 5: addf:[-d c:\pkg-install\d3d9-1.dll] [-s c:\windows\system32\d3d9.dll][-p][-i]
+I0801 15:12:39.743257  3180 lineparser.cpp:15] Line Parser line: addf:[-d c:\pkg-install\d3d9-1.dll] [-s c:\windows\system32\d3d9.dll][-p][-i]
+I0801 15:12:39.744256  3180 argv.h:225] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.744256  3180 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.744256  3180 argv.h:340] Addf Argv: dst: "c:\pkg-install\d3d9-1.dll", src: "c:\windows\system32\d3d9.dll"
+I0801 15:12:39.744256  3180 script.cpp:28] 6: 
+I0801 15:12:39.744256  3180 script.cpp:28] 7: delf:[-d c:\pkg-install\d3d9.dll][-u]
+I0801 15:12:39.744256  3180 lineparser.cpp:15] Line Parser line: delf:[-d c:\pkg-install\d3d9.dll][-u]
+I0801 15:12:39.744256  3180 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.744256  3180 argv.h:387] Delf Argv: dst: "c:\pkg-install\d3d9.dll"
+I0801 15:12:39.744256  3180 script.cpp:28] 8: delf:[-d c:\pkg-install\d3d9-1.dll][-u]
+I0801 15:12:39.744256  3180 lineparser.cpp:15] Line Parser line: delf:[-d c:\pkg-install\d3d9-1.dll][-u]
+I0801 15:12:39.744256  3180 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.744256  3180 argv.h:387] Delf Argv: dst: "c:\pkg-install\d3d9-1.dll"
+I0801 15:12:39.744256  3180 script.cpp:28] 9: rmdir:[-d c:\pkg-install\][-u]
+I0801 15:12:39.744256  3180 lineparser.cpp:15] Line Parser line: rmdir:[-d c:\pkg-install\][-u]
+I0801 15:12:39.745256  3180 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:12:39.745256  3180 argv.h:480] Rmdir Argv: dst: "c:\pkg-install\"
+I0801 15:12:39.745256  3180 script.cpp:28] 10: 
+I0801 15:12:39.745256  3180 script.cpp:28] 11: out:[-d .\test.dat]
+I0801 15:12:39.745256  3180 lineparser.cpp:15] Line Parser line: out:[-d .\test.dat]
+I0801 15:12:39.745256  3180 argv.h:269] Out Argv: dst: ".\test.dat"
+I0801 15:12:39.745256  3180 script.cpp:28] 12: 
+I0801 15:12:39.745256  3180 script.cpp:42] Parse Script End: <------
+I0801 15:12:39.745256  3180 script.cpp:48] Parse Script Successful, entry size: 8

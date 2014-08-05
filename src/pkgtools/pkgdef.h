@@ -176,13 +176,12 @@ inline uint64_t length(dinfomgr_t const* dinfomgr)
     return sizeof(dinfomgr) + (dinfomgr->count - 1) * sizeof(dinfo_t);
 }
 
-const uint16_t kentryfile  = 1;
-const uint16_t kentryaddf  = 2;
+const uint16_t kentryaddf  = 1;
 const uint16_t kentrydelf  = 2;
-const uint16_t kentrymkdir = 2;
-const uint16_t kentryrmdir = 2;
-const uint16_t kentryexec  = 3;
-const uint16_t kentrysetting = 4;
+const uint16_t kentrymkdir = 3;
+const uint16_t kentryrmdir = 4;
+const uint16_t kentryexec  = 5;
+const uint16_t kentrysetting = 6;
 const uint16_t kentryunknown = 0xffff;
 
 /// uninstall shift 

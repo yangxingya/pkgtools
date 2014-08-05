@@ -91,7 +91,7 @@ private:
     argv::AutoArgvList arglist_;
     std::string to_;
 
-    std::vector<std::string>  pkg_argvs_;
+    std::vector<std::string> pkg_argvs_;
     std::vector<entry_t> pkg_entrys_;
     std::vector<shared_ptr<fholder> > pkg_files_;
     uint64_t pkg_argvs_len_;
@@ -103,13 +103,6 @@ private:
         entry::transfer argvtransfer(pkg_argvs_, args_map);
         std::for_each(arglist_.begin(), arglist_.end(), argvtransfer);
 
-        /*
-        if (pkg_argvs_.size() != arglist_.size()) {
-            std::string error = "After transfer argv, the transfer size is not equal original argv list size";
-            LOG(ERROR) << error;
-            throw pkg_error(ERROR_TransferArgvError, error); 
-        }
-        */
 
         for (size_t i = 0; i < arglist_.size(); ++i)
             DLOG(INFO) << "    args: " << pkg_argvs_[i];

@@ -20,7 +20,7 @@
 #include <vector>
 #include <cclib/types.h>
 #include <cclib/smartptr_def.h>
-#include "fholder.h"
+#include "fchecker.h"
 #include "pkgfile.h"
 #include "pkgdef.h"
 
@@ -37,16 +37,16 @@ struct fappender
         buf_.resize(k1mega * 10);
     }
 
-    void operator()(shared_ptr<fholder> opener)
+    void operator()(shared_ptr<fholder> holder)
     {
-        uint64_t len = opener->length();
+        uint64_t len = holder->length();
         uint64_t writed = 0;
         uint64_t readed = 0;
         uint32_t readonce;
         
         while (readed < len) {
             
-            readonce = opener->read(&buf_[0], buf_.size());
+            readonce = holder->read(&buf_[0], buf_.size());
             readed += readonce;
             ///TODO:: compress..
             if (compress_ != pkg::kcompno) {

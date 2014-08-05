@@ -7,8 +7,8 @@
 #include <fstream>
 #include "lineparser.h"
 #include "except.h"
-#include "error.h"
 
+using namespace err;
 
 Script::Script(std::string const& script)
     : script_(script)

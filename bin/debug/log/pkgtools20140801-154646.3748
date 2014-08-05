@@ -1,0 +1,17 @@
+Log file created at: 2014/08/01 15:46:46
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0801 15:46:46.477323  2780 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i creator.dat"
+I0801 15:46:46.480322  2780 pkgtools.cpp:161] Install Start, package name: creator.dat
+I0801 15:46:46.480322  2780 pkgfile.h:78] Open Package File: creator.dat successfule!
+I0801 15:46:46.481323  2780 unpacker.h:136] Extract args 0: dfsrd
+I0801 15:46:46.481323  2780 unpacker.h:136] Extract args 1: c:\pkg-install
+I0801 15:46:46.481323  2780 unpacker.h:136] Extract args 2: c:\pkg-install\d3d9.dll
+I0801 15:46:46.526325  2780 installer.h:29] Install args: ""
+I0801 15:46:46.526325  2780 setting.h:97] Setting: disable filesystem redirection
+I0801 15:46:46.526325  2780 installer.h:148] Install: mkdir: "c:\pkg-install" create successful!
+I0801 15:46:46.526325  2780 pkgfile.h:35] Create Package File: c:\pkg-install\d3d9.dll successfule!
+I0801 15:46:46.528326  2780 installer.h:85] Install: file: "c:\pkg-install\d3d9.dll" RAW copy successful!
+I0801 15:46:46.528326  2780 installer.h:113] Install: delf: "c:\pkg-install\d3d9.dll" no need install!
+I0801 15:46:46.528326  2780 installer.h:173] Install: rmdir: "c:\pkg-install" no need install!
+I0801 15:46:46.528326  2780 pkgtools.cpp:173] Install Over!

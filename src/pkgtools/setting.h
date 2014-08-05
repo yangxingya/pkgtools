@@ -10,13 +10,13 @@
 #include <cclib/strutil.h>
 #include <cclib/win32/disabler.h>
 #include "pkgdef.h"
-#include "error.h"
 #include "except.h"
 
 namespace pkg {
 
 using namespace cclib;
 using namespace argv;
+using namespace err;
 
 const std::string kdisfsredirectstr = "dfsrd";
 const std::string kenbfsredirectstr = "efsrd";

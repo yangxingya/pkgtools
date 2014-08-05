@@ -11,13 +11,13 @@
 #include <cclib/types.h>
 #include "fwrapper.h"
 #include "fwrapper.h"
-#include "error.h"
 #include "except.h"
 #include "pkgdef.h"
 
 namespace pkg {
 
 using namespace cclib;
+using namespace err;
 using ::file::fwrapper;
 
 struct Writer

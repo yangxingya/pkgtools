@@ -1,0 +1,15 @@
+Log file created at: 2014/08/05 13:36:05
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0805 13:36:05.311069  2200 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat"
+I0805 13:36:05.311069  2200 pkgtools.cpp:161] Install Start, package name: test.dat
+I0805 13:36:05.312068  2200 pkgfile.h:78] Open Package File: test.dat successfule!
+I0805 13:36:05.312068  2200 unpacker.h:141] Extract args 0: dfsrd
+I0805 13:36:05.312068  2200 unpacker.h:141] Extract args 1: $36\mytmp\
+I0805 13:36:05.312068  2200 unpacker.h:141] Extract args 2: $36\mytmp\d3d9.dll
+I0805 13:36:05.312068  2200 unpacker.h:141] Extract args 3: "$37\cmd.exe" echo off
+I0805 13:36:05.341070  2200 installer.h:31] Install args: ""
+I0805 13:36:05.371073  2200 argvtrans.h:411] restorer, custom path: C:\Windows
+I0805 13:36:05.371073  2200 argvtrans.h:412] restorer, custom replace path: C:\Windows\mytmp\
+I0805 13:36:05.371073  2200 argvtrans.h:411] restorer, custom path: C:\Windows
+I0805 13:36:05.371073  2200 argvtrans.h:412] restorer, custom replace path: C:\Windows\mytmp\d3d9.dll

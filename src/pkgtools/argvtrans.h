@@ -9,15 +9,16 @@
 #include <cclib/types.h>
 #include <cclib/strutil.h>
 #include <cclib/win32/pathutil.h>
+#include "except.h"
 #include "specpath.h"
 #include "argv.h"
-#include "error.h"
-#include "except.h"
+#include "counter.h"
 
 namespace argv {
 
 using namespace cclib;
 using namespace path;
+using namespace err;
 
 const std::string kcustompathpfx = "$";
 
@@ -210,74 +211,78 @@ using namespace pkg;
 
 struct transfer
 {
-    transfer(std::vector<std::string> &argvs, std::map<uint64_t, uint64_t> &str_index)
-        : argvs_(argvs), str_index_(str_index), curr_index_(0L), counter_(0L) {}
+    transfer(acounter &counter, std::vector<uint64_t> &str_index)
+        : counter_(counter), str_index_(str_index) 
+    {}
     void operator()(AutoArgv argv)
     {
         std::string str = "";
         switch (argv->type()) {
-        case kAddf:
-            str = fileDst(argv);
-            break;
-        case entry::kDir:
-            str = dirDst(argv);
-            break;
-        case kExec:
-            str = execCmd(argv);
-            break;
-        case kSetting:
-            str = setFlags(argv);
-            break;
-        case kOut:
-            // null.
-            break;
-        case kUnknown:
-            // throw exception/
-            break;
+        case kAddf:    str = addfDst(argv); break;
+        case kDelf:    str = delfDst(argv); break;
+        case kMkdir:   str = mkdirDst(argv);  break;
+        case kRmdir:   str = rmdirDst(argv); break;
+        case kExec:    str = execCmd(argv); break;
+        case kSetting: str = setFlags(argv); break;
+        case kOut:     break;
+        case kUnknown: break;
         }
 
         if (str.empty()) {
-            str_index_[curr_index_++] = kinvalid;
+            str_index_.push_back(kinvalid);
             return;
         }
-
-        // find.
-        std::map<std::string, uint64_t>::iterator it;
-        if ((it = quick_tab_.find(str)) != quick_tab_.end()) {
-            str_index_[curr_index_++] = it->second;
-            return;
-        } 
-
-        // not find.
-        quick_tab_[str] = counter_;
-        argvs_.push_back(str);
-        str_index_[curr_index_++] = counter_;
-
-        counter_++;
+        str_index_.push_back(counter_.index(str));
     }
 private:
-    std::vector<std::string> &argvs_;
-    std::map<uint64_t, uint64_t> &str_index_;
-    uint64_t curr_index_;
-    std::map<std::string, uint64_t> quick_tab_;
-    uint64_t counter_;
+    std::vector<uint64_t> &str_index_;
+    acounter &counter_;
 
-    std::string fileDst(AutoArgv argv)
+    std::string addfDst(AutoArgv argv)
     {
         AddfArgv *fargv = (AddfArgv *)argv.get();
         miniPath minipath(fargv->dst());
         return minipath.pkgargv;
     }
-    std::string dirDst(AutoArgv argv)
+
+    std::string delfDst(AutoArgv argv)
     {
-        DirArgv *dargv = (DirArgv *)argv.get();
+        DelfArgv *fargv = (DelfArgv *)argv.get();
+        miniPath minipath(fargv->dst());
+        return minipath.pkgargv;
+    }
+
+    std::string mkdirDst(AutoArgv argv)
+    {
+        MkdirArgv *dargv = (MkdirArgv *)argv.get();
         miniPath minipath(dargv->dst());
         return minipath.pkgargv;
     }
+
+    std::string rmdirDst(AutoArgv argv)
+    {
+        RmdirArgv *dargv = (RmdirArgv *)argv.get();
+        miniPath minipath(dargv->dst());
+        return minipath.pkgargv;
+    }
+
     std::string execCmd(AutoArgv argv)
     {
         ExecArgv *eargv = (ExecArgv *)argv.get();
-        return eargv->cmd();
+        
+        /// need change $... to special path.
+        std::string::size_type pos;
+        std::string cmd = eargv->cmd();
+
+        /// not find $...path.
+        if ((pos = cmd.find_first_of(kcustompathpfx)) == std::string::npos)
+            return eargv->cmd();
+
+        /// find $... path
+        std::string cmd1 = cmd.substr(0, pos);
+        miniPath path(cmd.substr(pos));
+
+        return std::string(cmd1 + path.pkgargv);
     }
 
     std::string setFlags(AutoArgv argv)
@@ -304,14 +309,20 @@ struct restorer
         AutoArgv arg;
 
         switch (entry.type) {
-        case kentryfile:
-            arg.reset(new FileArgv(entry, transfer(args), entry.dtaindex));
+        case kentryaddf:
+            arg.reset(new AddfArgv(entry, transfer(args), entry.dtaindex));
             break;
-        case kentrydir:
-            arg.reset(new DirArgv(entry, transfer(args)));
+        case kentrydelf: 
+            arg.reset(new DelfArgv(entry, transfer(args)));
+            break;
+        case kentrymkdir:
+            arg.reset(new MkdirArgv(entry, transfer(args)));
+            break;
+        case kentryrmdir:
+            arg.reset(new RmdirArgv(entry, transfer(args)));
             break;
         case kentryexec:
-            arg.reset(new ExecArgv(entry, args));
+            arg.reset(new ExecArgv(entry, transfer2(args)));
             break;
         case kentrysetting:
             arg.reset(new SettingArgv(entry, args));
@@ -375,7 +386,7 @@ private:
         /// install
 
         std::string::size_type pos = argv.find_first_of(win32::kregseparator);
-        std::string pfx = argv.substr(0, pos + 1); 
+        std::string pfx = argv.substr(0, pos); 
         std::string strcsidl = pfx.substr(1);
 
         uint16_t csidl;
@@ -405,6 +416,63 @@ private:
 
 
 
+
+    /// only for exec argv ""$xxx\\xxx.exe"" %guid   ";
+    /// replace $xxx -> special path.
+    std::string transfer2(std::string const& str)
+    {
+        std::string argv = str;
+
+        /// type is file or dir.
+
+        /// start not $
+        std::string::size_type pos;
+
+        /// not find $xxx\\xxx\\yyy.exe.
+        if ((pos = str.find(kcustompathpfx)) == std::string::npos)
+            return str;
+
+
+        /// find $xxx\\.... -> '\\' position.
+        std::string::size_type pos2 = argv.find_first_of(win32::kregseparator);
+        if ((pos2 = argv.find_first_of(win32::kregseparator))
+            == std::string::npos) {
+            std::stringstream ss;
+            ss << "Custom path is error! :" << str;
+            std::string error;
+
+            ss >> error;
+            LOG(ERROR) << error;
+            throw spget_error(ERROR_CustomPathGetFailed, error);
+        }
+
+        std::string pfx = argv.substr(pos, pos2 - 1); 
+        std::string strcsidl = pfx.substr(1);
+
+        uint16_t csidl;
+        std::stringstream ss;
+        ss << strcsidl;
+        ss >> csidl;
+
+        std::string path = customPath(csidl);
+        if (path.empty()) {
+            std::stringstream ss;
+            ss << "Custom path is empty! CSIDL: 0x" << std::hex << csidl;
+            std::string error;
+
+            ss >> error;
+            LOG(ERROR) << error;
+            throw spget_error(ERROR_CustomPathGetFailed, error);
+        }
+
+        std::string tmp = argv;
+        replace(tmp, pfx, path);
+
+        DLOG(INFO) << "restorer, custom path: " << path;
+        DLOG(INFO) << "restorer, custom replace path: " << tmp;
+
+        return tmp;
+    }
 };
 
 } // namespace argv

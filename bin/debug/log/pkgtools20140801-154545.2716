@@ -1,0 +1,41 @@
+Log file created at: 2014/08/01 15:45:45
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0801 15:45:45.219818  2912 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -p creator.script"
+I0801 15:45:45.222818  2912 pkgtools.cpp:205] Package Start, script name: creator.script
+I0801 15:45:45.222818  2912 script.cpp:16] Script: creator.script, will be parsed!
+I0801 15:45:45.222818  2912 script.cpp:26] Parse Script Begin: ------>
+I0801 15:45:45.223819  2912 script.cpp:28] 1: setting:[-s dfsrd][-p][-i][-u]
+I0801 15:45:45.223819  2912 lineparser.cpp:15] Line Parser line: setting:[-s dfsrd][-p][-i][-u]
+I0801 15:45:45.223819  2912 argv.h:225] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:45:45.223819  2912 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:45:45.224819  2912 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:45:45.224819  2912 script.cpp:28] 2: out:[-d creator.dat]
+I0801 15:45:45.224819  2912 lineparser.cpp:15] Line Parser line: out:[-d creator.dat]
+I0801 15:45:45.224819  2912 argv.h:269] Out Argv: dst: "creator.dat"
+I0801 15:45:45.224819  2912 script.cpp:28] 3: mkdir:[-d c:\pkg-install][-i]
+I0801 15:45:45.224819  2912 lineparser.cpp:15] Line Parser line: mkdir:[-d c:\pkg-install][-i]
+I0801 15:45:45.225819  2912 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:45:45.225819  2912 argv.h:434] Mkdir Argv: dst: "c:\pkg-install"
+I0801 15:45:45.225819  2912 script.cpp:28] 4: addf:[-d c:\pkg-install\d3d9.dll][-s c:\windows\system32\d3d9.dll][-p][-i]
+I0801 15:45:45.225819  2912 lineparser.cpp:15] Line Parser line: addf:[-d c:\pkg-install\d3d9.dll][-s c:\windows\system32\d3d9.dll][-p][-i]
+I0801 15:45:45.226819  2912 argv.h:225] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:45:45.226819  2912 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:45:45.226819  2912 argv.h:340] Addf Argv: dst: "c:\pkg-install\d3d9.dll", src: "c:\windows\system32\d3d9.dll"
+I0801 15:45:45.226819  2912 script.cpp:28] 5: delf:[-d c:\pkg-install\d3d9.dll][-u]
+I0801 15:45:45.226819  2912 lineparser.cpp:15] Line Parser line: delf:[-d c:\pkg-install\d3d9.dll][-u]
+I0801 15:45:45.226819  2912 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:45:45.226819  2912 argv.h:387] Delf Argv: dst: "c:\pkg-install\d3d9.dll"
+I0801 15:45:45.227819  2912 script.cpp:28] 6: rmdir:[-d c:\pkg-install][-u]
+I0801 15:45:45.227819  2912 lineparser.cpp:15] Line Parser line: rmdir:[-d c:\pkg-install][-u]
+I0801 15:45:45.227819  2912 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0801 15:45:45.227819  2912 argv.h:480] Rmdir Argv: dst: "c:\pkg-install"
+I0801 15:45:45.227819  2912 script.cpp:42] Parse Script End: <------
+I0801 15:45:45.227819  2912 script.cpp:48] Parse Script Successful, entry size: 6
+I0801 15:45:45.228819  2912 setting.h:97] Setting: disable filesystem redirection
+I0801 15:45:45.228819  2912 fchecker.h:40] Open file: "c:\windows\system32\d3d9.dll" successful!
+I0801 15:45:45.272821  2912 packer.h:239]     args: dfsrd
+I0801 15:45:45.272821  2912 packer.h:239]     args: c:\pkg-install
+I0801 15:45:45.272821  2912 packer.h:239]     args: c:\pkg-install\d3d9.dll
+I0801 15:45:45.272821  2912 pkgfile.h:35] Create Package File: creator.dat successfule!
+I0801 15:45:45.323824  2912 pkgtools.cpp:222] Package Over!

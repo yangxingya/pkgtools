@@ -1,0 +1,37 @@
+Log file created at: 2014/08/05 11:57:25
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0805 11:57:25.447471  5052 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -p pkg.script"
+I0805 11:57:25.449471  5052 pkgtools.cpp:205] Package Start, script name: pkg.script
+I0805 11:57:25.450472  5052 script.cpp:16] Script: pkg.script, will be parsed!
+I0805 11:57:25.450472  5052 script.cpp:26] Parse Script Begin: ------>
+I0805 11:57:25.450472  5052 script.cpp:28] 1: setting:[-p][-i][-u][-s dfsrd]
+I0805 11:57:25.450472  5052 lineparser.cpp:15] Line Parser line: setting:[-p][-i][-u][-s dfsrd]
+I0805 11:57:25.451472  5052 argv.h:225] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.451472  5052 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.451472  5052 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.451472  5052 script.cpp:28] 2: 
+I0805 11:57:25.452472  5052 script.cpp:28] 3: mkdir:[-d $WINDIR\mytmp\][-i]
+I0805 11:57:25.452472  5052 lineparser.cpp:15] Line Parser line: mkdir:[-d $WINDIR\mytmp\][-i]
+I0805 11:57:25.452472  5052 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.452472  5052 argv.h:434] Mkdir Argv: dst: "$WINDIR\mytmp\"
+I0805 11:57:25.452472  5052 script.cpp:28] 4: addf:[-d $WINDIR\mytmp\d3d9.dll] [-s c:\windows\system32\d3d9.dll][-p][-i]
+I0805 11:57:25.452472  5052 lineparser.cpp:15] Line Parser line: addf:[-d $WINDIR\mytmp\d3d9.dll] [-s c:\windows\system32\d3d9.dll][-p][-i]
+I0805 11:57:25.453472  5052 argv.h:225] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.453472  5052 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.453472  5052 argv.h:340] Addf Argv: dst: "$WINDIR\mytmp\d3d9.dll", src: "c:\windows\system32\d3d9.dll"
+I0805 11:57:25.453472  5052 script.cpp:28] 5: exec:[-c "$SYSDIR\cmd.exe" echo off][-p][-i][-u]
+I0805 11:57:25.453472  5052 lineparser.cpp:15] Line Parser line: exec:[-c "$SYSDIR\cmd.exe" echo off][-p][-i][-u]
+I0805 11:57:25.454473  5052 argv.h:225] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.454473  5052 argv.h:225] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.454473  5052 argv.h:225] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0805 11:57:25.454473  5052 argv.h:550] Exec Argv: cmd: ""$SYSDIR\cmd.exe" echo off", no check: 0
+I0805 11:57:25.454473  5052 script.cpp:28] 6: 
+I0805 11:57:25.454473  5052 script.cpp:28] 7: out:[-d .\test.dat]
+I0805 11:57:25.454473  5052 lineparser.cpp:15] Line Parser line: out:[-d .\test.dat]
+I0805 11:57:25.455472  5052 argv.h:269] Out Argv: dst: ".\test.dat"
+I0805 11:57:25.455472  5052 script.cpp:28] 8: 
+I0805 11:57:25.455472  5052 script.cpp:42] Parse Script End: <------
+I0805 11:57:25.455472  5052 script.cpp:48] Parse Script Successful, entry size: 5
+I0805 11:57:25.455472  5052 setting.h:97] Setting: disable filesystem redirection
+I0805 11:57:25.456472  5052 fchecker.h:40] Open file: "c:\windows\system32\d3d9.dll" successful!

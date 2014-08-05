@@ -1,0 +1,1018 @@
+Log file created at: 2014/08/01 18:48:30
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0801 18:48:30.731962  5356 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -e test test"
+I0801 18:48:30.731962  5356 pkgtools.cpp:230] Extract Start, package name: test, to dir: test
+I0801 18:48:30.732962  5356 pkgfile.h:78] Open Package File: test successfule!
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 0: dfsrd
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 1: $36\EasytekTmp
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 2: $36\EasytekTmp\Registry.REG
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 3: C:\Program Files\Youdao\YoudaoNote
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 4: C:\Program Files\Youdao\YoudaoNote\locales
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 5: C:\Program Files\Youdao\YoudaoNote\logs
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 6: C:\Program Files\Youdao\YoudaoNote\res
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 7: C:\Program Files\Youdao\YoudaoNote\res\backImage
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 8: C:\Program Files\Youdao\YoudaoNote\res\Group
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 9: C:\Program Files\Youdao\YoudaoNote\res\GroupMsg
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 10: C:\Program Files\Youdao\YoudaoNote\res\GroupMsg\scripts
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 11: C:\Program Files\Youdao\YoudaoNote\res\GroupMsg\stylesheets
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 12: C:\Program Files\Youdao\YoudaoNote\res\GroupTray
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 13: C:\Program Files\Youdao\YoudaoNote\res\htmls
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 14: C:\Program Files\Youdao\YoudaoNote\res\htmls\pic
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 15: C:\Program Files\Youdao\YoudaoNote\res\htmls\vip
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 16: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 17: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\css
+I0801 18:48:30.732962  5356 unpacker.h:141] Extract args 18: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 19: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\js
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 20: C:\Program Files\Youdao\YoudaoNote\res\PhotoTransitHelp
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 21: C:\Program Files\Youdao\YoudaoNote\res\PhotoTransitHelp\images
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 22: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 23: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\images
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 24: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\scripts
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 25: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\stylesheets
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 26: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\vendor
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 27: C:\Program Files\Youdao\YoudaoNote\res\UserGuide
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 28: C:\Program Files\Youdao\YoudaoNote\theme
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 29: C:\Program Files\Youdao\YoudaoNote\theme\default
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 30: C:\Program Files\Youdao\YoudaoNote\theme\default\ad
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 31: C:\Program Files\Youdao\YoudaoNote\theme\default\manage
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 32: C:\Program Files\Youdao\YoudaoNote\theme\default\public
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 33: $5890\有道\有道云笔记
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 34: C:\Program Files\Youdao\YoudaoNote\CB6F53D7-5B3E-46f4-BE20-DD89118E1565.db
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 35: C:\Program Files\Youdao\YoudaoNote\Common.dll
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 36: C:\Program Files\Youdao\YoudaoNote\CrashRpt.dll
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 37: C:\Program Files\Youdao\YoudaoNote\CrashRpt.dll.manifest
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 38: C:\Program Files\Youdao\YoudaoNote\ExtraEditor.dll
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 39: C:\Program Files\Youdao\YoudaoNote\icudt.dll
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 40: C:\Program Files\Youdao\YoudaoNote\ieext_btn.htm
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 41: C:\Program Files\Youdao\YoudaoNote\ieext_menu.htm
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 42: C:\Program Files\Youdao\YoudaoNote\InstallDaemon.exe
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 43: C:\Program Files\Youdao\YoudaoNote\libcef.dll
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 44: C:\Program Files\Youdao\YoudaoNote\libeay32.dll
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 45: C:\Program Files\Youdao\YoudaoNote\libtidy.dll
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 46: C:\Program Files\Youdao\YoudaoNote\locales\am.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 47: C:\Program Files\Youdao\YoudaoNote\locales\ar.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 48: C:\Program Files\Youdao\YoudaoNote\locales\bg.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 49: C:\Program Files\Youdao\YoudaoNote\locales\bn.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 50: C:\Program Files\Youdao\YoudaoNote\locales\ca.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 51: C:\Program Files\Youdao\YoudaoNote\locales\cs.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 52: C:\Program Files\Youdao\YoudaoNote\locales\da.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 53: C:\Program Files\Youdao\YoudaoNote\locales\de.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 54: C:\Program Files\Youdao\YoudaoNote\locales\el.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 55: C:\Program Files\Youdao\YoudaoNote\locales\en-GB.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 56: C:\Program Files\Youdao\YoudaoNote\locales\en-US.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 57: C:\Program Files\Youdao\YoudaoNote\locales\es-419.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 58: C:\Program Files\Youdao\YoudaoNote\locales\es.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 59: C:\Program Files\Youdao\YoudaoNote\locales\et.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 60: C:\Program Files\Youdao\YoudaoNote\locales\fa.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 61: C:\Program Files\Youdao\YoudaoNote\locales\fi.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 62: C:\Program Files\Youdao\YoudaoNote\locales\fil.pak
+I0801 18:48:30.733963  5356 unpacker.h:141] Extract args 63: C:\Program Files\Youdao\YoudaoNote\locales\fr.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 64: C:\Program Files\Youdao\YoudaoNote\locales\gu.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 65: C:\Program Files\Youdao\YoudaoNote\locales\he.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 66: C:\Program Files\Youdao\YoudaoNote\locales\hi.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 67: C:\Program Files\Youdao\YoudaoNote\locales\hr.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 68: C:\Program Files\Youdao\YoudaoNote\locales\hu.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 69: C:\Program Files\Youdao\YoudaoNote\locales\id.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 70: C:\Program Files\Youdao\YoudaoNote\locales\it.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 71: C:\Program Files\Youdao\YoudaoNote\locales\ja.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 72: C:\Program Files\Youdao\YoudaoNote\locales\kn.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 73: C:\Program Files\Youdao\YoudaoNote\locales\ko.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 74: C:\Program Files\Youdao\YoudaoNote\locales\lt.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 75: C:\Program Files\Youdao\YoudaoNote\locales\lv.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 76: C:\Program Files\Youdao\YoudaoNote\locales\ml.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 77: C:\Program Files\Youdao\YoudaoNote\locales\mr.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 78: C:\Program Files\Youdao\YoudaoNote\locales\ms.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 79: C:\Program Files\Youdao\YoudaoNote\locales\nb.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 80: C:\Program Files\Youdao\YoudaoNote\locales\nl.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 81: C:\Program Files\Youdao\YoudaoNote\locales\pl.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 82: C:\Program Files\Youdao\YoudaoNote\locales\pt-BR.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 83: C:\Program Files\Youdao\YoudaoNote\locales\pt-PT.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 84: C:\Program Files\Youdao\YoudaoNote\locales\ro.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 85: C:\Program Files\Youdao\YoudaoNote\locales\ru.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 86: C:\Program Files\Youdao\YoudaoNote\locales\sk.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 87: C:\Program Files\Youdao\YoudaoNote\locales\sl.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 88: C:\Program Files\Youdao\YoudaoNote\locales\sr.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 89: C:\Program Files\Youdao\YoudaoNote\locales\sv.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 90: C:\Program Files\Youdao\YoudaoNote\locales\sw.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 91: C:\Program Files\Youdao\YoudaoNote\locales\ta.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 92: C:\Program Files\Youdao\YoudaoNote\locales\te.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 93: C:\Program Files\Youdao\YoudaoNote\locales\th.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 94: C:\Program Files\Youdao\YoudaoNote\locales\tr.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 95: C:\Program Files\Youdao\YoudaoNote\locales\uk.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 96: C:\Program Files\Youdao\YoudaoNote\locales\vi.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 97: C:\Program Files\Youdao\YoudaoNote\locales\zh-CN.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 98: C:\Program Files\Youdao\YoudaoNote\locales\zh-TW.pak
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 99: C:\Program Files\Youdao\YoudaoNote\log.dll
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 100: C:\Program Files\Youdao\YoudaoNote\log.dll.manifest
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 101: C:\Program Files\Youdao\YoudaoNote\logs\trace_log.txt
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 102: C:\Program Files\Youdao\YoudaoNote\mfc90u.dll
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 103: C:\Program Files\Youdao\YoudaoNote\Microsoft.VC90.CRT.manifest
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 104: C:\Program Files\Youdao\YoudaoNote\Microsoft.VC90.MFC.manifest
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 105: C:\Program Files\Youdao\YoudaoNote\Monitor.exe
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 106: C:\Program Files\Youdao\YoudaoNote\msvcp90.dll
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 107: C:\Program Files\Youdao\YoudaoNote\msvcr90.dll
+I0801 18:48:30.734962  5356 unpacker.h:141] Extract args 108: C:\Program Files\Youdao\YoudaoNote\pcre16.dll
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 109: C:\Program Files\Youdao\YoudaoNote\pcre16.dll.manifest
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 110: C:\Program Files\Youdao\YoudaoNote\res\AboutContent.html
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 111: C:\Program Files\Youdao\YoudaoNote\res\attachmentIcon.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 112: C:\Program Files\Youdao\YoudaoNote\res\attach_icon.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 113: C:\Program Files\Youdao\YoudaoNote\res\audio.bmp
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 114: C:\Program Files\Youdao\YoudaoNote\res\backImage\default.jpg
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 115: C:\Program Files\Youdao\YoudaoNote\res\backImage\Thumbs.db
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 116: C:\Program Files\Youdao\YoudaoNote\res\Bg_Search_Key.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 117: C:\Program Files\Youdao\YoudaoNote\res\Bg_Snap_Down.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 118: C:\Program Files\Youdao\YoudaoNote\res\Bg_Snap_Focus.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 119: C:\Program Files\Youdao\YoudaoNote\res\Bg_Snap_Hover.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 120: C:\Program Files\Youdao\YoudaoNote\res\Bg_Snap_Normal.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 121: C:\Program Files\Youdao\YoudaoNote\res\Btn_DropDown.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 122: C:\Program Files\Youdao\YoudaoNote\res\Btn_SysClose.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 123: C:\Program Files\Youdao\YoudaoNote\res\calendar.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 124: C:\Program Files\Youdao\YoudaoNote\res\dft-mark.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 125: C:\Program Files\Youdao\YoudaoNote\res\DrawingBoard_Next.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 126: C:\Program Files\Youdao\YoudaoNote\res\DrawingBoard_Prev.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 127: C:\Program Files\Youdao\YoudaoNote\res\envernote_encrypt.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 128: C:\Program Files\Youdao\YoudaoNote\res\error-mark.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 129: C:\Program Files\Youdao\YoudaoNote\res\error_state.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 130: C:\Program Files\Youdao\YoudaoNote\res\excel.bmp
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 131: C:\Program Files\Youdao\YoudaoNote\res\FormBk_Shadow.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 132: C:\Program Files\Youdao\YoudaoNote\res\FormBk_Tip.png
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 133: C:\Program Files\Youdao\YoudaoNote\res\Group\error.htm
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 134: C:\Program Files\Youdao\YoudaoNote\res\Group\icon.gif
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 135: C:\Program Files\Youdao\YoudaoNote\res\Group\Thumbs.db
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 136: C:\Program Files\Youdao\YoudaoNote\res\GroupMsg\groupmsg.html
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 137: C:\Program Files\Youdao\YoudaoNote\res\GroupMsg\scripts\groupmsg.js
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 138: C:\Program Files\Youdao\YoudaoNote\res\GroupMsg\stylesheets\groupmsg.css
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 139: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message01.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 140: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message02.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 141: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message03.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 142: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message04.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 143: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message05.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 144: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message06.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 145: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message07.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 146: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message08.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 147: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message09.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 148: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message10.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 149: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message11.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 150: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message12.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 151: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message13.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 152: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message14.ico
+I0801 18:48:30.735962  5356 unpacker.h:141] Extract args 153: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message15.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 154: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message16.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 155: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message17.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 156: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message18.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 157: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message19.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 158: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message20.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 159: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message21.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 160: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message22.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 161: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message23.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 162: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message24.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 163: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message25.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 164: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message26.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 165: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message27.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 166: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message28.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 167: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message29.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 168: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message30.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 169: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message31.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 170: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message32.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 171: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message33.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 172: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message34.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 173: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message35.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 174: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message36.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 175: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message37.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 176: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message38.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 177: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message39.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 178: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message40.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 179: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message41.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 180: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message42.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 181: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message43.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 182: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message44.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 183: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message45.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 184: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message46.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 185: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message47.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 186: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message48.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 187: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message49.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 188: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message50.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 189: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message51.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 190: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message52.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 191: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message53.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 192: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message54.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 193: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message55.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 194: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message56.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 195: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message57.ico
+I0801 18:48:30.736963  5356 unpacker.h:141] Extract args 196: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message58.ico
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 197: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message59.ico
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 198: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\message60.ico
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 199: C:\Program Files\Youdao\YoudaoNote\res\GroupTray\Thumbs.db
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 200: C:\Program Files\Youdao\YoudaoNote\res\htmls\pic\Bg_Btn_Blue.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 201: C:\Program Files\Youdao\YoudaoNote\res\htmls\pic\Bg_Btn_Gray.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 202: C:\Program Files\Youdao\YoudaoNote\res\htmls\vip\error.htm
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 203: C:\Program Files\Youdao\YoudaoNote\res\htmls\vip\icon.gif
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 204: C:\Program Files\Youdao\YoudaoNote\res\htmls\VIPSales.htm
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 205: C:\Program Files\Youdao\YoudaoNote\res\htmls\VIPSales.js
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 206: C:\Program Files\Youdao\YoudaoNote\res\Icon_Attachment.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 207: C:\Program Files\Youdao\YoudaoNote\res\Icon_Error.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 208: C:\Program Files\Youdao\YoudaoNote\res\Icon_NoteBook.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 209: C:\Program Files\Youdao\YoudaoNote\res\Icon_note_list_lock.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 210: C:\Program Files\Youdao\YoudaoNote\res\Icon_note_list_unlock.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 211: C:\Program Files\Youdao\YoudaoNote\res\Icon_Share.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 212: C:\Program Files\Youdao\YoudaoNote\res\Icon_X.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 213: C:\Program Files\Youdao\YoudaoNote\res\ie.bmp
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 214: C:\Program Files\Youdao\YoudaoNote\res\image.bmp
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 215: C:\Program Files\Youdao\YoudaoNote\res\Image_Logo_PopTip.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 216: C:\Program Files\Youdao\YoudaoNote\res\Mask_Snap.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 217: C:\Program Files\Youdao\YoudaoNote\res\menu_Shadow.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 218: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\css\lightbox.css
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 219: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\back1.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 220: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\back2.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 221: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\close1.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 222: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\close2.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 223: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\forward1.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 224: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\forward2.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 225: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\page1.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 226: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\page2.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 227: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\page3.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 228: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\page4.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 229: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\index.html
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 230: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\js\jquery.js
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 231: C:\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\js\slider.js
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 232: C:\Program Files\Youdao\YoudaoNote\res\null.bmp
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 233: C:\Program Files\Youdao\YoudaoNote\res\pdf.bmp
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 234: C:\Program Files\Youdao\YoudaoNote\res\PhotoTransitHelp\images\btns.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 235: C:\Program Files\Youdao\YoudaoNote\res\PhotoTransitHelp\images\illustration.jpg
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 236: C:\Program Files\Youdao\YoudaoNote\res\PhotoTransitHelp\welcome.html
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 237: C:\Program Files\Youdao\YoudaoNote\res\ppt.bmp
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 238: C:\Program Files\Youdao\YoudaoNote\res\proxy-alert.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 239: C:\Program Files\Youdao\YoudaoNote\res\proxy-success.png
+I0801 18:48:30.737963  5356 unpacker.h:141] Extract args 240: C:\Program Files\Youdao\YoudaoNote\res\share-in.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 241: C:\Program Files\Youdao\YoudaoNote\res\share-out.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 242: C:\Program Files\Youdao\YoudaoNote\res\swf.bmp
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 243: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\images\grey.gif
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 244: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\images\icon.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 245: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\images\motion2.gif
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 246: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\scripts\syncinfo.js
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 247: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\stylesheets\syncinfo.css
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 248: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\syncinfo.html
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 249: C:\Program Files\Youdao\YoudaoNote\res\SyncInfo\vendor\underscore-min.js
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 250: C:\Program Files\Youdao\YoudaoNote\res\sync_state1.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 251: C:\Program Files\Youdao\YoudaoNote\res\sync_state2.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 252: C:\Program Files\Youdao\YoudaoNote\res\sync_state3.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 253: C:\Program Files\Youdao\YoudaoNote\res\sync_state4.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 254: C:\Program Files\Youdao\YoudaoNote\res\sync_state5.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 255: C:\Program Files\Youdao\YoudaoNote\res\sync_state6.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 256: C:\Program Files\Youdao\YoudaoNote\res\tag.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 257: C:\Program Files\Youdao\YoudaoNote\res\text.bmp
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 258: C:\Program Files\Youdao\YoudaoNote\res\Thumbs.db
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 259: C:\Program Files\Youdao\YoudaoNote\res\transfer-icon.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 260: C:\Program Files\Youdao\YoudaoNote\res\trash.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 261: C:\Program Files\Youdao\YoudaoNote\res\unknown.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 262: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\computer.jpg
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 263: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\guide.css
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 264: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\guide.js
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 265: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\guide0.htm
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 266: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\guide1.htm
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 267: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\guide2.htm
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 268: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\guide3.htm
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 269: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\pc-guide-popup-bg.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 270: C:\Program Files\Youdao\YoudaoNote\res\UserGuide\Thumbs.db
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 271: C:\Program Files\Youdao\YoudaoNote\res\video.bmp
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 272: C:\Program Files\Youdao\YoudaoNote\res\webclipper.ico
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 273: C:\Program Files\Youdao\YoudaoNote\res\word.bmp
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 274: C:\Program Files\Youdao\YoudaoNote\res\zip.bmp
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 275: C:\Program Files\Youdao\YoudaoNote\RunYNote.exe
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 276: C:\Program Files\Youdao\YoudaoNote\RunYNote.exe.manifest
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 277: C:\Program Files\Youdao\YoudaoNote\ShowPopupOnDesktop.exe
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 278: C:\Program Files\Youdao\YoudaoNote\softs.ini
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 279: C:\Program Files\Youdao\YoudaoNote\theme\build.xml
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 280: C:\Program Files\Youdao\YoudaoNote\theme\default\ad\satis.jpg
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 281: C:\Program Files\Youdao\YoudaoNote\theme\default\attr.xml
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 282: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 283: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Arrow_Black_Down.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 284: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Arrow_Black_Right.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 285: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Arrow_Gray_Down.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 286: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Arrow_Gray_Right.png
+I0801 18:48:30.738963  5356 unpacker.h:141] Extract args 287: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Author.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 288: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Collision.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 289: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Dft.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 290: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Dft_Share.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 291: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Error.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 292: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Fav.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 293: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Group.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 294: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Local.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 295: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Local_Group.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 296: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Lock.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 297: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Lock_Share.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 298: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Share.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 299: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Unlock.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 300: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Unlock_Share.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 301: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_note_list_lock.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 302: C:\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_note_list_unlock.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 303: C:\Program Files\Youdao\YoudaoNote\theme\default\Preview.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 304: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Anmy_Sync.gif
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 305: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Blue.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 306: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Gray.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 307: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Gray_Big.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 308: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Gray_Border.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 309: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Green.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 310: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Yellow.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 311: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Yellow_Big.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 312: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Edit_Title_Normal_Focus.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 313: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_History_Num_Dot.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 314: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_innder_shadow.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 315: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Login.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 316: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Mail_Number.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 317: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Pop.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 318: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Popup_Gradient.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 319: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress-12.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 320: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 321: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress_Done-12.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 322: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress_Done.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 323: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress_Will.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 324: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Reg.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 325: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Scroll_Bar.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 326: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Search.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 327: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Search_Detail.png
+I0801 18:48:30.739964  5356 unpacker.h:141] Extract args 328: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Search_Focus.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 329: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Search_Key.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 330: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_secret.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 331: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_SyncInfoForm.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 332: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Tag_Suggestion.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 333: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Border_Search.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 334: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Border_StdTBBtn.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 335: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Border_Tab.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 336: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Add_Tag.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 337: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Add_Tag_First.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 338: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Attach_Sort.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 339: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Back_2_Login.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 340: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Cancel.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 341: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Change_Verify.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 342: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Combox.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 343: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_DropDown.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 344: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_DropDown_Tag.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 345: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Group.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 346: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Hide_Frame.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 347: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_History_Next.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 348: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_History_Prev.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 349: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_HScrollBar.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 350: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_HScrollBarLeft.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 351: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_HScrollBarRight.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 352: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_HScrollBarThumb.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 353: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login2Reg_Normal_Over_Down.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 354: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login_Normal_Over_Down.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 355: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login_QQ.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 356: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login_QQT.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 357: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login_Weibo.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 358: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Note_Meta_Down.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 359: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Note_Meta_Up.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 360: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Popup_Sync_Continue.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 361: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Popup_Sync_Pause.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 362: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Reg_Normal_Over_Down.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 363: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 364: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Delete.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 365: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Delete_SML.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 366: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Down.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 367: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Icon.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 368: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Up.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 369: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Segment_Left.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 370: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Segment_Right.png
+I0801 18:48:30.740963  5356 unpacker.h:141] Extract args 371: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Show_Frame.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 372: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysBbs.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 373: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysLock.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 374: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysMail.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 375: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysMail_Yellow.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 376: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysMenu.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 377: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysPopup.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 378: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysView.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 379: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_unlock.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 380: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_User_Down.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 381: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_User_Down_Focus.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 382: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_User_Down_Mail_Combox.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 383: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_View_Grid.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 384: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_View_List.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 385: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_View_Snap.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 386: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBar.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 387: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarDown.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 388: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarEnd.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 389: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarFlash.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 390: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarThumb.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 391: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarUp.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 392: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Window_Close.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 393: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Window_Max.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 394: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Window_Min.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 395: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Window_Normal.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 396: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_X.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 397: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Checkbox.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 398: C:\Program Files\Youdao\YoudaoNote\theme\default\public\CommonBk_HScrollBar.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 399: C:\Program Files\Youdao\YoudaoNote\theme\default\public\CommonBk_PreLogin.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 400: C:\Program Files\Youdao\YoudaoNote\theme\default\public\CommonBk_VScrollBar.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 401: C:\Program Files\Youdao\YoudaoNote\theme\default\public\ctt_varication_code.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 402: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Editor.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 403: C:\Program Files\Youdao\YoudaoNote\theme\default\public\EditorIcon.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 404: C:\Program Files\Youdao\YoudaoNote\theme\default\public\FormBk_Main.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 405: C:\Program Files\Youdao\YoudaoNote\theme\default\public\FormBk_Main_Max.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 406: C:\Program Files\Youdao\YoudaoNote\theme\default\public\FormBk_Popup.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 407: C:\Program Files\Youdao\YoudaoNote\theme\default\public\History_Num_Bk.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 408: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Attachment.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 409: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Error.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 410: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Login_QQ.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 411: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Login_QQ_T.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 412: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Login_Weibo.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 413: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Menu.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 414: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_NewNote.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 415: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_NewNoteBook.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 416: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_NewNoteBookGroup.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 417: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Safe_Blue.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 418: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Search.png
+I0801 18:48:30.741963  5356 unpacker.h:141] Extract args 419: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Search_Delete.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 420: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Sort_Arrow_Down.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 421: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Sort_Arrow_Up.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 422: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_SRC_Edit.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 423: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_TitleBar_Safe.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 424: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_X.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 425: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Image_About_Logo.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 426: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Image_Attach_Empty.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 427: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Image_Gray_Note_Mark.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 428: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Image_Login_Logo.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 429: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Check.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 430: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Login_Normal_Focus.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 431: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Normal_Focus_Disabled.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 432: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Normal_Focus_Disabled_SML.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 433: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Search_Round.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 434: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Secret.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 435: C:\Program Files\Youdao\YoudaoNote\theme\default\public\IntroGif.gif
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 436: C:\Program Files\Youdao\YoudaoNote\theme\default\public\IntroGifMargin.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 437: C:\Program Files\Youdao\YoudaoNote\theme\default\public\IntroText.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 438: C:\Program Files\Youdao\YoudaoNote\theme\default\public\loading-54.gif
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 439: C:\Program Files\Youdao\YoudaoNote\theme\default\public\LoginIntro.gif
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 440: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Mask_Snap.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 441: C:\Program Files\Youdao\YoudaoNote\theme\default\public\MenuBar_01.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 442: C:\Program Files\Youdao\YoudaoNote\theme\default\public\MenuBar_02.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 443: C:\Program Files\Youdao\YoudaoNote\theme\default\public\MenuBar_03.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 444: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Menu_Bk.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 445: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Menu_Focused.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 446: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Menu_Hover_Focus_Select.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 447: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Menu_Line.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 448: C:\Program Files\Youdao\YoudaoNote\theme\default\public\NotebookGroupFold.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 449: C:\Program Files\Youdao\YoudaoNote\theme\default\public\NotebookList.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 450: C:\Program Files\Youdao\YoudaoNote\theme\default\public\NoVip.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 451: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Photo_List_Wnd_Horizontal_Margin.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 452: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Photo_List_Wnd_Vertical_Margin.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 453: C:\Program Files\Youdao\YoudaoNote\theme\default\public\PopoupMenu_04.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 454: C:\Program Files\Youdao\YoudaoNote\theme\default\public\PopoupMenu_08.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 455: C:\Program Files\Youdao\YoudaoNote\theme\default\public\proxy-alert.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 456: C:\Program Files\Youdao\YoudaoNote\theme\default\public\proxy-success.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 457: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Radio.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 458: C:\Program Files\Youdao\YoudaoNote\theme\default\public\RedDot.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 459: C:\Program Files\Youdao\YoudaoNote\theme\default\public\SeperateLine.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 460: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Seperator.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 461: C:\Program Files\Youdao\YoudaoNote\theme\default\public\SettingButton.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 462: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Slider_btn.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 463: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_hover_l.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 464: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_hover_m.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 465: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_hover_r.png
+I0801 18:48:30.742964  5356 unpacker.h:141] Extract args 466: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_normal_l.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 467: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_normal_m.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 468: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_normal_r.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 469: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_press_l.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 470: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_press_m.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 471: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_press_r.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 472: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvh_asc.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 473: C:\Program Files\Youdao\YoudaoNote\theme\default\public\slvh_desc.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 474: C:\Program Files\Youdao\YoudaoNote\theme\default\public\SugCombox_Bk.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 475: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_Pass.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 476: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_Pass_Focus.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 477: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_Pass_Normal.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 478: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_User.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 479: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_User_Focus.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 480: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_User_Normal.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 481: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Thumbs.db
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 482: C:\Program Files\Youdao\YoudaoNote\theme\default\public\TopMost.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 483: C:\Program Files\Youdao\YoudaoNote\theme\default\public\TopMostCancel.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 484: C:\Program Files\Youdao\YoudaoNote\theme\default\public\UpDown_01_01.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 485: C:\Program Files\Youdao\YoudaoNote\theme\default\public\UpDown_01_04.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 486: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Vip-53.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 487: C:\Program Files\Youdao\YoudaoNote\theme\default\public\Vip.png
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 488: C:\Program Files\Youdao\YoudaoNote\theme\default\skin.xml
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 489: C:\Program Files\Youdao\YoudaoNote\theme\gdstrings.ini
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 490: C:\Program Files\Youdao\YoudaoNote\theme\skins.xml
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 491: C:\Program Files\Youdao\YoudaoNote\UI.dll
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 492: C:\Program Files\Youdao\YoudaoNote\uninst.exe
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 493: C:\Program Files\Youdao\YoudaoNote\XGDI.dll
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 494: C:\Program Files\Youdao\YoudaoNote\YNotepad.exe
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 495: C:\Program Files\Youdao\YoudaoNote\YNotepad.exe.manifest
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 496: C:\Program Files\Youdao\YoudaoNote\YoudaoNote.exe
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 497: C:\Program Files\Youdao\YoudaoNote\YoudaoNote.exe.manifest
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 498: $28\Microsoft\Windows\Temporary Internet Files\Content.IE5\BNH130D8\install[1
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 499: $28\Youdao\YNote\vendor.dat
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 500: $8986\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\有道云笔记.lnk
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 501: $5890\有道\有道云笔记\卸载有道云笔记.lnk
+I0801 18:48:30.743963  5356 unpacker.h:141] Extract args 502: $5890\有道\有道云笔记\启动有道云笔记.lnk
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 503: $5890\有道\有道云笔记\有道云笔记网页剪报.url
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 504: $6416\有道云笔记.lnk
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 505: $6416\有道云笔记网页剪报.url
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 506: $28\Microsoft\Windows\History\History.IE5\index.dat
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 507: $28\Microsoft\Windows\Temporary Internet Files\Content.IE5\index.dat
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 508: $28\Microsoft\Windows\UsrClass.dat
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 509: $28\Microsoft\Windows\UsrClass.dat.LOG1
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 510: $28\Youdao\YNote\log\YoudaoNote.exe.log
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 511: $28\Youdao\YNote\profile.ini
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 512: $33\index.dat
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 513: $40\NTUSER.DAT
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 514: $40\ntuser.dat.LOG1
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 515: $36\AppCompat\Programs\RecentFileCache.bcf
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 516: $36\System32\config\SOFTWARE
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 517: $36\System32\config\SOFTWARE.LOG1
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 518: $36\System32\config\systemprofile\AppData\Local\Microsoft\Windows\History\History.IE5\index.dat
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 519: $36\System32\config\systemprofile\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\index.dat
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 520: $36\System32\config\systemprofile\AppData\Roaming\Microsoft\Windows\Cookies\index.dat
+I0801 18:48:30.744963  5356 unpacker.h:141] Extract args 521: "$SYSDIR\reg.exe" import "$WINDIR\EasytekTmp\Registry.REG"
+E0801 18:48:30.780966  5356 pkgfile.h:32] Create Package File: test\$36\EasytekTmp\Registry.REG failed!
+E0801 18:48:30.786965  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\CB6F53D7-5B3E-46f4-BE20-DD89118E1565.db failed!
+E0801 18:48:30.787966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\Common.dll failed!
+E0801 18:48:30.788965  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\CrashRpt.dll failed!
+E0801 18:48:30.789965  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\CrashRpt.dll.manifest failed!
+E0801 18:48:30.790966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\ExtraEditor.dll failed!
+E0801 18:48:30.791966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\icudt.dll failed!
+E0801 18:48:30.792966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\ieext_btn.htm failed!
+E0801 18:48:30.792966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\ieext_menu.htm failed!
+E0801 18:48:30.793967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\InstallDaemon.exe failed!
+E0801 18:48:30.794966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\libcef.dll failed!
+E0801 18:48:30.795966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\libeay32.dll failed!
+E0801 18:48:30.795966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\libtidy.dll failed!
+E0801 18:48:30.797966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\am.pak failed!
+E0801 18:48:30.799967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ar.pak failed!
+E0801 18:48:30.800966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\bg.pak failed!
+E0801 18:48:30.802966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\bn.pak failed!
+E0801 18:48:30.803966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ca.pak failed!
+E0801 18:48:30.805966  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\cs.pak failed!
+E0801 18:48:30.806967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\da.pak failed!
+E0801 18:48:30.808967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\de.pak failed!
+E0801 18:48:30.809967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\el.pak failed!
+E0801 18:48:30.811967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\en-GB.pak failed!
+E0801 18:48:30.812968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\en-US.pak failed!
+E0801 18:48:30.814967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\es-419.pak failed!
+E0801 18:48:30.815968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\es.pak failed!
+E0801 18:48:30.817967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\et.pak failed!
+E0801 18:48:30.818967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\fa.pak failed!
+E0801 18:48:30.820967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\fi.pak failed!
+E0801 18:48:30.821967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\fil.pak failed!
+E0801 18:48:30.823967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\fr.pak failed!
+E0801 18:48:30.824967  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\gu.pak failed!
+E0801 18:48:30.825968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\he.pak failed!
+E0801 18:48:30.827968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\hi.pak failed!
+E0801 18:48:30.828969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\hr.pak failed!
+E0801 18:48:30.830968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\hu.pak failed!
+E0801 18:48:30.831969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\id.pak failed!
+E0801 18:48:30.833968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\it.pak failed!
+E0801 18:48:30.834969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ja.pak failed!
+E0801 18:48:30.836968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\kn.pak failed!
+E0801 18:48:30.837968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ko.pak failed!
+E0801 18:48:30.839968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\lt.pak failed!
+E0801 18:48:30.840968  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\lv.pak failed!
+E0801 18:48:30.842969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ml.pak failed!
+E0801 18:48:30.843969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\mr.pak failed!
+E0801 18:48:30.844969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ms.pak failed!
+E0801 18:48:30.846969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\nb.pak failed!
+E0801 18:48:30.847970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\nl.pak failed!
+E0801 18:48:30.849969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\pl.pak failed!
+E0801 18:48:30.850970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\pt-BR.pak failed!
+E0801 18:48:30.852969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\pt-PT.pak failed!
+E0801 18:48:30.853970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ro.pak failed!
+E0801 18:48:30.854969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ru.pak failed!
+E0801 18:48:30.856969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\sk.pak failed!
+E0801 18:48:30.857969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\sl.pak failed!
+E0801 18:48:30.859969  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\sr.pak failed!
+E0801 18:48:30.860970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\sv.pak failed!
+E0801 18:48:30.862970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\sw.pak failed!
+E0801 18:48:30.863970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\ta.pak failed!
+E0801 18:48:30.865970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\te.pak failed!
+E0801 18:48:30.867970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\th.pak failed!
+E0801 18:48:30.868970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\tr.pak failed!
+E0801 18:48:30.870970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\uk.pak failed!
+E0801 18:48:30.871970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\vi.pak failed!
+E0801 18:48:30.873970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\zh-CN.pak failed!
+E0801 18:48:30.874970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\locales\zh-TW.pak failed!
+E0801 18:48:30.875970  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\log.dll failed!
+E0801 18:48:30.877971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\log.dll.manifest failed!
+E0801 18:48:30.878972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\logs\trace_log.txt failed!
+E0801 18:48:30.880971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\mfc90u.dll failed!
+E0801 18:48:30.881971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\Microsoft.VC90.CRT.manifest failed!
+E0801 18:48:30.883971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\Microsoft.VC90.MFC.manifest failed!
+E0801 18:48:30.884971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\Monitor.exe failed!
+E0801 18:48:30.885972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\msvcp90.dll failed!
+E0801 18:48:30.887971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\msvcr90.dll failed!
+E0801 18:48:30.888972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\pcre16.dll failed!
+E0801 18:48:30.890971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\pcre16.dll.manifest failed!
+E0801 18:48:30.891971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\AboutContent.html failed!
+E0801 18:48:30.892971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\attachmentIcon.png failed!
+E0801 18:48:30.894971  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\attach_icon.png failed!
+E0801 18:48:30.895972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\audio.bmp failed!
+E0801 18:48:30.897972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\backImage\default.jpg failed!
+E0801 18:48:30.898972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\backImage\Thumbs.db failed!
+E0801 18:48:30.900972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Bg_Search_Key.png failed!
+E0801 18:48:30.901973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Bg_Snap_Down.png failed!
+E0801 18:48:30.902972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Bg_Snap_Focus.png failed!
+E0801 18:48:30.904973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Bg_Snap_Hover.png failed!
+E0801 18:48:30.905972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Bg_Snap_Normal.png failed!
+E0801 18:48:30.907973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Btn_DropDown.png failed!
+E0801 18:48:30.908972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Btn_SysClose.png failed!
+E0801 18:48:30.910972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\calendar.png failed!
+E0801 18:48:30.911972  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\dft-mark.png failed!
+E0801 18:48:30.912973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\DrawingBoard_Next.png failed!
+E0801 18:48:30.914973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\DrawingBoard_Prev.png failed!
+E0801 18:48:30.915973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\envernote_encrypt.png failed!
+E0801 18:48:30.917973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\error-mark.png failed!
+E0801 18:48:30.918973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\error_state.png failed!
+E0801 18:48:30.920974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\excel.bmp failed!
+E0801 18:48:30.921973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\FormBk_Shadow.png failed!
+E0801 18:48:30.923974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\FormBk_Tip.png failed!
+E0801 18:48:30.924973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Group\error.htm failed!
+E0801 18:48:30.926973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Group\icon.gif failed!
+E0801 18:48:30.927973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Group\Thumbs.db failed!
+E0801 18:48:30.928973  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupMsg\groupmsg.html failed!
+E0801 18:48:30.930974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupMsg\scripts\groupmsg.js failed!
+E0801 18:48:30.931974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupMsg\stylesheets\groupmsg.css failed!
+E0801 18:48:30.933974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message01.ico failed!
+E0801 18:48:30.935974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message02.ico failed!
+E0801 18:48:30.936975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message03.ico failed!
+E0801 18:48:30.937974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message04.ico failed!
+E0801 18:48:30.939975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message05.ico failed!
+E0801 18:48:30.940974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message06.ico failed!
+E0801 18:48:30.942975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message07.ico failed!
+E0801 18:48:30.943974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message08.ico failed!
+E0801 18:48:30.945974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message09.ico failed!
+E0801 18:48:30.946974  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message10.ico failed!
+E0801 18:48:30.948976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message11.ico failed!
+E0801 18:48:30.949975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message12.ico failed!
+E0801 18:48:30.951975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message13.ico failed!
+E0801 18:48:30.952975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message14.ico failed!
+E0801 18:48:30.954975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message15.ico failed!
+E0801 18:48:30.955976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message16.ico failed!
+E0801 18:48:30.957975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message17.ico failed!
+E0801 18:48:30.958976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message18.ico failed!
+E0801 18:48:30.960975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message19.ico failed!
+E0801 18:48:30.961976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message20.ico failed!
+E0801 18:48:30.963975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message21.ico failed!
+E0801 18:48:30.964975  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message22.ico failed!
+E0801 18:48:30.966976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message23.ico failed!
+E0801 18:48:30.967977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message24.ico failed!
+E0801 18:48:30.968976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message25.ico failed!
+E0801 18:48:30.970976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message26.ico failed!
+E0801 18:48:30.971976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message27.ico failed!
+E0801 18:48:30.973976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message28.ico failed!
+E0801 18:48:30.974977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message29.ico failed!
+E0801 18:48:30.976976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message30.ico failed!
+E0801 18:48:30.977977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message31.ico failed!
+E0801 18:48:30.979976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message32.ico failed!
+E0801 18:48:30.980976  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message33.ico failed!
+E0801 18:48:30.982977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message34.ico failed!
+E0801 18:48:30.983978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message35.ico failed!
+E0801 18:48:30.984977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message36.ico failed!
+E0801 18:48:30.986978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message37.ico failed!
+E0801 18:48:30.987977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message38.ico failed!
+E0801 18:48:30.989977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message39.ico failed!
+E0801 18:48:30.990978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message40.ico failed!
+E0801 18:48:30.992977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message41.ico failed!
+E0801 18:48:30.993978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message42.ico failed!
+E0801 18:48:30.995977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message43.ico failed!
+E0801 18:48:30.996978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message44.ico failed!
+E0801 18:48:30.998977  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message45.ico failed!
+E0801 18:48:30.999979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message46.ico failed!
+E0801 18:48:31.000978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message47.ico failed!
+E0801 18:48:31.001978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message48.ico failed!
+E0801 18:48:31.003978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message49.ico failed!
+E0801 18:48:31.004978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message50.ico failed!
+E0801 18:48:31.005978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message51.ico failed!
+E0801 18:48:31.006978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message52.ico failed!
+E0801 18:48:31.007978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message53.ico failed!
+E0801 18:48:31.009979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message54.ico failed!
+E0801 18:48:31.011978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message55.ico failed!
+E0801 18:48:31.012979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message56.ico failed!
+E0801 18:48:31.013978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message57.ico failed!
+E0801 18:48:31.015979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message58.ico failed!
+E0801 18:48:31.016978  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message59.ico failed!
+E0801 18:48:31.017979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\message60.ico failed!
+E0801 18:48:31.018980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\GroupTray\Thumbs.db failed!
+E0801 18:48:31.019979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\htmls\pic\Bg_Btn_Blue.png failed!
+E0801 18:48:31.021980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\htmls\pic\Bg_Btn_Gray.png failed!
+E0801 18:48:31.022979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\htmls\vip\error.htm failed!
+E0801 18:48:31.023979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\htmls\vip\icon.gif failed!
+E0801 18:48:31.024979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\htmls\VIPSales.htm failed!
+E0801 18:48:31.025979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\htmls\VIPSales.js failed!
+E0801 18:48:31.026979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Icon_Attachment.png failed!
+E0801 18:48:31.028980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Icon_Error.png failed!
+E0801 18:48:31.029979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Icon_NoteBook.png failed!
+E0801 18:48:31.030979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Icon_note_list_lock.png failed!
+E0801 18:48:31.031980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Icon_note_list_unlock.png failed!
+E0801 18:48:31.032979  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Icon_Share.png failed!
+E0801 18:48:31.034981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Icon_X.png failed!
+E0801 18:48:31.035980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\ie.bmp failed!
+E0801 18:48:31.036980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\image.bmp failed!
+E0801 18:48:31.037981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Image_Logo_PopTip.png failed!
+E0801 18:48:31.039980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Mask_Snap.png failed!
+E0801 18:48:31.040981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\menu_Shadow.png failed!
+E0801 18:48:31.041980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\css\lightbox.css failed!
+E0801 18:48:31.042980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\back1.png failed!
+E0801 18:48:31.043980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\back2.png failed!
+E0801 18:48:31.045980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\close1.png failed!
+E0801 18:48:31.046980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\close2.png failed!
+E0801 18:48:31.047981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\forward1.png failed!
+E0801 18:48:31.048980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\forward2.png failed!
+E0801 18:48:31.049980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\page1.png failed!
+E0801 18:48:31.051980  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\page2.png failed!
+E0801 18:48:31.052981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\page3.png failed!
+E0801 18:48:31.053982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\images\page4.png failed!
+E0801 18:48:31.054981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\index.html failed!
+E0801 18:48:31.055981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\js\jquery.js failed!
+E0801 18:48:31.056982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\NewFeaturesGuid\js\slider.js failed!
+E0801 18:48:31.058981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\null.bmp failed!
+E0801 18:48:31.059981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\pdf.bmp failed!
+E0801 18:48:31.060981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\PhotoTransitHelp\images\btns.png failed!
+E0801 18:48:31.061981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\PhotoTransitHelp\images\illustration.jpg failed!
+E0801 18:48:31.062981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\PhotoTransitHelp\welcome.html failed!
+E0801 18:48:31.064981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\ppt.bmp failed!
+E0801 18:48:31.065981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\proxy-alert.png failed!
+E0801 18:48:31.066982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\proxy-success.png failed!
+E0801 18:48:31.067981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\share-in.png failed!
+E0801 18:48:31.068981  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\share-out.png failed!
+E0801 18:48:31.069983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\swf.bmp failed!
+E0801 18:48:31.071982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\SyncInfo\images\grey.gif failed!
+E0801 18:48:31.072983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\SyncInfo\images\icon.png failed!
+E0801 18:48:31.073982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\SyncInfo\images\motion2.gif failed!
+E0801 18:48:31.074982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\SyncInfo\scripts\syncinfo.js failed!
+E0801 18:48:31.075983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\SyncInfo\stylesheets\syncinfo.css failed!
+E0801 18:48:31.077982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\SyncInfo\syncinfo.html failed!
+E0801 18:48:31.078982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\SyncInfo\vendor\underscore-min.js failed!
+E0801 18:48:31.079982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\sync_state1.png failed!
+E0801 18:48:31.080982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\sync_state2.png failed!
+E0801 18:48:31.082983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\sync_state3.png failed!
+E0801 18:48:31.083982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\sync_state4.png failed!
+E0801 18:48:31.084982  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\sync_state5.png failed!
+E0801 18:48:31.085983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\sync_state6.png failed!
+E0801 18:48:31.087983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\tag.png failed!
+E0801 18:48:31.088984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\text.bmp failed!
+E0801 18:48:31.089983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\Thumbs.db failed!
+E0801 18:48:31.090983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\transfer-icon.png failed!
+E0801 18:48:31.091984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\trash.png failed!
+E0801 18:48:31.093983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\unknown.png failed!
+E0801 18:48:31.094984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\computer.jpg failed!
+E0801 18:48:31.095983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\guide.css failed!
+E0801 18:48:31.096983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\guide.js failed!
+E0801 18:48:31.097983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\guide0.htm failed!
+E0801 18:48:31.099983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\guide1.htm failed!
+E0801 18:48:31.100983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\guide2.htm failed!
+E0801 18:48:31.101984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\guide3.htm failed!
+E0801 18:48:31.102983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\pc-guide-popup-bg.png failed!
+E0801 18:48:31.103983  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\UserGuide\Thumbs.db failed!
+E0801 18:48:31.104984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\video.bmp failed!
+E0801 18:48:31.106984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\webclipper.ico failed!
+E0801 18:48:31.107985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\word.bmp failed!
+E0801 18:48:31.108984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\res\zip.bmp failed!
+E0801 18:48:31.109984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\RunYNote.exe failed!
+E0801 18:48:31.110985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\RunYNote.exe.manifest failed!
+E0801 18:48:31.111984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\ShowPopupOnDesktop.exe failed!
+E0801 18:48:31.113984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\softs.ini failed!
+E0801 18:48:31.114984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\build.xml failed!
+E0801 18:48:31.115984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\ad\satis.jpg failed!
+E0801 18:48:31.116984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\attr.xml failed!
+E0801 18:48:31.117985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category.png failed!
+E0801 18:48:31.118984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Arrow_Black_Down.png failed!
+E0801 18:48:31.120985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Arrow_Black_Right.png failed!
+E0801 18:48:31.121984  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Arrow_Gray_Down.png failed!
+E0801 18:48:31.123986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Arrow_Gray_Right.png failed!
+E0801 18:48:31.124985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Author.png failed!
+E0801 18:48:31.125985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Collision.png failed!
+E0801 18:48:31.126986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Dft.png failed!
+E0801 18:48:31.127985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Dft_Share.png failed!
+E0801 18:48:31.129986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Error.png failed!
+E0801 18:48:31.130985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Fav.png failed!
+E0801 18:48:31.131985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Group.png failed!
+E0801 18:48:31.132985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Local.png failed!
+E0801 18:48:31.134985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Local_Group.png failed!
+E0801 18:48:31.135985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Lock.png failed!
+E0801 18:48:31.136986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Lock_Share.png failed!
+E0801 18:48:31.137985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Share.png failed!
+E0801 18:48:31.138985  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Unlock.png failed!
+E0801 18:48:31.140986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_Category_Unlock_Share.png failed!
+E0801 18:48:31.141986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_note_list_lock.png failed!
+E0801 18:48:31.142987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\manage\Icon_note_list_unlock.png failed!
+E0801 18:48:31.143986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\Preview.png failed!
+E0801 18:48:31.144986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Anmy_Sync.gif failed!
+E0801 18:48:31.145987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Blue.png failed!
+E0801 18:48:31.146986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Gray.png failed!
+E0801 18:48:31.148987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Gray_Big.png failed!
+E0801 18:48:31.149986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Gray_Border.png failed!
+E0801 18:48:31.150986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Green.png failed!
+E0801 18:48:31.151986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Yellow.png failed!
+E0801 18:48:31.152987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Btn_Yellow_Big.png failed!
+E0801 18:48:31.153986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Edit_Title_Normal_Focus.png failed!
+E0801 18:48:31.155987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_History_Num_Dot.png failed!
+E0801 18:48:31.156986  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_innder_shadow.png failed!
+E0801 18:48:31.157987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Login.png failed!
+E0801 18:48:31.158987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Mail_Number.png failed!
+E0801 18:48:31.159987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Pop.png failed!
+E0801 18:48:31.160987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Popup_Gradient.png failed!
+E0801 18:48:31.161988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress-12.png failed!
+E0801 18:48:31.162987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress.png failed!
+E0801 18:48:31.164988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress_Done-12.png failed!
+E0801 18:48:31.165987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress_Done.png failed!
+E0801 18:48:31.166987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Progress_Will.png failed!
+E0801 18:48:31.167987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Reg.png failed!
+E0801 18:48:31.168987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Scroll_Bar.png failed!
+E0801 18:48:31.169987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Search.png failed!
+E0801 18:48:31.170987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Search_Detail.png failed!
+E0801 18:48:31.171988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Search_Focus.png failed!
+E0801 18:48:31.173987  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Search_Key.png failed!
+E0801 18:48:31.174988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_secret.png failed!
+E0801 18:48:31.175988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_SyncInfoForm.png failed!
+E0801 18:48:31.176988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Bg_Tag_Suggestion.png failed!
+E0801 18:48:31.177989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Border_Search.png failed!
+E0801 18:48:31.178988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Border_StdTBBtn.png failed!
+E0801 18:48:31.179988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Border_Tab.png failed!
+E0801 18:48:31.180989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Add_Tag.png failed!
+E0801 18:48:31.181988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Add_Tag_First.png failed!
+E0801 18:48:31.183989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Attach_Sort.png failed!
+E0801 18:48:31.184988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Back_2_Login.png failed!
+E0801 18:48:31.185988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Cancel.png failed!
+E0801 18:48:31.186988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Change_Verify.png failed!
+E0801 18:48:31.187988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Combox.png failed!
+E0801 18:48:31.189988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_DropDown.png failed!
+E0801 18:48:31.190989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_DropDown_Tag.png failed!
+E0801 18:48:31.191988  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Group.png failed!
+E0801 18:48:31.192989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Hide_Frame.png failed!
+E0801 18:48:31.193989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_History_Next.png failed!
+E0801 18:48:31.194989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_History_Prev.png failed!
+E0801 18:48:31.195989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_HScrollBar.png failed!
+E0801 18:48:31.196990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_HScrollBarLeft.png failed!
+E0801 18:48:31.197989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_HScrollBarRight.png failed!
+E0801 18:48:31.199990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_HScrollBarThumb.png failed!
+E0801 18:48:31.200989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login2Reg_Normal_Over_Down.png failed!
+E0801 18:48:31.201989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login_Normal_Over_Down.png failed!
+E0801 18:48:31.202990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login_QQ.png failed!
+E0801 18:48:31.203989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login_QQT.png failed!
+E0801 18:48:31.205989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Login_Weibo.png failed!
+E0801 18:48:31.206990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Note_Meta_Down.png failed!
+E0801 18:48:31.207989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Note_Meta_Up.png failed!
+E0801 18:48:31.208989  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Popup_Sync_Continue.png failed!
+E0801 18:48:31.209990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Popup_Sync_Pause.png failed!
+E0801 18:48:31.210990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Reg_Normal_Over_Down.png failed!
+E0801 18:48:31.211990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search.png failed!
+E0801 18:48:31.213990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Delete.png failed!
+E0801 18:48:31.214990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Delete_SML.png failed!
+E0801 18:48:31.215991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Down.png failed!
+E0801 18:48:31.216990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Icon.png failed!
+E0801 18:48:31.218991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Search_Up.png failed!
+E0801 18:48:31.219990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Segment_Left.png failed!
+E0801 18:48:31.220990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Segment_Right.png failed!
+E0801 18:48:31.222990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Show_Frame.png failed!
+E0801 18:48:31.224990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysBbs.png failed!
+E0801 18:48:31.226990  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysLock.png failed!
+E0801 18:48:31.227991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysMail.png failed!
+E0801 18:48:31.229991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysMail_Yellow.png failed!
+E0801 18:48:31.230991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysMenu.png failed!
+E0801 18:48:31.231992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysPopup.png failed!
+E0801 18:48:31.232991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_SysView.png failed!
+E0801 18:48:31.233991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_unlock.png failed!
+E0801 18:48:31.234992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_User_Down.png failed!
+E0801 18:48:31.235991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_User_Down_Focus.png failed!
+E0801 18:48:31.236991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_User_Down_Mail_Combox.png failed!
+E0801 18:48:31.238991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_View_Grid.png failed!
+E0801 18:48:31.239991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_View_List.png failed!
+E0801 18:48:31.240991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_View_Snap.png failed!
+E0801 18:48:31.241991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBar.png failed!
+E0801 18:48:31.242991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarDown.png failed!
+E0801 18:48:31.243991  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarEnd.png failed!
+E0801 18:48:31.245992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarFlash.png failed!
+E0801 18:48:31.246992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarThumb.png failed!
+E0801 18:48:31.247992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_VScrollBarUp.png failed!
+E0801 18:48:31.248992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Window_Close.png failed!
+E0801 18:48:31.249992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Window_Max.png failed!
+E0801 18:48:31.250993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Window_Min.png failed!
+E0801 18:48:31.251992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_Window_Normal.png failed!
+E0801 18:48:31.252992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Btn_X.png failed!
+E0801 18:48:31.253993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Checkbox.png failed!
+E0801 18:48:31.255992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\CommonBk_HScrollBar.png failed!
+E0801 18:48:31.256993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\CommonBk_PreLogin.png failed!
+E0801 18:48:31.257992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\CommonBk_VScrollBar.png failed!
+E0801 18:48:31.258992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\ctt_varication_code.png failed!
+E0801 18:48:31.259992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Editor.png failed!
+E0801 18:48:31.260993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\EditorIcon.png failed!
+E0801 18:48:31.261992  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\FormBk_Main.png failed!
+E0801 18:48:31.263993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\FormBk_Main_Max.png failed!
+E0801 18:48:31.264993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\FormBk_Popup.png failed!
+E0801 18:48:31.265993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\History_Num_Bk.png failed!
+E0801 18:48:31.266993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Attachment.png failed!
+E0801 18:48:31.267993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Error.png failed!
+E0801 18:48:31.268993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Login_QQ.png failed!
+E0801 18:48:31.269994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Login_QQ_T.png failed!
+E0801 18:48:31.270993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Login_Weibo.png failed!
+E0801 18:48:31.272994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Menu.png failed!
+E0801 18:48:31.273993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_NewNote.png failed!
+E0801 18:48:31.274993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_NewNoteBook.png failed!
+E0801 18:48:31.275993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_NewNoteBookGroup.png failed!
+E0801 18:48:31.276993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Safe_Blue.png failed!
+E0801 18:48:31.277993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Search.png failed!
+E0801 18:48:31.278993  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Search_Delete.png failed!
+E0801 18:48:31.279994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Sort_Arrow_Down.png failed!
+E0801 18:48:31.280994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_Sort_Arrow_Up.png failed!
+E0801 18:48:31.282994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_SRC_Edit.png failed!
+E0801 18:48:31.283994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_TitleBar_Safe.png failed!
+E0801 18:48:31.284994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Icon_X.png failed!
+E0801 18:48:31.285995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Image_About_Logo.png failed!
+E0801 18:48:31.286994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Image_Attach_Empty.png failed!
+E0801 18:48:31.287994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Image_Gray_Note_Mark.png failed!
+E0801 18:48:31.288995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Image_Login_Logo.png failed!
+E0801 18:48:31.289994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Check.png failed!
+E0801 18:48:31.291995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Login_Normal_Focus.png failed!
+E0801 18:48:31.292994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Normal_Focus_Disabled.png failed!
+E0801 18:48:31.293994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Normal_Focus_Disabled_SML.png failed!
+E0801 18:48:31.295994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Search_Round.png failed!
+E0801 18:48:31.296994  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Input_Secret.png failed!
+E0801 18:48:31.297996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\IntroGif.gif failed!
+E0801 18:48:31.298995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\IntroGifMargin.png failed!
+E0801 18:48:31.299995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\IntroText.png failed!
+E0801 18:48:31.300995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\loading-54.gif failed!
+E0801 18:48:31.301995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\LoginIntro.gif failed!
+E0801 18:48:31.302995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Mask_Snap.png failed!
+E0801 18:48:31.304996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\MenuBar_01.png failed!
+E0801 18:48:31.305995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\MenuBar_02.png failed!
+E0801 18:48:31.306995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\MenuBar_03.png failed!
+E0801 18:48:31.307996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Menu_Bk.png failed!
+E0801 18:48:31.308995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Menu_Focused.png failed!
+E0801 18:48:31.309995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Menu_Hover_Focus_Select.png failed!
+E0801 18:48:31.310995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Menu_Line.png failed!
+E0801 18:48:31.311995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\NotebookGroupFold.png failed!
+E0801 18:48:31.312995  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\NotebookList.png failed!
+E0801 18:48:31.314996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\NoVip.png failed!
+E0801 18:48:31.315996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Photo_List_Wnd_Horizontal_Margin.png failed!
+E0801 18:48:31.316997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Photo_List_Wnd_Vertical_Margin.png failed!
+E0801 18:48:31.317996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\PopoupMenu_04.png failed!
+E0801 18:48:31.318996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\PopoupMenu_08.png failed!
+E0801 18:48:31.320996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\proxy-alert.png failed!
+E0801 18:48:31.321996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\proxy-success.png failed!
+E0801 18:48:31.322996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Radio.png failed!
+E0801 18:48:31.323997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\RedDot.png failed!
+E0801 18:48:31.324996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\SeperateLine.png failed!
+E0801 18:48:31.325996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Seperator.png failed!
+E0801 18:48:31.326997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\SettingButton.png failed!
+E0801 18:48:31.327996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Slider_btn.png failed!
+E0801 18:48:31.328996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_hover_l.png failed!
+E0801 18:48:31.330996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_hover_m.png failed!
+E0801 18:48:31.331996  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_hover_r.png failed!
+E0801 18:48:31.332998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_normal_l.png failed!
+E0801 18:48:31.333997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_normal_m.png failed!
+E0801 18:48:31.334997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_normal_r.png failed!
+E0801 18:48:31.336997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_press_l.png failed!
+E0801 18:48:31.337997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_press_m.png failed!
+E0801 18:48:31.338997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvhi_press_r.png failed!
+E0801 18:48:31.339998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvh_asc.png failed!
+E0801 18:48:31.341997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\slvh_desc.png failed!
+E0801 18:48:31.342998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\SugCombox_Bk.png failed!
+E0801 18:48:31.343997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_Pass.png failed!
+E0801 18:48:31.344997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_Pass_Focus.png failed!
+E0801 18:48:31.345998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_Pass_Normal.png failed!
+E0801 18:48:31.346997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_User.png failed!
+E0801 18:48:31.347997  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_User_Focus.png failed!
+E0801 18:48:31.349998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Text_Login_User_Normal.png failed!
+E0801 18:48:31.350998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Thumbs.db failed!
+E0801 18:48:31.351999  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\TopMost.png failed!
+E0801 18:48:31.352998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\TopMostCancel.png failed!
+E0801 18:48:31.353998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\UpDown_01_01.png failed!
+E0801 18:48:31.354998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\UpDown_01_04.png failed!
+E0801 18:48:31.355998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Vip-53.png failed!
+E0801 18:48:31.356998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\public\Vip.png failed!
+E0801 18:48:31.358999  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\default\skin.xml failed!
+E0801 18:48:31.359998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\gdstrings.ini failed!
+E0801 18:48:31.360998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\theme\skins.xml failed!
+E0801 18:48:31.361999  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\UI.dll failed!
+E0801 18:48:31.362998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\uninst.exe failed!
+E0801 18:48:31.363998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\XGDI.dll failed!
+E0801 18:48:31.364998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\YNotepad.exe failed!
+E0801 18:48:31.365998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\YNotepad.exe.manifest failed!
+E0801 18:48:31.366998  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\YoudaoNote.exe failed!
+E0801 18:48:31.368000  5356 pkgfile.h:32] Create Package File: test\C$\Program Files\Youdao\YoudaoNote\YoudaoNote.exe.manifest failed!
+E0801 18:48:31.368999  5356 pkgfile.h:32] Create Package File: test\$28\Microsoft\Windows\Temporary Internet Files\Content.IE5\BNH130D8\install[1 failed!
+E0801 18:48:31.369999  5356 pkgfile.h:32] Create Package File: test\$28\Youdao\YNote\vendor.dat failed!
+E0801 18:48:31.371999  5356 pkgfile.h:32] Create Package File: test\$8986\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\有道云笔记.lnk failed!
+E0801 18:48:31.373999  5356 pkgfile.h:32] Create Package File: test\$5890\有道\有道云笔记\卸载有道云笔记.lnk failed!
+E0801 18:48:31.375999  5356 pkgfile.h:32] Create Package File: test\$5890\有道\有道云笔记\启动有道云笔记.lnk failed!
+E0801 18:48:31.376999  5356 pkgfile.h:32] Create Package File: test\$5890\有道\有道云笔记\有道云笔记网页剪报.url failed!
+E0801 18:48:31.378999  5356 pkgfile.h:32] Create Package File: test\$6416\有道云笔记.lnk failed!
+E0801 18:48:31.381000  5356 pkgfile.h:32] Create Package File: test\$6416\有道云笔记网页剪报.url failed!
+E0801 18:48:31.382999  5356 pkgfile.h:32] Create Package File: test\$28\Microsoft\Windows\History\History.IE5\index.dat failed!
+E0801 18:48:31.383999  5356 pkgfile.h:32] Create Package File: test\$28\Microsoft\Windows\Temporary Internet Files\Content.IE5\index.dat failed!
+E0801 18:48:31.385000  5356 pkgfile.h:32] Create Package File: test\$28\Microsoft\Windows\UsrClass.dat failed!
+E0801 18:48:31.386000  5356 pkgfile.h:32] Create Package File: test\$28\Microsoft\Windows\UsrClass.dat.LOG1 failed!
+E0801 18:48:31.387001  5356 pkgfile.h:32] Create Package File: test\$28\Youdao\YNote\log\YoudaoNote.exe.log failed!
+E0801 18:48:31.388000  5356 pkgfile.h:32] Create Package File: test\$28\Youdao\YNote\profile.ini failed!
+E0801 18:48:31.389000  5356 pkgfile.h:32] Create Package File: test\$33\index.dat failed!
+E0801 18:48:31.390000  5356 pkgfile.h:32] Create Package File: test\$40\NTUSER.DAT failed!
+E0801 18:48:31.391000  5356 pkgfile.h:32] Create Package File: test\$40\ntuser.dat.LOG1 failed!
+E0801 18:48:31.392000  5356 pkgfile.h:32] Create Package File: test\$36\AppCompat\Programs\RecentFileCache.bcf failed!
+E0801 18:48:31.393000  5356 pkgfile.h:32] Create Package File: test\$36\System32\config\SOFTWARE failed!
+E0801 18:48:31.394001  5356 pkgfile.h:32] Create Package File: test\$36\System32\config\SOFTWARE.LOG1 failed!
+E0801 18:48:31.395000  5356 pkgfile.h:32] Create Package File: test\$36\System32\config\systemprofile\AppData\Local\Microsoft\Windows\History\History.IE5\index.dat failed!
+E0801 18:48:31.397001  5356 pkgfile.h:32] Create Package File: test\$36\System32\config\systemprofile\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\index.dat failed!
+E0801 18:48:31.398000  5356 pkgfile.h:32] Create Package File: test\$36\System32\config\systemprofile\AppData\Roaming\Microsoft\Windows\Cookies\index.dat failed!
+I0801 18:48:31.399000  5356 extractor.h:57] Extractor, exec entry: ""$SYSDIR\reg.exe" import "$WINDIR\EasytekTmp\Registry.REG"" not exec
+I0801 18:48:31.403002  5356 pkgtools.cpp:241] Extract Over!

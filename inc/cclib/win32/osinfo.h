@@ -8,8 +8,10 @@
 #include <string>
 #include <sstream>
 #include <windows.h>
+#include "../types.h"
 
-//namespace os {
+CCLIB_NAMESPACE_BEGIN
+WIN32_NAMESPACE_BEGIN
 
 /// intel x86(32bit)
 const int kCpuArchX86 = 1; 
@@ -169,7 +171,48 @@ inline bool is64bitSelf()
     return sizeof(void*) == 8;
 }
 
+uint64_t osver();
+uint64_t makeullong(DWORD high, DWORD low);
 
-//} // namespace os
+//version overview: http://msdn.microsoft.com/en-us/library/ms724834(VS.85).aspx
+const uint64_t koswin81   = makeullong(6, 3);
+const uint64_t koswin8    = makeullong(6, 2);
+const uint64_t koswin7    = makeullong(6, 1);
+const uint64_t kosvista   = makeullong(6, 0);
+const uint64_t koswin2003 = makeullong(5, 2);
+const uint64_t koswinxp   = makeullong(5, 1);
+
+inline bool win81OrLater        () { return osver() >= koswin81;   }
+inline bool win8OrLater         () { return osver() >= koswin8;    }
+inline bool win7OrLater         () { return osver() >= koswin7;    }
+inline bool vistaOrLater        () { return osver() >= kosvista;   }
+inline bool winServer2003orLater() { return osver() >= koswin2003; }
+inline bool winXpOrLater        () { return osver() >= koswinxp;   }
+
+//######################### implementation #########################
+inline
+uint64_t makeullong(DWORD high, DWORD low)
+{
+    ULARGE_INTEGER tmp = {};
+    tmp.HighPart = high;
+    tmp.LowPart  = low;
+
+    // c++11 supported static_assert. vc2010 and later supported.
+    //static_assert(sizeof(tmp) == sizeof(uint64_t), "");
+    return tmp.QuadPart;
+}
+
+inline
+uint64_t osver()
+{
+    OSVERSIONINFO osvi = {};
+    osvi.dwOSVersionInfoSize = sizeof(osvi);
+    if (!::GetVersionEx(&osvi)) //38 ns per call! (yes, that's nano!) -> we do NOT miss C++11 thread safe statics right now...
+        return 0;
+    return makeullong(osvi.dwMajorVersion, osvi.dwMinorVersion);
+}
+
+WIN32_NAMESPACE_END
+CCLIB_NAMESPACE_END
 
 #endif // cclib_win32_os_info_h_

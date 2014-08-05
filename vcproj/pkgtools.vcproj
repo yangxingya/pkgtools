@@ -209,10 +209,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\error.h"
-				>
-			</File>
-			<File
 				RelativePath="..\src\pkgtools\except.h"
 				>
 			</File>
@@ -241,10 +237,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\src\pkgtools\maker.h"
-				>
-			</File>
-			<File
 				RelativePath="..\src\pkgtools\packer.h"
 				>
 			</File>
@@ -254,6 +246,10 @@
 			</File>
 			<File
 				RelativePath="..\src\pkgtools\pkgfile.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\pkgtools\runner.h"
 				>
 			</File>
 			<File

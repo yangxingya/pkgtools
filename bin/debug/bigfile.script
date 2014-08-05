@@ -1,5 +1,5 @@
-file:[-d c:\pkg-install\test1.iso] [-s C:\pkg-test\test1.iso] [-p t i] [-i t i]
-file:[-d c:\pkg-install\test2.iso] [-s C:\pkg-test\test2.iso] [-p t i] [-i t i]
+addf:[-d c:\pkg-install\test1.iso] [-s C:\pkg-test\test1.iso] [-i t i]
+addf:[-d c:\pkg-install\test2.iso] [-s C:\pkg-test\test2.iso] [-i t i]
 
 
 out:[-d .\bigfile.dat]

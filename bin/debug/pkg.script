@@ -1,9 +1,10 @@
 setting:[-p][-i][-u][-s dfsrd]
 
-dir:[-d c:\pkg-install\] [-p] [-i] [-u]
-file:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3d9.dll] [-p] [-i] [-u]
+mkdir:[-d c:\pkg-install\][-i]
+addf:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3d9.dll][-p][-i]
 
-exec:[-i] [-c "cmd.exe" echo "hello, this a test, output is: $NAME" > $OUT]
+delf:[-d c:\pkg-install\d3d9.dll][-u]
+rmdir:[-d c:\pkg-install\][-u]
 
 out:[-d .\test.dat]
 

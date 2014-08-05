@@ -1,0 +1,18 @@
+Log file created at: 2014/08/01 15:16:47
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0801 15:16:47.741441  1084 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -u test.dat"
+I0801 15:16:47.744441  1084 pkgtools.cpp:184] Uninstall Start, package name: test.dat
+I0801 15:16:47.744441  1084 pkgfile.h:78] Open Package File: test.dat successfule!
+I0801 15:16:47.744441  1084 unpacker.h:136] Extract args 0: dfsrd
+I0801 15:16:47.745440  1084 unpacker.h:136] Extract args 1: c:\pkg-install\
+I0801 15:16:47.745440  1084 unpacker.h:136] Extract args 2: c:\pkg-install\d3d9.dll
+I0801 15:16:47.745440  1084 unpacker.h:136] Extract args 3: c:\pkg-install\d3d9-1.dll
+I0801 15:16:47.794443  1084 setting.h:97] Setting: disable filesystem redirection
+I0801 15:16:47.795444  1084 uninstaller.h:132] Uninstall: mkdir: "c:\pkg-install\" no need uninstall
+I0801 15:16:47.795444  1084 uninstaller.h:66] Uninstall: addf: "c:\pkg-install\d3d9.dll" no need uninstall
+I0801 15:16:47.795444  1084 uninstaller.h:66] Uninstall: addf: "c:\pkg-install\d3d9-1.dll" no need uninstall
+I0801 15:16:47.795444  1084 uninstaller.h:108] Uninstall: delf: "c:\pkg-install\d3d9.dll" extract successful!
+I0801 15:16:47.796443  1084 uninstaller.h:108] Uninstall: delf: "c:\pkg-install\d3d9-1.dll" extract successful!
+I0801 15:16:47.796443  1084 uninstaller.h:166] Uninstall: rmdir: "c:\pkg-install\" remove successful!
+I0801 15:16:47.796443  1084 pkgtools.cpp:196] Uninstall Over!

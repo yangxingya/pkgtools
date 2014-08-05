@@ -11,7 +11,6 @@
 #include <cclib/types.h>
 #include <cclib/smartptr_def.h>
 #include <glog/logging.h>
-#include "error.h"
 #include "except.h"
 #include "argvdef.h"
 #include "pkgdef.h"
@@ -21,86 +20,7 @@ namespace argv {
 
 using namespace cclib;
 using namespace pkg;
-using ::file::fholder;
-
-//!
-/// detail:
-///   flags:
-///     7 6 5 4 3 2 1 0
-///                   ^
-///                  p/i/u
-///                 ^
-///                 t(error try?)
-///               ^
-///               e(error exit?)
-
-const uint8_t kpkgtmask = 1;    /// 0x01
-const uint8_t kinstmask = 1;    /// 0x01
-const uint8_t kuninmask = 1;    /// 0x01  
-
-const uint8_t kallmask = 7;     /// 0x07
-
-/// error try mask
-const uint8_t kerrtmask = 2;    /// 0x02
-/// error exit mask
-const uint8_t kerrxmask = 4;    /// 0x04
-
-const std::string kargvbegin = "[";
-const std::string kargvend = "]";
-const std::string kseparate = " ";
-const std::string kpkgtstr = "-p";
-const std::string kinststr = "-i";
-const std::string kuninstr = "-u";
-
-/// no error try prefix, error try value follow '-p/-i/-u'.
-/// detail: -p n/t, -i n/t, -u n/t
-/// no error exit prefix likely '-e b/i', is only b/i. so:
-/// detail: -p n/t b/i, -i n/t b/i, -u n/t b/i
-
-const std::string knotrystr  = "n";
-const std::string ktrystr    = "t";
-const std::string kbreakstr  = "b";
-const std::string kignorestr = "i";
-
-/// error try value.
-const uint8_t kerrtry = 2;
-/// error no try value.
-const uint8_t kerrnotry = 0;
-/// error ignore value.
-const uint8_t kerrignore = 4;
-/// error break value.
-const uint8_t kerrbreak = 0;
-///!
-/// the following is default value.
-const uint8_t kdfttry = kerrtry; 
-const uint8_t kdfterr = kerrignore;
-
-const uint8_t kdftpkgt = 1;
-const uint8_t kdftinst = 1;
-const uint8_t kdftunin = 0;
-const uint8_t kenabled = 1;
-
-/// the following is all combined default flags.
-const uint8_t kdftpcomb = kdftpkgt | kdfttry | kdfterr;
-const uint8_t kdfticomb = kdftinst | kdfttry | kdfterr;
-const uint8_t kdftucomb = kdftunin | kdfttry | kdfterr;
-
-inline uint8_t toInst(uint8_t entryflags) { return entryflags & kallmask; }
-inline uint8_t toUnin(uint8_t entryflags) { return (entryflags >> kflagsuninshift) & kallmask; }
-inline int toType(uint16_t entrytype) 
-{
-    switch (entrytype) {
-    case kentryaddf:    return kAddf;
-    case kentrydelf:    return kDelf;
-    case kentrymkdir:   return kMkdir;
-    case kentryrmdir:   return kRmdir;
-    case kentryexec:    return kExec;
-    case kentrysetting: return kSetting;
-    default: return kUnknown;
-    }
-}
-
-inline uint8_t toCheckRet(uint8_t entryflags) { return entryflags >> kflagsckshift; }
+using namespace err;
 
 //! 
 /// brief: base args: -p -i -u
@@ -273,14 +193,24 @@ private:
 };
 
 //!
-/// addf:[-d dst][-s src][-i/u [n/t [b/i]]] 
+/// addf:[-d dst][-s src][-p/i/u [n/t [b/i]]]
+/// must have [-p [n/t [b/i]]] section.
 struct AddfArgv : public ArgvBase
 {
     AddfArgv(std::string const& argv)
         : ArgvBase(argv, kAddf), src_valid_(false)
     {
+        if (!hasPkgt()) {
+            std::string error = "Parse Args no 'pkgt args': \"";
+            error += argv;
+            error += "\".";
+            LOG(ERROR) << error;
+            throw script_error(ERROR_ScriptFormatError, error); 
+        }
         if (!hasInst() && !hasUnin()) {
-            std::string error = "Parse Args no 'inst args' or 'unin args'";
+            std::string error = "Parse Args no 'inst args' or 'unin args': \"";
+            error += argv;
+            error += "\".";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptFormatError, error); 
         }
@@ -341,7 +271,9 @@ struct DelfArgv : public ArgvBase
         : ArgvBase(argv, kDelf)
     {
         if (!hasInst() && !hasUnin()) {
-            std::string error = "Parse Args no 'inst args' or 'unin args'";
+            std::string error = "Parse Args no 'inst args' or 'unin args': \"";
+            error += argv;
+            error += "\".";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptFormatError, error); 
         }
@@ -386,8 +318,10 @@ public:
     MkdirArgv(std::string const& argv)
         : ArgvBase(argv, kMkdir)
     {
-        if (!hasInst() || !hasUnin()) {
-            std::string error = "Parse Args no 'inst args' or 'unin args'";
+        if (!hasInst() && !hasUnin()) {
+            std::string error = "Parse Args no 'inst args' or 'unin args': \"";
+            error += argv;
+            error += "\".";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptFormatError, error); 
         }
@@ -430,8 +364,10 @@ public:
     RmdirArgv(std::string const& argv)
         : ArgvBase(argv, kRmdir)
     {
-        if (!hasInst() || !hasUnin()) {
-            std::string error = "Parse Args no 'inst args' or 'unin args'";
+        if (!hasInst() && !hasUnin()) {
+            std::string error = "Parse Args no 'inst args' or 'unin args': \"";
+            error += argv;
+            error += "\".";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptFormatError, error); 
         }
@@ -477,8 +413,10 @@ public:
     ExecArgv(std::string const& argv)
         : ArgvBase(argv, kExec)
     {
-        if (!hasInst() && !hasUnin()) {
-            std::string error = "Parse Args no 'inst args' or 'unin args'";
+        if (!hasPkgt() && !hasInst() && !hasUnin()) {
+            std::string error = "Parse Args no 'pkgt args' or 'inst args' or 'unin args': \"";
+            error += argv;
+            error += "\".";
             LOG(ERROR) << error;
             throw script_error(ERROR_ScriptFormatError, error); 
         }
@@ -545,6 +483,14 @@ struct SettingArgv : public ArgvBase
     SettingArgv(std::string const& argv)
         : ArgvBase(argv, kSetting)
     {
+        if (!hasPkgt() && !hasInst() && !hasUnin()) {
+            std::string error = "Parse Args no 'pkgt args' or 'inst args' or 'unin args': \"";
+            error += argv;
+            error += "\".";
+            LOG(ERROR) << error;
+            throw script_error(ERROR_ScriptFormatError, error); 
+        }
+
         parse();
         /// check argv supported ???
         if (Setting::valid(flags_) == kinvalidargs) {
@@ -621,11 +567,11 @@ inline entry_t transfer(argv::MkdirArgv *argv)
     return entry;
 }
 
-inline entry_t transfer(argv::MkdirArgv *argv)
+inline entry_t transfer(argv::RmdirArgv *argv)
 {
     entry_t entry = {0};
 
-    entry.type = kentrymkdir;
+    entry.type = kentryrmdir;
     entry.flags = argv->instFlags() | (argv->uninFlags() << kflagsuninshift);
     entry.dtaindex = kinvalid; 
 

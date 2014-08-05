@@ -1,0 +1,1722 @@
+<?xml version="1.0" encoding="utf-8"?>
+<POPO>
+    <control>
+        <!--标题栏-->
+        <CloseCaption type="MainCaption" css="CloseCaption" ass="caption public">
+            <SysButtonClose type="button" css="SysButtonClose" ass="sysbutton close"/>
+        </CloseCaption>
+
+        <CloseCaption1 type="caption" css="public2" ass="caption public">
+            <SysButtonClose type="button" css="SysButtonClose" ass="sysbutton close"/>
+        </CloseCaption1>
+
+        <NormalCaption type="caption" css="CaptionWithIcon" ass="caption public">
+            <PanelCloseButton type="panel" css="public" ass ="FormCaption_MAIN PanelClose">
+                <SysButtonClose type="button" css="SysButtonClose" ass="FormCaption_MAIN PanelClose close"/>
+            </PanelCloseButton>
+            <PanelMaxButton type="panel" css="public" ass ="FormCaption_MAIN PanelMax">
+                <SysButtonMax type="button" css="SysButtonMax" ass="FormCaption_MAIN PanelMax max"/>
+                <SysButtonRestore type="button" css="SysButtonRes" ass="FormCaption_MAIN PanelMax restore" Visible="false"/>
+            </PanelMaxButton>
+
+            <PanelMinButton type="panel" css="public" ass ="FormCaption_MAIN PanelMin">
+                <SysButtonMin type="button" css="SysButtonMin" ass="FormCaption_MAIN PanelMin min"/>
+            </PanelMinButton>
+        </NormalCaption> 
+
+        <NoteFormCaption type="caption" css="CaptionWithIcon" ass="caption public">
+          <PanelCloseButton type="panel" css="public" ass ="FormCaption_MAIN PanelClose">
+            <SysButtonClose type="button" css="SysButtonClose" ass="FormCaption_MAIN PanelClose close"/>
+          </PanelCloseButton>
+          <PanelMaxButton type="panel" css="public" ass ="FormCaption_MAIN PanelMax">
+            <SysButtonMax type="button" css="SysButtonMax" ass="FormCaption_MAIN PanelMax max"/>
+            <SysButtonRestore type="button" css="SysButtonRes" ass="FormCaption_MAIN PanelMax restore" Visible="false"/>
+          </PanelMaxButton>
+
+          <PanelMinButton type="panel" css="public" ass ="FormCaption_MAIN PanelMin">
+            <SysButtonMin type="button" css="SysButtonMin" ass="FormCaption_MAIN PanelMin min"/>
+          </PanelMinButton>
+
+          <PanelTopMost type="panel" css="public" ass ="FormCaption_MAIN PanelTopMost">
+            <ButtonTopMost type="button" css="ButtonTopMost" ass="FormCaption_MAIN PanelTopMost ButtonTopMost"/>
+            <ButtonTopMostCancel type="button" css="ButtonTopMostCancel" ass="FormCaption_MAIN PanelTopMost ButtonTopMostCancel"/>
+          </PanelTopMost>
+        </NoteFormCaption>
+
+
+        <OKAndCanel type="panel" css="public" ass="common OKAndCancel">
+            <PanelCancel type="panel" css="public" DockStyle="right" bounds="0,0,60,0" Margin="12,0,0,0">
+                <CancelButton type="button" css="public" DockStyle="fill" StrID="STRID_CANCEL"/>
+            </PanelCancel>
+            <OKButton type="button" css="ButtonOk" DockStyle="right" bounds="0,0,48,0" StrID="STRID_OK"/>
+        </OKAndCanel>
+
+        <HotKeyEditAndButton type="panel" css="OptionForm HotKeyBorderPanel" >
+            <editHotkey type="hotkey" css="ProxySettingForm public" ass="OptionForm editHotkey"/>
+            <ButtonPanel type="panel" css="WhitePanel" DockStyle="fill" Margin="0,6,5,6">
+                <buttonHotkey type="button" css="OptionForm buttonHotkey" DockStyle="fill"/>
+            </ButtonPanel>
+        </HotKeyEditAndButton>
+
+        <FormCaption_MAIN type="MainCaption" css="mainform" ass="caption public">
+            <YNoteTextBack type="label" css="caption YNoteTextBack" ass="caption YNoteTextBack"/>
+            <YNoteTextFore type="label" css="caption YNoteTextFore" ass="caption YNoteTextFore"/>
+
+            <WindowTextBack type="label" css="caption WindowTextBack" ass="caption WindowTextBack"/>
+            <WindowTextFore type="label" css="caption WindowTextFore" ass="caption WindowTextFore"/>
+
+            <IconSafe type="button" css="IconSafe" ass="caption IconSafe"/>
+
+            <PanelCloseButton type="panel" css="public" ass ="FormCaption_MAIN PanelClose">
+                <SysButtonClose type="button" css="SysButtonClose" ass="FormCaption_MAIN PanelClose close"/>
+            </PanelCloseButton>
+
+            <PanelMaxButton type="panel" css="public" ass ="FormCaption_MAIN PanelMax">
+                <SysButtonMax type="button" css="SysButtonMax" ass="FormCaption_MAIN PanelMax max"/>
+                <SysButtonRestore type="button" css="SysButtonRes" ass="FormCaption_MAIN PanelMax restore" Visible="false"/>
+            </PanelMaxButton>
+
+            <PanelMinButton type="panel" css="public" ass ="FormCaption_MAIN PanelMin">
+                <SysButtonMin type="button" css="SysButtonMin" ass="FormCaption_MAIN PanelMin min"/>
+            </PanelMinButton>
+
+            <PanelLockButton type="panel" css="public" ass ="FormCaption_MAIN PanelLock">
+                <SysButtonLock type="button" css="SysButtonLock" ass="FormCaption_MAIN PanelLock lock"/>
+            </PanelLockButton>
+
+            <MailPanel type="panel" css="public" ass="FormCaption_MAIN mailpanel">
+                <SysButtonMailInfo type="button" css="SysButtonMailInfo" ass="FormCaption_MAIN mailpanel mailinfo"/>
+                <SysButtonMailNum type="button" css="SysButtonMailNum" ass="FormCaption_MAIN mailpanel mailnum"/>
+            </MailPanel>
+
+            <PanelBbsButton type="panel" css="public" ass ="FormCaption_MAIN PanelBbs">
+                <SysButtonBbs type="button" css="SysButtonBbs" ass="FormCaption_MAIN PanelBbs bbs"/>
+            </PanelBbsButton>
+
+            <PanelDisplayButton type="panel" css="public" ass ="FormCaption_MAIN PanelDisplay">
+                <SysButtonDisplay type="button" css="SysButtonDisplay" ass="FormCaption_MAIN PanelDisplay display"/>
+            </PanelDisplayButton>
+
+            <PanelMenuButton type="panel" css="public" ass ="FormCaption_MAIN PanelMenu">
+                <SysButtonMenu type="button" css="SysButtonMenu" ass="FormCaption_MAIN PanelMenu menu"/>
+            </PanelMenuButton>
+
+
+        </FormCaption_MAIN>
+
+        <LoginFormCaption type="caption" css="public_hide" ass="caption LoginFormCaption">
+            <PanelCloseButton type="panel" css="public" ass ="FormCaption_MAIN PanelClose">
+                <SysButtonClose type="button" css="SysButtonClose" ass="FormCaption_MAIN PanelClose close"/>
+            </PanelCloseButton>
+            <PanelMinButton type="panel" css="public" ass ="FormCaption_MAIN PanelMin">
+                <SysButtonMin type="button" css="SysButtonMin" ass="FormCaption_MAIN PanelMin min"/>
+            </PanelMinButton>
+        </LoginFormCaption>
+
+        <!--笔记加解密-->
+        <NoteLockForm type="ReadingEncryptPanel" css="ReadingEncryptPanel" ass="NoteLockForm">
+            <EncyptPanel type="SetEncryptPasswordPanel" css="public" DockStyle="fill" Margin="0,30,0,0">
+                <TopPanel type="panel" css="public" DockStyle="top" Bounds="0,0,0,144">
+                    <LockPanelCenter type="panel" css="public" ass="NoteLockForm LockPanel TopPanel LockPanelCenter">
+                        <TopTextPanel type="panel" css ="public" DockStyle="top" Bounds="0,0,0,24">
+                            <LableLeft type="label" css="common Normal" ass="NoteLockForm LockPanel TopPanel LockPanelCenter TopTextPanel LableLeft"/>
+                            <LableRight type="label" css="common Gray" ass="NoteLockForm LockPanel TopPanel LockPanelCenter TopTextPanel LableRight"/>
+                        </TopTextPanel>
+                        <PassWordPanel type="panel" css ="public" DockStyle="top" Bounds="0,0,0,72" Margin="0,0,0,6">
+                            <EditPassword type="simpleedit" css="EditSecret" Bounds="0,0,0,30" DockStyle="top" />
+                            <EditPasswordCheck type="simpleedit" css="EditSecret" Bounds="0,0,0,30" DockStyle="bottom" />
+                        </PassWordPanel>
+                        <ErrorPanel type="panel" css ="public" DockStyle="top" Bounds="0,0,0,18" Margin="0,0,0,6">
+                            <LableErrorRemind type="label" css="common ErrorRemind" DockStyle="Fill" StrID="STRID_NOTE_PASSWORD_ERROR"/>
+                        </ErrorPanel>
+                        <BottomPanel type="panel" css ="public" DockStyle="Fill">
+                            <OKButton type="button" css="ButtonOk" ass="NoteLockForm LockPanel OKButton"/>
+                            <CancelButton type="button" css="public" ass="NoteLockForm LockPanel CancelButton"/>
+                        </BottomPanel>
+                    </LockPanelCenter>
+                </TopPanel>
+            </EncyptPanel>
+            <DecyptPanel type="ReadingDecryptPanel" css="public" DockStyle="fill" Margin="0,48,0,0">
+                <TopPanel type="panel" css="public" DockStyle="top" Bounds="0,0,0,72">
+                    <LockPanelCenter type="panel" css="public" AnchorStyle="center"  Bounds="0,0,204, 72" Margin="0,0,0,0">
+                        <ErrorPanel type="panel" css ="public" DockStyle="top" Bounds="0,0,0,18">
+                            <LableErrorRemind type="label" css="common ErrorRemind" DockStyle="Fill" StrID="STRID_NOTE_PASSWORD_ERROR"/>
+                        </ErrorPanel>
+                        <PassWordPanel type="panel" css ="public" DockStyle="top" Bounds="0,0,0,36" Margin="0,0,0,6">
+                            <PassWordPanelInner type="EditorPanel" css ="public" DockStyle="fill" Margin="3,6,6,4">
+                                <PasswordEdit type="simpleedit" css="DecryptPassword" DockStyle="left" Bounds="0,0,170,0"/>
+                                <ButtonDecrypt type="button" css="ButtonDecryptOk" DockStyle="right" Bounds="0,0,20,0"/>
+                            </PassWordPanelInner>
+                        </PassWordPanel>
+                        <BottomPanel type="panel" css ="public" DockStyle="Fill">
+                            <LabelCacelEnrypt type="label" css="common linkBlue" DockStyle="left" Bounds="0,0,84,0" StrID="STRID_CANCEL_READING_ENCRYPT"/>
+                            <LabelForgetPassword type="label" css="common linkBlue" DockStyle="right" Bounds="0,0,48,0" StrID="STRID_FORGET_PASSWORD"/>
+                        </BottomPanel>
+                    </LockPanelCenter>
+                </TopPanel>
+            </DecyptPanel>
+        </NoteLockForm>
+
+        <PanelEdit type="noteEditorPanel" css="MainForm PanelNoteEditor" ass="mainform panelclient PanelNoteEditor">
+            <!--笔记标题栏-->
+            <NoteTitlePanel type="noteTitlePanel" css="noteTitlePanel" ass="mainform panelclient PanelNoteEditor PanelNoteTitle">
+                <!--最下面的横线-->
+                <PanelHSeparator type="panel" css="PanelHSeparator" DockStyle="bottom" Bounds="0,0,0,1"/>
+                <PanelRightBorder type="panel" DockStyle="right" Bounds="0,0,12,0"/>
+                <PanelToggleInfo type="panel" DockStyle="right" Margin="0,5,0,6" Bounds="0,0,30,0">
+                    <BtnShowInfo type="button" css="BtnShowInfo" DockStyle="fill" Visible="True" TipID="TIP_VIEW_NOTE_INFO_BUTTON" />
+                    <BtnHideInfo type="button" css="BtnHideInfo" DockStyle="fill" Visible="False" TipId="TIP_VIEW_NOTE_INFO_BUTTON" />
+                </PanelToggleInfo>
+
+                <PanelChangeNotebook type="panel" Bounds="0,0,150,0" DockStyle="right" Margin="0,5,6,6">
+                    <BtnChangeNotebook type="SkinButtonEx" DockStyle="fill" css="ChangeNotebook" />
+                </PanelChangeNotebook>
+
+                <PanelChangeNotebook type="panel" Bounds="0,0,30,0" DockStyle="right" Margin="0,5,6,6">
+                    <BtnClearTitle type="button" DockStyle="fill" css="btnclear" />
+                </PanelChangeNotebook>
+
+                <NoteTitleInnerPanel type="panel" DockStyle="fill" Margin="0,0,6,0">
+                    <NoteTitleEditor type="richedit" DockStyle="fill" css="NoteTitleEditor" ass="mainform panelclient PanelNoteEditor PanelNoteTitle NoteTitleEditor" />
+                </NoteTitleInnerPanel>
+            </NoteTitlePanel>
+
+            <!--笔记信息栏-->
+            <NoteInfoPanel  type="noteInfoPanel"  css="PanelNoteInfo" ass="mainform panelclient PanelNoteEditor PanelNoteInfo">
+                <Panel1stLine type="panel" DockStyle="top" Bounds="0,0,0,35" >
+
+                    <!--右侧留出空白区-->
+                    <Placeholder type="panel" DockStyle="right" Bounds="0,0,5,0" />
+
+                    <!--创建时间-->
+                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,270,0" Margin="18,0,0,0" AllowSize="True">
+                        <CreateTime type="edit" css="TimeAndCharNum" DockStyle="fill" />
+                    </Placeholder>
+                    <!--竖线分隔符-->
+                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,1,0" Margin="0,6,0,6" AllowSize="True">
+                        <PanelVSeparator  type="panel" css="PanelVSeparator" DockStyle="fill" Bounds="0,0,0,0" />
+                    </Placeholder>
+                    <!--修改时间-->
+                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,340,0" Margin="18,0,0,0" AllowSize="True">
+                        <ModifyTime type="edit" css="TimeAndCharNum" DockStyle="fill" Bounds="0,0,0,0" />
+                    </Placeholder>
+
+                    <!--竖线分隔符-->
+                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,1,0" Margin="0,6,0,6" AllowSize="True">
+                        <PanelVSeparator  type="panel" css="PanelVSeparator" DockStyle="fill" Bounds="0,0,0,0" />
+                    </Placeholder>
+
+                    <Placeholder type="panel" DockStyle="fill" Bounds="0,0,300,0" Margin="18,5,2,6" AllowSize="True">
+                        <!--历史版本超链接显示-->
+                        <HyperlinkHistory  type="labelex"  css="HyperlinkSource" DockStyle="left" StrID="STRID_HYPER_LINK_HISTORY" AllowSize="True"/>
+                    </Placeholder>
+
+                </Panel1stLine>
+                <!--横线分隔-->
+                <PanelHSeparator css="PanelHSeparator" type="panel" DockStyle="top" Bounds="0,0,0,1" />
+
+                <Panel2ndLine type="panel" DockStyle="top" Bounds="0,0,0,35" >
+
+                    <!--右侧留出空白区-->
+                    <Placeholder type="panel" DockStyle="right" Bounds="0,0,5,0" />
+
+                    <!--作者-->
+                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,270,0" AllowSize="True">
+                        <Placeholder type="panel" DockStyle="left" Bounds="0,0,73,0" Margin="42,0,0,0">
+                            <AuthorDesc type="label" css="AuthorDesc" DockStyle="fill" StrID="STRID_AUTHOR_DESC" />
+                        </Placeholder>
+                        <Placeholder type="panel" DockStyle="fill" Bounds="0,0,0,0" Margin="11,5,2,6">
+                            <ClickToAddAuthor type="labelex" css="ClickToAddAuthor" DockStyle="fill" StrID="STRID_CLICK_TO_ADD_AUTHOR" />
+                            <EditAuthor type="simpleedit" css="EditAuthor" DockStyle="fill" />
+                        </Placeholder>
+                    </Placeholder>
+
+                    <!--竖线分隔符-->
+                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,1,0" Margin="0,6,0,6" AllowSize="True">
+                        <PanelVSeparator  type="panel" css="PanelVSeparator" DockStyle="fill" Bounds="0,0,0,0" />
+                    </Placeholder>
+
+                    <!--来源-->
+                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,340,0">
+                        <!--来源文本：-->
+                        <Placeholder type="panel" DockStyle="left" Bounds="0,0,73,0" Margin="42,0,0,0" AllowSize="True">
+                            <SourceDesc type="label" css="SourceDesc" DockStyle="fill" StrID="STRID_SOURCE_DESC" />
+                        </Placeholder>
+
+                        <Placeholder type="panel" DockStyle="left" Bounds="0,0,300,0" Margin="11,5,2,6" AllowSize="True">
+                            <ClickToAddSource type="labelex" css="ClickToAddSource" Bounds="0,0,178,0" DockStyle="left" StrID="STRID_CLICK_TO_ADD_SOURCE" AllowSize="True"/>
+                            <EditSource type="simpleedit" css="EditAuthor" Bounds="0,0,178,0" DockStyle="left" />
+
+                            <!--超链接显示-->
+                            <HyperlinkSource  type="labelex"  css="HyperlinkSource" DockStyle="left" AllowSize="True"/>
+                            <!--点击编辑来源按钮图标-->
+                            <Placeholder type="panel" DockStyle="left" Bounds="0,0,28,0" Margin="12,4,0,4" AllowSize="False">
+                                <ClickToEditSource type="button" css="ClickToEditSource" DockStyle="fill" />
+                            </Placeholder>
+                        </Placeholder>
+                    </Placeholder>
+                </Panel2ndLine>
+                <!--横线分隔-->
+                <PanelHSeparator css="PanelHSeparator" type="panel" DockStyle="top" Bounds="0,0,0,1" />
+                <TagPanel css="public" type="tagpanel" DockStyle="top" Bounds="0,0,0,35">
+                    <!--标签文本-->
+                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,73,0" Margin="42,0,0,0" AllowSize="True">
+                        <SourceDesc type="label" css="TagDesc" DockStyle="fill" StrID="STRID_TAG"/>
+                    </Placeholder>
+                    <TagFunPanel type="panel" DockStyle="fill">
+                        <!-- 增加标签按钮-->
+                        <AddButtonPanel type="panel" DockStyle="left" Bounds="0,0,38,0">
+                            <AddTagButton type="button" css="TagPanel AddTag" AnchorStyle="topleft" Bounds="14,9,18,18"/>
+                        </AddButtonPanel>
+                        <!--增加标签输入框-->
+                        <AddEditPanel type="panel" DockStyle="left" Bounds="0,0,160,0" AllowSize="True">
+                            <AddEditWrapper type="panel" DockStyle="fill" Bounds="0,0,0,0" Margin="11,6,2,6">
+                                <AddTagHintCombox type="sugcombox" css="SugTagInput" DockStyle="fill" ass="mainform panelclient panelmenubar SugTag"/>
+                            </AddEditWrapper>
+                        </AddEditPanel>
+
+
+
+                        <DropDownPanel type="panel" DockStyle="right" Bounds="0,0,18,0">
+                            <DropDownButton type="button" AnchorStyle="topleft" Bounds ="0,8,18,24" css="TagPanel DropDown"/>
+                        </DropDownPanel>
+                        <TagShowPanel type="panel" DockStyle="fill" Margin="10,9,0,8">
+
+                        </TagShowPanel>
+                    </TagFunPanel>
+                </TagPanel>
+
+                <Panel5rdLine type="panel" DockStyle="top" Bounds="0,0,0,35" >
+                    <!--推荐标签-->
+                    <Placeholder type="panel" DockStyle="fill" Bounds="0,0,0,0">
+                        <!--推荐：-->
+                        <Placeholder type="panel" DockStyle="left" Bounds="0,0,73,0" Margin="18,0,0,0" AllowSize="True">
+                            <SmartTagDesc type="label" css="SmartTagDesc" DockStyle="fill" StrID="STRID_SMART_TAG_DESC" />
+                        </Placeholder>
+                        <Placeholder type="panel" DockStyle="fill" Bounds="0,0,300,0" Margin="0,0,0,0" AllowSize="True">
+                            <PanelSmartTag type="smarttagpanel" css="public" ass="common fill" />
+                        </Placeholder>
+                    </Placeholder>
+                </Panel5rdLine>
+
+                <!--横线分隔-->
+                <PanelHSeparator css="PanelHSeparator" type="panel" DockStyle="top" Bounds="0,0,0,1" />
+            </NoteInfoPanel>
+        </PanelEdit>
+
+    </control>
+
+    <!-- 主窗口-->
+    <MainForm type="form" css="MainForm" ass="form public">
+        <!-- 窗口标题栏 -->
+        <FormCaption type="control" control="FormCaption_MAIN"/>
+        <PanelClient type="panel" css="public" ass="mainform panelclient">
+            <!-- 菜单条 -->
+            <PanelMenubar type="panel" ass="mainform panelclient panelmenubar">
+
+                <ButtonNewNote type="SkinButtonEx" css="NewNote" ass="mainform panelclient panelmenubar buttonNewNote"/>
+                <ButtonDelete type="SkinButtonEx" css="Delete" ass="mainform panelclient panelmenubar buttonDelete"/>
+                <ButtonPrint type="SkinButtonEx" css="Print" ass="mainform panelclient panelmenubar buttonPrint"/>
+                <ButtonShare type="SkinButtonEx" css="Share" ass="mainform panelclient panelmenubar buttonShare"/>
+                <ButtonSync type="SkinButtonEx" css="Sync" ass="mainform panelclient panelmenubar buttonSync"/>
+                <ButtonUsage type="SkinButtonEx" css="Usage" ass="mainform panelclient panelmenubar buttonUsage"/>
+                <ButtonLogin type="SkinButtonEx" css="Usage" ass="mainform panelclient panelmenubar buttonLogin"/>
+                <ButtonRegister type="SkinButtonEx" css="Usage" ass="mainform panelclient panelmenubar buttonRegister"/>
+                <!-- <IntervalPanel type="panel" DockStyle="left" Bounds="0,0,3,0"/> -->
+                <HistoryPanel type="panel" css="public" ass="mainform panelclient panelmenubar HistoryPanel">
+                    <ButtonGoBack type="button" css="MainForm HistoryPanel ButtonGoBack" ass="mainform panelclient panelmenubar HistoryPanel ButtonGoBack"/>
+                    <ButtonGoForward type="button" css="MainForm HistoryPanel ButtonGoForward" ass="mainform panelclient panelmenubar HistoryPanel ButtonGoForward"/>
+                </HistoryPanel>
+                <Placeholder type="panel" DockStyle="left" Bounds="0,0,1,0" Margin="0,5,0,5">
+                    <VSeparatorForGroup  type="panel" css="PanelVSeparator" DockStyle="left" Bounds="0,0,1,0" />
+                </Placeholder>
+                <IntervalPanel type="panel" DockStyle="left" Bounds="0,0,6,0"/>
+                <ButtonGroup type="SkinButtonEx" css="GroupNoMsg" ass="mainform panelclient panelmenubar buttonGroup"/>               
+
+                <PanelShowHideFrame type="panel" DockStyle="right" Bounds="0,0,74,0" Margin="0,0,0,0">
+                    <ButtonHideFrame type="SkinButtonEx" Bounds="0,0,36,0" DockStyle="left" css="HideFrame" TipID="STRID_HIDE_FRAME_TOOLTIP"/>
+                    <ButtonShowFrame type="SkinButtonEx" Bounds="0,0,36,0" DockStyle="left" css="ShowFrame" TipID="STRID_SHOW_FRAME_TOOLTIP"/>
+                </PanelShowHideFrame>
+
+                <AnimationSync type="animationex" AnchorStyle="topleft" Transparent="false" Bounds="312,11,20,20"/>
+            </PanelMenubar>
+            <SplitterLeft type="SkinSpliterEx" css="MainFormLeft" DockStyle="fill">
+                <PanelFirst type="panel" css="public">
+                    <!-- 左下角广告-->
+                    <PanelAd type="adpanel" css="public" ass="mainform panelclient PanelAd">
+                        <AdPhoto type="photo" css="Ad AdPhoto" ass="common fill"/>
+                    </PanelAd>
+
+                    <!-- 笔记本列表-->
+                    <PanelManage type="managepanel" css="MainForm PanelNotebooks" ass="mainform panelclient PanelManage">
+
+                        <ManageItemNote type="panel" ass="mainform panelclient PanelManage ManageItemNote">
+                            <ItemHeader type="panel" css="ItemHeader" ass="mainform panelclient PanelManage ManageItemHeader">
+                                <IHSelectArea type="panel" css="ItemHeader IHSelectArea UnSelected" ass="mainform panelclient PanelManage ManageItemHeader IHSelectArea">
+                                    <IHSSTop type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameTop"/>
+                                    <IHSSBottom type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameBottom"/>
+                                </IHSelectArea>
+                                <IHFrameTop type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameTop"/>
+                                <IHFrameBottom type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameBottom"/>
+                                <IHFrameLeft type="panel" css="IItemHeader IHSelectArea UnSelected" ass="mainform panelclient PanelManage ManageItemHeader IHFrameLeft"/>
+                                <IHInnerPanel type="panel" css="public"  DockStyle="fill">
+                                    <IHVIPPanel type="panel" css="public"  DockStyle="right" Bounds="0,0,35,0" Margin="0,0,0,0">
+                                        <IHVIPButton type="button" css="IconNoVIP" DockStyle="fill" TipID="STRID_VIP_PACKAGE"/>
+                                    </IHVIPPanel>
+                                    <IHText type="label" css ="ManageItemHeader" ass="mainform panelclient PanelManage ManageItemHeader IHTextNote" />
+                                </IHInnerPanel>
+                            </ItemHeader>
+
+                            <ItemClient type="panel" css="ItemClient" ass ="mainform panelclient PanelManage ManageItemClient">
+                                <ManageItemNoteClient type="notebooktree" css="public" ass="mainform panelclient PanelManage ManageItemNoteClient"/>
+                            </ItemClient>
+                        </ManageItemNote>
+
+                        <ManageItemAttachment type="panel" ass="mainform panelclient PanelManage ManageItemPhoto">
+                            <ItemHeader type="panel" css="ItemHeader" ass="mainform panelclient PanelManage ManageItemHeader">
+                                <IHSelectArea type="panel" css="ItemHeader IHSelectArea UnSelected" ass="mainform panelclient PanelManage ManageItemHeader IHSelectArea">
+                                    <IHSSTop type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameTop"/>
+                                    <IHSSBottom type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameBottom"/>
+                                </IHSelectArea>
+                                <IHFrameTop type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameTop"/>
+                                <IHFrameBottom type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameBottom"/>
+                                <IHFrameLeft type="panel" css="IItemHeader IHSelectArea UnSelected" ass="mainform panelclient PanelManage ManageItemHeader IHFrameLeft"/>
+                                <IHText type="label" css ="ManageItemHeader" ass="mainform panelclient PanelManage ManageItemHeader IHTextAttachment" />
+                            </ItemHeader>
+
+                            <ItemClient type="panel" css="public" ass="mainform panelclient PanelManage ManageItemClient"/>
+                        </ManageItemAttachment>
+
+                        <ManageItemPhoto type="panel" ass="mainform panelclient PanelManage ManageItemPhoto">
+                            <ItemHeader type="panel" css="ItemHeader" ass="mainform panelclient PanelManage ManageItemHeader">
+                                <IHSelectArea type="panel" css="ItemHeader IHSelectArea UnSelected" ass="mainform panelclient PanelManage ManageItemHeader IHSelectArea">
+                                    <IHSSTop type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameTop"/>
+                                    <IHSSBottom type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameBottom"/>
+                                </IHSelectArea>
+                                <IHFrameTop type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameTop"/>
+                                <IHFrameBottom type="panel" css="ItemHeader FrameLine" ass="mainform panelclient PanelManage ManageItemHeader IHFrameBottom"/>
+                                <IHFrameLeft type="panel" css="IItemHeader IHSelectArea UnSelected" ass="mainform panelclient PanelManage ManageItemHeader IHFrameLeft"/>
+                                <IHText type="label" css ="ManageItemHeader" ass="mainform panelclient PanelManage ManageItemHeader IHTextPhoto" />
+                            </ItemHeader>
+
+                            <ItemClient type="panel" css="public" ass="mainform panelclient PanelManage ManageItemClient"/>
+                        </ManageItemPhoto>
+
+                    </PanelManage>
+                </PanelFirst>
+                <!--成员区-->
+                <PanelSecond type="panel" css="public">
+                    <PhotoTransitPanel type="phototransitpanel" css="MainForm PhotoTransitPanel" ass="MainForm PanelClient PhotoTransitPanel">
+                        <Placeholder type="panel" css="PanelSplitter" DockStyle="top" Bounds="0,0,0,1" Margin="0,0,0,0">
+                        </Placeholder>
+                    </PhotoTransitPanel>
+
+
+
+                    <SplitterMid type="SkinSpliterEx" css="MainFormMid" DockStyle="fill">
+                        <PanelFirst type="middlepanel" css="public">
+                            <LockListPanel type="panel" css="public" DockStyle="fill" Bounds="0,0,0,200" Margin="0,0,0,0">
+                                <LockList type="control" control="NoteLockForm"/>
+                            </LockListPanel>
+                            <PanelNoteList type="notelistpanel" css="public" ass="mainform panelclient PanelNoteList">
+                                <PanelListHead type="listheadpanel" css="MainForm PanelNoteList PanelListHead" ass="MainForm PanelClient PanelNoteList PanelListHead">
+                                    <!-- 列表按钮 -->
+                                    <InfoListBtn type="button" css="MainForm PanelNoteList InfoListBtn" ass="MainForm PanelClient PanelNoteList InfoListBtn">
+                                    </InfoListBtn>
+                                    <ThumbnailBtn type="button" css="MainForm PanelNoteList ThumbnailBtn" ass="MainForm PanelClient PanelNoteList ThumbnailBtn">
+                                    </ThumbnailBtn>
+                                    <AbstractBtn type="button" css="MainForm PanelNoteList AbstractBtn" ass="MainForm PanelClient PanelNoteList AbstractBtn">
+                                    </AbstractBtn>
+                                    <!-- 一个像素的分割线 -->
+                                    <PanelSeparator type="panel" css="PanelSeparator" ass="MainForm PanelClient PanelNoteList PanelSeparator"/>
+                                    <!-- 搜索详情按钮 -->
+                                    <ShowDetailBtn type="button" css="MainForm PanelNoteList ShowDetailBtn" ass="MainForm PanelClient PanelNoteList ShowDetailBtn">
+                                    </ShowDetailBtn>
+                                    <HideDetailBtn type="button" css="MainForm PanelNoteList HideDetailBtn" ass="MainForm PanelClient PanelNoteList HideDetailBtn">
+                                    </HideDetailBtn>
+                                    <!-- 搜索列表框 -->
+                                    <SearchEditorBar type="searchedit" css="public" ass="searchedit">
+                                    </SearchEditorBar>
+                                </PanelListHead>
+                                <PanelSearchInfo type="searchinfopanel" css="MainForm PanelNoteList PanelSearchInfo" ass="MainForm PanelClient PanelNoteList PanelSearchInfo">
+                                </PanelSearchInfo>
+
+                                <!--显示已加密的笔记-->
+                                <PanelShowEncrypt type="panel" css="PanelShowEncrypt" Bounds="0,0,0,34" DockStyle="top" Margin="0,0,0,0" >
+                                    <PlaceHolder type="panel" DockStyle="top" Bounds="0,0,0,24" Margin="10,0,0,0" >
+                                        <Text type="labelex" css="SearchResultShowEncrypt" DockStyle="left" Bounds="0,0,168,0" StrID="SEARCH_RESULT_SHOW_ENCRYPT">
+                                        </Text>
+                                        <ViewAll type="SkinButtonEx" css="ViewAll" DockStyle="left" Bounds="0,0,70,0" StrID="SEARCH_RESULT_VIEW_ALL">
+                                        </ViewAll>
+                                    </PlaceHolder>
+
+                                    <DecryptToViewAll type="SearchDecryptPanel" css="public" DockStyle="top" Bounds="0,0,0,60" Margin="0,0,0,0" Visible="false">
+                                        <LockPanelCenter type="panel" css="public" AnchorStyle="center"  Bounds="0,0,204,72" Margin="0,18,0,0">
+                                            <PassWordPanel type="panel" css ="public" DockStyle="top" Bounds="0,0,0,36" Margin="0,0,0,6">
+                                                <PassWordPanelInner type="EditorPanel" css ="DecryptPasswordLight" DockStyle="fill" Margin="3,6,6,4">
+                                                    <PasswordEdit type="simpleedit" css="DecryptPasswordLight" DockStyle="left" Bounds="0,0,170,0"/>
+                                                    <ButtonDecrypt type="button" css="ButtonDecryptOk" DockStyle="right" Bounds="0,0,20,0"/>
+                                                </PassWordPanelInner>
+                                            </PassWordPanel>
+                                            <BottomPanel type="panel" css ="public" DockStyle="Fill">
+                                                <ErrorPanel type="panel" css ="public" DockStyle="left" Bounds="0,0,150,0">
+                                                    <LableErrorRemind type="label" css="common ErrorRemind" DockStyle="Fill" StrID="STRID_NOTE_PASSWORD_ERROR" Visible="false" />
+                                                </ErrorPanel>
+                                                <LabelForgetPassword type="label" css="common linkBlue" DockStyle="right" Bounds="0,0,48,0" StrID="STRID_FORGET_PASSWORD"/>
+                                            </BottomPanel>
+                                        </LockPanelCenter>
+                                    </DecryptToViewAll>
+                                    <PlaceHolder type="panel" DockStyle="top" Bounds="0,0,0,10" />
+                                </PanelShowEncrypt>
+
+                                <!--下面的横线-->
+                                <HSeparator type="panel" css="PanelSplitter" Bounds="0,0,0,1" DockStyle="top">
+                                </HSeparator>
+
+                                <!-- 摘要列表 -->
+                                <AbstractListView type="abslistview" css="MainForm PanelNoteList AbstractListView" ass="MainForm PanelClient PanelNoteList AbstractListView">
+                                </AbstractListView>
+                                <!-- 缩略图列表 -->
+                                <ThumbnailListView type="thumblistview" css="MainForm PanelNoteList ThumbnailListView" ass="MainForm PanelClient PanelNoteList ThumbnailListView">
+                                </ThumbnailListView>
+                                <!--简要略表-->
+                                <SimpleListView type="simplelistview" css="MainForm PanelNoteList simplelistview" ass="MainForm PanelClient PanelNoteList simplelistview">
+                                </SimpleListView>
+                                <PanelEmptyList type="emptylistpanel" css="public" ass="MainForm PanelClient PanelNoteList PanelEmptyList">
+                                    <PanelCenter type="panel" css="PanelEmptyList PanelCenter" ass="MainForm PanelClient PanelNoteList PanelEmptyList PanelCenter">
+                                        <LabelTip type ="label" css="PanelEmptyList LabelTip" ass="MainForm PanelClient PanelNoteList PanelEmptyList LabelTip">
+                                        </LabelTip>
+                                        <BtnRemind type ="button" css="ButtonOk" ass="MainForm PanelClient PanelNoteList PanelEmptyList BtnRemind">
+                                        </BtnRemind>
+                                    </PanelCenter>
+                                </PanelEmptyList>
+                            </PanelNoteList>
+                        </PanelFirst>
+                        <PanelSecond type="rightpanel" css="MainForm PanelNoteEditorBK">
+                            <ReadingPasswordPanel type="panel" css="public" DockStyle="top" Bounds="0,0,0,200" Margin="0,0,0,0">
+                                <ReadingPasswordControl type="control" control="NoteLockForm"/>
+                            </ReadingPasswordPanel>
+                            <Placeholder type="panel" css="PanelSplitter" DockStyle="top" Bounds="0,0,0,1" />
+                            <PanelEdit type="control" control="PanelEdit"/>
+                            <Placeholder type ="panel" DockStyle="fill">
+                                <panelNoteIcon type ="panel" css="MainForm PanelNoteIcon" ass="mainform panelclient PanelNoteIcon"/>
+                            </Placeholder>
+                        </PanelSecond>
+                    </SplitterMid>
+
+                    <AttachmentCenterPanel type="attachmentcenterwindow" css="public" ass="common fill">
+                        <Placeholder type="panel" css="PanelSplitter" DockStyle="top" Bounds="0,0,0,1" Margin="0,0,0,0">
+                        </Placeholder>
+                        <Client type="panel" css="public" ass="common fill">
+                            <!-- attachment toolbar -->
+                            <AttachmentToolbar type="attachtoolbar" css="public" ass="MainForm PanelClient AttachmentCenterPanel AttachmentToolbar">
+                                <ListSortBtn type="SkinButtonEx" css="ListSortArrowDown" ass="MainForm PanelClient AttachmentCenterPanel AttachmentToolbar ListSortBtn" />
+                                <RightPadding type="panel" css="RightPadding" ass="MainForm PanelClient AttachmentCenterPanel AttachmentToolbar RightPadding">
+                                    <InnerPadding type="panel" css="InnerPadding" ass="MainForm PanelClient AttachmentCenterPanel AttachmentToolbar InnerPadding">
+                                        <SearchEditorBar type="searcheditfortoolbar" css="public" ass="searcheditfortoolbar" />
+                                    </InnerPadding>
+                                </RightPadding>
+                                <LeftPadding type="panel" css="LeftPadding" ass="MainForm PanelClient AttachmentCenterPanel AttachmentToolbar LeftPadding" >
+                                    <AttachToggleBtn type="SkinButtonEx" css="AttachToggle" ass="MainForm PanelClient AttachmentCenterPanel AttachmentToolbar AttachToggleBtn"/>
+                                    <PicToggleBtn type="button" css="PicToggle" ass="MainForm PanelClient AttachmentCenterPanel AttachmentToolbar PicToggleBtn" />
+                                </LeftPadding>
+                            </AttachmentToolbar>
+                            <Statusbar type="panel" css="AttachmentStatusBar" ass="MainForm PanelClient AttachmentCenterPanel Statusbar">
+                                <SeparatorPanel type="panel" css="AttachmentSeparator" ass="MainForm PanelClient AttachmentCenterPanel Statusbar AttachmentSeparator"/>
+                                <TopPanel type="panel" ass="MainForm PanelClient AttachmentCenterPanel Statusbar TopPanel"/>
+                                <MidPanel type="panel" ass="MainForm PanelClient AttachmentCenterPanel Statusbar MidPanel">
+                                    <LSpace type="panel" ass="MainForm PanelClient AttachmentCenterPanel Statusbar LSpace"/>
+                                    <InfoLabel type="label" css="public" ass="MainForm PanelClient AttachmentCenterPanel Statusbar InfoLabel"/>
+                                    <RSpace type="panel" ass="MainForm PanelClient AttachmentCenterPanel Statusbar RSpace"/>
+                                    <DelBtn type="button" css="public" ass="MainForm PanelClient AttachmentCenterPanel Statusbar DelBtn"/>
+                                    <RSpace type="panel" ass="MainForm PanelClient AttachmentCenterPanel Statusbar RSpace"/>
+                                    <SaveAsBtn type="button" css="ButtonOk" ass="MainForm PanelClient AttachmentCenterPanel Statusbar SaveAsBtn"/>
+                                    <RSpace type="panel" ass="MainForm PanelClient AttachmentCenterPanel Statusbar RSpace"/>
+                                    <SelAllBtn type="button" css="ButtonOk" ass="MainForm PanelClient AttachmentCenterPanel Statusbar SelAllBtn"/>
+                                </MidPanel>
+                            </Statusbar>
+                            <ClientList type="panel" css="MainForm PhotoTransitPanel" ass="common fill">
+                                <AttachmentList type="panel" css="public" ass="common fill"></AttachmentList>
+                                <PictureListPanel type="PictureListPanel" css="public" ass="common fill">
+                                    <LoadingPanel type="panel" css="WhitePanel" ass="common fill">
+                                        <LoadingIcon type ="animationex" css="LoadingIcon54" ass="MainForm PanelClient AttachmentCenterPanel ClientList EmptyPanel PanelCenter PanelTop Icon"/>
+                                        <LoadingText type="labelex"  css="NewNotebookForm LabelName" AnchorStyle="center" Bounds="0,50,200,200" />
+                                    </LoadingPanel>
+                                    <PictureList type="attachwindow" css="public" ass="common fill"></PictureList>
+                                </PictureListPanel>
+                                <EmptyPanel type="AttachEmtpyPanel" css="WhitePanel" ass="common fill">
+                                    <PanelCenter type="panel" css="public" ass="MainForm PanelClient AttachmentCenterPanel ClientList EmptyPanel PanelCenter">
+                                        <PanelCenterTop type="panel" css="public" ass="MainForm PanelClient AttachmentCenterPanel ClientList EmptyPanel PanelCenter PanelTop">
+                                            <PanelIcon type ="panel" css="MainForm AttachmentCenter EmptyIcon" ass="MainForm PanelClient AttachmentCenterPanel ClientList EmptyPanel PanelCenter PanelTop Icon"/>
+                                        </PanelCenterTop>
+                                        <PanelCenterBottom type="panel" css="public" ass="MainForm PanelClient AttachmentCenterPanel ClientList EmptyPanel PanelCenter PanelBottom">
+                                            <TextLabel type="label" css="DisableHorMid" ass="MainForm PanelClient AttachmentCenterPanel ClientList EmptyPanel PanelCenter PanelBottom TextLabel"/>
+                                        </PanelCenterBottom>
+                                    </PanelCenter>
+                                </EmptyPanel>
+                            </ClientList>
+                        </Client>
+                        <SinglePictureBrowser type="attachwindow" css="public" ass="common fill">
+                        </SinglePictureBrowser>
+                    </AttachmentCenterPanel>
+
+                    <VIPPanel type="panel" css="public" DockStyle="fill" margin="0,1,0,0"></VIPPanel>
+
+                </PanelSecond>
+            </SplitterLeft>
+        </PanelClient>;
+    </MainForm>
+
+    <!-- 用户信息窗口-->
+    <UserInfoForm type="form" css="UserInfoForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <StoragePercentage type="slider" css="common" ass="UserInfoForm StoragePercentage"/>
+        <InviteFriendlabel type="label" css="InviteFriendlabel" ass="UserInfoForm InviteFriendlabel"/>
+        <CancelButton type="button" css="public" ass="UserInfoForm CancelButton"/>
+        <ExpansionButton type="button" css="ButtonOK" ass="UserInfoForm ExpansionButton"/>
+        <PanelUserAccount type="panel" AnchorStyle="topleft" Bounds="54,52,300,24">
+            <UserAccount type="label" css="UserAccount" ass="UserInfoForm UserAccount"/>
+            <PanelUserSafeIcon type="panel" DockStyle="left" Bounds="0,0,20,0">
+                <UserInfoSafe type="button" css="IconSafeBlue" ass="UserInfoForm UserInfoSafe"/>
+            </PanelUserSafeIcon>
+        </PanelUserAccount>
+
+    </UserInfoForm>
+
+    <!-- 取消分享窗口-->
+    <ShareRemoveForm type="form" css="ShareRemoveForm" ass="form public">
+        <!-- 窗口标题栏 -->
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <BottomButton type="control" control="OKAndCanel"/>
+            <Text type="edit" css="ShareRemoveForm Text" ass="ShareRemoveForm Client Text"/>
+            <KeepUse type="checkbox" css="public" ass="ShareRemoveForm Client KeepUse"/>
+            <DescPanel type="panel" css="public" ass="ShareRemoveForm Client DescPanel">
+                <Desc type="label" css="Disable" ass="ShareRemoveForm Client Desc"/>
+            </DescPanel>
+        </Client>
+    </ShareRemoveForm>
+
+    <!-- 删除附件窗口-->
+    <DeleteAttachForm type="form" css="DeleteAttachForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <ClientPanel type="panel" ass="common fill">
+            <DelConfirmPanel type="panel" ass="common fill">
+                <DelConfirmText type="label" css="public" ass="DeleteAttachForm DelConfirmPanel DelConfirmText"/>
+                <DelHintText type="label" css="public" ass="DeleteAttachForm DelConfirmPanel DelHintText"/>
+                <ConfirmOK type="button" css="ButtonOK" ass="DeleteAttachForm DelConfirmPanel ConfirmOK"/>
+                <ConfirmCancel type="button" css="public" ass="DeleteAttachForm DelConfirmPanel ConfirmCancel"/>
+            </DelConfirmPanel>
+            <DelProgressPanel type="panel" ass="common fill">
+                <DeletingText type="label" css="public" ass="DeleteAttachForm DelProgressPanel DeletingText"/>
+                <DeletingProgress type="slider" css="common" ass="DeleteAttachForm DelProgressPanel DeletingProgress"/>
+                <DeletingCancel type="button" css="public" ass="DeleteAttachForm DelProgressPanel DeletingCancel"/>
+            </DelProgressPanel>
+        </ClientPanel>
+    </DeleteAttachForm>
+    <!-- 关于窗口-->
+    <AboutForm type="form" css="AboutForm" ass="form public">
+        <!-- 窗口标题栏 -->
+        <FormCaption type="control" control="CloseCaption"/>
+        <AboutClient type="panel" css="public" ass="common fill">
+            <ATop type="panel" css="public" ass="AboutForm ATop">
+                <Icon type="photo" css="AboutForm Icon" ass="AboutForm Icon"/>
+                <Product type="panel" css="public" ass="AboutForm Product">
+                    <Name type="label" css="AboutForm Product Name" ass="AboutForm Product Name"/>
+                    <Version type="label" css="AboutForm Product Version" ass="AboutForm Product Version"/>
+                </Product>
+            </ATop>
+            <ABottom type="panel" css="public" ass="AboutForm ABottom">
+                <ASnap type="photo" css="AboutForm Snap" ass="AboutForm ABottom Snap"/>
+                <ALabel type="label" css="AboutForm BottomText" ass="AboutForm ABottom BottomText"/>
+            </ABottom>
+            <AClient type="panel" css="public" ass="AboutForm AClient">
+                <AboutContent type="panel" css="public" ass="common fill"/>
+            </AClient>
+        </AboutClient>
+    </AboutForm>
+
+    <!-- todo提醒对话框 -->
+    <RemindAlertForm type="form" css="RemindAlertForm" ass="form public">
+        <!-- 窗口标题栏 -->
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <Todo type="panel" css="public" ass="RemindAlertForm Todo">
+                <Checked type="checkbox" css="public" ass="RemindAlertForm Todo Checked"/>
+                <Note type="panel" css="public" ass="common fill">
+                    <OpenButton type="button" css="public" ass="RemindAlertForm Todo Note OpenButton"/>
+                    <Title type="label" css="public" ass="RemindAlertForm Todo Note Title"/>
+                </Note>
+            </Todo>
+            <ABottom type="panel" css="public" ass="AboutForm ABottom">
+                <ASnap type="photo" css="AboutForm Snap" ass="AboutForm ABottom Snap"/>
+                <BottomButtons type="panel" css="public" ass="RemindAlertForm ABottom BottomButtons">
+                    <CancelButton type="button" css="public" ass="RemindAlertForm ABottom BottomButtons CancelButton"></CancelButton>
+                    <ButtonSplite type="panel" css="public" Bounds="0,0,6,6" ass="common right"></ButtonSplite>
+                    <OKButton type="button" css="ButtonOk" ass="RemindAlertForm ABottom BottomButtons KnownButton"></OKButton>
+                </BottomButtons>
+            </ABottom>
+        </Client>
+    </RemindAlertForm>
+
+    <!-- 分享管理窗口-->
+    <ShareManageForm type="form" css="ShareManageForm" ass="form public">
+        <!-- 窗口标题栏 -->
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+        </Client>
+    </ShareManageForm>
+
+    <!-- 分享通知窗口-->
+    <ShareNotifyForm type="form" css="ShareNotifyForm" ass="form public">
+        <!-- 窗口标题栏 -->
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <OKAndCanel type="panel" css="public" ass="common OKAndCancel">
+                <CancelButton type="button" css="public" DockStyle="right" Bounds="0,0,80,24" StrID="SHARE_NOTIFY_FORM_REFUSE_ALL"/>
+                <PanelSep type="panel" css="public" dockstyle="right" bounds="0,0,12,0"/>
+                <OKButton type="button" css="ButtonOk" DockStyle="right" Bounds="0,0,80,24" StrID="SHARE_NOTIFY_FORM_ACCEPT_ALL"/>
+            </OKAndCanel>
+            <Desc type="label" css="public" ass="ShareNotifyForm Client Desc" />
+            <ShareList type="panel" css="ItemHeader IHLeft Selected" ass="common fill"/>
+        </Client>
+    </ShareNotifyForm>
+
+    <!--升级窗口-->
+    <UpdateForm type="form" css="UpdateForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <PanelBottom type="panel" css="public" ass="panel bottom">
+                <PanelOk type="panel" css="public" DockStyle="right" bounds="0,0,60,0" Margin="12,0,0,0">
+                    <ButtonOk type="button" css="public" DockStyle="fill" StrID="STRID_CANCEL"/>
+                </PanelOk>
+                <ButtonContinue type="button" css="ButtonOk" DockStyle="right" bounds="0,0,48,0" StrID="STRID_CONTINUE"/>
+            </PanelBottom>
+            <UpdateProgress type="slider" css="common" ass="UpdateForm Client ProgressBar"/>
+            <Description type="edit" css="public" ass="UpdateForm Client Description"/>
+            <LabelRemind type ="label" css="public" ass="UpdateForm Client LabelRemind"/>
+            <LabelRemindText type ="label" css="public" ass="UpdateForm Client LabelRemindText"/>
+        </Client>
+    </UpdateForm>
+
+    <!--升级提示窗口-->
+    <UpdateRemindForm type="form" css="UpdateRemindForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <PanelBottom type="panel" css="public" ass="panel bottom">
+                <PanelCancel type="panel" css="public" DockStyle="right" bounds="0,0,60,0" Margin="12,0,0,0">
+                    <ButtonCancel type="button" css="public" DockStyle="fill" StrID="STRID_CANCEL"/>
+                </PanelCancel>
+                <ButtonOk type="button" css="ButtonOk" DockStyle="right" bounds="0,0,48,0" StrID="STRID_UPDATE"/>
+            </PanelBottom>
+            <Description type="edit" css="public" ass="UpdateRemindForm Client Description"/>
+        </Client>
+    </UpdateRemindForm>
+
+    <!-- RunYnote.exe 中的升级窗口-->
+    <UpdateDlg type="form" css="UpdateRemindForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption1"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <PanelBottom type="panel" css="public" ass="panel bottom">
+                <PanelCancel type="panel" css="public" DockStyle="right" bounds="0,0,60,0" Margin="12,0,0,0">
+                    <ButtonCancel type="button" css="public" DockStyle="fill" StrID="STRID_CANCEL"/>
+                </PanelCancel>
+                <ButtonOk type="button" css="ButtonOk" DockStyle="right" bounds="0,0,48,0" StrID="STRID_UPDATE"/>
+            </PanelBottom>
+            <panelWebclipper type="panel" css="public" ass="UpdateDlg Client panelBindSoft">
+                <CheckBoxWebclipper type="checkbox" css="public_black" ass="UpdateDlg Client panelBindSoft CheckBoxBindSoft"/>
+            </panelWebclipper>
+            <panelBindSoft type="panel" css="public" ass="UpdateDlg Client panelBindSoft">
+                <CheckBoxBindSoft type="checkbox" css="public_black" ass="UpdateDlg Client panelBindSoft CheckBoxBindSoft"/>
+            </panelBindSoft>
+            <panelIEDefaultPage type="panel" css="public" ass="UpdateDlg Client panelIEDefaultPage">
+                <CheckBoxIEDefaultPage type="checkbox" css="public_black" ass="UpdateDlg Client panelIEDefaultPage CheckBoxIEDefaultPage"/>
+            </panelIEDefaultPage>
+            <panelProgress type="panel" css="public" ass="UpdateDlg Client panelProgress">
+                <UpdateProgress type="slider" css="common" ass="UpdateDlg Client panelProgress ProgressBar"/>
+            </panelProgress>
+            <Description type="edit" css="public" ass="UpdateDlg Client Description"/>
+        </Client>
+    </UpdateDlg>
+
+    <LoginForm type="form" css="LoginForm" ass="LoginForm main"> 
+         <FormCaption type="control" control="LoginFormCaption"/>
+        <IntroGifPanel type="panel" AnchorStyle="topleft" Bounds="0,0,300,347" css="LoginForm IntroducePanel">
+            <IntroGif type="animationex" DockStyle="right" Bounds="0,0,283,0" css="LoginForm IntroducePanel IntroGif"/>
+            <IntroGigMargin type="label" AnchorStyle="topleft" Bounds="0,0,17,0" css="LoginForm IntroducePanel IntroGifMargin"/>
+        </IntroGifPanel>
+        <IntroducePanel type="panel" DockStyle="left" Bounds="0,0,300,0">
+            <IntroText type="label" AnchorStyle="topleft" Bounds="0,302,300,104" css="LoginForm IntroText"/>
+        </IntroducePanel>
+        <LoginOuterPanel type="panel" css="LoginForm LoginOuterPanel" ass="LoginForm LoginOuterPanel">
+            <LoginPanel type="panel" css="LoginForm LoginPanel" ass="LoginForm LoginPanel">
+                <LoginIconLabel type="label" css="LoginForm LoginIconLabel" ass="LoginForm LoginPanel LoginIconLabel"/>
+                <LoginAccountLabel type="label" css="LoginForm MainCSS" ass="LoginForm LoginPanel LoginAccountLabel"/>
+                <LoginOPLLabel type="label" css="LoginForm MainCSS" ass="LoginForm LoginPanel LoginOPLLabel"/>
+                <LoginErrorPanel type="panel" css="LoginForm MainCSS" ass="LoginForm LoginPanel LoginErrorPanel">
+                    <LoginErrorInfo type="label" css="LoginForm LoginErrorInfo" ass="LoginForm LoginPanel LoginErrorInfo"/>
+                </LoginErrorPanel>
+                <UserNameInput type="hintcombox" css="LoginForm UserNameInput" ass="LoginForm LoginPanel UserNameInput"/>
+                <PasswordInput type="hintedit" css="LoginForm PasswordInput" ass="LoginForm LoginPanel PasswordInput"/>
+
+                <ATestPanel type="panel" css="public" ass="LoginForm LoginPanel ATestPanel">
+                    <LoginButton type="button" css="LoginForm LoginButton" ass="LoginForm LoginPanel ATestPanel LoginButton"/>
+                    <RegisterLabel type="label" css="LoginForm RegisterLabel" ass="LoginForm LoginPanel ATestPanel RegisterLabel"/>
+                    <ForgetPasswordLabel type="label" css="LoginForm ForgetPasswordLabel" ass="LoginForm LoginPanel ATestPanel ForgetPasswordLabel"/>
+                    <ProxySettingLabel type="label" css="LoginForm ProxySettingLabel" ass="LoginForm LoginPanel ATestPanel ProxySettingLabel"/>
+                </ATestPanel>
+
+                <BTestPanel type="panel" css="public" ass="LoginForm LoginPanel BTestPanel">
+                    <LoginButton type="button" css="LoginForm LoginButton" ass="LoginForm LoginPanel BTestPanel LoginButton"/>
+                    <GoRegisterButton type="button" css="LoginForm RegisterButton" ass="LoginForm LoginPanel BTestPanel RegisterButton"/>
+                    <ForgetPasswordLabel2 type="label" css="LoginForm ForgetPasswordLabel" ass="LoginForm LoginPanel BTestPanel ForgetPasswordLabel"/>
+                    <ProxySettingLabel2 type="label" css="LoginForm ProxySettingLabel" ass="LoginForm LoginPanel BTestPanel ProxySettingLabel"/>
+                </BTestPanel>
+
+                <AutoLogin type="checkbox" css="LoginForm AutoLogin" ass="LoginForm LoginPanel AutoLogin"/>
+                <SeparatorPanel type="panel" css="LoginForm SeparatorPanel" ass="LoginForm LoginPanel SeparatorPanel"/>
+                <OPLTencentButton type="button" css="LoginForm OPLTencentButton" ass="LoginForm LoginPanel OPLTencentButton"/>
+                <OPLQQButton type="button" css="LoginForm OPLQQButton" ass="LoginForm LoginPanel OPLQQButton"/>
+                <OPLSinaButton type="button" css="LoginForm OPLSinaButton" ass="LoginForm LoginPanel OPLSinaButton"/>
+
+            </LoginPanel>
+            <ExperiencePanel type="panel" css="public" ass="LoginForm LoginOuterPanel ExperiencePanel">
+                <ExperienceButton type="button" css="ButtonOk" ass="LoginForm LoginOuterPanel ExperiencePanel ExperienceButton"/>
+            </ExperiencePanel>
+        </LoginOuterPanel>
+        <RegisterOuterPanel type="panel" css="LoginForm RegisterOuterPanel" ass="LoginForm RegisterOuterPanel">
+            <!-- The hierarchy is not strict in css -->
+            <RegisterPanel type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel">
+                <TextLabelReturnToLogin type="label" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextLabelReturnToLogin"/>
+                <TextMailAddress type="label" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextMailAddress"/>
+                <MailAddrInputPanel type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel MailAddrInputPanel">
+                    <MailAddrNameEdit type="hintedit" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel MailAddrInputPanel MailAddrNameEdit"/>
+                    <TextAt type="label" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel MailAddrInputPanel TextAt"/>
+                    <MailDomainCombox type="hintcombox" css="LoginForm RegisterPanel MailDomainCombox" ass="LoginForm RegisterPanel MailAddrInputPanel MailDomainCombox"/>
+                </MailAddrInputPanel>
+                <TextMailAddrHintPanel type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextMailAddrHintPanel">
+                    <WarningIconTMA type="label" css="LoginForm RegisterPanel WarningIcon" ass="LoginForm RegisterPanel WarningIcon"/>
+                    <TextMailAddrHint type="label" css="LoginForm RegisterPanel HintCSS" ass="common fill"/>
+                </TextMailAddrHintPanel>
+                <IntervalAfterMAIP type="panel" css="LoginForm RegisterPanel IntervalAfterMAIP" ass="LoginForm RegisterPanel IntervalAfterMAIP"/>
+                <PassWordPanel type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel PassWordPanel">
+                    <PassWordPanel1 type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel PassWordPanel1">
+                        <TextPassword type="label" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextPassword"/>
+                        <PasswordSetEdit type="hintedit" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel PasswordSetEdit"/>
+                        <TextPasswordHintPanel type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextPasswordHintPanel">
+                            <WarningIconTP type="label" css="LoginForm RegisterPanel WarningIcon" ass="LoginForm RegisterPanel WarningIcon"/>
+                            <TextPasswordHint type="label" css="LoginForm RegisterPanel HintCSS" ass="common fill"/>
+                        </TextPasswordHintPanel>
+                        <IntervalAfterPSE type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel IntervalAfterPSE"/>
+                    </PassWordPanel1>
+                    <IntervalAfterP1 type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel IntervalAfterP1"/>
+                    <PassWordPanel2 type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel PassWordPanel2">
+                        <TextPasswordConfirm type="label" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextPasswordConfirm"/>
+                        <PasswordConfirmEdit type="hintedit" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel PasswordConfirmEdit"/>
+                        <TextPasswordConfirmHintPanel type="label" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextPasswordConfirmHintPanel">
+                            <WarningIconTPC type="label" css="LoginForm RegisterPanel WarningIcon" ass="LoginForm RegisterPanel WarningIcon"/>
+                            <TextPasswordConfirmHint type="label" css="LoginForm RegisterPanel HintCSS" ass="common fill"/>
+                        </TextPasswordConfirmHintPanel>
+                        <IntervalAfterPCE type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel IntervalAfterPCE"/>
+                    </PassWordPanel2>
+                </PassWordPanel>
+                <TextVerificationCode type="label" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextVerificationCode"/>
+                <VerificationCodePanel type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel VerificationCodePanel">
+                    <VerificationCodeEdit  type="hintedit" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel VerificationCodePanel VerificationCodeEdit"/>
+                    <VerificationInterval type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel VerificationCodePanel VerificationInterval"/>
+                    <VerificationPic type="label" css="LoginForm RegisterPanel VerificationPic" ass="LoginForm RegisterPanel VerificationCodePanel VerificationPic"/>
+                    <VerificationInterval2 type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel VerificationCodePanel VerificationInterval2"/>
+                    <ChangePicButton type="button" css="LoginForm RegisterPanel ChangePicButton" ass="LoginForm RegisterPanel VerificationCodePanel ChangePicButton"/>
+                </VerificationCodePanel>
+                <TextVerificationCodeHintPanel type="label" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel TextVerificationCodeHintPanel">
+                    <WarningIconTVC type="label" css="LoginForm RegisterPanel WarningIcon" ass="LoginForm RegisterPanel WarningIcon"/>
+                    <TextVerificationCodeHint type="label" css="LoginForm RegisterPanel HintCSS" ass="common fill"/>
+                </TextVerificationCodeHintPanel>
+                <IntervalAfterVCP type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel IntervalAfterVCP"/>
+                <IntervalAfterTVCHP type="panel" css="public" ass="LoginForm RegisterPanel IntervalAfterTVCHP"/>
+                <AgreementPanel type="panel" css="public" ass="LoginForm RegisterPanel AgreementPanel">
+                    <AgreementCheckBox type="checkbox" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel AgreementPanel AgreementCheckBox"/>
+                    <ServiceTerms type="label" css="LoginForm RegisterPanel AgreementPanel MainLinkCSS" ass="LoginForm RegisterPanel AgreementPanel ServiceTerms"/>
+                    <TextAnd type="label" css="LoginForm RegisterPanel AgreementPanel MainCSS" ass="LoginForm RegisterPanel AgreementPanel TextAnd"/>
+                    <PrivacyPolicy type="label" css="LoginForm RegisterPanel AgreementPanel MainLinkCSS" ass="LoginForm RegisterPanel AgreementPanel PrivacyPolicy"/>
+                </AgreementPanel>
+                <IntervalAfterACB type="panel"  css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel IntervalAfterACB"/>
+                <AcceptUpdate type="checkbox" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel AcceptUpdate"/>
+
+                <IntervalAfterAU type="panel" css="public" ass="LoginForm RegisterPanel IntervalAfterAU"/>
+                <TextGeneralErrorPanel type="panel" css="public" ass="LoginForm RegisterPanel TextGeneralErrorPanel">
+                    <WarningIconTGE type="label" css="LoginForm RegisterPanel WarningIcon" ass="LoginForm RegisterPanel WarningIcon"/>
+                    <TextGeneralError type="label" css="LoginForm RegisterPanel MainCSS" ass="common fill"/>
+                </TextGeneralErrorPanel>
+                <IntervalAfterTGE type="panel" css="public" ass="LoginForm RegisterPanel IntervalAfterTGE"/>
+                <RegisterButtonPanel type="panel" css="LoginForm RegisterPanel MainCSS" ass="LoginForm RegisterPanel RegisterButtonPanel">
+                    <RegisterButton type="button" css="LoginForm RegisterPanel RegisterButton" ass="LoginForm RegisterPanel RegisterButtonPanel RegisterButton"/>
+                    <ReturnToLoginButton type="button" css="LoginForm RegisterPanel ReturnToLoginButton" ass="LoginForm RegisterPanel RegisterButtonPanel ReturnToLoginButton"/>
+                </RegisterButtonPanel>
+            </RegisterPanel>
+        </RegisterOuterPanel>
+    </LoginForm>
+    <ProxySettingForm type="form" css="ProxySettingForm" ass="ProxySettingForm">
+        <FormCaption type="control" control="CloseCaption"/>
+        <UseProxyCheckBox type="checkbox" css="ProxySettingForm MainCSS" ass="ProxySettingForm UseProxyCheckBox"/>
+        <InputPanel type="panel" ass="ProxySettingForm InputPanel">
+            <TopPanel type="panel"  ass="ProxySettingForm TopPanel">
+                <AddressText type="label" css="ProxySettingForm MainCSS" ass="ProxySettingForm AddressText"/>
+                <Address type="simpleedit" css="ProxySettingForm public" ass="ProxySettingForm Address"/>
+                <IntervalAfterA type="panel" ass="ProxySettingForm IntervalAfterA"/>
+                <PortText type="label" css="ProxySettingForm MainCSS" ass="ProxySettingForm PortText"/>
+                <Port type="simpleedit" css="ProxySettingForm public" ass="ProxySettingForm Port"/>
+            </TopPanel>
+            <IntervalPanel type="panel" ass="ProxySettingForm IntervalPanel"/>
+            <BottomPanel type="panel" ass="ProxySettingForm BottomPanel">
+                <NameText type="label" css="ProxySettingForm MainCSS" ass="ProxySettingForm NameText"/>
+                <Name type="simpleedit" css="ProxySettingForm public" ass="ProxySettingForm Name"/>
+                <IntervalAfterN type="panel" ass="ProxySettingForm IntervalAfterN"/>
+                <PasswordText type="label" css="ProxySettingForm MainCSS" ass="ProxySettingForm PasswordText"/>
+                <Password type="simpleedit" css="ProxySettingForm public" ass="ProxySettingForm Password"/>
+            </BottomPanel>
+        </InputPanel>
+
+        <ConnectStatus type="panel" ass="ProxySettingForm ConnectStatus">
+            <ConnectPic type="label" css="ProxySettingForm ConnectPic" ass="ProxySettingForm ConnectPic"/>
+            <UnConnectPic type="label" css="ProxySettingForm UnConnectPic" ass="ProxySettingForm UnConnectPic"/>
+        </ConnectStatus>
+        <ErrorText type="label" css="ProxySettingForm MainCSS" ass="ProxySettingForm ErrorText"/>
+        <TestButton type="button" css="public" ass="ProxySettingForm TestButton"/>
+        <IntevalBottom type="panel" ass="ProxySettingForm IntevalBottom"/>
+        <ButtonPanel type="panel" DockStyle="bottom" bounds="0,0,0,34" margin="0,0,21,0">
+            <ButtonPanelInner type="control" control="OKAndCanel"/>
+        </ButtonPanel>
+    </ProxySettingForm>
+
+    <OptionForm type="form" css="OptionForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <ButtonPanel type="panel" ass="OptionForm ButtonPanel">
+            <ButtonPanelInner type="control" control="OKAndCanel">
+            </ButtonPanelInner>
+        </ButtonPanel>
+
+        <ClientPanel type="panel" css="OptionForm ClientPanel" ass="OptionForm ClientPanel">
+            <HeaderBorderPanel type="panel" css="OptionForm HeaderBorderPanel" ass="OptionForm HeaderBorderPanel">
+                <HeaderBackPanel type="panel" css="WhitePanel" ass="OptionForm HeaderBackPanel">
+                    <Header type="panel" css="OptionForm Header" ass="OptionForm Header">
+                    </Header>
+                </HeaderBackPanel>
+            </HeaderBorderPanel>
+            <SettingPositionPanel type="panel" css="OptionForm SettingPositionPanel" ass="OptionForm SettingPositionPanel">
+                <panelCommon type="optioncommonpanel" css="OptionForm MainPanel" ass="OptionForm MainPanel">
+                    <firstPanel_Common type="panel" ass="OptionForm firstPanel_Common">
+                        <labelCommon type="label" css="OptionForm MainCSS" ass="OptionForm labelCommon"/>
+                        <checkboxAutoRun type="checkbox" css="OptionForm MainCSS" ass="OptionForm checkboxAutoRun"/>
+                        <checkboxUpdate type="checkbox" css="OptionForm MainCSS" ass="OptionForm checkboxUpdate"/>
+                        <checkboxMinToTray type="checkbox" css="OptionForm MainCSS" ass="OptionForm checkboxMinToTray"/>
+                    </firstPanel_Common>
+                    <secondPanel_Common type="panel" ass="OptionForm secondPanel_Common"/>
+                    <thirdPanel_Common type="panel" ass="OptionForm thirdPanel_Common">
+                        <labelFont type="label" css="OptionForm MainCSS" ass="OptionForm labelFont"/>
+                        <comboxFont type="combox" css="combox_public" ass="OptionForm comboxFont"/>
+                        <comboxFontSize type="combox" css="combox_public" ass="OptionForm comboxFontSize"/>
+                    </thirdPanel_Common>
+                </panelCommon>
+                <panelLock type="optionlockpanel" css="OptionForm MainPanel" ass="Optionform MainPanel">
+                    <labelLockPanel type="label" css="OptionForm MainCSS" ass="OptionForm labelLockPanel"/>
+                    <labelLockRemind type="label" css="common ErrorRemind" ass="OptionForm labelLockRemind"/>
+                    <labelInputKey type="label" css="OptionForm MainCSS" ass="OptionForm labelInputKey"/>
+                    <editInputKey type="simpleedit" css="public" ass="OptionForm editInputKey"/>
+                    <labelCheckKey type="label" css="OptionForm MainCSS" ass="OptionForm labelCheckKey"/>
+                    <editCheckKey type="simpleedit" css="public" ass="OptionForm editCheckKey"/>
+                    <checkboxStartLock type="checkbox" css="OptionForm MainCSS" ass="OptionForm checkboxStartLock"/>
+                    <checkboxAutoLock type="checkbox" css="OptionForm MainCSS" ass="OptionForm checkboxAutoLock"/>
+                    <editLockInterval type="simpleedit" css="public_small" ass="OptionForm editLockInterval"/>
+                    <labelAutoLock type="label" css="OptionForm MainCSS" ass="OptionForm labelAutoLock"/>
+                    <checkboxLockWhenCloseWnd type="checkbox" css="OptionForm MainCSS" ass="OptionForm checkboxLockWhenCloseWnd"/>
+                </panelLock>
+                <panelReadPwd type="optionreadpwdpanel" css="OptionForm MainPanel" ass="Optionform MainPanel">
+                    <VIntervalPanel type="panel" ass="OptionForm panelReadPwd VIntervalPanel"/>
+                    <HIntervalPanel type="panel" css ="public" ass="OptionForm panelReadPwd HIntervalPanel"/>
+                    <panelSetOrDelReadPwd type="panel" css="public" ass="OptionForm panelReadPwd panelSetOrDelReadPwd">
+                        <labelSetReadPwd type="label" css="OptionForm MainCSS" ass="OptionForm panelReadPwd labelSetReadPwd"/>
+                        <labelDelReadPwd type="label" css="common linkBlue" ass="OptionForm panelReadPwd labelDelReadPwd"/>
+                    </panelSetOrDelReadPwd>
+                    <HIntervalPanel type="panel" css ="public" ass="OptionForm panelReadPwd HIntervalPanel"/>
+                    <OldKeyPanel type="panel" css="OptionForm MainCSS" ass="OptionForm panelReadPwd OldKeyPanel">
+                        <labelOldKey type="label" css="OptionForm MainCSS" ass="OptionForm panelReadPwd labelOldKey"/>
+                        <editOldKey type="simpleedit" css="public" ass="OptionForm panelReadPwd editOldKey"/>
+                    </OldKeyPanel>
+                    <HIntervalPanel type="panel" css ="public" ass="OptionForm panelReadPwd HIntervalPanel"/>
+                    <InputKeyPanel type="panel" css="OptionForm MainCSS" ass="OptionForm panelReadPwd InputKeyPanel">
+                        <labelInputKey type="label" css="OptionForm MainCSS" ass="OptionForm panelReadPwd labelInputKey"/>
+                        <editInputKey type="simpleedit" css="public" ass="OptionForm panelReadPwd editInputKey"/>
+                    </InputKeyPanel>
+                    <HIntervalPanel type="panel" css ="public" ass="OptionForm panelReadPwd HIntervalPanel"/>
+                    <checkKeyPanel type="panel" css="OptionForm MainCSS" ass="OptionForm panelReadPwd CheckKeyPanel">
+                        <labelCheckKey type="label" css="OptionForm MainCSS" ass="OptionForm panelReadPwd labelCheckKey"/>
+                        <editCheckKey type="simpleedit" css="public" ass="OptionForm panelReadPwd editCheckKey"/>
+                    </checkKeyPanel>
+                    <HIntervalPanel type="panel" css ="public" ass="OptionForm panelReadPwd HIntervalPanel"/>
+                    <settingPanel type="panel" css="OptionForm MainCSS" ass="OptionForm panelReadPwd settingPanel">
+                        <VIntervalPanel2 type="panel" ass="OptionForm panelReadPwd VIntervalPanel2"/>
+                        <labelError type="label" css="common ErrorRemind" ass="OptionForm panelReadPwd labelError"/>
+                        <checkboxMinimizeLock type="checkbox" css="OptionForm MainCSS" ass="OptionForm panelReadPwd checkboxMinimizeLock"/>
+                        <autoLockPanel type="panel" ass="OptionForm panelReadPwd autoLockPanel">
+                            <checkboxAutoLock type="checkbox" css="OptionForm MainCSS" ass="OptionForm panelReadPwd checkboxAutoLock"/>
+                            <editLockInterval type="simpleedit" css="public_small" ass="OptionForm panelReadPwd editLockInterval"/>
+                            <labelAutoLock type="label" css="OptionForm MainCSS" ass="OptionForm panelReadPwd labelAutoLock"/>
+                        </autoLockPanel>
+                        <checkboxSwitchLock type="checkbox" css="OptionForm MainCSS" ass="OptionForm panelReadPwd checkboxSwitchLock"/>
+                    </settingPanel>
+                </panelReadPwd>
+                <panelProxy type="optionproxypanel" css="OptionForm MainPanel" ass="OptionForm MainPanel">
+                    <checkboxUseProxy type="checkbox" css="OptionForm MainCSS" ass="OptionForm checkboxUseProxy"/>
+                    <InputPanel type="panel" ass="OptionForm InputPanel">
+                        <TopPanel type="panel"  ass="OptionForm TopPanel">
+                            <PanelWrapper type="panel" ass="OptionForm PanelWrapper">
+                                <labelProxyAddr type="label" css="OptionForm MainCSS" ass="OptionForm labelProxyAddr"/>
+                            </PanelWrapper>
+                            <editProxyAddr type="simpleedit" css="ProxySettingForm public" ass="OptionForm editProxyAddr"/>
+                            <IntervalAfterA type="panel" ass="OptionForm IntervalAfterA"/>
+                            <PanelWrapper type="panel" ass="OptionForm PanelWrapper">
+                                <labelProxyPort type="label" css="OptionForm MainCSS" ass="OptionForm labelProxyPort"/>
+                            </PanelWrapper>
+                            <editProxyPort type="simpleedit" css="ProxySettingForm public" ass="OptionForm editProxyPort"/>
+                        </TopPanel>
+                        <IntervalPanel type="panel" ass="OptionForm IntervalPanel"/>
+                        <BottomPanel type="panel" ass="OptionForm BottomPanel">
+                            <PanelWrapper type="panel" ass="OptionForm PanelWrapper">
+                                <labelProxyUsername type="label" css="OptionForm MainCSS" ass="OptionForm labelProxyUsername"/>
+                            </PanelWrapper>
+                            <editProxyUsername type="simpleedit" css="ProxySettingForm public" ass="OptionForm editProxyUsername"/>
+                            <IntervalAfterN type="panel" ass="OptionForm IntervalAfterN"/>
+                            <PanelWrapper type="panel" ass="OptionForm PanelWrapper">
+                                <labelProxyPassword type="label" css="OptionForm MainCSS" ass="OptionForm labelProxyPassword"/>
+                            </PanelWrapper>
+                            <editProxyPassword type="simpleedit" css="ProxySettingForm public" ass="OptionForm editProxyPassword"/>
+                        </BottomPanel>
+                    </InputPanel>
+                    <ProxyError type="label" css="OptionForm ProxyError" ass="OptionForm ProxyError"/>
+                    <ProxyError type="label" css="OptionForm ProxyError" ass="OptionForm ProxyError"/>
+                    <btnProxyTest type="button" css="OptionForm btnProxyTest" ass="OptionForm btnProxyTest"/>
+
+                </panelProxy>
+                <panelPhotoCenter type="optionphotocenterpanel" css="OptionForm MainPanel" ass="OptionForm MainPanel">
+                    <blankLeftPanel type="panel" ass="OptionForm blankLeftPanel"/>
+                    <panelRight type ="panel" DockStyle ="fill">
+                        <labelTextYNote type="label" css="OptionForm MainCSS" ass="OptionForm labelTextYNote"/>
+                        <ResDataDirectory type="simpleedit" css="ProxySettingForm public" ass="OptionForm ResDataDirectory"/>
+                        <btnResDataChangeDir type="button" css="OptionForm btnProxyTest"   ass="OptionForm btnResDataChangeDir"/>
+                        <labelPhotoCenter type="label" css="OptionForm MainCSS" ass="OptionForm labelPhotoCenter"/>
+                        <checkboxAutoSave type="checkbox" css="OptionForm MainCSS" ass="OptionForm checkboxAutoSave"/>
+                        <editDirectory type="simpleedit" css="ProxySettingForm public" ass="OptionForm editDirectory"/>
+                        <btnChangeDir type="button" css="OptionForm btnProxyTest"   ass="OptionForm btnChangeDir"/>
+                        <labelExpansion type ="label" css="labelExpansion" ass ="OptionForm labelExpansion"/>
+                        <ViewDetails  type="label"  css="ViewDetails" AnchorStyle="topleft" Bounds="335,191,330,24"  StrID="STRID_LABELEX_VIEW_DETAILS" />
+                    </panelRight>
+
+                </panelPhotoCenter>
+                <panelHotkey type="optionhotkeypanel" css="OptionForm MainPanel" ass="OptionForm MainPanel">
+                    <Placeholder type="panel" DockStyle="fill" Margin="12,12,12,12">
+                        <Placeholder type="panel" css="OptionForm HeaderBorderPanel" DockStyle="top" Bounds="0,0,0,226" Margin="1,1,1,1">
+                            <HotkeyWnd type="OptionHotkeyWnd" DockStyle = "fill" >
+                                
+                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,84" css="WhitePanel">
+                                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,71,0" Margin="8,14,0,0">
+                                        <!--热键：-->
+                                        <HotkeyDesc type="labelex" css="ShortcutDesc" DockStyle="fill" StrID="HOTKEY_DESC"/>
+                                    </Placeholder>
+                                    <!--热键列表-->
+                                    <Placeholder type="panel" DockStyle="fill">
+                                        <leftPanel type="panel" DockStyle="left" Bounds="0,0,133,0">
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <ActivateWindow type="labelex" css="OptionHotkeyText" DockStyle="top" Bounds="0,0,0,24" StrID="STRID_LABEL_TEXTACTIVE"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <PrintScreenAndHideMainWnd type="labelex" css="OptionHotkeyText" DockStyle="top" Bounds="0,0,0,24" StrID="STRID_LABEL_TEXTPRINTSCREEN"/>
+                                        </leftPanel>
+                                        <rightPanel type="panel" DockStyle="fill" Margin="6,0,24,0">
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <Active type="control" control="HotKeyEditAndButton" DockStyle="top" Bounds="0,0,0,24" Margin="1,1,1,1"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <PrintScreen type="control" control="HotKeyEditAndButton" DockStyle="top" Bounds="0,0,0,24" Margin="1,1,1,1"/>
+                                        </rightPanel>
+                                    </Placeholder>
+                                </Placeholder>
+                                
+                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,210" css="WhitePanel">
+                                    <Placeholder type="panel" DockStyle="left" Bounds="0,0,71,0" Margin="8,3,0,0">
+                                        <!--快捷键：-->
+                                        <ShortcutsDesc type="labelex" css="ShortcutDesc" DockStyle="fill" StrID="SHORTCUT_DESC"/>
+                                    </Placeholder>
+                                    <!--快捷键列表-->
+                                    <Placeholder type="panel" DockStyle="fill">
+                                        <leftPanel type="panel" DockStyle="left" Bounds="0,0,133,0">
+                                            <labelTextSync type="labelex" css="OptionHotkeyText" DockStyle="top" Bounds="0,0,0,24" StrID="STRID_LABEL_TEXTSYNC"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <labelTextNewNote type="labelex" css="OptionHotkeyText" DockStyle="top" Bounds="0,0,0,24" StrID="STRID_LABEL_TEXTNEWNOTE"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <labelTextOnlyShowEditor type="labelex" css="OptionHotkeyText" DockStyle="top" Bounds="0,0,0,24" StrID="STRID_LABEL_TEXTONLYSHOWEDITOR"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <labelTextShowAll type="labelex" css="OptionHotkeyText" DockStyle="top" Bounds="0,0,0,24" StrID="STRID_LABEL_TEXTSHOWALL"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <labelTextInsertTodo type="labelex" css="OptionHotkeyText" DockStyle="top" Bounds="0,0,0,24" StrID="STRID_LABEL_TEXTInsertTodo"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <labelTextInsertTime type="labelex" css="OptionHotkeyText" DockStyle="top" Bounds="0,0,0,24" StrID="STRID_LABEL_TEXTInsertTime"/>
+                                        </leftPanel>
+                                        <rightPanel type="panel" DockStyle="fill" Margin="6,0,24,0">
+                                            <Sync type="control" control="HotKeyEditAndButton" DockStyle="top" Bounds="0,0,0,24" Margin="1,1,1,1"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <NewNote type="control" control="HotKeyEditAndButton" DockStyle="top" Bounds="0,0,0,24" Margin="1,1,1,1"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <OnlyShowEditor type="control" control="HotKeyEditAndButton" DockStyle="top" Bounds="0,0,0,24" Margin="1,1,1,1"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <ShowAll type="control" control="HotKeyEditAndButton" DockStyle="top" Bounds="0,0,0,24" Margin="1,1,1,1"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <InsertTodo type="control" control="HotKeyEditAndButton" DockStyle="top" Bounds="0,0,0,24" Margin="1,1,1,1"/>
+                                                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,11" />
+                                            <InsertTime type="control" control="HotKeyEditAndButton" DockStyle="top" Bounds="0,0,0,24" Margin="1,1,1,1"/>
+                                        </rightPanel>
+                                    </Placeholder>
+                                </Placeholder>                               
+                            </HotkeyWnd>
+                        </Placeholder>
+                        <!--恢复默认-->
+                        <Placeholder type="panel" DockStyle="left" Bounds="0,0,102,0" Margin="0,12,0,0">
+                            <ResetToDefault type="button" css="public" DockStyle="fill" StrID="OptionHotkeyWndResetToDefault" />
+                        </Placeholder>
+                    </Placeholder>
+                </panelHotkey>
+                <panelHistoryVersion type="optionhistorypanel" css="OptionForm MainPanel" ass="OptionForm MainPanel">
+                    <TextSelectHistoryNum type="label" css="OptionForm MainCSS" ass="OptionForm panelHistoryVersion TextSelectHistoryNum"/>
+                    <HistoryNumPanel type="panel" css="OptionForm HistoryNumPanel" ass="OptionForm panelHistoryVersion HistoryNumPanel">
+                        <HistoryNum3 type="label" css="OptionForm HistoryNumText" ass="OptionForm panelHistoryVersion HistoryNumPanel HistoryNum3"/>
+                        <HistoryNum5 type="label" css="OptionForm HistoryNumText" ass="OptionForm panelHistoryVersion HistoryNumPanel HistoryNum5"/>
+                        <HistoryNum10 type="label" css="OptionForm HistoryNumText" ass="OptionForm panelHistoryVersion HistoryNumPanel HistoryNum10"/>
+                        <HistoryNum15 type="label" css="OptionForm HistoryNumText" ass="OptionForm panelHistoryVersion HistoryNumPanel HistoryNum15"/>
+                        <HistoryNum20 type="label" css="OptionForm HistoryNumText" ass="OptionForm panelHistoryVersion HistoryNumPanel HistoryNum20"/>
+                    </HistoryNumPanel>
+                    <HistoryNumSlider type="slider" css="OptionForm HistoryNumSlider" ass="OptionForm panelHistoryVersion HistoryNumSlider"/>
+                    <PointPanel type="panel" ass="OptionForm panelHistoryVersion PointPanel">
+                        <Point1 type="button" css="OptionForm PointPanel MainCSS" ass="OptionForm panelHistoryVersion PointPanel Point1"/>
+                        <Point2 type="button" css="OptionForm PointPanel MainCSS" ass="OptionForm panelHistoryVersion PointPanel Point2"/>
+                        <Point3 type="button" css="OptionForm PointPanel MainCSS" ass="OptionForm panelHistoryVersion PointPanel Point3"/>
+                        <Point4 type="button" css="OptionForm PointPanel MainCSS" ass="OptionForm panelHistoryVersion PointPanel Point4"/>
+                        <Point5 type="button" css="OptionForm PointPanel MainCSS" ass="OptionForm panelHistoryVersion PointPanel Point5"/>
+                    </PointPanel>
+                    <TextUseStoragePanel type="panel" ass="OptionForm panelHistoryVersion TextUseStoragePanel">
+                        <TextNowUse type="label" css="OptionForm TextUseStoragePanel MainCSS" ass="OptionForm panelHistoryVersion TextUseStoragePanel TextNowUse"/>
+                        <TextUsedStorage type="label" css="OptionForm TextUseStoragePanel MainCSS" ass="common left"/>
+                        <TextMayUse type="label" css="OptionForm TextUseStoragePanel MainCSS" ass="OptionForm panelHistoryVersion TextUseStoragePanel TextMayUse"/>
+                        <TextMayUsed1 type="label" css="OptionForm TextUseStoragePanel TextMayUsed1" ass="common left"/>
+                        <TextMayUsed2 type="label" css="OptionForm TextUseStoragePanel MainCSS" ass="common left"/>
+                    </TextUseStoragePanel>
+                    <UsedStoragePanel type="panel" css="OptionForm UsedStoragePanel" ass="OptionForm panelHistoryVersion UsedStoragePanel">
+                        <UsedStoragePanelTop type="panel" css="OptionForm UsedStoragePanelTop" ass="common left"/>
+                        <UsedStoragePanelMid type="panel" css="OptionForm UsedStoragePanelMid" ass="common left"/>
+                    </UsedStoragePanel>
+                    <labelExpansion type ="label" css="labelExpansion" Bounds="18,191,330,24" AnchorStyle = "topleft" StrID="STRID_LABEL_EXPANSION_HISTORY"/>
+                    <ViewDetails  type="label"  css="ViewDetails" AnchorStyle="topleft" Bounds="353,191,330,24"  StrID="STRID_LABELEX_VIEW_DETAILS"/>
+                    <ErrorHistoryVersion type="label" css="OptionForm ErrorHistoryVersion" ass="OptionForm panelHistoryVersion ErrorHistoryVersion"/>
+
+                </panelHistoryVersion>
+            </SettingPositionPanel>
+        </ClientPanel>
+
+    </OptionForm>
+
+    <ProxyTooltipForm type="form" css="ProxyTooltipForm" ass="ProxyTooltipForm">
+        <FormCaption type="control" control="CloseCaption"/>
+        <ConnectStatus type="panel" css="OptionForm MainCSS" ass="ProxyTooltipForm ConnectStatus">
+            <ConnectPic type="label" css="ProxyTooltipForm ConnectPic" ass="ProxyTooltipForm ConnectPic"/>
+            <UnConnectPic type="label" css="ProxyTooltipForm UnConnectPic" ass="ProxyTooltipForm UnConnectPic"/>
+        </ConnectStatus>
+        <labelProxyTooltip type="label" css="ProxyTooltipForm MainCSS" ass="ProxyTooltipForm labelProxyTooltip"/>
+        <btnOK type="button" css="OptionForm btnOK" ass="ProxyTooltipForm btnOK"/>
+    </ProxyTooltipForm>
+
+    <!-- 解除锁屏窗口-->
+    <UnlockForm type="form" css="UnlockForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="common fill">
+            <PanelBottom type="panel" css="public" dockstyle="bottom" bounds="0,0,0,52" margin="0,0,18,18">
+                <PanelOKAndCancel type="control" control="OKAndCanel"/>
+            </PanelBottom>
+            <PanelRemind type="panel" css="public" ass="UnlockForm PanelRemind">
+                <LabelRemind type="label" css="common ErrorRemind" ass="UnlockForm PanelRemind LabelRemind"/>
+            </PanelRemind>
+            <PanelEditor type="panel" css="public" ass="UnlockForm PanelEditor">
+                <LabelTip type="label" css="common BottomText" ass="UnlockForm PanelEditor LabelTip"/>
+                <EditPassword type="edit" css="public" ass="UnlockForm PanelEditor EditPassword"/>
+            </PanelEditor>
+            <PanelTip type="panel" css="public" ass="UnlockForm PanelTip">
+                <LabelTip type="label" css="UnlockForm LabelTip" ass="UnlockForm PanelTip LabelTip"/>
+                <LabelButton type="label" css="UnlockForm LabelButton" ass="UnlockForm PanelTip LabelButton"/>
+            </PanelTip>
+        </Client>
+    </UnlockForm>
+
+    <!-- 清空密码确认窗口-->
+    <CheckClearKeyForm type="form" css="CheckClearKeyForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="common fill">
+            <PanelBottom type="panel" css="public" dockstyle="bottom" bounds="0,0,0,52" margin="0,0,18,18">
+                <PanelOKAndCancel type="control" control="OKAndCanel"/>
+            </PanelBottom>
+            <PanelTip type="panel" css="public" ass="CheckClearKeyForm PanelTip">
+                <LabelTip type="label" css="common BottomText" ass="CheckClearKeyForm PanelTip LabelTip"/>
+            </PanelTip>
+        </Client>
+    </CheckClearKeyForm>
+
+    <!-- 清空密码提示窗口-->
+    <ClearKeyPromptForm type="form" css="ClearKeyPromptForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="common fill">
+            <PanelBottom type="panel" css="public" ass="panel panelbottom">
+                <ButtonOk type="button" css="ButtonOk" ass="ClearKeyPromptForm PanelBottom ButtonOk"/>
+            </PanelBottom>
+            <PanelTip type="panel" css="public" ass="ClearKeyPromptForm PanelTip">
+                <LabelTip type="label" css="common BottomText" ass="ClearKeyPromptForm PanelTip LabelTip"/>
+            </PanelTip>
+        </Client>
+    </ClearKeyPromptForm>
+
+    <!-- 清空密码窗口-->
+    <ClearKeyForm type="form" css="ClearKeyForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="common fill">
+            <PanelBottom type="panel" css="public" dockstyle="bottom" bounds="0,0,0,52" margin="0,0,18,18">
+                <PanelOKAndCancel type="control" control="OKAndCanel"/>
+            </PanelBottom>
+            <PanelTip type="panel" css="public" ass="ClearKeyForm PanelTip">
+                <LabelTip type="label" css="common BottomText" ass="ClearKeyForm PanelTip LabelTip"/>
+            </PanelTip>
+            <PanelRemind type="panel" css="public" ass="ClearKeyForm PanelRemind">
+                <LabelRemind type="label" css="common ErrorRemind" ass="ClearKeyForm PanelRemind LabelRemind"/>
+            </PanelRemind>
+            <PanelAccount type="panel" css="public" ass="ClearKeyForm PanelAccount">
+                <LabelKey type="label" css="common BottomText" ass="ClearKeyForm PanelAccount LabelKey"/>
+                <LabelValue type="label" css="common BottomText" ass="ClearKeyForm PanelAccount LabelValue"/>
+            </PanelAccount>
+            <PanelEditor type="panel" css="public" ass="ClearKeyForm PanelEditor">
+                <LabelTip type="label" css="common BottomText" ass="ClearKeyForm PanelEditor LabelTip"/>
+                <EditPassword type="edit" css="public" ass="ClearKeyForm PanelEditor EditPassword"/>
+            </PanelEditor>
+        </Client>
+    </ClearKeyForm>
+
+    <!-- 密码设置窗口/用于密码锁定-->
+    <LockForm type="form" css="LockForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="LockForm Client">
+            <panelLock type="optionlockpanel" css="public" DockStyle="top" Bounds="0,0,0,234">
+                <PanelLockTip type="panel" css="public" ass="LockForm PanelLockTip">
+                    <labelLockPanel type="label" css="common BottomText" ass="LockForm PanelLockTip labelLockPanel"/>
+                </PanelLockTip>
+                <PanelLockRemind type="panel" css="public" ass="LockForm PanelLockRemind">
+                    <labelLockRemind type="label" css="common ErrorRemind" ass="LockForm PanelLockRemind labelLockRemind"/>
+                </PanelLockRemind>
+                <PanelLockInputKey type="panel" css="public" ass="LockForm PanelLockInputKey">
+                    <labelInputKey type="label" css="common BottomText" ass="LockForm PanelLockInputKey labelInputKey"/>
+                    <editInputKey type="simpleedit" css="public" ass="LockForm PanelLockInputKey editInputKey"/>
+                </PanelLockInputKey>
+                <PanelLockCheckKey type="panel" css="public" ass="LockForm PanelLockCheckKey">
+                    <labelCheckKey type="label" css="common BottomText" ass="LockForm PanelLockCheckKey labelCheckKey"/>
+                    <editCheckKey type="simpleedit" css="public" ass="LockForm PanelLockCheckKey editCheckKey"/>
+                </PanelLockCheckKey>
+                <PanelLockStartLock type="panel" css="public" ass="LockForm PanelLockStartLock">
+                    <checkboxStartLock type="checkbox" css="public" ass="LockForm PanelLockStartLock checkboxStartLock"/>
+                </PanelLockStartLock>
+                <PanelLockAuto type="panel" css="public" ass="LockForm PanelLockAuto">
+                    <checkboxAutoLock type="checkbox" css="public" ass="LockForm PanelLockAuto checkboxAutoLock"/>
+                    <editLockInterval type="simpleedit" css="public_small" ass="LockForm PanelLockAuto editLockInterval"/>
+                    <labelAutoLock type="label" css="LockForm labelAutoLock" ass="LockForm PanelLockAuto labelAutoLock"/>
+                </PanelLockAuto>
+                <PanelLockWhenCloseWnd type="panel" css="public" ass="LockForm PanelLockWhenCloseWnd">
+                    <checkboxLockWhenCloseWnd type="checkbox" css="public" ass="LockForm PanelLockWhenCloseWnd checkboxLockWhenCloseWnd"/>
+                </PanelLockWhenCloseWnd>
+            </panelLock>
+            <FormButton type="control" control="OKAndCanel"/>
+        </Client>
+    </LockForm>
+
+    <!-- 数据库转换窗口-->
+    <DataBaseConvertForm type="form" css="DataBaseConvertForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" DockStyle="fill" margin="18,0,18,18">
+            <PanelTip type="panel" css="public" ass="DataBaseConvertForm PanelTip">
+                <LabelTip type="label" css="common BottomText" ass="DataBaseConvertForm PanelTip LabelTip"/>
+            </PanelTip>
+            <PanelBottom type="panel" css="public" ass="common OKAndCancel">
+                <ButtonOk type="button" css="ButtonOk" ass="common OKAndCancel OKButtonRight"/>
+            </PanelBottom>
+            <PanelSlider type="panel" css="public" ass="DataBaseConvertForm PanelSlider">
+                <SliderConvert type="slider" css="common" ass="DataBaseConvertForm PanelSlider SliderConvert"/>
+                <LabelRate type="label" css="common BottomText" ass="DataBaseConvertForm PanelSlider LabelRate"/>
+            </PanelSlider>
+
+        </Client>
+    </DataBaseConvertForm>
+
+    <!--导入导出的进度窗口-->
+    <ImportProgressForm type="form" css="ImportProgressForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <ImportProgress type="slider" css="common" ass="ImportProgressForm Client ProgressBar"/>
+            <ButtonCancel type="button" css="public" ass="ImportProgressForm Client ButtonCancel"/>
+        </Client>
+    </ImportProgressForm>
+
+    <!-- MessageDlg-->
+    <MessageDlg type="form" css="MessageDlg" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <PanelBottom type="control" control="OKAndCanel"/>
+            <PanelMsg type="panel" css="MessageDlg MsgLabel" ass="MessageDlg Client PanelMsg">
+            </PanelMsg>
+            <PanelDes type="panel" css="public" ass="MessageDlg Client PanelDes">
+                <LabelDes type="label" css="MessageDlg DesLabel" ass="MessageDlg Client PanelDes LabelDes"/>
+            </PanelDes>
+        </Client>
+    </MessageDlg>
+
+    <!-- 邮件发送窗口-->
+    <SendEmailForm type="form" css="SendEmailForm" ass="form public">
+        <!-- 窗口标题栏 -->
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="common fill">
+            <client type="panel" css="public" DockStyle="top" Bounds="0,0,0,200">
+                <PanelRight type="panel" css="PanelRight" ass="SendEmailForm PanelRight">
+                    <PanelThumbnail type="thumbnailpanel" css="public" ass="SendEmailForm PanelRight PanelThumbnail">
+                    </PanelThumbnail>
+                </PanelRight>
+                <client type="panel" css="public" ass="common fill">
+                    <PanelSender type="panel" css="public" ass="SendEmailForm PanelSender">
+                        <LabelSender type="label" css="common BottomText" ass="SendEmailForm PanelSender LabelSender"/>
+                        <EmailWnd type="sugcombox" css="SendEmailForm EmailWnd" ass="SendEmailForm EmailWnd" />
+                    </PanelSender>
+                    <PanelSubject type="panel" css="public" ass="SendEmailForm PanelSubject">
+                        <LabelSubject type="label" css="common BottomText" ass="SendEmailForm PanelSubject LabelSubject"/>
+                        <editSubject type="simpleedit" css="public" ass="SendEmailForm PanelSubject editSubject"/>
+                    </PanelSubject>
+                    <PanelDescription type="panel" css="public" ass="SendEmailForm PanelDescription">
+                        <LabelDescription type="label" css="common BottomText" ass="SendEmailForm PanelDescription LabelDescription"/>
+                        <editDescription type="simpleedit" css="public" ass="SendEmailForm PanelDescription editDescription"/>
+                    </PanelDescription>
+                </client>
+            </client>
+            <PanelBottom type="panel" css="public" ass="SendEmailForm PanelBottom">
+                <FormButton type="control" control="OKAndCanel"/>
+            </PanelBottom>
+        </Client>
+    </SendEmailForm>
+
+    <!--笔记历史版本窗口-->
+    <NoteHistoryForm type="form" css="NoteHistoryForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+        </Client>
+    </NoteHistoryForm>
+
+    <!--标签列表窗口，标签显示不够时显示此窗口-->
+    <OverTagForm type="form" css="OverTagForm" ass="form public">
+        <CefWebBrowser type="CefWebBrowser" ass="common fill"></CefWebBrowser>
+    </OverTagForm>
+
+    <!--新功能引导窗口-->
+    <NewFeaturesGuidForm type="form" css="NewFeaturesGuidForm" ass="form public">
+        <CefWebBrowser type="CefWebBrowser" ass="common fill"></CefWebBrowser>
+    </NewFeaturesGuidForm>
+
+    <!--是否继续体验还是立即登录窗口-->
+    <LoginOrExperienceForm type="form" css="LoginOrExperienceForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <SummaryText type="label" css="LoginOrExperienceForm SummaryText" ass="LoginOrExperienceForm SummaryText"/>
+        <LoginButton type="button" css="ButtonOk" ass="LoginOrExperienceForm LoginButton" />
+        <ContinueExperienceButton type="button" css="public" ass="LoginOrExperienceForm ContinueExperienceButton"/>
+    </LoginOrExperienceForm>
+
+    <!--新建笔记本窗口-->
+    <NewNotebookForm type="form" css="NewNotebookForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,18" Margin="0,0,0,0" />
+
+        <!--笔记本名称-->
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,30" Margin="18,0,0,0">
+            <LabelName type="labelex"  css="NewNotebookForm LabelName" DockStyle="left" Bounds="0,0,72,0" StrID="NEW_NOTEBOOK_FORM_NAME" />
+            <Placeholder type="panel" DockStyle="left" Bounds="0,0,15,0" Margin="0,0,0,0" />
+            <EditName  type="simpleedit" css="NewNotebookForm EditName"  DockStyle="left" Bounds="0,0,252,0" />
+        </Placeholder>
+
+        <!--笔记本类型-->
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,90" Margin="18,18,0,0">
+            <LabelType type="labelex" css="NewNotebookForm LabelType" DockStyle="left" Bounds="0,0,72,0" StrID="NEW_NOTEBOOK_FORM_TYPE" />
+            <Placeholder type="panel" DockStyle="fill" Margin="12,8,0,0">
+                <Button_LocalType type="radiobutton" css="NewNotebookForm Button_Type" DockStyle="top" Bounds="0,0,0,16" StrID="NEW_NOTEBOOK_FORM_LOCAL_TYPE" />
+                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,12"/>
+                <Button_SyncType type="radiobutton" css="NewNotebookForm Button_Type"  DockStyle="top" Bounds="0,0,0,16" StrID="NEW_NOTEBOOK_FORM_SYNC_TYPE"/>
+                <LabelDesc type="labelex" css="NewNotebookForm LabelDesc" DockStyle="fill" StrID="NEW_NOTEBOOK_FORM_DESC"/>
+            </Placeholder>
+        </Placeholder>
+        <Placeholder type="panel" DockStyle="fill" Margin="18,0,18,18">
+            <PanelBottom type="control" control="OKAndCanel"/>
+        </Placeholder>
+
+    </NewNotebookForm>
+
+    <!--笔记本属性窗口-->
+    <NotebookPropertyForm type="form" css="NewNotebookForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,18" Margin="0,0,0,0" />
+
+        <!--笔记本名称-->
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,30" Margin="18,0,0,0">
+            <LabelName type="labelex"  css="NewNotebookForm LabelName" DockStyle="left" Bounds="0,0,72,0" StrID="NEW_NOTEBOOK_FORM_NAME" />
+            <Placeholder type="panel" DockStyle="left" Bounds="0,0,15,0" Margin="0,0,0,0" />
+            <EditName  type="simpleedit" css="NewNotebookForm EditName"  DockStyle="left" Bounds="0,0,252,0" />
+        </Placeholder>
+
+        <!--笔记本类型-->
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,90" Margin="18,18,0,0">
+            <LabelType type="labelex" css="NewNotebookForm LabelType" DockStyle="left" Bounds="0,0,72,0" StrID="NEW_NOTEBOOK_FORM_TYPE" />
+            <Placeholder type="panel" DockStyle="fill" Margin="12,0,0,0">
+                <LabelTypeDesc type="labelex" css="NewNotebookForm LabelType" DockStyle="top" Bounds="0,0,72,40" />
+                <CheckboxSetting type="checkbox" css="public_black"  DockStyle="top" Bounds="0,0,0,16" StrID="NOTEBOOK_PROPERTY_FORM_DEFAULT"/>
+            </Placeholder>
+        </Placeholder>
+
+        <Placeholder type="panel" DockStyle="fill" Margin="18,0,18,18">
+            <PanelBottom type="control" control="OKAndCanel"/>
+        </Placeholder>
+
+    </NotebookPropertyForm>
+
+    <!--新建附件窗口-->
+    <CreateAttachmentForm type="form" css="CreateAttachmentForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,18" Margin="0,0,0,0" />
+
+        <!--附件名称-->
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,30" Margin="18,0,0,0">
+            <LabelName type="labelex"  css="CreateAttachmentForm LabelName" DockStyle="left" Bounds="0,0,72,0" StrID="CREATE_ATTACHMENT_LABEL" />
+            <EditName  type="simpleedit" css="CreateAttachmentForm EditName"  DockStyle="left" Bounds="0,0,198,0" />
+            <Placeholder type="panel" DockStyle="left" Bounds="0,0,40,0" Margin="8,0,0,0">
+                <LabelExtName type="labelex"  css="CreateAttachmentForm LabelExtName" DockStyle="fill" Bounds="0,0,0,0" />
+            </Placeholder>
+        </Placeholder>
+
+        <Placeholder type="panel" DockStyle="fill" Margin="216,24,0,18">
+            <OKButton type="button" css="ButtonOk" DockStyle="left" Bounds="0,0,48,0" Margin="0,0,0,0" StrID="STRID_OK" />
+            <Placeholder type="panel" DockStyle="fill" Bounds="0,0,0,0" Margin="12,0,0,0">
+                <CancelButton type="button" css="public" DockStyle="left" Bounds="0,0,48,0" Margin="0,0,0,0" StrID="STRID_CANCEL" />
+            </Placeholder>
+        </Placeholder>
+
+    </CreateAttachmentForm>
+
+    <!--新建标签窗口-->
+    <CreateTagForm type="form" css="CreateAttachmentForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,18" Margin="0,0,0,0" />
+
+        <!--标签名称-->
+        <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,30" Margin="18,0,0,0">
+            <LabelName type="labelex"  css="CreateAttachmentForm LabelName" DockStyle="left" Bounds="0,0,72,0" StrID="CREATE_TAG_FORM_LABEL" />
+            <EditName  type="simpleedit" css="CreateAttachmentForm EditName"  DockStyle="left" Bounds="0,0,234,0" />
+        </Placeholder>
+        <Placeholder type="panel" DockStyle="fill" Margin="216,24,0,18">
+            <OKButton type="button" css="ButtonOk" DockStyle="left" Bounds="0,0,48,0" Margin="0,0,0,0" StrID="STRID_OK" />
+            <Placeholder type="panel" DockStyle="fill" Bounds="0,0,0,0" Margin="12,0,0,0">
+                <CancelButton type="button" css="public" DockStyle="left" Bounds="0,0,48,0" Margin="0,0,0,0" StrID="STRID_CANCEL" />
+            </Placeholder>
+        </Placeholder>
+    </CreateTagForm>
+
+    <!--添加附件提示扩容窗口-->
+    <ExpansionPromptForm type="form" css="ExpansionPromptForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+
+        <Placeholder type="panel" DockStyle="fill"  Margin="18,0,0,0" >
+            <!--文件大小不能超过25M！-->
+            <AttachmentSizeLimitlabel type="label"  css="ExpansionPromptForm AttachmentSizeLimitlabel" AnchorStyle="topleft" Bounds="18,16,148,26" StrID="STRID_LABEL_ATTACHMENT_SIZE_LIMIT" />
+            <Details type="panel" AnchorStyle="topleft" Bounds="18,1,400,111">
+                <!--购买有道云笔记扩容套餐，可享受单个附件1G上传限制。-->
+                <BuyExpansionlabel type="label"  css="ExpansionPromptForm BuyExpansionlabel" AnchorStyle="topleft" Bounds="0,41,330,18" StrID="STRID_LABEL_BUY_EXPANSION" />
+
+                <!--有道云笔记的扩容套餐可以。。。-->
+                <Icon type="photo" css="ExpansionPromptForm Icon" AnchorStyle="topleft" Bounds="0,71,53,53"/>
+                <ExpansionDetailslabel type="label"  css="ExpansionPromptForm ExpansionDetailslabel" AnchorStyle="topleft" Bounds="72,71,300,60" StrID="STRID_LABEL_EXPANSION_DETAILS" />    
+            </Details>
+
+          <ViewDetailsButton type="button" css="ButtonOk" AnchorStyle="topleft" Bounds="252,143,72,25" Margin="0,0,0,0" StrID="STRID_IMMEDIATELY_VIEW" />
+          <CancelButton type="button" css="public" AnchorStyle="topleft" Bounds="336,143,48,25" Margin="0,0,0,0" StrID="STRID_CLOSE" />
+
+        </Placeholder>
+    </ExpansionPromptForm>
+
+  <!--新建笔记本组窗口-->
+  <NewNotebookGroupForm type="form" css="NewNotebookGroupForm" ass="form public">
+    <FormCaption type="control" control="CloseCaption"/>
+    
+    <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,24" Margin="0,0,0,0" />
+    
+    <!--笔记本组名称-->
+    <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,24" Margin="20,0,0,0">
+      <LabelName type="labelex"  css="NewNotebookGroupForm LabelName" DockStyle="left" Bounds="0,0,72,0" StrID="NEW_NOTEBOOKGROUP_FORM_NAME" />
+      <Placeholder type="panel" DockStyle="left" Bounds="0,0,15,0" Margin="0,0,0,0" />
+      <EditName  type="simpleedit" css="NewNotebookGroupForm EditName"  DockStyle="left" Bounds="0,0,252,0" />
+    </Placeholder>
+
+    <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,6" Margin="0,0,0,0" />
+
+    <!--选择笔记本-->
+    <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,24" Margin="18,0,0,0">
+      <LabelSelectNotebook type="labelex"  css="NewNotebookGroupForm LabelSelectNotebook" DockStyle="left" Bounds="0,0,72,0" StrID="NEW_NOTEBOOKGROUP_FORM_SELECTNOTEBOOK" />
+    </Placeholder>
+
+    <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,6" Margin="0,0,0,0" />
+    
+    <!--笔记本列表-->
+    <Placeholder type="panel" css="NewNotebookGroupForm TreeBorder" AnchorStyle="topleft" Bounds="18,120,348,191" >
+      <TreeNotebook type="notebookgrouptree" css="public" AnchorStyle="topleft" Bounds="1,1,346,189" />  
+    </Placeholder>
+    
+    
+    <Placeholder type="panel" DockStyle="fill" Margin="18,0,18,15">
+      <PanelBottom type="control" control="OKAndCanel"/>
+    </Placeholder>
+  </NewNotebookGroupForm>
+
+    <CancelReadingEnryptForm type="form" css="CancelReadingEnryptForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <PanelClient type="panel" css="public" DockStyle ="fill" Margin="18, 21,18, 21">
+            <PanelTop type="panel" css="public" DockStyle="top" Bounds="0,0,0,24" Margin="0,0,0,9">
+                <LableLeft type="label" css="common Normal" DockStyle="Left" Bounds="0,0,180,0" StrID=""/>
+                <LableErrorRemind type="label" css="common ErrorRemind" DockStyle="right" Bounds="0,0,120,0"  StrID="STRID_NOTE_PASSWORD_ERROR"/>
+            </PanelTop>
+            <LabelHint2 type="label" css="common LightGray" DockStyle="top" Bounds="0,0,0,24" Margin="0,0,0,10"/>
+            <panelLowPart type="panel" css="public" DockStyle="Fill" Margin="0,4,0,0">
+                <EditPanel type="panel" css="public" Bounds="0,0,0,30" DockStyle="top">
+                    <LabelInputReadPwd type="label" Bounds="0,0,90,0" DockStyle="left" StrID="SEARCH_RESULT_DECRYPT_HINT"/>
+                    <EditPassword type="simpleedit" css="public" Bounds="0,0,213,30" DockStyle="right" />
+                </EditPanel>
+                <PanelBottom type="panel" css="public" DockStyle="Fill" Margin="0,18,0,0">
+                    <LableForget type="label" css="common linkBlue" DockStyle="left" Bounds="0,0,48,0" StrID="STRID_FORGET_PASSWORD"/>
+                    <CancelButton type="button" css="public" DockStyle="right" Bounds="0,0,48,0" StrID="STRID_CANCEL"/>
+                    <PanelSep type="panel" css="public" DockStyle="Right" Bounds="0,0,12,0"/>
+                    <OKButton type="button" css="ButtonOk" DockStyle="right" Bounds="0,0,48,0" StrID="STRID_OK"/>
+                </PanelBottom>
+            </panelLowPart>
+        </PanelClient>
+    </CancelReadingEnryptForm>
+
+
+    <SyncInfoForm type="form" css="SyncInfoForm" ass="form public">
+        <Space type="panel" css="WhitePanel" DockStyle="top" Bounds="0,0,0,5" />
+        <HSeparator type="panel" css="PanelSplitter" Bounds="0,0,0,1" DockStyle="top" />
+
+        <!--下载信息-->
+        <Download type="panel" DockStyle="top" Bounds="0,0,0,25">
+            <!--文字描述-->
+            <DownloadDesc type="panel" css="DownloadInfo" DockStyle="top" Bounds="0,0,0,24" Margin="8,0,0,0">
+                <Text type="labelex" css="DownloadInfo" DockStyle="left" Bounds="0,0,50,0" StrID="SYNC_INFO_DOWNLOAD" />
+            </DownloadDesc>
+            <HSeparator type="panel" css="PanelSplitter" Bounds="0,0,0,1" DockStyle="top" />
+            <!--【下载条目】-->
+
+            <!--等待的条目-->
+            <WaitItems type="panel" css="WhitePanel" DockStyle="top" Bounds="0,0,0,36" Visible="False">
+                <HSeparator type="panel" css="PanelSplitter" Bounds="0,0,0,1" DockStyle="bottom" />
+                <WaitText type="labelex" css="DownloadWaitText" DockStyle="fill" ></WaitText>
+            </WaitItems>
+
+        </Download>
+
+        <!--上传信息-->
+        <Upload type="panel" DockStyle="top" Bounds="0,0,0,25">
+            <!--文字描述-->
+            <UploadDesc type="panel" css="DownloadInfo" DockStyle="top" Bounds="0,0,0,24" Margin="8,0,0,0">
+                <Text type="labelex" css="DownloadInfo" DockStyle="left" Bounds="0,0,50,0" StrID="SYNC_INFO_UPLOAD" />
+            </UploadDesc>
+            <HSeparator type="panel" css="PanelSplitter" Bounds="0,0,0,1" DockStyle="top" />
+            <!--【上传条目】-->
+
+        </Upload>
+        <Space type="panel" css="WhitePanel" DockStyle="top" Bounds="0,0,0,5" />
+        <HSeparator type="panel" css="PanelSplitter" Bounds="0,0,0,1" DockStyle="top" />
+    </SyncInfoForm>
+
+
+    <DownloadItem type="panel" DockStyle="top" Bounds="0,0,0,67" Item="True">
+        <Info type="PercentagePanel" DockStyle="top" Bounds="0,0,0,66" css="downloadProgress">
+            <Right type="panel" DockStyle="right" Bounds="0,0,30,0">
+                <Toggle type="panel" DockStyle="fill">
+                    <Pause type="button" DockStyle="fill" css="PauseDownload"/>
+                    <Resume type="button" DockStyle="fill" css="ResumeDownload" />
+                </Toggle>
+            </Right>
+            <Left type="panel" DockStyle="fill" Bounds="0,0,0,0" Margin="12,0,0,0">
+                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,12"/>
+                <Title type="labelex" DockStyle="top" Bounds="0,0,0,24" css="NoteTitle">
+                </Title>
+                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,24">
+                    <Size type="labelex" DockStyle="left" Bounds="0,0,300,0" css="SizeInfo">
+                    </Size>
+                    <ErrorText type="labelex" DockStyle="fill" css="SyncErrorText" Visible="False" StrID="DOWNLOAD_ERROR_TEXT">
+                    </ErrorText>
+                </Placeholder>
+            </Left>
+        </Info>
+        <HSeparator type="panel" css="PanelSplitter" DockStyle="top" Bounds="0,0,0,1" />
+    </DownloadItem>
+
+    <UploadItem type="panel" DockStyle="top" Bounds="0,0,0,67" Item="True">
+        <Info type="PercentagePanel" DockStyle="top" Bounds="0,0,0,66" css="downloadProgress">
+            <Right type="panel" DockStyle="right" Bounds="0,0,30,0">
+                <Toggle type="panel" DockStyle="fill">
+                    <Pause type="button" DockStyle="fill" css="PauseDownload" Visible="False" />
+                    <Resume type="button" DockStyle="fill" css="ResumeDownload" Visible="False" />
+                </Toggle>
+                <Wait type="panel" DockStyle="fill">
+                    <Text type="labelex" DockStyle="fill" css="WaitText" StrID="SYNC_INFO_WAIT" />
+                </Wait>
+            </Right>
+            <Left type="panel" DockStyle="fill" Bounds="0,0,0,0" Margin="12,0,0,0">
+                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,12"/>
+                <Title type="labelex" DockStyle="top" Bounds="0,0,0,24" css="NoteTitle">
+                </Title>
+                <Placeholder type="panel" DockStyle="top" Bounds="0,0,0,24">
+                    <Size type="labelex" DockStyle="left" Bounds="0,0,300,0" css="SizeInfo">
+                    </Size>
+                    <ErrorText type="labelex" DockStyle="fill" css="SyncErrorText" Visible="False" StrID="UPLOAD_ERROR_TEXT">
+                    </ErrorText>
+                </Placeholder>
+            </Left>
+        </Info>
+        <HSeparator type="panel" css="PanelSplitter" DockStyle="top" Bounds="0,0,0,1" />
+    </UploadItem>
+
+    <BlankDownloadItem type="panel" DockStyle="top" Bounds="0,0,0,67">
+        <Info type="PercentagePanel" DockStyle="top" Bounds="0,0,0,66" css="downloadProgress">
+            <Text type="labelex" DockStyle="fill" css="BlankDownloadItem" StrID="BLANK_DOWNLOAD_ITEM_TEXT"></Text>
+        </Info>
+        <HSeparator type="panel" css="PanelSplitter" DockStyle="top" Bounds="0,0,0,1" />
+    </BlankDownloadItem>
+
+    <BlankUploadItem type="panel" DockStyle="top" Bounds="0,0,0,67">
+        <Info type="PercentagePanel" DockStyle="top" Bounds="0,0,0,66" css="downloadProgress">
+            <Text type="labelex" DockStyle="fill" css="public" StrID="BLANK_UPLOAD_ITEM_TEXT"></Text>
+        </Info>
+        <HSeparator type="panel" css="PanelSplitter" DockStyle="top" Bounds="0,0,0,1" />
+</BlankUploadItem>
+
+    <!--空间不足提示-->
+    <SpaceFullForm type="form" css="SpaceFullForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" DockStyle="fill"/>
+    </SpaceFullForm>
+
+
+    <!--笔记单窗口-->
+    <NoteForm type="form" css="NoteForm" ass="form public">
+        <FormCaption type="control" control="NoteFormCaption"/>
+        <Client type="panel" DockStyle="fill">
+            <!-- 菜单条 -->
+            <PanelMenubar type="panel" ass="mainform panelclient panelmenubar">
+
+                <ButtonPrint type="SkinButtonEx" css="Print" ass="mainform panelclient panelmenubar buttonPrint"/>
+                <ButtonShare type="SkinButtonEx" css="Share" ass="mainform panelclient panelmenubar buttonShare"/>
+                <ButtonSync type="SkinButtonEx" css="Sync" ass="mainform panelclient panelmenubar buttonSync"/>
+                <AnimationSync type="animationex" AnchorStyle="topleft" Transparent="false" Bounds="156,11,20,20"/>
+            </PanelMenubar>
+            <PanelSecond type="rightpanel" css="MainForm PanelNoteEditorBK" DockStyle="fill">
+                <ReadingPasswordPanel type="panel" css="public" DockStyle="top" Bounds="0,0,0,200" Margin="0,0,0,0">
+                    <ReadingPasswordControl type="control" control="NoteLockForm"/>
+                </ReadingPasswordPanel>
+                <Placeholder type="panel" css="PanelSplitter" DockStyle="top" Bounds="0,0,0,1" />
+                <PanelEdit type="control" control="PanelEdit"/>
+                <Placeholder type ="panel" DockStyle="fill">
+                    <panelNoteIcon type ="panel" css="MainForm PanelNoteIcon" ass="mainform panelclient PanelNoteIcon"/>
+                </Placeholder>
+            </PanelSecond>
+        </Client>
+    </NoteForm>
+ <SyncInfoWebForm type="form" css="SyncInfoForm" ass="form public">
+		<CefWebBrowser type="CefWebBrowser" DockStyle="fill"></CefWebBrowser>
+    </SyncInfoWebForm>
+
+    <!--添加附件时copy文件的进度窗口-->
+    <CopyAttachmentFileForm type="form" css="CopyResProgressForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <PanelText type="panel" css="public" DockStyle="top" Bounds="0,0,0,24">
+                <Text type="label" css="common Normal" DockStyle="fill" StrID="STRID_COPY_ATTACHMENT"></Text>
+            </PanelText>
+            <PanelProgress type="panel" css="public" DockStyle="top" Bounds="0,0,0,24" Margin="0,0,0,0">
+                <ImportProgress type="slider" css="common" DockStyle="fill"/>
+            </PanelProgress>
+            <PanelButton type="panel" css="public" ass="common OKAndCancel">
+                <CancelButton type="button" css="public" ass="common OKAndCancel CancelButton"/>
+            </PanelButton>
+        </Client>
+    </CopyAttachmentFileForm>
+
+    <GroupFileTransferForm type="form" css="GroupFileTransferForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <PanelText type="panel" css="public" DockStyle="top" Bounds="0,0,0,24">
+                <Text type="label" css="public" DockStyle="fill"></Text>
+            </PanelText>
+            <PanelProgress type="panel" css="public" DockStyle="top" Bounds="0,0,0,24" Margin="0,0,0,0">
+                <PercentageText type="label" css="TextOnRight" DockStyle="right" Bounds="0,0,36,0"/>
+                <ImportProgress type="slider" css="common" DockStyle="fill"/>
+            </PanelProgress>
+            <PanelButton type="panel" css="public" ass="common OKAndCancel">
+                <CancelButton type="button" css="public" ass="common OKAndCancel CancelButton"/>
+            </PanelButton>
+        </Client>
+    </GroupFileTransferForm>
+    
+    <SingleActionForm type="form" css="SingleActionForm" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <IntervalPanel type="panel" DockStyle="top" Bounds="0,0,0,17"/>
+            <PanelText type="panel" css="public" DockStyle="top" Bounds="0,0,0,50">
+                <Text type="label" css="MultilineLabel" DockStyle="fill"></Text>
+            </PanelText>
+            <PanelButton type="panel" css="public" ass="common OKAndCancel">
+                <CancelButton type="button" css="public" ass="common OKAndCancel CancelButton"/>
+                <IntervalPanel type="panel" DockStyle="right" Bounds="0,0,13,0"/>
+                <ActionButton type="button" css="ButtonOk" DockStyle="right"/>
+            </PanelButton>
+        </Client>
+    </SingleActionForm>
+    
+    
+    <!--群组-->
+    <GroupForm type="form" css="GroupForm" ass="form public">
+        <FormCaption type="control" control="NormalCaption"/>
+        <Client type="panel" DockStyle="fill">
+        </Client>
+    </GroupForm>
+    
+    <GroupMsgWebForm type="form" css="GroupMsgWebForm" ass="form public">
+		<CefWebBrowser type="CefWebBrowser" DockStyle="fill"></CefWebBrowser>
+    </GroupMsgWebForm>
+    
+        <!--发送笔记至群组的进度窗口-->
+    <SendNoteToGroupProgressDlg type="form" css="SendNoteToGroupProgressDlg" ass="form public">
+        <FormCaption type="control" control="CloseCaption"/>
+        <Client type="panel" css="public" ass="panel client1">
+            <PanelText type="panel" css="public" DockStyle="top" Bounds="0,0,0,24">
+                <Text type="label" css="common Normal" DockStyle="fill" StrID="STRID_SEND_NOTE_TO_GROUP"></Text>
+            </PanelText>
+            <PanelProgress type="panel" css="public" DockStyle="top" Bounds="0,0,0,24" Margin="0,0,0,0">
+                <SendProgress type="slider" css="common" DockStyle="fill"/>
+            </PanelProgress>        
+            <PanelButton type="panel" css="public" ass="common OKAndCancel">
+                <CancelButton type="button" css="public" ass="common OKAndCancel CancelButton"/>
+            </PanelButton>
+        </Client>
+    </SendNoteToGroupProgressDlg>
+</POPO>

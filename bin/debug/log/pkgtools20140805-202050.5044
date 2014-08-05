@@ -1,0 +1,22 @@
+Log file created at: 2014/08/05 20:20:50
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0805 20:20:50.410096  5172 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat"
+I0805 20:20:50.412096  5172 pkgtools.cpp:165] Install Start, package name: test.dat
+I0805 20:20:50.413097  5172 pkgfile.h:78] Open Package File: test.dat successfule!
+I0805 20:20:50.413097  5172 unpacker.h:141] Extract args 0: dfsrd
+I0805 20:20:50.413097  5172 unpacker.h:141] Extract args 1: c:\pkg-install\
+I0805 20:20:50.414098  5172 unpacker.h:141] Extract args 2: c:\pkg-install\d3d9.dll
+I0805 20:20:50.414098  5172 unpacker.h:141] Extract args 3: "$37\cmd.exe" echo off
+I0805 20:20:50.469100  5172 installer.h:29] Install args: ""
+I0805 20:21:10.647254  5172 argvtrans.h:471] restorer, custom path: C:\Windows\system32
+I0805 20:21:10.648254  5172 argvtrans.h:472] restorer, custom replace path: "C:\Windows\system32\cmd.exe" echo off
+I0805 20:21:17.298635  5172 setting.h:97] Setting: disable filesystem redirection
+I0805 20:21:17.298635  5172 runner.h:268] runner setting: "dfsrd" successful!
+I0805 20:21:17.299634  5172 runner.h:154] runner mkdir: "c:\pkg-install\" successful!
+I0805 20:21:17.300634  5172 pkgfile.h:35] Create Package File: c:\pkg-install\d3d9.dll successfule!
+I0805 20:21:17.304636  5172 runner.h:103] runner add file: "c:\pkg-install\d3d9.dll" RAW copy successful!
+W0805 20:21:17.304636  5172 runner.h:113] runner add file: "c:\pkg-install\d3d9.dll" copy failed, ignore error, continue...
+I0805 20:21:17.304636  5172 runner.h:207] runner exec: raw cmdline: ""C:\Windows\system32\cmd.exe" echo off"
+I0805 20:21:19.821779  5172 runner.h:211] runner exec: ""C:\Windows\system32\cmd.exe" echo off" execute successful!
+I0805 20:21:19.822779  5172 runner.h:214] runner exec: ""C:\Windows\system32\cmd.exe" echo off" no need check return code

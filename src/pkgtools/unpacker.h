@@ -66,13 +66,18 @@ struct unpacker
         uint64_t times = reallen / buf_.size();
         uint32_t leave = (uint32_t)(reallen % buf_.size());
 
-        Writer writer(ex_to);
+        shared_ptr<Writer> writer;
+        try {
+            writer.reset(new Writer(ex_to));
+        } catch (except_base) {
+            return 0;
+        }
 
         for (uint64_t i = 0; i < times; ++i) {
             reader_.read(&buf_[0], buf_.size());
                 
             if (header_->compress == pkg::kcompno) {
-                writer.write(&buf_[0], buf_.size());
+                writer->write(&buf_[0], buf_.size());
                 continue;
             }
             /// compress need decompress.
@@ -80,7 +85,7 @@ struct unpacker
         }
         reader_.read(&buf_[0], leave);
         if (header_->compress == pkg::kcompno)
-            writer.write(&buf_[0], leave);
+            writer->write(&buf_[0], leave);
         /// compress need decompress.
         /// else
         return reallen;
