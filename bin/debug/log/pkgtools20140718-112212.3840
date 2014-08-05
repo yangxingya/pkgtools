@@ -1,9 +1,0 @@
-Log file created at: 2014/07/18 11:22:12
-Running on machine: YXY-PC
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0718 11:22:12.080731  4560 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -u test.dat"
-I0718 11:22:15.180908  4560 pkgtools.cpp:180] Uninstall Start, package name: test.dat
-I0718 11:22:15.180908  4560 pkgfile.h:78] Open Package File: test.dat successfule!
-I0718 11:22:15.181908  4560 unpacker.h:136] Extract args 0: c:\pkg-install\
-I0718 11:22:15.181908  4560 unpacker.h:136] Extract args 1: c:\pkg-install\d3d9.dll
-I0718 11:22:17.446038  4560 pkgtools.cpp:192] Uninstall Over!

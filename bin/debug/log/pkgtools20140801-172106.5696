@@ -1,7 +1,0 @@
-Log file created at: 2014/08/01 17:21:06
-Running on machine: YXY-PC
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0801 17:21:06.600544  5672 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -e test.dat test"
-I0801 17:21:06.601544  5672 pkgtools.cpp:230] Extract Start, package name: test.dat, to dir: test
-E0801 17:21:06.602545  5672 pkgfile.h:92] Package read package header failed!
-I0801 17:21:06.603545  5672 pkgtools.cpp:241] Extract Over!
