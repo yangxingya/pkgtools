@@ -15,6 +15,8 @@
 # define WIN32_NAMESPACE_END }
 #endif // _WIN32
 
+#define DUMMY 
+
 CCLIB_NAMESPACE_BEGIN
 
 typedef unsigned char  uint8_t;
@@ -25,6 +27,9 @@ typedef char  int8_t;
 typedef short int16_t;
 typedef int   int32_t;
 typedef __int64 int64_t;
+
+typedef long long_t;
+typedef unsigned long ulong_t;
 
 typedef unsigned char byte_t;
 
@@ -39,6 +44,52 @@ const uint32_t k1giga = 1 << 30; /// 1G.
 #pragma warning(disable:4293)    /// disable compiler complain number too big.
 const uint64_t k1tera = 1 << 40; /// 1T.
 #pragma warning(pop)
+
+typedef union _llong_t {
+    struct {
+        ulong_t low;
+        long_t high;
+    } DUMMY;
+    struct {
+        ulong_t low;
+        long_t high;
+    } u;
+    int64_t quad;
+} llong_t;
+
+typedef union _ullong_t {
+    struct {
+        ulong_t low;
+        ulong_t high;
+    } DUMMY;
+    struct {
+        ulong_t low;
+        ulong_t high;
+    } u;
+    uint64_t quad;
+} ullong_t;
+
+inline uint64_t makeullong(ulong_t high, ulong_t low)
+{
+    ullong_t tmp = {};
+    tmp.high = high;
+    tmp.low  = low;
+
+    // c++11 supported static_assert. vc2010 and later supported.
+    //static_assert(sizeof(tmp) == sizeof(uint64_t), "");
+    return tmp.quad;
+}
+
+inline int64_t makellong(long_t high, ulong_t low)
+{
+    llong_t tmp = {};
+    tmp.high = high;
+    tmp.low  = low;
+
+    // c++11 supported static_assert. vc2010 and later supported.
+    //static_assert(sizeof(tmp) == sizeof(int64_t), "");
+    return tmp.quad;
+}
 
 CCLIB_NAMESPACE_END
 

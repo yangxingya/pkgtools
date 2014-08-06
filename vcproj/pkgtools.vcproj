@@ -272,6 +272,10 @@
 				RelativePath="..\src\pkgtools\unpacker.h"
 				>
 			</File>
+			<File
+				RelativePath="..\src\pkgtools\vsscopyer.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Resource Files"

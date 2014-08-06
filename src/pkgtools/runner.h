@@ -84,6 +84,7 @@ private:
             break;
         case OP_Extract:
             if (extr_) {
+                /// extract only addf and mkdir to special out dir.
                 if (typeid(T) == typeid(AddfArgv) || typeid(T) == typeid(MkdirArgv))
                     run(fargv, errtry, igrerr);
             }

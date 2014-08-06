@@ -13,6 +13,7 @@
 #include <cclib/win32/right.h>
 #include <cclib/smartptr_def.h>
 #include "except.h"
+#include "vsscopyer.h"
 
 namespace file {
 
@@ -36,7 +37,7 @@ struct fholder
         , tmp_deleted_(false)
     {
         if (fp_ != NULL) {
-            getlen();
+            len_ = len();
             DLOG(INFO) << "Open file: \"" << name_ << "\" successful!";
             return;
         }
@@ -47,6 +48,7 @@ struct fholder
             std::string error = "Open file: \"";
             error += name_;
             error += "\" no max effort, so exit";
+            LOG(ERROR) << error;
             throw pkg_error(ERROR_OpenFileFailed, error);
         }
 
@@ -64,7 +66,7 @@ struct fholder
                 FILE *fp = fopen(name_.c_str(), "rb");
                 if (fp != NULL) {
                     reset(fp);
-                    getlen();
+                    len_ = len();
                     LOG(INFO) << "fholder: remove trustedinstaller and open: \"" << name_ << "\" successful!";
                     return;
                 }
@@ -79,7 +81,7 @@ struct fholder
             if (fp != NULL) {
                 reset(fp);
                 tmp_deleted_ = true;
-                getlen();
+                len_ = len();
                 LOG(INFO) << "fholder: copy to root and open: \"" << tmp_ << "\" successful!";
                 return;
             }
@@ -87,8 +89,26 @@ struct fholder
         }
 
         /// 3. vss copy.
-        
+        vss::copyer &copyer = vss::makecopyer();
+        std::string tofile = copyer.copy(name_);
+        if (!tofile.empty()) {
+            FILE *fp = fopen(tofile.c_str(), "rb");
+            if (fp != NULL) {
+                reset(fp);
+                len_ = len();
+                LOG(INFO) << "fholder: vss copy and open: \"" << tofile << "\" successful!";
+                return;
+            }
+            LOG(WARNING) << "fholder: vss copy succeed but open failed: \"" << tofile << "\"";
+        } 
 
+        /// fp == NULL || tofile.empty() 
+
+        std::string error = "Open file: \"";
+        error += name_;
+        error += "\" do max effort, so exit";
+        LOG(ERROR) << error;
+        throw pkg_error(ERROR_OpenFileFailed, error);
     }
 
     ~fholder() { reset(); }
@@ -113,12 +133,10 @@ private:
     bool tmp_deleted_;
     std::string tmp_;
 
-    void getlen() 
+    uint64_t len() 
     {
-        if (fp_ == NULL) {
-            len_ = 0;
-            return;
-        }
+        if (fp_ == NULL)
+            return 0L;
 
         /// if _filelengthi64 failed then return value is -1L,
         /// details:
@@ -126,7 +144,7 @@ private:
         /// then need changed to 0, because -1L cast to uint64 will 
         /// be max uint64 value.
         int64_t len = _filelengthi64(fp_->_file);
-        len_ = (len == -1L) ? 0 : len;
+        return (len == -1L) ? 0L : len;
     }
 
     std::string copy_to_root()

@@ -172,7 +172,6 @@ inline bool is64bitSelf()
 }
 
 uint64_t osver();
-uint64_t makeullong(DWORD high, DWORD low);
 
 //version overview: http://msdn.microsoft.com/en-us/library/ms724834(VS.85).aspx
 const uint64_t koswin81   = makeullong(6, 3);
@@ -182,33 +181,19 @@ const uint64_t kosvista   = makeullong(6, 0);
 const uint64_t koswin2003 = makeullong(5, 2);
 const uint64_t koswinxp   = makeullong(5, 1);
 
-inline bool win81OrLater        () { return osver() >= koswin81;   }
-inline bool win8OrLater         () { return osver() >= koswin8;    }
-inline bool win7OrLater         () { return osver() >= koswin7;    }
-inline bool vistaOrLater        () { return osver() >= kosvista;   }
-inline bool winServer2003orLater() { return osver() >= koswin2003; }
-inline bool winXpOrLater        () { return osver() >= koswinxp;   }
+inline bool win81   () { return osver() >= koswin81;   }
+inline bool win8    () { return osver() >= koswin8;    }
+inline bool win7    () { return osver() >= koswin7;    }
+inline bool winVista() { return osver() >= kosvista;   }
+inline bool win2003 () { return osver() >= koswin2003; }
+inline bool winXp   () { return osver() >= koswinxp;   }
 
-//######################### implementation #########################
-inline
-uint64_t makeullong(DWORD high, DWORD low)
-{
-    ULARGE_INTEGER tmp = {};
-    tmp.HighPart = high;
-    tmp.LowPart  = low;
-
-    // c++11 supported static_assert. vc2010 and later supported.
-    //static_assert(sizeof(tmp) == sizeof(uint64_t), "");
-    return tmp.QuadPart;
-}
-
-inline
-uint64_t osver()
+inline uint64_t osver()
 {
     OSVERSIONINFO osvi = {};
     osvi.dwOSVersionInfoSize = sizeof(osvi);
-    if (!::GetVersionEx(&osvi)) //38 ns per call! (yes, that's nano!) -> we do NOT miss C++11 thread safe statics right now...
-        return 0;
+    if (!::GetVersionEx(&osvi))
+        return 0L;
     return makeullong(osvi.dwMajorVersion, osvi.dwMinorVersion);
 }
 
