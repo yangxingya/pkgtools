@@ -3,6 +3,9 @@ setting:[-p][-i][-u][-s dfsrd]
 mkdir:[-d c:\pkg-install\][-i]
 addf:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3d9.dll][-p][-i]
 
+
+exec:[-c "$WINDIR\xxx.exe" "$SYSDIR\yyy.exe"][-i][-u]
+
 delf:[-d c:\pkg-install\d3d9.dll][-u]
 rmdir:[-d c:\pkg-install\][-u]
 

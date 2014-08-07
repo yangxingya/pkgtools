@@ -51,7 +51,7 @@ inline bool rm_trustedinstaller(std::string const& path)
     std::string icacls_cmd;
     icacls_cmd += "\"icacls.exe\" \"";
     icacls_cmd += path;
-    icacls_cmd += "\" /grant Administrator:F";
+    icacls_cmd += "\" /grant Administrators:F";
 
     if (!execute(&retcode, "", icacls_cmd) || retcode != 0)
         return false;

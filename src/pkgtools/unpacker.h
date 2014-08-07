@@ -74,18 +74,23 @@ struct unpacker
         }
 
         for (uint64_t i = 0; i < times; ++i) {
-            reader_.read(&buf_[0], buf_.size());
+            if (!reader_.read(&buf_[0], buf_.size()))
+                return 0L;
                 
             if (header_->compress == pkg::kcompno) {
-                writer->write(&buf_[0], buf_.size());
+                if (!writer->write(&buf_[0], buf_.size()))
+                    return 0L;
                 continue;
             }
             /// compress need decompress.
 
         }
-        reader_.read(&buf_[0], leave);
+        if (!reader_.read(&buf_[0], leave))
+            return 0L;
+
         if (header_->compress == pkg::kcompno)
-            writer->write(&buf_[0], leave);
+            if (!writer->write(&buf_[0], leave))
+                return 0L;
         /// compress need decompress.
         /// else
         return reallen;

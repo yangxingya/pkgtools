@@ -9,6 +9,8 @@
 #include <sstream>
 #include <glog/logging.h>
 #include <cclib/types.h>
+#include <cclib/win32/pathutil.h>
+#include <cclib/win32/right.h>
 #include "fwrapper.h"
 #include "fwrapper.h"
 #include "except.h"
@@ -23,12 +25,24 @@ using ::file::fwrapper;
 struct Writer
 {
     Writer(std::string const& file)
-        : writer_(file, "wb+") 
+        : writer_(new fwrapper(file, "wb+")) 
     {
-        std::string error = "Create Package File: ";
+        /// some time, you write file to system will not right, you must delete parent dir 
+        /// special right, for example: trustedinstaller right.
+        if (!writer_->good()) {
+            if (win32::is_special(file)) {
+                std::string pdir = win32::pdir(file);
+                if (win32::rm_trustedinstaller(pdir)) {
+                    writer_.reset(new fwrapper(file, "wb+")); 
+                    LOG(INFO) << "fwrapper: remove parent dir trustedinstaller : \"" << pdir << "\" successful!";    
+                }
+            }
+        }
+
+        std::string error = "Writer File: ";
         error += file;
-        error += (writer_.good() ? " successfule!" : " failed!");
-        if (!writer_.good()) {
+        error += (writer_->good() ? " create successfule!" : " create failed!");
+        if (!writer_->good()) {
             LOG(ERROR) << error;
             throw pkg_error(ERROR_CreatePkgFileFailed, error.c_str());
         }
@@ -44,21 +58,21 @@ struct Writer
         uint64_t writed = 0;
         uint8_t *ptr = (uint8_t *)data;
         for (uint32_t i = 0; i < times; ++i) {
-            writed += writer_.write(ptr, kuint32max);
+            writed += writer_->write(ptr, kuint32max);
             ptr += kuint32max;
         }
-        writed += writer_.write(ptr, leave);
+        writed += writer_->write(ptr, leave);
         return writed == len; 
     }
 
     bool write(void const* buf, size_t len)
     {
-        return writer_.write(buf, len);
+        return writer_->write(buf, len);
     }
 
-    bool seek(int64_t pos) { return writer_.seek(pos); }
+    bool seek(int64_t pos) { return writer_->seek(pos); }
 private:
-    fwrapper writer_;
+    shared_ptr<fwrapper> writer_;
 };
 
 struct Reader
@@ -68,9 +82,9 @@ struct Reader
     {
         check();
 
-        std::string error = "Open Package File: ";
+        std::string error = "Reader File: ";
         error += file;
-        error += (reader_.good() ? " successfule!" : " failed!");
+        error += (reader_.good() ? " open successfule!" : " open failed!");
         if (!reader_.good()) {
             LOG(ERROR) << error;
             throw pkg_error(ERROR_CreatePkgFileFailed, error.c_str());

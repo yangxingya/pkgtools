@@ -100,8 +100,12 @@ private:
 #pragma region detail run
     void run(AddfArgv *argv, bool errtry, bool ignorerr)
     {
-        unpacker_.tofile(argv->dst(), argv->offset());
-        LOG(INFO) << "runner add file: \"" << argv->dst() << "\" RAW copy successful!";
+        uint64_t len = unpacker_.tofile(argv->dst(), argv->offset());
+        
+        if (len != 0) {
+            LOG(INFO) << "runner add file: \"" << argv->dst() << "\" RAW copy successful!";
+            return;
+        }
 
         /// error try
         if (errtry) {
@@ -159,7 +163,18 @@ private:
         /// error try
         if (errtry) {
             /// need remove parent dir relatived right.<TrustedInstaller right>.
-
+            std::string dir = argv->dst();
+            if (win32::is_special(dir)) {
+                std::string pdir = win32::pdir(dir);
+                if (win32::rm_trustedinstaller(pdir)) {
+                    LOG(INFO) << "runner mkdir: remove parent dir trustedinstaller : \"" << pdir << "\" successful!";    
+                    if (win32::mkdirtree(argv->dst())) {
+                        LOG(INFO) << "runner mkdir: \"" << argv->dst() << "\" successful!";
+                        return;
+                    }
+                    LOG(ERROR) << "runner mkdir: remove parent dir trustedinstaller, but mkdir failed : \"" << pdir << "\"!";
+                }
+            }
         }
 
         /// error ignore

@@ -9,9 +9,10 @@
 #include <stdio.h>
 #include <io.h>
 #include <cclib/types.h>
+#include <cclib/smartptr_def.h>
 #include <cclib/win32/pathutil.h>
 #include <cclib/win32/right.h>
-#include <cclib/smartptr_def.h>
+#include <cclib/win32/autores.h>
 #include "except.h"
 #include "vsscopyer.h"
 
@@ -32,11 +33,10 @@ struct fholder
     fholder(std::string const& name, bool max_effort = true)
         : name_(name)
         , max_effort_(max_effort)
-        , fp_(fopen(name.c_str(), "rb"))
+        , fhd_(open(name))
         , len_(0L)
-        , tmp_deleted_(false)
     {
-        if (fp_ != NULL) {
+        if (fhd_.get() != NULL) {
             len_ = len();
             DLOG(INFO) << "Open file: \"" << name_ << "\" successful!";
             return;
@@ -63,9 +63,8 @@ struct fholder
         if (win32::is_special(name_)) {
             std::string pdir = win32::pdir(name_);
             if (win32::rm_trustedinstaller(pdir)) {
-                FILE *fp = fopen(name_.c_str(), "rb");
-                if (fp != NULL) {
-                    reset(fp);
+                fhd_.reset(open(name_));
+                if (fhd_.get() != NULL) {
                     len_ = len();
                     LOG(INFO) << "fholder: remove trustedinstaller and open: \"" << name_ << "\" successful!";
                     return;
@@ -75,26 +74,23 @@ struct fholder
         }
 
         /// 2. copy to root dir and open.
-        tmp_ = copy_to_root();
-        if (!tmp_.empty()) {
-            FILE *fp = fopen(tmp_.c_str(), "rb");
-            if (fp != NULL) {
-                reset(fp);
-                tmp_deleted_ = true;
+        std::string tofile = copy_to_root();
+        if (!tofile.empty()) {
+            fhd_.reset(open(tofile, true));
+            if (fhd_.get() != NULL) {
                 len_ = len();
-                LOG(INFO) << "fholder: copy to root and open: \"" << tmp_ << "\" successful!";
+                LOG(INFO) << "fholder: copy to root and open: \"" << tofile << "\" successful!";
                 return;
             }
-            LOG(WARNING) << "fholder: copy to root but open failed: \"" << tmp_ << "\"";
+            LOG(WARNING) << "fholder: copy to root but open failed: \"" << tofile << "\"";
         }
 
         /// 3. vss copy.
         vss::copyer &copyer = vss::makecopyer();
-        std::string tofile = copyer.copy(name_);
+        tofile = copyer.copy(name_);
         if (!tofile.empty()) {
-            FILE *fp = fopen(tofile.c_str(), "rb");
-            if (fp != NULL) {
-                reset(fp);
+            fhd_.reset(open(tofile));
+            if (fhd_.get() != NULL) {
                 len_ = len();
                 LOG(INFO) << "fholder: vss copy and open: \"" << tofile << "\" successful!";
                 return;
@@ -111,15 +107,15 @@ struct fholder
         throw pkg_error(ERROR_OpenFileFailed, error);
     }
 
-    ~fholder() { reset(); }
-
     /// read file content to buf, and the max read len is
     /// rdlen or file real left length less rdlen.
     int read(void* buf, size_t rdlen)
     {
-        if (fp_ == NULL) return 0;
+        if (fhd_.get() == NULL) return 0;
 
-        return fread(buf, 1, rdlen, fp_);
+        ulong_t rrdlen = 0;
+        ReadFile(fhd_.get(), buf, rdlen, &rrdlen, NULL);
+        return rrdlen;
     }
 
     /// return file length, supported over 4G file.
@@ -127,24 +123,16 @@ struct fholder
 private:
     std::string name_;
     bool max_effort_;
-    FILE *fp_;
     uint64_t len_;
 
-    bool tmp_deleted_;
-    std::string tmp_;
+    win32::AutoHANDLE fhd_;
+
 
     uint64_t len() 
     {
-        if (fp_ == NULL)
-            return 0L;
-
-        /// if _filelengthi64 failed then return value is -1L,
-        /// details:
-        ///     http://msdn.microsoft.com/en-us/library/dfbc2kec.aspx
-        /// then need changed to 0, because -1L cast to uint64 will 
-        /// be max uint64 value.
-        int64_t len = _filelengthi64(fp_->_file);
-        return (len == -1L) ? 0L : len;
+        llong_t len = {0};
+        GetFileSizeEx(fhd_.get(), (PLARGE_INTEGER)&len);
+        return len.quad;
     }
 
     std::string copy_to_root()
@@ -162,20 +150,28 @@ private:
         return rootname;
     }
 
-    void reset(FILE *fp = NULL)
+    
+    HANDLE open(std::string const& file, bool del_when_close = false) 
     {
-        if (fp_) { 
-            fflush(fp_); 
-            fclose(fp_); 
-
-            /// deleted when closed.
-            if (tmp_deleted_) {
-                win32::rmfile(tmp_);
-                tmp_deleted_ = false;
-            }
-        } 
-
-        fp_ = fp;
+        DWORD attr = FILE_FLAG_SEQUENTIAL_SCAN;
+        if (del_when_close) 
+            attr |= FILE_FLAG_DELETE_ON_CLOSE;
+        else
+            attr |= FILE_ATTRIBUTE_NORMAL;
+        HANDLE hd = CreateFileA(
+                file.c_str(),
+                GENERIC_READ,
+                FILE_SHARE_READ,
+                NULL,
+                OPEN_EXISTING,
+                attr,
+                NULL
+                );
+        if (hd == INVALID_HANDLE_VALUE) {
+            hd = NULL;
+            LOG(WARNING) << "fholder: open error, code:" << GetLastError() << ", file: \"" << file << "\" failed";
+        }
+        return hd;
     }
 };
 

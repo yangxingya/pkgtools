@@ -94,7 +94,9 @@ private:
             special = true;
 
             pfx = folder;
-            sfx = path.substr(start.length() + 2);
+            sfx = "";
+            if (path.length() > start.length() + 1)
+                sfx = path.substr(start.length() + 1);
 
             std::stringstream ss;
             std::string to;
@@ -269,20 +271,19 @@ private:
     std::string execCmd(AutoArgv argv)
     {
         ExecArgv *eargv = (ExecArgv *)argv.get();
-        
-        /// need change $... to special path.
-        std::string::size_type pos;
         std::string cmd = eargv->cmd();
+    
+        std::vector<std::string> out;
+        split(cmd, kcustompathpfx, win32::kseparator, &out);
 
-        /// not find $...path.
-        if ((pos = cmd.find_first_of(kcustompathpfx)) == std::string::npos)
-            return eargv->cmd();
+        std::string tmp;
+        for (size_t i = 0; i < out.size(); ++i) {
+            tmp = kcustompathpfx + out[i];
+            miniPath path(tmp);
+            replace(cmd, tmp, path.pkgargv);   
+        }
 
-        /// find $... path
-        std::string cmd1 = cmd.substr(0, pos);
-        miniPath path(cmd.substr(pos));
-
-        return std::string(cmd1 + path.pkgargv);
+        return cmd;
     }
 
     std::string setFlags(AutoArgv argv)
@@ -424,6 +425,7 @@ private:
         std::string argv = str;
 
         /// type is file or dir.
+#if 0
 
         /// start not $
         std::string::size_type pos;
@@ -448,30 +450,38 @@ private:
 
         std::string pfx = argv.substr(pos, pos2 - 1); 
         std::string strcsidl = pfx.substr(1);
+#endif
 
-        uint16_t csidl;
-        std::stringstream ss;
-        ss << strcsidl;
-        ss >> csidl;
+        std::vector<std::string> out;
+        split(str, kcustompathpfx, win32::kseparator, &out);
 
-        std::string path = customPath(csidl);
-        if (path.empty()) {
+        std::string tmp;
+        for (size_t i = 0; i < out.size(); ++i) {
+
+            uint16_t csidl;
             std::stringstream ss;
-            ss << "Custom path is empty! CSIDL: 0x" << std::hex << csidl;
-            std::string error;
+            ss << out[i];
+            ss >> csidl;
 
-            ss >> error;
-            LOG(ERROR) << error;
-            throw spget_error(ERROR_CustomPathGetFailed, error);
+            std::string path = customPath(csidl);
+            if (path.empty()) {
+                std::stringstream ss;
+                ss << "Custom path is empty! CSIDL: 0x" << std::hex << csidl;
+                std::string error;
+
+                ss >> error;
+                LOG(ERROR) << error;
+                throw spget_error(ERROR_CustomPathGetFailed, error);
+            }
+            
+            tmp = kcustompathpfx + out[i];
+            replace(argv, tmp, path);
         }
 
-        std::string tmp = argv;
-        replace(tmp, pfx, path);
+        DLOG(INFO) << "restorer, original path: " << str;
+        DLOG(INFO) << "restorer, custom replace path: " << argv;
 
-        DLOG(INFO) << "restorer, custom path: " << path;
-        DLOG(INFO) << "restorer, custom replace path: " << tmp;
-
-        return tmp;
+        return argv;
     }
 };
 
