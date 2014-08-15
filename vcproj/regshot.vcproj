@@ -161,7 +161,15 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath="..\src\regshot\regdata.h"
+				>
+			</File>
+			<File
 				RelativePath="..\src\regshot\regdef.h"
+				>
+			</File>
+			<File
+				RelativePath="..\src\regshot\regtree.h"
 				>
 			</File>
 		</Filter>

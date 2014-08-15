@@ -31,15 +31,25 @@ struct Wow64FileSystem
     {
         Wow64FsRedirectDisabler disabler 
             = kernel32Dll().find<Wow64FsRedirectDisabler>(kfnDisableWow64FSRedirect);
+        
+        /// win vista or later have this function
+        if (disabler)
+            return !!disabler(&ori_value_);
 
-        return !!disabler(&ori_value_);
+        /// win xp not the function
+        return true;
     }
     bool enable()
     {
         Wow64FsRedirectEnabler enabler
             = kernel32Dll().find<Wow64FsRedirectEnabler>(kfnEnableWow64FSRedirect);
+        
+        /// win vista or later have this function
+        if (enabler) 
+            return !!enabler(ori_value_);
 
-        return !!enabler(ori_value_);
+        /// win xp not the function
+        return true;
     }
 
 private:

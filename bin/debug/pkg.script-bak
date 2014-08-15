@@ -1,0 +1,16 @@
+setting:[-p][-i][-u][-s dfsrd]
+
+mkdir:[-d c:\pkg-install\][-i]
+addf:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3dxxx.dll][-p][-i]
+
+addf:[-d $APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-s C:\ProgramData\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-p][-i]
+
+
+exec:[-c "$WINDIR\xxx.exe" "$SYSDIR\yyy.exe"][-i][-u]
+
+delf:[-d $APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-u]
+delf:[-d c:\pkg-install\d3d9.dll][-u]
+rmdir:[-d c:\pkg-install\][-u]
+
+out:[-d .\test.dat]
+

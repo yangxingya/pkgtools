@@ -38,8 +38,10 @@ enum Error {
     ERROR_ExecEntryRunFailed,
     ERROR_SettingArgsNotSupported,
     ERROR_RunnerNotSupported,
+    ERROR_CalcCrc32Failed,
+    ERROR_Crc32CheckFailed,
     ERROR_Min = ERROR_Success,
-    ERROR_Max = ERROR_RunnerNotSupported,
+    ERROR_Max = ERROR_CalcCrc32Failed,
 };
 
 const std::string kErrorStr[] = {
@@ -71,6 +73,8 @@ const std::string kErrorStr[] = {
     "Exec entry run failed",
     "Setting args not supported",
     "Runner not support operate type",
+    "Calc crc32 failed",
+    "Crc32 check failed",
 };
 
 inline const char* getError(int error)

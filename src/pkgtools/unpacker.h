@@ -22,6 +22,7 @@
 #include <vector>
 #include <string>
 #include <cclib/types.h>
+#include <cclib/algo/crc.h>
 #include <cclib/win32/pathutil.h>
 #include "pkgdef.h"
 #include "pkgfile.h"
@@ -36,6 +37,7 @@ struct unpacker
     unpacker(std::string const& file)
         : reader_(file)
     {
+        crc32_valid(file);
         ex_header();
         buf_.resize(k1mega * 10);
     }
@@ -147,6 +149,41 @@ private:
         }   
     }
 #pragma endregion extract all parts.
+
+#pragma region crc32
+    void crc32_valid(std::string const& file)
+    {
+        reader_.seek(0);
+        header_t hdr;
+        reader_.read(&hdr, sizeof(header_t));
+        reader_.seek(0);
+
+        algo::crc32 calc_crc(file, sizeof(hdr.magic) + sizeof(hdr.crc32));
+        if (!calc_crc.ready()) {
+            std::string error = "Unpacker: crc open file failed! file: \"";
+            error += file;
+            error += "\"";
+            LOG(ERROR) << error;
+            throw pkg_error(ERROR_OpenFileFailed, error);
+        }
+
+        if (hdr.crc32 != calc_crc.value()) {
+            std::stringstream ss;
+            ss  << "Unpacker: crc valid failed, read: 0x" 
+                << std::hex << hdr.crc32
+                << ". calc: 0x" << calc_crc.value()
+                << ". file: \"" << file << "\"";
+            std::string error;
+            ss >> error;
+
+            LOG(ERROR) << error;
+            throw pkg_error(ERROR_Crc32CheckFailed, error);
+        }
+
+        LOG(INFO) << "Unpacker: check crc32 successful";
+    }
+
+#pragma endregion crc32 valid.
 
 };
 

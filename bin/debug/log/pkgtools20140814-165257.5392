@@ -1,0 +1,6 @@
+Log file created at: 2014/08/14 16:52:57
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0814 16:52:57.962194  5536 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat"
+I0814 16:52:57.964195  5536 pkgtools.cpp:165] Install Start, package name: test.dat
+I0814 16:52:57.965194  5536 pkgfile.h:92] Reader File: test.dat open successfule!

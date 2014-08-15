@@ -163,7 +163,8 @@ inline uint64_t length(header_t const* header)
 
 inline uint64_t length(entrymgr_t const* entrymgr)
 {
-    return sizeof(entrymgr) + (entrymgr->count - 1) * sizeof(entry_t); 
+    uint64_t count = entrymgr->count > 0 ? (entrymgr->count - 1) : 0;
+    return sizeof(entrymgr) + count * sizeof(entry_t); 
 }
 
 inline uint64_t length(argvmgr_t const* argvmgr)
@@ -173,7 +174,8 @@ inline uint64_t length(argvmgr_t const* argvmgr)
 
 inline uint64_t length(dinfomgr_t const* dinfomgr)
 {
-    return sizeof(dinfomgr) + (dinfomgr->count - 1) * sizeof(dinfo_t);
+    uint64_t count = dinfomgr->count > 0 ? (dinfomgr->count - 1) : 0;
+    return sizeof(dinfomgr) + count * sizeof(dinfo_t);
 }
 
 const uint16_t kentryaddf  = 1;

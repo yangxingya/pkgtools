@@ -29,8 +29,8 @@ using namespace err;
 ///             -i install
 ///             -u uninstall
 /// detail:
-///     file:[-d dest] [-s src] [-p/i/u n/t b/i] 
-///     dir :[-d dest] [-p/i/u n/t b/i] 
+///     file:[-d dest] [-s src] [-p/i/u [n/t [b/i]]] 
+///     dir :[-d dest] [-p/i/u [n/t [b/i]]] 
 /// 
 struct ArgvBase {
 public:

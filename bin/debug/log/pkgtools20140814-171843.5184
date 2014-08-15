@@ -1,0 +1,19 @@
+Log file created at: 2014/08/14 17:18:43
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0814 17:18:43.913617  5284 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -i test.dat"
+I0814 17:18:43.915617  5284 pkgtools.cpp:165] Install Start, package name: test.dat
+I0814 17:18:43.916617  5284 pkgfile.h:92] Reader File: test.dat open successfule!
+I0814 17:18:57.913419  5284 unpacker.h:183] Unpacker: check crc32 successful
+I0814 17:18:57.913419  5284 unpacker.h:148] Extract args 0: dfsrd
+I0814 17:18:57.913419  5284 unpacker.h:148] Extract args 1: c:\pkg-install\
+I0814 17:18:57.913419  5284 unpacker.h:148] Extract args 2: "$36\xxx.exe" "$37\yyy.exe"
+I0814 17:18:57.975422  5284 installer.h:29] Install args: ""
+I0814 17:18:57.992424  5284 argvtrans.h:481] restorer, original path: "$36\xxx.exe" "$37\yyy.exe"
+I0814 17:18:57.992424  5284 argvtrans.h:482] restorer, custom replace path: "C:\Windows\xxx.exe" "C:\Windows\system32\yyy.exe"
+I0814 17:18:57.992424  5284 setting.h:97] Setting: disable filesystem redirection
+I0814 17:18:57.992424  5284 runner.h:284] runner setting: "dfsrd" successful!
+I0814 17:18:57.998424  5284 runner.h:159] runner mkdir: "c:\pkg-install\" successful!
+I0814 17:18:57.998424  5284 runner.h:223] runner exec: raw cmdline: ""C:\Windows\xxx.exe" "C:\Windows\system32\yyy.exe""
+W0814 17:18:57.998424  5284 runner.h:264] runner exec: ""C:\Windows\xxx.exe" "C:\Windows\system32\yyy.exe"" failed, ignore error, continue...
+I0814 17:18:57.998424  5284 pkgtools.cpp:177] Install Over!

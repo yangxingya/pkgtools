@@ -150,7 +150,6 @@ private:
         return rootname;
     }
 
-    
     HANDLE open(std::string const& file, bool del_when_close = false) 
     {
         DWORD attr = FILE_FLAG_SEQUENTIAL_SCAN;
@@ -175,12 +174,17 @@ private:
     }
 };
 
-#pragma warning(pop)  
+#pragma warning(pop) 
+
+const std::string kprogramdata = win32::sysroot() + win32::kseparator + "ProgramData";
 
 struct fchecker
 {
     shared_ptr<fholder> check(std::string const& name, bool effort = true)
     {
+        if (filter(name))
+            return shared_ptr<fholder>();
+
         std::string name_lower = to_lower(name);
         std::map<std::string, shared_ptr<fholder>>::iterator it;
         if ((it = name_to_holder_.find(name_lower)) != name_to_holder_.end())
@@ -196,7 +200,7 @@ struct fchecker
         }
 
         /// add to map.
-        name_to_holder_[name] = opener;
+        name_to_holder_[name_lower] = opener;
         return opener;
     }
     
@@ -204,6 +208,15 @@ struct fchecker
 
 private:
     std::map<std::string, shared_ptr<fholder>> name_to_holder_;
+
+    bool filter(std::string const &path)
+    {
+        /// must filter "C:\ProgramData\xxx" path.
+        if (start_with(path, kprogramdata, false))
+            return true;
+
+        return false;
+    }
 };
 
 } // namespace file

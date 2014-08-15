@@ -9,13 +9,17 @@
 #define CCLIB_NAMESPACE_BEGIN namespace cclib {
 #define CCLIB_NAMESPACE_END }
 
+#define ALGO_NAMESPACE algo
+#define ALGO_NAMESPACE_BEGIN namespace algo {
+#define ALGO_NAMESPACE_END }
+
 #ifdef _WIN32
 # define WIN32_NAMESPACE win32
 # define WIN32_NAMESPACE_BEGIN namespace win32 {
 # define WIN32_NAMESPACE_END }
 #endif // _WIN32
 
-#define DUMMY 
+#define DUMMY
 
 CCLIB_NAMESPACE_BEGIN
 

@@ -8,6 +8,7 @@
 #include <string>
 #include <cclib/types.h>
 #include <cclib/smartptr_def.h>
+#include <cclib/algo/crc.h>
 
 #include "except.h"
 #include "fchecker.h"
@@ -35,17 +36,24 @@ struct packer
 
     int pack()
     {
+        LOG(INFO) << "Pkg: -------------------> start";
+
         int ret;
         if ((ret = prepack()) != ERROR_Success) {
             LOG(ERROR) << "Pkg: pre-pack failed";
             return ret;
         }
 
+        LOG(INFO) << "Pkg: pre pack";
+
         rm_bad_args();
+
+        LOG(INFO) << "Pkg: remove bad args.";
 
         try {
             ready();
         } catch (except_base &ex) {
+            LOG(ERROR) << "Pkg: XXXXXX ready error: " << ex.what();
             return ex.error();
         }
 
@@ -71,6 +79,7 @@ struct packer
         try {
             writer.reset(new Writer(out_));
         } catch (except_base &ex) {
+            LOG(ERROR) << "Pkg: XXXXXX writer error: " << ex.what();
             return ex.error();
         }
 
@@ -94,6 +103,26 @@ struct packer
 
         writer->seek(0L);
         writer->write(header);
+
+        /// close file.
+        writer.reset();
+
+        /// calc crc32;
+        algo::crc32 calc_crc(out_, sizeof(header->magic) + sizeof(header->crc32));
+
+        if (!calc_crc.ready()) {
+            LOG(ERROR) << "Pkg: calc crc32 failed";
+            return ERROR_CalcCrc32Failed;
+        }
+
+        /// modify crc32 section.
+        header->crc32 = calc_crc.value();
+
+        shared_ptr<fwrapper> modifyheader(new fwrapper(out_, "rb+"));
+        modifyheader->seek(0L);
+        modifyheader->write(header, sizeof(header_t));
+
+        LOG(INFO) << "Pkg: -------------------> over";
 
         return ERROR_Success;
     }
@@ -162,6 +191,7 @@ private:
                                 return ERROR_OpenFileFailed;
                             /// ignore error.
                             fargv->srcvalid(false);
+                            LOG(WARNING) << "addf: holder failed! file://" << fargv->src();
                         } else {
                             fargv->srcvalid(true);
                             fcnter_.index(fargv->src());
@@ -182,6 +212,8 @@ private:
     {
         std::vector<std::string> dstlist;
 
+        LOG(INFO) << "rm bad args ---> before, arg list size(): " << arglist_.size();
+
         AutoArgvList::iterator it;
         for (it = arglist_.begin(); it != arglist_.end(); ) {
             if ((*it)->type() == kOut) {
@@ -192,12 +224,16 @@ private:
                 AddfArgv *farg = (AddfArgv*)((*it).get());
                 if (!farg->srcvalid()) {
                     dstlist.push_back(farg->dst());
+                    LOG(WARNING) << "addf: holder failed! dst file://" << farg->dst();
                     it = arglist_.erase(it);
                     continue;
                 }
             }
             ++it;
         }
+
+        LOG(INFO) << "rm bad args ---> addf dst number: " << dstlist.size();
+        LOG(INFO) << "rm bad args ---> remove addf and out, arg list size(): " << arglist_.size();
 
         std::vector<std::string>::iterator dit;
         bool find;
@@ -215,6 +251,8 @@ private:
                 if (find) {
                     it = arglist_.erase(it);
 
+                    LOG(WARNING) << "addf: holder failed, delf remove: file://" << dargv->dst();
+
                     dstlist.erase(dit);
                     if (dstlist.size() == 0)
                         break;
@@ -224,6 +262,8 @@ private:
             }
             ++it;
         }
+
+        LOG(INFO) << "rm bad args ---> remove delf, arg list size(): " << arglist_.size();
     }
 
     void ready()
@@ -295,13 +335,17 @@ private:
         header->version  = kcurrentver;
         header->compress = kcompno;
 
+        uint32_t entrys_num = pkg_entrys_.size() > 0 ? (pkg_entrys_.size() - 1) : 0;
+        uint64_t args_len = pkg_args_len_ > 0L ? (pkg_args_len_ - 1) : 0L;
+        uint32_t files_num = pkg_files_.size() > 0 ? (pkg_files_.size() - 1) : 0;
+
         header->entrymgr = sizeof(header_t);
         header->argvmgr  = header->entrymgr +
-            sizeof(entrymgr_t) + (pkg_entrys_.size() - 1) * sizeof(entry_t);
+            sizeof(entrymgr_t) + entrys_num * sizeof(entry_t);
         header->dinfomgr = header->argvmgr + 
-            sizeof(argvmgr_t) + pkg_args_len_ - 1;
+            sizeof(argvmgr_t) + args_len;
         header->data = header->dinfomgr + 
-            sizeof(dinfomgr_t) + (pkg_files_.size() - 1) * sizeof(dinfo_t);
+            sizeof(dinfomgr_t) + files_num * sizeof(dinfo_t);
 
         ///TODO::header.pkglen = header.data + datalen;
         header->pkglen = 0L;

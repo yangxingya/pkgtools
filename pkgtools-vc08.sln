@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "scriptcreator", "vcproj\scr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "regshot", "vcproj\regshot.vcproj", "{639574B0-4418-40F6-BC0E-63775235CA57}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crc32", "vcproj\crc32.vcproj", "{06766EAC-3C9E-4DA6-8F72-0B629D53C9CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,6 +27,10 @@ Global
 		{639574B0-4418-40F6-BC0E-63775235CA57}.Debug|Win32.Build.0 = Debug|Win32
 		{639574B0-4418-40F6-BC0E-63775235CA57}.Release|Win32.ActiveCfg = Release|Win32
 		{639574B0-4418-40F6-BC0E-63775235CA57}.Release|Win32.Build.0 = Release|Win32
+		{06766EAC-3C9E-4DA6-8F72-0B629D53C9CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{06766EAC-3C9E-4DA6-8F72-0B629D53C9CD}.Debug|Win32.Build.0 = Debug|Win32
+		{06766EAC-3C9E-4DA6-8F72-0B629D53C9CD}.Release|Win32.ActiveCfg = Release|Win32
+		{06766EAC-3C9E-4DA6-8F72-0B629D53C9CD}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

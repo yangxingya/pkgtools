@@ -1,0 +1,80 @@
+Log file created at: 2014/08/14 17:18:06
+Running on machine: YXY-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0814 17:18:06.813495   728 pkgtools.cpp:51] Commandline: "d:\src\design\bin\debug\pkgtools.exe -p pkg.script"
+I0814 17:18:06.815495   728 pkgtools.cpp:209] Package Start, script name: pkg.script
+I0814 17:18:06.815495   728 script.cpp:16] Script: pkg.script, will be parsed!
+I0814 17:18:06.815495   728 script.cpp:26] Parse Script Begin: ------>
+I0814 17:18:06.815495   728 script.cpp:28] 1: setting:[-p][-i][-u][-s dfsrd]
+I0814 17:18:06.816495   728 lineparser.cpp:16] Line Parser line: setting:[-p][-i][-u][-s dfsrd]
+I0814 17:18:06.816495   728 argv.h:146] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.816495   728 argv.h:146] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.816495   728 argv.h:146] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.816495   728 script.cpp:28] 2: 
+I0814 17:18:06.817497   728 script.cpp:28] 3: mkdir:[-d c:\pkg-install\][-i]
+I0814 17:18:06.817497   728 lineparser.cpp:16] Line Parser line: mkdir:[-d c:\pkg-install\][-i]
+I0814 17:18:06.817497   728 argv.h:146] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.817497   728 argv.h:355] Mkdir Argv: dst: "c:\pkg-install\"
+I0814 17:18:06.817497   728 script.cpp:28] 4: addf:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3dxxx.dll][-p][-i]
+I0814 17:18:06.817497   728 lineparser.cpp:16] Line Parser line: addf:[-d c:\pkg-install\d3d9.dll] [-s c:\windows\system32\d3dxxx.dll][-p][-i]
+I0814 17:18:06.818496   728 argv.h:146] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.818496   728 argv.h:146] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.818496   728 argv.h:261] Addf Argv: dst: "c:\pkg-install\d3d9.dll", src: "c:\windows\system32\d3dxxx.dll"
+I0814 17:18:06.818496   728 script.cpp:28] 5: 
+I0814 17:18:06.818496   728 script.cpp:28] 6: addf:[-d $APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-s C:\ProgramData\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-p][-i]
+I0814 17:18:06.818496   728 lineparser.cpp:16] Line Parser line: addf:[-d $APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-s C:\ProgramData\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-p][-i]
+I0814 17:18:06.818496   728 argv.h:146] Parse detail, prefix: -p, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.819496   728 argv.h:146] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.819496   728 argv.h:261] Addf Argv: dst: "$APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf", src: "C:\ProgramData\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf"
+I0814 17:18:06.819496   728 script.cpp:28] 7: 
+I0814 17:18:06.819496   728 script.cpp:28] 8: 
+I0814 17:18:06.819496   728 script.cpp:28] 9: exec:[-c "$WINDIR\xxx.exe" "$SYSDIR\yyy.exe"][-i][-u]
+I0814 17:18:06.819496   728 lineparser.cpp:16] Line Parser line: exec:[-c "$WINDIR\xxx.exe" "$SYSDIR\yyy.exe"][-i][-u]
+I0814 17:18:06.819496   728 argv.h:146] Parse detail, prefix: -i, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.819496   728 argv.h:146] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.819496   728 argv.h:471] Exec Argv: cmd: ""$WINDIR\xxx.exe" "$SYSDIR\yyy.exe"", no check: 0
+I0814 17:18:06.819496   728 script.cpp:28] 10: 
+I0814 17:18:06.820497   728 script.cpp:28] 11: delf:[-d $APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-u]
+I0814 17:18:06.820497   728 lineparser.cpp:16] Line Parser line: delf:[-d $APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf][-u]
+I0814 17:18:06.820497   728 argv.h:146] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.820497   728 argv.h:308] Delf Argv: dst: "$APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf"
+I0814 17:18:06.820497   728 script.cpp:28] 12: delf:[-d c:\pkg-install\d3d9.dll][-u]
+I0814 17:18:06.820497   728 lineparser.cpp:16] Line Parser line: delf:[-d c:\pkg-install\d3d9.dll][-u]
+I0814 17:18:06.820497   728 argv.h:146] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.820497   728 argv.h:308] Delf Argv: dst: "c:\pkg-install\d3d9.dll"
+I0814 17:18:06.821496   728 script.cpp:28] 13: rmdir:[-d c:\pkg-install\][-u]
+I0814 17:18:06.821496   728 lineparser.cpp:16] Line Parser line: rmdir:[-d c:\pkg-install\][-u]
+I0814 17:18:06.821496   728 argv.h:146] Parse detail, prefix: -u, flag(1<p/i/u>, 2<try>, 4<ignore>): 6
+I0814 17:18:06.821496   728 argv.h:401] Rmdir Argv: dst: "c:\pkg-install\"
+I0814 17:18:06.821496   728 script.cpp:28] 14: 
+I0814 17:18:06.821496   728 script.cpp:28] 15: out:[-d .\test.dat]
+I0814 17:18:06.821496   728 lineparser.cpp:16] Line Parser line: out:[-d .\test.dat]
+I0814 17:18:06.821496   728 argv.h:190] Out Argv: dst: ".\test.dat"
+I0814 17:18:06.821496   728 script.cpp:28] 16: 
+I0814 17:18:06.821496   728 script.cpp:42] Parse Script End: <------
+I0814 17:18:06.822496   728 script.cpp:48] Parse Script Successful, entry size: 9
+I0814 17:18:06.822496   728 packer.h:39] Pkg: -------------------> start
+I0814 17:18:06.822496   728 setting.h:97] Setting: disable filesystem redirection
+W0814 17:18:06.822496   728 fchecker.h:171] fholder: open error, code:2, file: "c:\windows\system32\d3dxxx.dll" failed
+W0814 17:18:07.221519   728 fchecker.h:171] fholder: open error, code:2, file: "c:\windows\system32\d3dxxx.dll" failed
+W0814 17:18:07.221519   728 fchecker.h:72] fholder: remove trustedinstaller but open failed: "c:\windows\system32\d3dxxx.dll"
+E0814 17:18:07.297523   728 fchecker.h:106] Open file: "c:\windows\system32\d3dxxx.dll" do max effort, so exit
+E0814 17:18:07.298523   728 fchecker.h:198] Open file failed! file:"c:\windows\system32\d3dxxx.dll", error: 14
+W0814 17:18:07.298523   728 packer.h:194] addf: holder failed! file://c:\windows\system32\d3dxxx.dll
+W0814 17:18:07.298523   728 packer.h:194] addf: holder failed! file://C:\ProgramData\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf
+I0814 17:18:07.298523   728 packer.h:47] Pkg: pre pack
+I0814 17:18:07.298523   728 packer.h:215] rm bad args ---> before, arg list size(): 9
+W0814 17:18:07.298523   728 packer.h:227] addf: holder failed! dst file://c:\pkg-install\d3d9.dll
+W0814 17:18:07.298523   728 packer.h:227] addf: holder failed! dst file://$APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf
+I0814 17:18:07.298523   728 packer.h:235] rm bad args ---> addf dst number: 2
+I0814 17:18:07.298523   728 packer.h:236] rm bad args ---> remove addf and out, arg list size(): 6
+W0814 17:18:07.298523   728 packer.h:254] addf: holder failed, delf remove: file://$APPDATA\Microsoft\RAC\PublishedData\RacWmiDatabase.sdf
+W0814 17:18:07.298523   728 packer.h:254] addf: holder failed, delf remove: file://c:\pkg-install\d3d9.dll
+I0814 17:18:07.298523   728 packer.h:266] rm bad args ---> remove delf, arg list size(): 4
+I0814 17:18:07.298523   728 packer.h:51] Pkg: remove bad args.
+I0814 17:18:07.315525   728 packer.h:279]     args: dfsrd
+I0814 17:18:07.315525   728 packer.h:279]     args: c:\pkg-install\
+I0814 17:18:07.315525   728 packer.h:279]     args: "$36\xxx.exe" "$37\yyy.exe"
+I0814 17:18:07.316524   728 pkgfile.h:49] Writer File: .\test.dat create successful!
+I0814 17:18:27.171660   728 packer.h:125] Pkg: -------------------> over
+I0814 17:18:27.173660   728 pkgtools.cpp:226] Package Over!

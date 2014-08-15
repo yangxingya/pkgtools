@@ -41,7 +41,7 @@ struct Writer
 
         std::string error = "Writer File: ";
         error += file;
-        error += (writer_->good() ? " create successfule!" : " create failed!");
+        error += (writer_->good() ? " create successful!" : " create failed!");
         if (!writer_->good()) {
             LOG(ERROR) << error;
             throw pkg_error(ERROR_CreatePkgFileFailed, error.c_str());
@@ -55,14 +55,14 @@ struct Writer
         uint64_t len = length(data);
         uint32_t times = (uint32_t)(len >> kuint64high32shift);
         uint32_t leave = (uint32_t)(len & kuint32max);
-        uint64_t writed = 0;
         uint8_t *ptr = (uint8_t *)data;
+
         for (uint32_t i = 0; i < times; ++i) {
-            writed += writer_->write(ptr, kuint32max);
+            if (!writer_->write(ptr, kuint32max))
+                return false;
             ptr += kuint32max;
         }
-        writed += writer_->write(ptr, leave);
-        return writed == len; 
+        return writer_->write(ptr, leave);
     }
 
     bool write(void const* buf, size_t len)
@@ -87,7 +87,7 @@ struct Reader
         error += (reader_.good() ? " open successfule!" : " open failed!");
         if (!reader_.good()) {
             LOG(ERROR) << error;
-            throw pkg_error(ERROR_CreatePkgFileFailed, error.c_str());
+            throw pkg_error(ERROR_OpenFileFailed, error.c_str());
         }
         DLOG(INFO) << error;
     }

@@ -83,6 +83,16 @@ inline std::string root(std::string const& path = ".")
 }
 
 //!
+/// brief: like *nix os have root path, windows sys root path is volume path
+///        likely "c:";
+inline std::string sysroot()
+{
+    char buf[MAX_PATH];
+    GetWindowsDirectoryA(buf, MAX_PATH);
+    return std::string(buf).substr(0, 2);
+}
+
+//!
 /// brief: add path '\\' sep if path is not end with '\\' or '/'.
 inline std::string& add_sep(std::string& path)
 {
